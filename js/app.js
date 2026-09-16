@@ -167,34 +167,73 @@ function initializeEventListeners() {
 // DATA LOADING
 // ============================================
 
+function questionsFileUrl() {
+    const path = location.pathname;
+    const dir = /\/$/.test(path) || path.endsWith('.html')
+        ? path.replace(/[^/]*$/, '')
+        : path + '/';
+    return dir + 'data/questions.json';
+}
+
 async function loadQuestions() {
     try {
-        const response = await fetch('data/questions.json');
+        const response = await fetch(questionsFileUrl());
+        if (!response.ok) throw new Error(response.status);
         const data = await response.json();
-        questionsData = processQuestions(data.questions);
+        const processed = processQuestions(data.questions);
+        if (!processed.length) throw new Error('empty');
+        questionsData = processed;
+        localStorage.setItem('carnetBQuestionCount', String(processed.length));
+        cacheQuestions(data);
         console.log(`✅ Cargadas ${questionsData.length} preguntas`);
     } catch (error) {
         console.error('❌ Error cargando preguntas:', error);
-        questionsData = [];
+        const cached = await readCachedQuestions();
+        if (cached.length) questionsData = cached;
+    }
+}
+
+async function cacheQuestions(data) {
+    try {
+        const cache = await caches.open('carnet-b-questions');
+        await cache.put('questions', new Response(JSON.stringify(data)));
+    } catch (error) {}
+}
+
+async function readCachedQuestions() {
+    try {
+        const cache = await caches.open('carnet-b-questions');
+        const response = await cache.match('questions');
+        if (!response) return [];
+        const data = await response.json();
+        return processQuestions(data.questions || []);
+    } catch (error) {
+        return [];
     }
 }
 
 function processQuestions(questions) {
-    return questions.map((q, index) => {
-        return {
-            id: q.id,
-            question: q.question.es,
-            questionEN: q.question.en,
-            answers: q.answers.map(a => a.es),
-            correctIndex: q.correctIndex,
-            category: categorizeQuestion(q),
-            difficulty: calculateDifficulty(q, index),
-            importance: calculateImportance(q, index),
-            frequency: calculateFrequency(index),
-            source: q.source,
-            explanation: q.explanation || ''
-        };
+    if (!Array.isArray(questions)) return [];
+    const out = [];
+    questions.forEach((q, index) => {
+        try {
+            if (!q?.question?.es || !Array.isArray(q.answers)) return;
+            out.push({
+                id: q.id,
+                question: q.question.es,
+                questionEN: q.question.en,
+                answers: q.answers.map(a => a.es),
+                correctIndex: q.correctIndex,
+                category: categorizeQuestion(q),
+                difficulty: calculateDifficulty(q, index),
+                importance: calculateImportance(q, index),
+                frequency: calculateFrequency(index),
+                source: q.source,
+                explanation: q.explanation || ''
+            });
+        } catch (error) {}
     });
+    return out;
 }
 
 // ============================================
@@ -501,7 +540,15 @@ function markAsDoubt() {
 // TEST MODE
 // ============================================
 
-function startMode(mode) {
+async function ensureQuestions() {
+    if (questionsData.length) return true;
+    await loadQuestions();
+    updateHomeStats();
+    return questionsData.length > 0;
+}
+
+async function startMode(mode) {
+    if (!(await ensureQuestions())) return;
     testMode = mode;
     currentQuestionIndex = 0;
     correctAnswers = 0;
@@ -717,8 +764,9 @@ function resetTest() {
 // LIBRARY
 // ============================================
 
-function showLibrary() {
+async function showLibrary() {
     showView('libraryView');
+    await ensureQuestions();
     requestAnimationFrame(filterQuestions);
 }
 
@@ -1093,7 +1141,8 @@ function saveUserStats() {
 }
 
 function updateHomeStats() {
-    document.getElementById('totalQuestions').textContent = questionsData.length;
+    const known = questionsData.length || Number(localStorage.getItem('carnetBQuestionCount') || 0);
+    document.getElementById('totalQuestions').textContent = known || '—';
     document.getElementById('completedQuestions').textContent = userStats.totalAnswered;
     
     // Calcular temas débiles
