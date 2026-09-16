@@ -415,21 +415,16 @@ function createTireIllustration() {
 
 function getQuestionIllustration(question) {
     const questionText = question.question.toLowerCase();
-    
-    // SEÑALES ESPECÍFICAS
+
+    // Only when the picture teaches the thing. No emoji filler.
     if (questionText.includes('stop') || questionText.includes('señal de stop')) {
         return wrapSVG(createStopSign());
     }
-    if (questionText.includes('ceda') || questionText.includes('ceder el paso')) {
+    if (questionText.includes('ceda el paso') || questionText.includes('ceder el paso')) {
         return wrapSVG(createYieldSign());
     }
     if (questionText.includes('prohibido') && (questionText.includes('adelantar') || questionText.includes('adelantamiento'))) {
         return wrapSVG(createNoOvertakingSign());
-    }
-    if (questionText.includes('velocidad máxima') || (questionText.includes('velocidad') && (questionText.includes('50') || questionText.includes('90') || questionText.includes('120')))) {
-        const match = questionText.match(/(\d+)\s*km/);
-        const speed = match ? match[1] : '50';
-        return wrapSVG(createSpeedLimitSign(speed));
     }
     if (questionText.includes('prohibido el paso') || questionText.includes('dirección prohibida') || questionText.includes('entrada prohibida')) {
         return wrapSVG(createNoEntrySign());
@@ -440,29 +435,17 @@ function getQuestionIllustration(question) {
     if (questionText.includes('curva peligrosa')) {
         return wrapSVG(createDangerousCurveSign());
     }
-    
-    // SITUACIONES VIALES
-    if (questionText.includes('cruce') || questionText.includes('intersección')) {
-        return wrapSVG(createIntersectionSituation());
+    if (questionText.includes('semáforo')) {
+        return wrapSVG(createTrafficLightSign());
     }
-    if (questionText.includes('adelanta') && !questionText.includes('prohibido')) {
-        return wrapSVG(createOvertakingSituation());
-    }
-    if (questionText.includes('aparca') || questionText.includes('estaciona')) {
-        return wrapSVG(createParkingSituation());
+    if (questionText.includes('rotonda') || questionText.includes('glorieta')) {
+        return wrapSVG(createRoundaboutSign());
     }
     if (questionText.includes('arcén')) {
         return wrapSVG(createRoadShoulderSituation());
     }
-    if (questionText.includes('semáforo')) {
-        return wrapSVG(createTrafficLightSign());
-    }
-    if (questionText.includes('rotonda')) {
-        return wrapSVG(createRoundaboutSign());
-    }
-    
-    // ELEMENTOS VIALES
-    if (questionText.includes('línea continua') || (questionText.includes('línea') && questionText.includes('marca'))) {
+    if (questionText.includes('línea continua') || questionText.includes('linea continua') ||
+        (questionText.includes('línea') && questionText.includes('marca'))) {
         return wrapSVG(createRoadMarkings());
     }
     if (questionText.includes('chaleco')) {
@@ -471,54 +454,6 @@ function getQuestionIllustration(question) {
     if (questionText.includes('neumático')) {
         return wrapSVG(createTireIllustration());
     }
-    
-    // CATEGORÍAS GENERALES
-    if (questionText.includes('señal') || questionText.includes('señaliz')) {
-        return wrapSVG(createGenericWarningSign());
-    }
-    if (questionText.includes('calzada') || questionText.includes('carretera') || questionText.includes('carril')) {
-        return wrapSVG(createRoadSituation());
-    }
-    
-    // FALLBACK
-    return createTextualFallback(questionText);
-}
 
-// ============================================
-// FALLBACK TEXTUAL
-// ============================================
-
-function createTextualFallback(questionText) {
-    let icon = '🚗';
-    let label = 'Circulación';
-    
-    if (questionText.includes('alcohol') || questionText.includes('droga')) {
-        icon = '🚫';
-        label = 'Seguridad Vial';
-    } else if (questionText.includes('distancia')) {
-        icon = '📏';
-        label = 'Distancias';
-    } else if (questionText.includes('luz') || questionText.includes('alumbrado')) {
-        icon = '💡';
-        label = 'Alumbrado';
-    } else if (questionText.includes('túnel')) {
-        icon = '🚇';
-        label = 'Túneles';
-    } else if (questionText.includes('autopista') || questionText.includes('autovía')) {
-        icon = '🛣️';
-        label = 'Vías Rápidas';
-    } else if (questionText.includes('peatón') || questionText.includes('ciclista')) {
-        icon = '🚶';
-        label = 'Usuarios Vulnerables';
-    } else if (questionText.includes('document') || questionText.includes('permiso')) {
-        icon = '📄';
-        label = 'Documentación';
-    }
-    
-    return `
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; background: linear-gradient(135deg, rgba(217, 119, 87, 0.08) 0%, rgba(139, 154, 122, 0.08) 100%); border-radius: 24px; margin: 24px 0; min-height: 140px;">
-            <div style="font-size: 56px; margin-bottom: 12px;">${icon}</div>
-            <div style="font-size: 15px; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.5px;">${label}</div>
-        </div>
-    `;
+    return '';
 }

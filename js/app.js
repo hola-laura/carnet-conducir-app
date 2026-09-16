@@ -569,10 +569,10 @@ function loadQuestion() {
     document.getElementById('questionDifficulty').textContent = '★'.repeat(question.difficulty) + '☆'.repeat(5 - question.difficulty);
     document.getElementById('questionText').textContent = question.question;
     
-    // Show simple illustration
     const imageContainer = document.getElementById('questionImage');
-    imageContainer.innerHTML = getQuestionIllustration(question);
-    imageContainer.style.display = 'block';
+    const illustrationHTML = getQuestionIllustration(question);
+    imageContainer.innerHTML = illustrationHTML;
+    imageContainer.style.display = illustrationHTML ? 'flex' : 'none';
     
     // Load answers
     const answersContainer = document.getElementById('answersContainer');
@@ -778,7 +778,7 @@ function displayQuestions(questions) {
                 <span class="question-category">${q.category}</span>
                 <span class="question-difficulty">${'★'.repeat(q.difficulty)}${'☆'.repeat(5 - q.difficulty)}</span>
             </div>
-            ${illustrationHTML}
+            ${illustrationHTML || ''}
             <div class="question-item-text" style="margin-top: 16px;">${q.question}</div>
             
             <div class="all-answers-box" style="margin-top: 16px; padding: 16px; background: rgba(255, 255, 255, 0.03); border-radius: 16px;">
@@ -1014,59 +1014,27 @@ function showGlossary() {
 }
 
 function loadGlossary() {
-    const glossaryTerms = [
-        {
-            term: 'Calzada',
-            definition: 'Parte de la carretera destinada a la circulación de vehículos. No incluye el arcén ni la acera.',
-            icon: '🛣️',
-            svg: createRoadSituation()
-        },
-        {
-            term: 'Arcén',
-            definition: 'Franja longitudinal de la carretera, contigua a la calzada, NO destinada al tránsito de vehículos.',
-            icon: '↔️',
-            svg: createRoadShoulderSituation()
-        },
-        {
-            term: 'Carril',
-            definition: 'Banda longitudinal en que puede estar dividida la calzada, delimitada o no por marcas viales.',
-            icon: '🚗',
-            svg: createRoadMarkings()
-        },
-        {
-            term: 'Intersección',
-            definition: 'Zona donde se cruzan o unen dos o más vías. Incluye rotondas y cruces.',
-            icon: '✖️',
-            svg: createIntersectionSituation()
-        },
-        {
-            term: 'Prioridad',
-            definition: 'Derecho del conductor a pasar antes que otro vehículo en una intersección o situación de tráfico.',
-            icon: '⚠️',
-            svg: createYieldSign()
-        },
-        {
-            term: 'Estacionamiento',
-            definition: 'Inmovilización del vehículo que no es una detención ni una parada. Puede ser prolongada.',
-            icon: '🅿️',
-            svg: createParkingSituation()
-        }
-    ];
-    
     const container = document.getElementById('glossaryGrid');
     container.innerHTML = '';
-    
-    glossaryTerms.forEach(item => {
+
+    glossaryDgt.forEach(item => {
         const card = document.createElement('div');
         card.className = 'glossary-card glass-card';
+        const photo = item.image
+            ? `<div class="glossary-illustration"><img src="${item.image}" alt="${item.term}" loading="lazy"></div>`
+            : '';
         card.innerHTML = `
-            <div class="glossary-icon">${item.icon}</div>
             <h3 class="glossary-term">${item.term}</h3>
             <p class="glossary-definition">${item.definition}</p>
-            <div class="glossary-illustration">${item.svg}</div>
+            ${photo}
         `;
         container.appendChild(card);
     });
+
+    const credit = document.createElement('p');
+    credit.className = 'glossary-credit';
+    credit.textContent = 'Fuente: DGT. Diccionario en Lectura Fácil. Permiso B.';
+    container.appendChild(credit);
 }
 
 // ============================================

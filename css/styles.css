@@ -905,14 +905,27 @@ body.light-mode {
 
 .glossary-illustration {
     width: 100%;
-    height: 90px;
-    background: rgba(255, 255, 255, 0.03);
+    height: auto;
+    background: var(--surface-ghost);
     border-radius: var(--radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-top: var(--space-md);
     overflow: hidden;
+}
+
+.glossary-illustration img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.glossary-credit {
+    margin: 24px 0 8px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    font-family: 'Inter', -apple-system, sans-serif;
 }
 
 .theme-toggle {
