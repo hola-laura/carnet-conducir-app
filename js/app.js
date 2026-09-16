@@ -586,10 +586,9 @@ function loadQuestion() {
         answersContainer.appendChild(button);
     });
     
-    // Hide elements
-    document.getElementById('nextButton').style.display = 'none';
-    document.getElementById('doubtButton').style.display = 'none';
-    document.getElementById('explanationCard').style.display = 'none';
+    document.getElementById('nextButton').classList.add('hidden');
+    document.getElementById('doubtButton').classList.add('hidden');
+    document.getElementById('explanationCard').classList.add('hidden');
 }
 
 // ============================================
@@ -638,21 +637,17 @@ function selectAnswer(selectedIndex) {
         showExplanation(isCorrect, question);
     }
     
-    // Mostrar botón "He dudado"
     const doubtBtn = document.getElementById('doubtButton');
-    doubtBtn.style.display = 'block';
+    doubtBtn.classList.remove('hidden');
     doubtBtn.disabled = false;
-    doubtBtn.textContent = '🤔 He dudado con esta';
-    doubtBtn.style.background = 'rgba(230, 126, 92, 0.15)';
-    doubtBtn.style.border = '2px solid var(--primary-warm)';
-    doubtBtn.style.color = 'var(--primary-warm)';
+    doubtBtn.textContent = 'He dudado con esta';
     
     if (testMode === 'exam' && wrongAnswers > 3) {
         setTimeout(() => showResults(), 1500);
         return;
     }
     
-    document.getElementById('nextButton').style.display = 'block';
+    document.getElementById('nextButton').classList.remove('hidden');
 }
 
 function showExplanation(isCorrect, question) {
@@ -673,7 +668,7 @@ function showExplanation(isCorrect, question) {
         text.innerHTML = `<div style="margin-bottom: 16px; font-size: 16px; padding: 12px; background: rgba(217,119,87,0.1); border-radius: 16px; border-left: 3px solid var(--error);"><strong>La respuesta correcta es:</strong><br/>"${question.answers[question.correctIndex]}"</div>${explanationHTML}`;
     }
     
-    card.style.display = 'block';
+    card.classList.remove('hidden');
 }
 
 function getExplanationText(question) {

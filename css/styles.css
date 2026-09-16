@@ -579,10 +579,10 @@ body.light-mode {
 
 .next-button {
     width: 100%;
-    padding: var(--space-md);
-    font-size: 18px;
-    margin-top: var(--space-md);
-    font-weight: 700;
+    padding: 18px 24px;
+    font-size: 16px;
+    margin-top: 16px;
+    font-weight: 600;
 }
 
 .question-explanation {
@@ -1414,15 +1414,17 @@ body.light-mode .filter-group select {
 
 /* Doubt Button */
 .doubt-button {
-    margin-top: var(--space-sm);
-    background: rgba(230, 126, 92, 0.15);
-    border: 2px solid var(--primary-warm);
-    color: var(--primary-warm);
+    width: 100%;
+    margin-top: 16px;
+    background: var(--surface-ghost);
+    border: 1px solid var(--border-hairline);
+    color: var(--text-primary);
     font-weight: 600;
 }
 
 .doubt-button:hover {
-    background: rgba(230, 126, 92, 0.25);
+    background: var(--surface-ghost);
+    color: var(--text-primary);
 }
 
 /* ========================================
