@@ -455,6 +455,7 @@ body.light-mode {
 
 .question-difficulty {
     font-size: 18px;
+    line-height: 1;
     color: var(--primary-warm);
 }
 
@@ -1448,7 +1449,7 @@ body.light-mode .filter-group select {
 .question-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .question-header-left {
