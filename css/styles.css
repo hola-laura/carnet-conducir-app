@@ -1249,7 +1249,7 @@ body.light-mode .filter-group select {
 
 /* Utility Classes */
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .full-width {
