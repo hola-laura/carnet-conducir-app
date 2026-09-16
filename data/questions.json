@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
   "license": "Permiso B",
-  "updatedAt": "2026-09-16",
+  "updatedAt": "2026-09-17",
   "source": "anki-carnet-conducir",
-  "totalQuestions": 2947,
+  "totalQuestions": 2983,
   "questions": [
     {
       "id": "anki-b-1",
@@ -1690,42 +1690,6 @@
       "correctIndex": 1,
       "explanation": "JERARQUÍA ENTRE SEÑALES: 1Âº AGENTES, 2Âº BALIZAMIENTO, 3Âº SEMÁFOROS, 4Âº SEÑALES VERTICALES, 5Âº MARCAS VIALES Y 6Âº NORMAS DE CIRCULACIÓN. \" CUANDO HAYA CONTRADICCIÓN ENTRE SEÑALES DEL MISMO RANGO, PREVALECE LA MÁS RESTRICTIVA.",
       "image": "10389.JPG",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
-      "id": "anki-b-48",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "El consumo de LSD. produce en el conductor...",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "fatiga.",
-          "en": ""
-        },
-        {
-          "es": "alucinaciones y distorsiones en la percepción.",
-          "en": ""
-        },
-        {
-          "es": "estabilidad emocional.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 1,
-      "explanation": "LSD: ES UNA DROGA PERTURBADORA, SUS EFECTOS SON: DISTORSIÓN EN LA PERCEPCIÓN Y ALUCINACIONES. \" SUS EFECTOS DURAN ENTRE 10 A 12 HORAS\".",
-      "image": "8373.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -7026,42 +6990,6 @@
       }
     },
     {
-      "id": "anki-b-196",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "Las anfetaminas, ¿son peligrosas para conducir?",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "No, porque son tranquilizantes.",
-          "en": ""
-        },
-        {
-          "es": "No, porque retrasan la aparición del sueño.",
-          "en": ""
-        },
-        {
-          "es": "Sí.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 2,
-      "explanation": "CON ANFETAMINAS. EL CONDUCTOR ES: IMPACIENTE E IMPULSIVO.",
-      "image": "6420.JPG",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
       "id": "anki-b-197",
       "source": {
         "name": "DGT - Base de datos Anki",
@@ -10294,42 +10222,6 @@
       "correctIndex": 2,
       "explanation": "PARA EVITAR LA FATIGA LO MÁS IMPORTANTE ES DESCANSAR REGULARMENTE, AL MENOS 20-30 MINUTOS CADA 2 HORAS O 200 KM.",
       "image": "6306.jpg",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
-      "id": "anki-b-287",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "El permiso de conducción de la clase A1, ¿autoriza a conducir motocicletas con sidecar?",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "No, en ningún caso.",
-          "en": ""
-        },
-        {
-          "es": "Sí, motocicletas de cualquier cilindrada.",
-          "en": ""
-        },
-        {
-          "es": "Sí, motocicletas con una cilindrada de 125  centímetros cúbicos como máximo y una potencia no superior a 11 kilovatios.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 2,
-      "explanation": " EL\"  A1 \"  AUTORIZA A CONDUCIR MOTOCICLETAS CON Y SIN SIDECAR. \" CILINDRADA HASTA  125 C.C.\". Y UNA POTENCIA NO SUPERIOR A: 11 KILOVATIOS\".",
-      "image": "10353.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -17574,42 +17466,6 @@
       }
     },
     {
-      "id": "anki-b-489",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "El conductor que consume cocaína...",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "puede volverse más competitivo y agresivo.",
-          "en": ""
-        },
-        {
-          "es": "es más tranquilo y menos competitivo.",
-          "en": ""
-        },
-        {
-          "es": "es más agresivo y menos competitivo.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 0,
-      "explanation": "LA COCAÍNA ES UNA DROGA ESTIMULANTE, SUS EFECTOS SON: COMPETITIVIDAD, AGRESIVIDAD, IMPULSIVO Y MENOS CONCENTRACIÓN.",
-      "image": "6420.JPG",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
       "id": "anki-b-490",
       "source": {
         "name": "DGT - Base de datos Anki",
@@ -19186,42 +19042,6 @@
       "correctIndex": 0,
       "explanation": "SEÑAL CIRCULAR ROJA. \" PROHIBIDO\" ",
       "image": "7304.JPG",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
-      "id": "anki-b-534",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "Los efectos que provoca el LSD en el comportamiento del conductor...",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "pueden llegar a prolongarse de 10 a 12 horas desde su consumo.",
-          "en": ""
-        },
-        {
-          "es": "son muy breves, pero pueden reaparecer por sorpresa algún tiempo después.",
-          "en": ""
-        },
-        {
-          "es": "proporcionan un estado de relajación.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 0,
-      "explanation": "EL LSD SON DROGAS ALUCINÓGENAS Y DISTORSIONAN LA REALIDAD. SU EFECTOS PUEDEN DURAR DE: 10 A 12 HORAS.",
-      "image": "8373.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -23550,42 +23370,6 @@
       }
     },
     {
-      "id": "anki-b-655",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "En caso de no disponer del dispositivo luminoso V-16 y hasta el 1 de enero del 2026, ¿está permitido colocar los triángulos de preseñalización de peligro a menos de 50 metros del vehículo averiado?",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "No, deben estar al menos a 100 metros.",
-          "en": ""
-        },
-        {
-          "es": "No.",
-          "en": ""
-        },
-        {
-          "es": "Sí, a esa distancia ya son visibles.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 1,
-      "explanation": "EN CASO DE AVERÍA SE DEBE SEÑALIZAR EL OBSTÁCULO CREADO, CON LA SEÑAL V-16 (que se pondrá en el techo del vehículo)  O BIEN MEDIANTE LOS TRIÁNGULOS DE PRESEÑALIZACIÓN DE PELIGRO( hasta 01-0-2026). ESTOS DISPOSITIVOS SE COLOCARÁN UNO POR DELANTE Y OTRO POR DETRÁS DEL VEHÍCULO, COMO MÍNIMO A 50 METROS DE DISTANCIA Y DE FORMA QUE SEAN VISIBLES POR LOS CONDUCTORES QUE SE APROXIMEN DESDE AL MENOS 100 METROS.",
-      "image": "9093.jpg",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
       "id": "anki-b-656",
       "source": {
         "name": "DGT - Base de datos Anki",
@@ -25630,42 +25414,6 @@
       "correctIndex": 0,
       "explanation": "",
       "image": "5198.JPG",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
-      "id": "anki-b-713",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "E una inmovilización por emergencia de un vehículo, en caso de no disponer del dispositivo luminoso, señal V-16, y hasta el 1 de enero del 2026, ¿a qué distancia del mismo deben colocarse los triángulos de preseñalización de peligro?",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "A 100 metros y deben ser visibles desde, al menos, 150 metros.",
-          "en": ""
-        },
-        {
-          "es": "A 50 metros como mínimo y deben ser visibles desde, al menos, 100 metros.",
-          "en": ""
-        },
-        {
-          "es": "A 50 metros como máximo y deben ser visibles desde al menos 100 metros.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 1,
-      "explanation": "",
-      "image": "9093.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -28302,42 +28050,6 @@
       }
     },
     {
-      "id": "anki-b-787",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "El turismo amarillo sale de una gasolinera para incorporarse a la circulación, en caso necesario, ¿cuándo tiene que ceder el paso?",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "Cuando se incorpore por la derecha.",
-          "en": ""
-        },
-        {
-          "es": "Cuando se incorpore por la izquierda.",
-          "en": ""
-        },
-        {
-          "es": "Siempre que se incorpore, ya sea por la derecha o por la izquierda.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 2,
-      "explanation": "",
-      "image": "6429.JPG",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
       "id": "anki-b-788",
       "source": {
         "name": "DGT - Base de datos Anki",
@@ -30786,42 +30498,6 @@
       }
     },
     {
-      "id": "anki-b-856",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "El consumo de éxtasis, ¿cómo afecta en el comportamiento del conductor?",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "Disminuye su capacidad de concentración.",
-          "en": ""
-        },
-        {
-          "es": "Reduce su sensibilidad al deslumbramiento.",
-          "en": ""
-        },
-        {
-          "es": "Provoca un agotamiento físico y mental mientras que están presentes los síntomas.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 0,
-      "explanation": "DISMINUYE LA CAPACIDAD DE CONCENTRACIÓN DEL CONDUCTOR Y ES MÁS SENSIBLE A LOS DESLUMBRAMIENTOS.",
-      "image": "5138.JPG",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
       "id": "anki-b-857",
       "source": {
         "name": "DGT - Base de datos Anki",
@@ -32830,42 +32506,6 @@
       "correctIndex": 2,
       "explanation": "",
       "image": "11432.jpg",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
-      "id": "anki-b-913",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "En un conductor el consumo de anfetaminas...",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "favorece la fatiga y el sueño.",
-          "en": ""
-        },
-        {
-          "es": "proporciona un estado de relajación.",
-          "en": ""
-        },
-        {
-          "es": "genera comportamientos impacientes o impulsivos.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 2,
-      "explanation": "PRODUCE: COMPORTAMIENTO, IMPULSIVO E IMPACIENTE.",
-      "image": "5138.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -35710,42 +35350,6 @@
       "correctIndex": 2,
       "explanation": "BRAZO ESTIRADO, PALMA DE LA MANO HACÍA BAJO: VA A LA IZQUIERDA, BRAZO LEVANTADO: VA A LA DERECHA, BRAZO ESTIRADO CON LA PALMA DE LA MANO HACIA ATRÁS: HACÍA ATRÁS.",
       "image": "5349.JPG",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
-      "id": "anki-b-993",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "Un camión de más de 3.500 kilogramos de masa máxima autorizada destinado al servicio público debe llevar siempre...",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "un extintor de incendios.",
-          "en": ""
-        },
-        {
-          "es": "un extintor de incendios y al menos un calzo adecuado para el vehículo.",
-          "en": ""
-        },
-        {
-          "es": "un calzo adecuado para el vehículo.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 0,
-      "explanation": "CAMIONES DE MÁS DE 3.500 KILOGRAMOS, AUTOBUSES Y CONJUNTO DE VEHÍCULOS (Sin especificar peso): TIENEN QUE LLEVAR UN EXTINTOR DE INCENDIOS.",
-      "image": "15074.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -42334,42 +41938,6 @@
       "correctIndex": 1,
       "explanation": "",
       "image": "564.jpg",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
-      "id": "anki-b-1177",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "Un conductor que ha consumido cocaína será...",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "inseguro, ya que el conductor no valora correctamente sus capacidades al volante.",
-          "en": ""
-        },
-        {
-          "es": "muy relajado, ya que baja su capacidad de concentración.",
-          "en": ""
-        },
-        {
-          "es": "competitivo e impulsivo.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 2,
-      "explanation": ".LA COCAÍNA ES UNA DROGA ESTIMULANTE, SUS EFECTOS SON: COMPETITIVIDAD, AGRESIVIDAD, IMPULSIVO Y MENOS CONCENTRACIÓN.",
-      "image": "10943.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -56706,42 +56274,6 @@
       }
     },
     {
-      "id": "anki-b-1576",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "El consumo de éxtasis, ¿cómo afecta al comportamiento del conductor?",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "Reduce su sensibilidad al deslumbramiento.",
-          "en": ""
-        },
-        {
-          "es": "Disminuye su capacidad de concentración.",
-          "en": ""
-        },
-        {
-          "es": "Provoca un agotamiento físico y mental mientras duran sus síntomas.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 1,
-      "explanation": "",
-      "image": "B_300.jpg",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
       "id": "anki-b-1577",
       "source": {
         "name": "DGT - Base de datos Anki",
@@ -63214,42 +62746,6 @@
       "correctIndex": 1,
       "explanation": "",
       "image": "B_487.jpg",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
-      "id": "anki-b-1757",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "¿Cómo afectan las anfetaminas a la conducción?",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "Se produce una fuerte somnolencia.",
-          "en": ""
-        },
-        {
-          "es": "Aumentan la sensación de fatiga.",
-          "en": ""
-        },
-        {
-          "es": "Disminuyen la sensación de fatiga y producen falsa seguridad.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 2,
-      "explanation": "",
-      "image": "B_488.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -85038,42 +84534,6 @@
       }
     },
     {
-      "id": "anki-b-2363",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "El consumo de anfetaminas en la conducción, ¿está prohibido?",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "No, si forma parte de un tratamiento médico.",
-          "en": ""
-        },
-        {
-          "es": "Sí.",
-          "en": ""
-        },
-        {
-          "es": "No, porque no afecta a la conducción.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 1,
-      "explanation": "",
-      "image": "B_1137.jpg",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
       "id": "anki-b-2364",
       "source": {
         "name": "DGT - Base de datos Anki",
@@ -86398,42 +85858,6 @@
       "correctIndex": 0,
       "explanation": "",
       "image": "B_1175.jpg",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
-      "id": "anki-b-2401",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "¿De qué color es el fondo de la placa de matrícula de las autocaravanas?",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "Amarillo",
-          "en": ""
-        },
-        {
-          "es": "Blanco",
-          "en": ""
-        },
-        {
-          "es": "Rojo",
-          "en": ""
-        }
-      ],
-      "correctIndex": 1,
-      "explanation": "Las placas de matrícula de las autocaravanas tendrán fondo retrorreflectante de color blanco y sus caracteres estampados en relieve irán pintados en color negro mate para su mejor visualización.\n\n¿Crees que la respuesta es incorrecta?",
-      "image": "B_1176.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -88990,42 +88414,6 @@
       "correctIndex": 0,
       "explanation": "",
       "image": "B_1252.jpg",
-      "review": {
-        "status": "official-data",
-        "rightsApproved": true,
-        "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
-      }
-    },
-    {
-      "id": "anki-b-2473",
-      "source": {
-        "name": "DGT - Base de datos Anki",
-        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
-        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
-      },
-      "category": "PERMISO B",
-      "question": {
-        "es": "¿Qué efectos secundarios tiene el LSD durante la conducción?",
-        "en": ""
-      },
-      "answers": [
-        {
-          "es": "Aumenta la sensación de fatiga y la somnolencia.",
-          "en": ""
-        },
-        {
-          "es": "Se sobrevaloran las capacidades del conductor.",
-          "en": ""
-        },
-        {
-          "es": "Se pueden sufrir alucinaciones y alteraciones emocionales.",
-          "en": ""
-        }
-      ],
-      "correctIndex": 2,
-      "explanation": "",
-      "image": "B_1254.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -106095,6 +105483,1864 @@
         "rightsApproved": true,
         "accuracyApproved": true,
         "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "dgt-nuevas-1",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "La señal P-1e, de tramo con accesos directos, avisa de un peligro. ¿Quién debe ceder el paso?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Los vehículos que ya circulan por la vía principal.",
+          "en": ""
+        },
+        {
+          "es": "Los usuarios que se incorporan por esos accesos directos.",
+          "en": ""
+        },
+        {
+          "es": "Solo los ciclistas que circulan por el arcén.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "La P-1e avisa de un tramo con varios accesos directos a la vía. Quienes se incorporan por esos accesos deben ceder el paso. Es parecida a las P-1 a-d de intersección con prioridad.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-2",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "En un paso solo para peatones (P-20a), ¿cómo debe pasar un ciclista?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Puede pasar montado en la bicicleta, porque tiene prioridad.",
+          "en": ""
+        },
+        {
+          "es": "Debe bajarse de la bicicleta y pasar andando.",
+          "en": ""
+        },
+        {
+          "es": "Solo puede pasar si no hay peatones esperando.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "En un paso para peatones (P-20a) los ciclistas deben bajarse y pasar andando. En un paso para ciclistas sí pueden pasar montados.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-3",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "¿Qué indica la señal P-20c?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Peligro por un paso para peatones adosado o compartido con un paso para ciclistas.",
+          "en": ""
+        },
+        {
+          "es": "Obligación de circular solo en bicicleta.",
+          "en": ""
+        },
+        {
+          "es": "Prohibido el paso a peatones y ciclistas.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "La P-20c avisa de un paso para peatones junto a un paso para ciclistas, o compartido. En la parte ciclista se puede pasar montado; en la peatonal, andando.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-4",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "La señal P-24a es como la de animales en libertad, pero avisa de forma especial de…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Ganado doméstico en una cañada.",
+          "en": ""
+        },
+        {
+          "es": "Jabalíes, que cruzan la vía con frecuencia.",
+          "en": ""
+        },
+        {
+          "es": "Animales sueltos solo de noche.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "La P-24a indica paso de animales en libertad cuando, en una proporción muy significativa, se trata de jabalíes.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-5",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "La señal P-33 de visibilidad reducida avisa de que la circulación se dificulta por…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Una curva muy cerrada o un cambio de rasante.",
+          "en": ""
+        },
+        {
+          "es": "Niebla, lluvia, nieve, humos u otras pérdidas notables de visibilidad.",
+          "en": ""
+        },
+        {
+          "es": "Obras que invaden un carril.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "La P-33 avisa de un tramo donde suele haber poca visibilidad por niebla, lluvia, nieve, humos, etc. Se cambió para no confundirla con caída de objetos o piedras.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-6",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "¿Qué indica la señal P-35 de trenzado?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Un túnel con un solo carril por sentido.",
+          "en": ""
+        },
+        {
+          "es": "Un tramo entre una confluencia y una bifurcación donde los vehículos se cruzan de carril y hay más riesgo de choque.",
+          "en": ""
+        },
+        {
+          "es": "Un adelantamiento prohibido en todo el tramo.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "El trenzado es el tramo entre una confluencia y una bifurcación. Ahí se cruzan las trayectorias al cambiar de carril y sube el riesgo de colisión.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-7",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "La señal R-118 prohíbe la entrada a…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Solo patinetes eléctricos.",
+          "en": ""
+        },
+        {
+          "es": "Todos los vehículos de movilidad personal (VMP).",
+          "en": ""
+        },
+        {
+          "es": "Bicicletas y ciclomotores.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "La R-118 es nueva y prohíbe el acceso a todos los VMP, no solo a los patinetes.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-8",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "La señal R-120 prohíbe la entrada a vehículos según…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Su peso máximo autorizado.",
+          "en": ""
+        },
+        {
+          "es": "El distintivo ambiental u otros criterios ambientales, que se indican en un panel.",
+          "en": ""
+        },
+        {
+          "es": "Si el conductor es novel.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "La R-120 prohíbe el acceso según el distintivo ambiental u otros criterios. Las condiciones van en un panel S-860 o en un cartel. Se usa, por ejemplo, en Zonas de Bajas Emisiones.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-9",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "¿Qué es una carretera 2+1, señalizada con la S-1c?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Una autovía con dos calzadas y un carril bus.",
+          "en": ""
+        },
+        {
+          "es": "Una carretera de tres carriles, dos sentidos, y el carril central para adelantar, alternando el sentido.",
+          "en": ""
+        },
+        {
+          "es": "Una calle de un solo sentido con dos carriles.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "La carretera 2+1 tiene tres carriles y circulación en ambos sentidos. El carril central se reserva de forma alterna para adelantar.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-10",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "En una zona de coexistencia (señal S-47), la velocidad máxima de los vehículos es…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "20 km/h.",
+          "en": ""
+        },
+        {
+          "es": "30 km/h.",
+          "en": ""
+        },
+        {
+          "es": "50 km/h.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "En zona de coexistencia (S-47) la velocidad máxima es 20 km/h. Los peatones tienen prioridad y pueden usar toda la zona.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-11",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "En una zona de coexistencia, ¿quién tiene prioridad?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Los vehículos, porque hay calzada.",
+          "en": ""
+        },
+        {
+          "es": "Los peatones. Pueden usar toda la zona y no se señalizan pasos de peatones.",
+          "en": ""
+        },
+        {
+          "es": "Las bicicletas, siempre.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "La S-47 da prioridad al peatón. La circulación se comparte. No se pintan pasos de peatones porque el peatón puede usar toda la zona.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-12",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "En una zona de coexistencia, los ciclos y los VMP…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Solo pueden circular en el sentido de los coches.",
+          "en": ""
+        },
+        {
+          "es": "Pueden circular en ambos sentidos, salvo que la autoridad diga lo contrario.",
+          "en": ""
+        },
+        {
+          "es": "Tienen prohibido circular.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "En zona de coexistencia, ciclos y, en su caso, VMP pueden circular en ambos sentidos, salvo que se establezca lo contrario. Los vehículos solo pueden estacionar donde esté señalado.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-13",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "La señal S-51b indica un carril reservado para…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Autobuses urbanos solamente.",
+          "en": ""
+        },
+        {
+          "es": "Vehículos de alta ocupación (VAO). En la señal figura a partir de cuántas personas se considera alta ocupación.",
+          "en": ""
+        },
+        {
+          "es": "Vehículos eléctricos, siempre.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "La S-51b reserva uno o varios carriles a vehículos con alta ocupación. El número de personas lo decide el órgano gestor y aparece en la señal.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-14",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "La señal S-105e informa de…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Un área de descanso sin servicios.",
+          "en": ""
+        },
+        {
+          "es": "Una estación de recarga eléctrica.",
+          "en": ""
+        },
+        {
+          "es": "Un control de alcoholemia.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Las S-105 indican estaciones de servicio. La S-105e es la de recarga eléctrica. Otras variantes marcan GLP, varios carburantes, etc.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-15",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "La señal S-892, junto a otra señal vertical, indica que…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Hay un radar de tramo en toda la provincia.",
+          "en": ""
+        },
+        {
+          "es": "El cumplimiento de esa señal se vigila con medios automáticos de captación y denuncia.",
+          "en": ""
+        },
+        {
+          "es": "Debe detenerse siempre, como un STOP.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "La S-892 avisa de vigilancia automática de lo que ordena la señal a la que acompaña.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-16",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "La señal S-991g avisa de controles de velocidad…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Solo con radar fijo en un pórtico.",
+          "en": ""
+        },
+        {
+          "es": "Con medios aéreos, como helicóptero o dron.",
+          "en": ""
+        },
+        {
+          "es": "Solo dentro de un túnel.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "La S-991g indica que en el tramo puede haber controles de velocidad con medios aéreos (helicóptero o dron).",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-17",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Las señales S-992 indican la distancia mínima entre vehículos. ¿Cómo se marca esa distancia?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Con el número de marcas viales de galón (o de balizas, si hay niebla) que debes dejar con el de delante.",
+          "en": ""
+        },
+        {
+          "es": "Con el tiempo en segundos que debes esperar.",
+          "en": ""
+        },
+        {
+          "es": "Con la velocidad máxima del tramo.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "La S-992 (y sus variantes) indica cuántas marcas de galón hay que dejar respecto al vehículo de delante. La S-992e usa balizas luminosas cuando suele haber niebla.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-18",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: Revista DGT y RD 465/2025"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Si un agente le da paso y el semáforo está en rojo, ¿a quién debe obedecer?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Al semáforo, porque es más visible.",
+          "en": ""
+        },
+        {
+          "es": "Al agente. Los agentes van por delante de semáforos, señales verticales y marcas.",
+          "en": ""
+        },
+        {
+          "es": "A la señal vertical más cercana.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Orden de las señales: 1) agentes, 2) señales circunstanciales y balizamiento, 3) semáforos, 4) señales verticales, 5) marcas viales. Si dos del mismo grupo se contradicen, vale la más restrictiva.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT magazine and BOE RD 465/2025"
+      }
+    },
+    {
+      "id": "dgt-nuevas-19",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: DGT, catálogo de señales"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "¿Qué es una carretera multicarril?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Una autopista con al menos dos carriles por sentido y sin cruces al mismo nivel.",
+          "en": ""
+        },
+        {
+          "es": "Una carretera convencional con al menos dos carriles por sentido, sentidos separados o delimitados, que sí puede tener cruces e intersecciones al mismo nivel.",
+          "en": ""
+        },
+        {
+          "es": "Cualquier vía urbana con un carril bus.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Una carretera multicarril es una carretera convencional con al menos dos carriles para cada sentido, separados o delimitados. A diferencia de autopistas y autovías, puede tener cruces, semáforos o accesos directos al mismo nivel.",
+      "image": "assets/glossary/carretera-multicarril.jpg",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT sign catalog"
+      }
+    },
+    {
+      "id": "dgt-nuevas-20",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: DGT, catálogo de señales"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Una carretera multicarril, ¿puede tener semáforos o cruces al mismo nivel?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "No, porque entonces sería una autovía.",
+          "en": ""
+        },
+        {
+          "es": "Sí. No es autopista ni autovía, así que puede tener cruces, semáforos o accesos al mismo nivel.",
+          "en": ""
+        },
+        {
+          "es": "Solo semáforos, nunca cruces.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Las multicarril no son autopistas ni autovías. Pueden tener cruces, semáforos y accesos directos al mismo nivel.",
+      "image": "assets/glossary/carretera-multicarril.jpg",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT sign catalog"
+      }
+    },
+    {
+      "id": "dgt-nuevas-21",
+      "source": {
+        "name": "DGT - Nuevas señales",
+        "url": "https://revista.dgt.es/es/reportajes/2023/06JUNIO/0620-Nuevas-senales.shtml",
+        "attribution": "Fuente: DGT, catálogo de señales"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Para contar los carriles de una carretera multicarril, ¿qué no se suma?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Los carriles de circulación de cada sentido.",
+          "en": ""
+        },
+        {
+          "es": "Los carriles adicionales de espera, de trenzado o de cambio de velocidad.",
+          "en": ""
+        },
+        {
+          "es": "Ningún carril de la calzada.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Para el cómputo no se suman los carriles adicionales, de espera, de trenzado o de cambio de velocidad. Solo los destinados a la circulación en cada dirección.",
+      "image": "assets/glossary/carretera-multicarril.jpg",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public DGT sign catalog"
+      }
+    },
+    {
+      "id": "dgt-exam-1",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "En una vía urbana con un solo carril por sentido, la velocidad máxima genérica es…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "20 km/h.",
+          "en": ""
+        },
+        {
+          "es": "30 km/h.",
+          "en": ""
+        },
+        {
+          "es": "50 km/h.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "En ciudad, si hay un solo carril por sentido, el límite genérico es 30 km/h.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-2",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "En una calle de plataforma única, donde acera y calzada están al mismo nivel, la velocidad máxima es…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "20 km/h.",
+          "en": ""
+        },
+        {
+          "es": "30 km/h.",
+          "en": ""
+        },
+        {
+          "es": "50 km/h.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "En plataforma única el límite genérico es 20 km/h. También en zona de coexistencia.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-3",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "En una vía urbana con más de un carril por sentido, la velocidad máxima genérica es…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "30 km/h.",
+          "en": ""
+        },
+        {
+          "es": "50 km/h.",
+          "en": ""
+        },
+        {
+          "es": "80 km/h.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Si hay más de un carril por sentido en poblado, el límite genérico es 50 km/h.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-4",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "En autopista o autovía, un turismo ¿a qué velocidad máxima genérica puede circular?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "90 km/h.",
+          "en": ""
+        },
+        {
+          "es": "100 km/h.",
+          "en": ""
+        },
+        {
+          "es": "120 km/h.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": "Turismos y motocicletas: 120 km/h en autopista y autovía.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-5",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "En una carretera convencional, la velocidad máxima genérica de un turismo es…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "90 km/h.",
+          "en": ""
+        },
+        {
+          "es": "100 km/h.",
+          "en": ""
+        },
+        {
+          "es": "120 km/h.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "En carretera convencional el genérico para turismos es 90 km/h.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-6",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Desde el 1 de enero de 2026, para preseñalizar un vehículo inmovilizado en vía interurbana debe usar…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Los triángulos de peligro, obligatoriamente.",
+          "en": ""
+        },
+        {
+          "es": "La luz de emergencia V-16, en la parte más alta del vehículo.",
+          "en": ""
+        },
+        {
+          "es": "Solo las luces de cruce.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Desde el 1-1-2026 la V-16 es el dispositivo válido. Los triángulos ya no sirven como alternativa. Además, encienda las luces de emergencia.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-7",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "¿Siguen valiendo los triángulos de preseñalización como alternativa a la V-16?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Sí, siempre.",
+          "en": ""
+        },
+        {
+          "es": "No. Desde el 1 de enero de 2026 hay que usar la V-16.",
+          "en": ""
+        },
+        {
+          "es": "Solo de noche.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "El plazo de los triángulos terminó el 1-1-2026. Ahora la señalización de emergencia es la V-16.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-8",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "La tasa máxima de alcohol en aire espirado para un conductor general es…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "0,15 miligramos por litro.",
+          "en": ""
+        },
+        {
+          "es": "0,25 miligramos por litro.",
+          "en": ""
+        },
+        {
+          "es": "0,50 miligramos por litro.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Conductor general: 0,25 mg/l en aire (0,50 g/l en sangre). Novel y profesional: 0,15 mg/l en aire.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-9",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Un conductor novel, ¿qué tasa máxima de alcohol en aire espirado tiene?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "0,15 miligramos por litro.",
+          "en": ""
+        },
+        {
+          "es": "0,25 miligramos por litro.",
+          "en": ""
+        },
+        {
+          "es": "0,00, siempre.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "Noveles y profesionales: 0,15 mg/l en aire espirado (0,30 g/l en sangre).",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-10",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Conducir bajo los efectos de drogas…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Está permitido si la cantidad es pequeña.",
+          "en": ""
+        },
+        {
+          "es": "Está prohibido siempre.",
+          "en": ""
+        },
+        {
+          "es": "Solo está prohibido de noche.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Está prohibido conducir con drogas. Te pueden hacer la prueba y perder puntos o el permiso.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-11",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Un niño de estatura igual o inferior a 135 cm, ¿cómo debe viajar?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "En cualquier asiento, con el cinturón de adulto.",
+          "en": ""
+        },
+        {
+          "es": "Con un sistema de retención infantil homologado, en general en los asientos traseros.",
+          "en": ""
+        },
+        {
+          "es": "Sin sujeción si el viaje es corto.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Hasta 135 cm debe usar SRI homologado. Como norma, detrás. Delante solo en casos tasados y con el airbag desconectado si la silla va a contramarcha.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-12",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Al adelantar a un ciclista en vía interurbana, la separación lateral mínima es…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "1 metro.",
+          "en": ""
+        },
+        {
+          "es": "1,50 metros.",
+          "en": ""
+        },
+        {
+          "es": "50 centímetros.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Hay que dejar 1,50 m y se puede ocupar parte del carril contrario aunque haya línea continua, si es seguro.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-13",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Si hay un atasco y se acerca un vehículo de emergencia, ¿cómo se forma el pasillo?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Todos se arriman a la derecha.",
+          "en": ""
+        },
+        {
+          "es": "Los del carril izquierdo a la izquierda y los demás a la derecha, dejando el centro libre.",
+          "en": ""
+        },
+        {
+          "es": "Se para en medio del carril.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Pasillo de emergencia: izquierda a la izquierda, resto a la derecha. Así pasa la ambulancia o la policía.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-14",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Para entrar en una Zona de Bajas Emisiones (ZBE) con un turismo, en general…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Puede entrar cualquier coche.",
+          "en": ""
+        },
+        {
+          "es": "Solo pueden entrar los que cumplan el distintivo ambiental u otras condiciones de esa zona.",
+          "en": ""
+        },
+        {
+          "es": "Solo se entra de noche.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "La ZBE limita el acceso según el distintivo ambiental (señal R-120 y paneles). Si no cumple, no entre.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-15",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Un vehículo de movilidad personal (patinete eléctrico), ¿puede circular por la acera?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Sí, si va despacio.",
+          "en": ""
+        },
+        {
+          "es": "No. Las aceras son para peatones.",
+          "en": ""
+        },
+        {
+          "es": "Sí, en ciudad.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Los VMP no pueden ir por la acera. Velocidad máxima 25 km/h. Tienen las mismas normas de alcohol y drogas.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-16",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Un conductor novel empieza con…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "12 puntos.",
+          "en": ""
+        },
+        {
+          "es": "8 puntos.",
+          "en": ""
+        },
+        {
+          "es": "15 puntos.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Novel: 8 puntos. Con 2 años sin perder puntos pasa a 12. El máximo que se puede tener es 15.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-17",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Usar el teléfono móvil en la mano mientras conduce…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Está permitido si es una llamada corta.",
+          "en": ""
+        },
+        {
+          "es": "Está prohibido. Solo manos libres, sin coger el teléfono.",
+          "en": ""
+        },
+        {
+          "es": "Está permitido en semáforo en rojo.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Prohibido sujetar el móvil. Quita puntos. Use un sistema de manos libres homologado, sin manejarlo.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-18",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "El cinturón de seguridad…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Solo es obligatorio para el conductor.",
+          "en": ""
+        },
+        {
+          "es": "Es obligatorio para todos los ocupantes.",
+          "en": ""
+        },
+        {
+          "es": "Solo en carretera.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Todos abrochados, ciudad y carretera. También en los asientos de atrás.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-19",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Al entrar en un túnel debe…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Apagar las luces para no deslumbrar.",
+          "en": ""
+        },
+        {
+          "es": "Encender las luces de cruce y guardar distancia.",
+          "en": ""
+        },
+        {
+          "es": "Poner las largas siempre.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "En el túnel: luces de cruce, distancia, no cambiar de sentido ni marcha atrás. Si se para, emergencia y V-16 si sale.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-20",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Ante una señal de STOP debe…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Reducir y pasar si no viene nadie.",
+          "en": ""
+        },
+        {
+          "es": "Detenerse por completo y ceder el paso, aunque no venga nadie.",
+          "en": ""
+        },
+        {
+          "es": "Pitar y pasar.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "STOP = parada total antes de la línea o de la intersección, y ceder el paso.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-21",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Al llegar a una glorieta, ¿quién tiene prioridad?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Quien llega por la derecha.",
+          "en": ""
+        },
+        {
+          "es": "Los vehículos que ya circulan dentro de la glorieta.",
+          "en": ""
+        },
+        {
+          "es": "Los que entran por la vía más ancha.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "En la rotonda tienen prioridad los que ya están dentro, salvo señal que diga otra cosa.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-22",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Una línea longitudinal continua…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Se puede pisar para adelantar si nadie viene.",
+          "en": ""
+        },
+        {
+          "es": "No se debe atravesar ni circular sobre ella, salvo excepciones (por ejemplo, adelantar a un ciclista con seguridad).",
+          "en": ""
+        },
+        {
+          "es": "Obliga a detenerse.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "La continua prohíbe adelantar y pisarla. Excepción: adelantar ciclistas u otros usuarios vulnerables dejando 1,50 m, si es seguro.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-23",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "¿Qué diferencia hay entre parada y estacionamiento?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Ninguna.",
+          "en": ""
+        },
+        {
+          "es": "La parada es una inmovilización corta (hasta 2 minutos) para recoger o dejar personas o carga, sin irse del vehículo. El estacionamiento es más largo.",
+          "en": ""
+        },
+        {
+          "es": "La parada solo existe en autopista.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Parada: breve, conductor cerca. Estacionamiento: inmovilización que no es detención ni parada.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-24",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "¿Qué documentos debe poder acreditar el conductor de un turismo?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Solo el DNI.",
+          "en": ""
+        },
+        {
+          "es": "Permiso de conducir, permiso de circulación, ITV en vigor y seguro.",
+          "en": ""
+        },
+        {
+          "es": "Solo el seguro.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Los cuatro. Pueden llevarse en formato digital oficial, pero tienen que poder mostrarse.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-25",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Si baja del coche en una vía interurbana, ¿qué debe ponerse?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Nada especial.",
+          "en": ""
+        },
+        {
+          "es": "El chaleco reflectante homologado, antes de bajar.",
+          "en": ""
+        },
+        {
+          "es": "Solo el casco.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Chaleco puesto antes de salir. Y señalice el vehículo con la V-16.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-26",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Si un agente le indica pasar y el semáforo está rojo…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Obedece al semáforo.",
+          "en": ""
+        },
+        {
+          "es": "Obedece al agente.",
+          "en": ""
+        },
+        {
+          "es": "Espera a que coincidan.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Los agentes mandan por encima de semáforos, señales y marcas.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-27",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Con niebla espesa, ¿qué luces debe usar?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Las largas, para ver más lejos.",
+          "en": ""
+        },
+        {
+          "es": "Las de cruce y, si hace falta, las antiniebla. No las largas.",
+          "en": ""
+        },
+        {
+          "es": "Ninguna, para no deslumbrar.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Niebla: cruce y antiniebla. Las largas rebotan y se ve peor.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-28",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Cuando se aproxima un vehículo prioritario en servicio de urgencia…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Sigue igual.",
+          "en": ""
+        },
+        {
+          "es": "Facilita el paso y, si hace falta, se aparta o detiene.",
+          "en": ""
+        },
+        {
+          "es": "Le adelanta para no molestar.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Ambulancia, policía o bomberos con señales: ceda, apártese, no se ponga delante.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-29",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "En un paso de peatones sin semáforo, ¿quién tiene prioridad?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "El coche, si llega antes.",
+          "en": ""
+        },
+        {
+          "es": "Los peatones que van a cruzar o están cruzando.",
+          "en": ""
+        },
+        {
+          "es": "Las bicicletas que van por el centro.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "El peatón tiene prioridad en el paso. Reduzca y párese si hace falta.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-30",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Al incorporarse a una vía debe…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Entrar y que frenen los demás.",
+          "en": ""
+        },
+        {
+          "es": "Ceder el paso a quienes ya circulan y hacerlo rápido y seguro, con el intermitente.",
+          "en": ""
+        },
+        {
+          "es": "Parar siempre en el carril de aceleración hasta que no quede nadie.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Quien se incorpora cede. Use el carril de aceleración, mire y señalice.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-31",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "La distancia de seguridad…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Es siempre 5 metros.",
+          "en": ""
+        },
+        {
+          "es": "Debe permitir parar sin chocar si el de delante frena. En lluvia o niebla, más.",
+          "en": ""
+        },
+        {
+          "es": "Solo importa en autopista.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Regla práctica: 2 segundos, más si el piso está mojado o no se ve bien. Las marcas de galón (S-992) también lo indican.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "dgt-exam-32",
+      "source": {
+        "name": "DGT - Permiso B (normativa vigente)",
+        "url": "https://www.dgt.es/",
+        "attribution": "Normativa DGT / RGC vigente en 2026"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Estacionar en el arcén de una autopista…",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Está permitido si es poco rato.",
+          "en": ""
+        },
+        {
+          "es": "Está prohibido, salvo emergencia o avería.",
+          "en": ""
+        },
+        {
+          "es": "Está permitido de noche.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "En autopista y autovía no se para ni se estaciona. Solo inmovilización por emergencia, señalizada.",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
       }
     }
   ]

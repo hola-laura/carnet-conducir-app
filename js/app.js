@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadUserStats();
         loadTheme();
         initializeEventListeners();
-        await loadQuestions();
+        await runWithLoader(loadQuestions);
         updateHomeStats();
     } catch (error) {
         console.error(error);
@@ -268,7 +268,8 @@ function processQuestions(questions) {
                 importance: calculateImportance(q, index),
                 frequency: calculateFrequency(index),
                 source: q.source,
-                explanation: q.explanation || ''
+                explanation: q.explanation || '',
+                image: (q.image && String(q.image).startsWith('assets/')) ? q.image : ''
             });
         } catch (error) {}
     });
@@ -350,6 +351,17 @@ function showView(viewId) {
     });
     document.getElementById(viewId).classList.add('active');
     window.scrollTo(0, 0);
+}
+
+async function runWithLoader(task) {
+    const loader = document.getElementById('screenLoader');
+    const timer = setTimeout(() => loader.classList.remove('hidden'), 180);
+    try {
+        return await task();
+    } finally {
+        clearTimeout(timer);
+        loader.classList.add('hidden');
+    }
 }
 
 function goHome() {
@@ -587,18 +599,16 @@ async function ensureQuestions() {
 }
 
 async function startMode(mode) {
-    if (!(await ensureQuestions())) return;
-    testMode = mode;
-    currentQuestionIndex = 0;
-    correctAnswers = 0;
-    wrongAnswers = 0;
-    
-    if (mode === 'exam') {
-        currentTest = getRandomQuestions(30);
-    } else {
-        currentTest = shuffleArray([...questionsData]);
-    }
-    
+    const ready = await runWithLoader(async () => {
+        if (!(await ensureQuestions())) return false;
+        testMode = mode;
+        currentQuestionIndex = 0;
+        correctAnswers = 0;
+        wrongAnswers = 0;
+        currentTest = mode === 'exam' ? getRandomQuestions(30) : shuffleArray([...questionsData]);
+        return true;
+    });
+    if (!ready) return;
     showView('testView');
     loadQuestion();
 }
@@ -804,9 +814,11 @@ function resetTest() {
 // ============================================
 
 async function showLibrary() {
+    await runWithLoader(async () => {
+        await ensureQuestions();
+        filterQuestions();
+    });
     showView('libraryView');
-    await ensureQuestions();
-    requestAnimationFrame(filterQuestions);
 }
 
 function filterQuestions() {
@@ -1130,9 +1142,11 @@ function generateNormative(questionText, category) {
 // GLOSSARY - Simple geometric shapes
 // ============================================
 
-function showGlossary() {
+async function showGlossary() {
+    await runWithLoader(async () => {
+        loadGlossary();
+    });
     showView('glossaryView');
-    loadGlossary();
 }
 
 function loadGlossary() {

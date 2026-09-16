@@ -414,6 +414,9 @@ function createTireIllustration() {
 // ============================================
 
 function getQuestionIllustration(question) {
+    if (question.image) {
+        return `<img src="${question.image}" alt="">`;
+    }
     const questionText = question.question.toLowerCase();
 
     // Only when the picture teaches the thing. No emoji filler.
@@ -441,6 +444,9 @@ function getQuestionIllustration(question) {
     if (questionText.includes('rotonda') || questionText.includes('glorieta')) {
         return wrapSVG(createRoundaboutSign());
     }
+    if (questionText.includes('tractor')) {
+        return wrapSVG(createTractorOnShoulder());
+    }
     if (questionText.includes('arcén')) {
         return wrapSVG(createRoadShoulderSituation());
     }
@@ -454,6 +460,108 @@ function getQuestionIllustration(question) {
     if (questionText.includes('neumático')) {
         return wrapSVG(createTireIllustration());
     }
+    if (questionText.includes('p-33') || (questionText.includes('señal') && questionText.includes('visibilidad reducida') && !questionText.includes('curva') && !questionText.includes('rasante'))) {
+        return wrapSVG(createReducedVisibilitySign());
+    }
+    if (questionText.includes('p-35') || (questionText.includes('trenzado') && (questionText.includes('señal') || questionText.includes('tramo')))) {
+        return wrapSVG(createWeavingSign());
+    }
+    if (questionText.includes('r-118') || (questionText.includes('movilidad personal') && questionText.includes('prohíbe'))) {
+        return wrapSVG(createNoVmpSign());
+    }
+    if (questionText.includes('s-47') || questionText.includes('coexistencia')) {
+        return wrapSVG(createCoexistenceSign());
+    }
+    if (questionText.includes('2+1') || questionText.includes('s-1c')) {
+        return wrapSVG(createRoadTwoPlusOneSign());
+    }
+    if (questionText.includes('multicarril')) {
+        return `<img src="assets/glossary/carretera-multicarril.jpg" alt="Señal de carretera multicarril">`;
+    }
 
     return '';
+}
+
+function createWarningTriangle(inner) {
+    return `
+        <svg viewBox="0 0 200 200" style="width: 140px; height: 140px;">
+            <path d="M100,22 L178,168 L22,168 Z" fill="${DGT_COLORS.yellow}" stroke="${DGT_COLORS.red}" stroke-width="10"/>
+            ${inner}
+        </svg>
+    `;
+}
+
+function createReducedVisibilitySign() {
+    return createWarningTriangle(`
+        <circle cx="78" cy="118" r="16" fill="${DGT_COLORS.black}" opacity="0.35"/>
+        <circle cx="100" cy="110" r="20" fill="${DGT_COLORS.black}" opacity="0.28"/>
+        <circle cx="122" cy="120" r="16" fill="${DGT_COLORS.black}" opacity="0.35"/>
+    `);
+}
+
+function createWeavingSign() {
+    return createWarningTriangle(`
+        <path d="M70,150 C78,128 90,118 100,108 C110,98 118,88 128,72" stroke="${DGT_COLORS.black}" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <path d="M130,150 C122,128 110,118 100,108 C90,98 82,88 72,72" stroke="${DGT_COLORS.black}" stroke-width="7" fill="none" stroke-linecap="round"/>
+    `);
+}
+
+function createNoVmpSign() {
+    return `
+        <svg viewBox="0 0 200 200" style="width: 140px; height: 140px;">
+            <circle cx="100" cy="100" r="78" fill="${DGT_COLORS.white}" stroke="${DGT_COLORS.red}" stroke-width="12"/>
+            <circle cx="78" cy="128" r="12" fill="${DGT_COLORS.black}"/>
+            <circle cx="128" cy="128" r="12" fill="${DGT_COLORS.black}"/>
+            <path d="M70,118 L130,90 L138,98" stroke="${DGT_COLORS.black}" stroke-width="7" fill="none" stroke-linecap="round"/>
+            <path d="M108,92 L104,72" stroke="${DGT_COLORS.black}" stroke-width="6" stroke-linecap="round"/>
+            <line x1="48" y1="48" x2="152" y2="152" stroke="${DGT_COLORS.red}" stroke-width="12" stroke-linecap="round"/>
+        </svg>
+    `;
+}
+
+function createCoexistenceSign() {
+    return `
+        <svg viewBox="0 0 200 200" style="width: 140px; height: 140px;">
+            <rect x="28" y="28" width="144" height="144" rx="10" fill="${DGT_COLORS.blue}"/>
+            <text x="100" y="92" text-anchor="middle" fill="${DGT_COLORS.white}" font-size="42" font-weight="700" font-family="Arial, sans-serif">20</text>
+            <circle cx="78" cy="128" r="10" fill="${DGT_COLORS.white}"/>
+            <rect x="72" y="138" width="12" height="22" rx="3" fill="${DGT_COLORS.white}"/>
+            <circle cx="122" cy="132" r="8" fill="${DGT_COLORS.white}"/>
+            <rect x="108" y="138" width="28" height="8" rx="3" fill="${DGT_COLORS.white}"/>
+        </svg>
+    `;
+}
+
+function createTractorOnShoulder() {
+    return `
+        <svg viewBox="0 0 280 160" style="width: 260px; height: 148px;">
+            <rect x="0" y="0" width="200" height="160" fill="${DGT_COLORS.road}"/>
+            <rect x="96" y="8" width="8" height="24" fill="${DGT_COLORS.white}"/>
+            <rect x="96" y="44" width="8" height="24" fill="${DGT_COLORS.white}"/>
+            <rect x="96" y="80" width="8" height="24" fill="${DGT_COLORS.white}"/>
+            <rect x="96" y="116" width="8" height="24" fill="${DGT_COLORS.white}"/>
+            <rect x="200" y="0" width="8" height="160" fill="${DGT_COLORS.white}"/>
+            <rect x="208" y="0" width="72" height="160" fill="#6B7280"/>
+            <text x="100" y="22" text-anchor="middle" fill="${DGT_COLORS.white}" font-size="11" font-weight="700" font-family="Inter, Arial, sans-serif">CALZADA</text>
+            <text x="244" y="22" text-anchor="middle" fill="${DGT_COLORS.white}" font-size="11" font-weight="700" font-family="Inter, Arial, sans-serif">ARCÉN</text>
+            <rect x="218" y="70" width="40" height="22" rx="3" fill="#3F7D3A"/>
+            <rect x="226" y="56" width="18" height="16" rx="2" fill="#2F5D2C"/>
+            <circle cx="226" cy="94" r="8" fill="${DGT_COLORS.black}"/>
+            <circle cx="250" cy="94" r="8" fill="${DGT_COLORS.black}"/>
+            <text x="244" y="122" text-anchor="middle" fill="${DGT_COLORS.white}" font-size="10" font-weight="600" font-family="Inter, Arial, sans-serif">TRACTOR</text>
+        </svg>
+    `;
+}
+
+function createRoadTwoPlusOneSign() {
+    return `
+        <svg viewBox="0 0 200 200" style="width: 140px; height: 140px;">
+            <rect x="28" y="28" width="144" height="144" rx="10" fill="${DGT_COLORS.blue}"/>
+            <rect x="70" y="48" width="60" height="104" rx="4" fill="${DGT_COLORS.white}"/>
+            <rect x="78" y="56" width="14" height="88" fill="${DGT_COLORS.blue}"/>
+            <rect x="108" y="56" width="14" height="40" fill="${DGT_COLORS.blue}"/>
+            <rect x="96" y="104" width="14" height="40" fill="${DGT_COLORS.blue}"/>
+            <text x="100" y="168" text-anchor="middle" fill="${DGT_COLORS.white}" font-size="16" font-weight="700" font-family="Arial, sans-serif">2+1</text>
+        </svg>
+    `;
 }

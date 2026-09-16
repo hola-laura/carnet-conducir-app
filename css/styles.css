@@ -195,11 +195,57 @@ body.light-mode {
 
 .view {
     display: none;
-    animation: fadeIn 0.4s var(--transition);
 }
 
 .view.active {
     display: block;
+    animation: screenIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes screenIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.screen-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--bg-black);
+}
+
+.loader-car {
+    font-size: 44px;
+    animation: carDrive 0.8s ease-in-out infinite;
+}
+
+.loader-label {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    font-family: 'Inter', sans-serif;
+}
+
+@keyframes carDrive {
+    0%, 100% { transform: translateX(-18px) rotate(-6deg); }
+    50% { transform: translateX(18px) rotate(6deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .view.active { animation: none; }
+    .loader-car { animation: none; }
 }
 
 .header-section {
@@ -483,6 +529,8 @@ body.light-mode {
 
 .question-image img {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
 }
 
