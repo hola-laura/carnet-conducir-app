@@ -1013,19 +1013,21 @@ body {
     }
     
     .stat-number {
-        font-size: 48px;
-        letter-spacing: -0.03em;
+        font-size: 28px;
+        letter-spacing: -0.04em;
         line-height: 1.1;
     }
     
     .stat-label {
-        font-size: 11px;
+        font-size: 9px;
         margin-top: 8px;
     }
     
     .stat-card {
-        padding: 24px 16px;
+        padding: 20px 8px;
+        min-width: 0;
         min-height: auto;
+        overflow: hidden;
     }
     
     .mode-button {
@@ -1166,7 +1168,7 @@ body {
     }
     
     .stat-number {
-        font-size: 40px;
+        font-size: 24px;
     }
     
     .question-text {
