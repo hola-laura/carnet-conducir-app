@@ -742,10 +742,10 @@ body.light-mode {
 .library-header {
     text-align: center;
     position: sticky;
-    top: var(--space-md);
+    top: 24px;
     z-index: 100;
     background: var(--bg-black);
-    padding: var(--space-md);
+    padding: 24px;
 }
 
 .library-header h2 {
@@ -761,7 +761,7 @@ body.light-mode {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding: 0 var(--space-md);
+    padding: 0 24px;
 }
 
 .filter-group {
@@ -800,7 +800,28 @@ body.light-mode {
 }
 
 .questions-list {
-    padding: var(--space-md);
+    padding: 24px;
+}
+
+.library-more {
+    display: block;
+    width: 100%;
+    margin: 24px 0 8px;
+    padding: 16px;
+    border: none;
+    border-radius: var(--radius-pill);
+    background: var(--primary-warm);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Inter', -apple-system, sans-serif;
+    cursor: pointer;
+}
+
+.library-empty {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 40px 0;
 }
 
 .question-item {

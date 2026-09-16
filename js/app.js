@@ -719,7 +719,7 @@ function resetTest() {
 
 function showLibrary() {
     showView('libraryView');
-    filterQuestions();
+    requestAnimationFrame(filterQuestions);
 }
 
 function filterQuestions() {
@@ -754,18 +754,39 @@ function filterQuestions() {
     displayQuestions(filtered);
 }
 
+let libraryList = [];
+let libraryShownCount = 0;
+const LIBRARY_PAGE = 40;
+
 function displayQuestions(questions) {
+    libraryList = questions;
+    libraryShownCount = 0;
     const container = document.getElementById('questionsList');
     container.innerHTML = '';
-    
-    questions.forEach((q, index) => {
+
+    if (questions.length === 0) {
+        container.innerHTML = '<p class="library-empty">No se encontraron preguntas</p>';
+        return;
+    }
+
+    appendLibraryPage();
+}
+
+function appendLibraryPage() {
+    const container = document.getElementById('questionsList');
+    const moreBtn = document.getElementById('libraryLoadMore');
+    if (moreBtn) moreBtn.remove();
+
+    const start = libraryShownCount;
+    const end = Math.min(start + LIBRARY_PAGE, libraryList.length);
+    const frag = document.createDocumentFragment();
+
+    for (let index = start; index < end; index++) {
+        const q = libraryList[index];
         const item = document.createElement('div');
         item.className = 'question-item glass-card';
-        
-        const correctAnswer = q.answers[q.correctIndex];
         const illustrationHTML = getQuestionIllustration(q);
-        const explanation = q.explanation || generateExplanation(q);
-        
+
         item.innerHTML = `
             <button class="menu-button" data-question-id="${q.id}" aria-label="Opciones de pregunta">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -796,14 +817,7 @@ function displayQuestions(questions) {
                 <button class="expand-button" onclick="toggleExplanation(${index})" style="width: 100%; padding: 14px; background: rgba(217, 119, 87, 0.1); border: 2px solid var(--primary-warm); border-radius: 50px; color: var(--primary-warm); font-weight: 700; font-size: 14px; cursor: pointer; transition: all 0.3s;">
                     💡 Ver Explicación Detallada
                 </button>
-                <div id="explanation-${index}" class="explanation-content" style="display: none; margin-top: 12px; padding: 20px; background: linear-gradient(135deg, rgba(217, 119, 87, 0.08) 0%, rgba(139, 154, 122, 0.08) 100%); border-radius: 16px; border: 1px solid var(--border-color);">
-                    <div style="font-size: 12px; color: var(--success); font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px;">
-                        ✓ ¿Por qué es correcta?
-                    </div>
-                    <div style="font-size: 15px; line-height: 1.7; color: var(--text-primary);">
-                        ${explanation}
-                    </div>
-                </div>
+                <div id="explanation-${index}" class="explanation-content" style="display: none; margin-top: 12px; padding: 20px; background: linear-gradient(135deg, rgba(217, 119, 87, 0.08) 0%, rgba(139, 154, 122, 0.08) 100%); border-radius: 16px; border: 1px solid var(--border-color);"></div>
             </div>
             
             <div style="margin-top: 12px; font-size: 12px; color: var(--text-secondary);">
@@ -811,24 +825,45 @@ function displayQuestions(questions) {
                 <span>📈 Frecuencia: ${q.frequency}%</span>
             </div>
         `;
-        
-        const menuBtn = item.querySelector('.menu-button');
-        menuBtn.addEventListener('click', (e) => {
+
+        item.querySelector('.menu-button').addEventListener('click', (e) => {
             e.stopPropagation();
             openLibraryFeedbackMenu(q);
         });
-        
-        container.appendChild(item);
-    });
-    
-    if (questions.length === 0) {
-        container.innerHTML = '<p style="text-align: center; color: var(--text-secondary); padding: 40px;">No se encontraron preguntas</p>';
+
+        frag.appendChild(item);
+    }
+
+    container.appendChild(frag);
+    libraryShownCount = end;
+
+    if (libraryShownCount < libraryList.length) {
+        const btn = document.createElement('button');
+        btn.id = 'libraryLoadMore';
+        btn.className = 'library-more';
+        btn.textContent = 'Ver más';
+        btn.addEventListener('click', appendLibraryPage);
+        container.appendChild(btn);
     }
 }
 
 function toggleExplanation(index) {
     const content = document.getElementById(`explanation-${index}`);
     const button = content.previousElementSibling;
+
+    if (!content.dataset.ready) {
+        const q = libraryList[index];
+        const explanation = q.explanation || generateExplanation(q);
+        content.innerHTML = `
+                    <div style="font-size: 12px; color: var(--success); font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px;">
+                        ✓ ¿Por qué es correcta?
+                    </div>
+                    <div style="font-size: 15px; line-height: 1.7; color: var(--text-primary);">
+                        ${explanation}
+                    </div>
+        `;
+        content.dataset.ready = '1';
+    }
     
     if (content.style.display === 'none') {
         content.style.display = 'block';
