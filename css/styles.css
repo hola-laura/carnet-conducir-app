@@ -995,12 +995,12 @@ body {
 
 @media screen and (max-width: 430px) {
     .glass-container {
-        margin: var(--space-sm);
-        padding: var(--space-lg);
+        margin: 0;
+        padding: 16px;
     }
     
     .glass-card {
-        padding: var(--space-lg);
+        padding: 20px;
     }
     
     .app-title {
@@ -1024,12 +1024,12 @@ body {
     }
     
     .stat-card {
-        padding: var(--space-lg) var(--space-sm);
+        padding: 24px 16px;
         min-height: auto;
     }
     
     .mode-button {
-        padding: var(--space-lg);
+        padding: 20px;
     }
     
     .button-text strong {
@@ -1040,8 +1040,13 @@ body {
         font-size: 13px;
     }
     
+    .question-container {
+        padding: 0 16px;
+    }
+    
     .question-card {
-        padding: var(--space-lg);
+        padding: 20px;
+        margin-bottom: 16px;
     }
     
     .question-text {
@@ -1064,7 +1069,7 @@ body {
     }
     
     .answer-button {
-        padding: 18px 20px;
+        padding: 16px 18px;
         font-size: 15px;
         line-height: 1.4;
         word-wrap: break-word;
@@ -1079,8 +1084,8 @@ body {
     }
     
     .test-header {
-        padding: var(--space-sm) var(--space-md);
-        margin: var(--space-sm);
+        padding: 12px 16px;
+        margin: 8px 0;
     }
     
     .back-button {
@@ -1099,7 +1104,7 @@ body {
     }
     
     .result-stat {
-        padding: var(--space-lg) var(--space-sm);
+        padding: 24px 16px;
     }
     
     #resultTitle {
@@ -1116,8 +1121,8 @@ body {
     }
     
     .filters {
-        padding: 0 var(--space-md);
-        gap: var(--space-sm);
+        padding: 0 16px;
+        gap: 12px;
     }
     
     .filter-group select {
@@ -1138,7 +1143,7 @@ body {
     
     .glossary-grid {
         grid-template-columns: 1fr;
-        padding: var(--space-md);
+        padding: 16px;
     }
     
     .glossary-term {
@@ -1175,12 +1180,12 @@ body {
     }
     
     .glass-container {
-        margin: var(--space-xs);
-        padding: var(--space-md);
+        margin: 0;
+        padding: 16px;
     }
     
     .header-section {
-        padding-top: var(--space-md);
+        padding-top: 20px;
     }
 }
 
