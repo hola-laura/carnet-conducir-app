@@ -416,7 +416,7 @@ body.light-mode {
 }
 
 .question-container {
-    padding: 0 var(--space-md);
+    padding: 0 24px;
 }
 
 .question-card {
@@ -996,11 +996,11 @@ body {
 @media screen and (max-width: 430px) {
     .glass-container {
         margin: 0;
-        padding: 16px;
+        padding: 24px;
     }
     
     .glass-card {
-        padding: 20px;
+        padding: 24px;
     }
     
     .app-title {
@@ -1041,11 +1041,11 @@ body {
     }
     
     .question-container {
-        padding: 0 16px;
+        padding: 0 24px;
     }
     
     .question-card {
-        padding: 20px;
+        padding: 24px;
         margin-bottom: 16px;
     }
     
@@ -1084,7 +1084,7 @@ body {
     }
     
     .test-header {
-        padding: 12px 16px;
+        padding: 12px 24px;
         margin: 8px 0;
     }
     
@@ -1121,7 +1121,7 @@ body {
     }
     
     .filters {
-        padding: 0 16px;
+        padding: 0 24px;
         gap: 12px;
     }
     
@@ -1143,7 +1143,7 @@ body {
     
     .glossary-grid {
         grid-template-columns: 1fr;
-        padding: 16px;
+        padding: 24px;
     }
     
     .glossary-term {
@@ -1181,7 +1181,7 @@ body {
     
     .glass-container {
         margin: 0;
-        padding: 16px;
+        padding: 24px;
     }
     
     .header-section {
