@@ -191,8 +191,15 @@ function applyQuestions(data) {
 }
 
 async function loadQuestions() {
+    if (typeof QUESTIONS_DATA !== 'undefined') applyQuestions(QUESTIONS_DATA);
+
     const saved = await readSavedQuestions();
     if (saved) applyQuestions(saved);
+
+    if (location.protocol === 'file:') {
+        if (typeof QUESTIONS_DATA !== 'undefined') await saveQuestions(QUESTIONS_DATA);
+        return;
+    }
 
     try {
         const response = await fetch(questionsFileUrl());
