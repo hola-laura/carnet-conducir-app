@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Ilustraciones DGT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #ffffff;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #D97757 0%, #8B9A7A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #888;
+            font-weight: 400;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #E67E5C;
+            border-left: 4px solid #D97757;
+            padding-left: 16px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #D97757, #8B9A7A);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(217, 119, 87, 0.2);
+            border-color: rgba(217, 119, 87, 0.3);
+        }
+        
+        .card:hover::before {
+            opacity: 1;
+        }
+        
+        .card-name {
+            margin-top: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        
+        .card-description {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #999;
+            line-height: 1.5;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            padding: 32px;
+            background: rgba(139, 154, 122, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(139, 154, 122, 0.2);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #8B9A7A;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #888;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚦 Test de Ilustraciones DGT</h1>
+            <p class="subtitle">Verificación completa del sistema de señales y situaciones viales</p>
+        </header>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">21</div>
+                <div class="stat-label">Total</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">13</div>
+                <div class="stat-label">Señales</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Situaciones</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">2</div>
+                <div class="stat-label">Elementos</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">🚫 Señales de Prohibición</h2>
+            <div class="grid" id="prohibition-signs"></div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">⚠️ Señales de Advertencia</h2>
+            <div class="grid" id="warning-signs"></div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">ℹ️ Señales de Información</h2>
+            <div class="grid" id="info-signs"></div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">🛣️ Situaciones Viales</h2>
+            <div class="grid" id="situations"></div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">🔧 Elementos Específicos</h2>
+            <div class="grid" id="elements"></div>
+        </div>
+    </div>
+    
+    <script src="js/illustrations-dgt.js"></script>
+    <script>
+        const illustrations = {
+            prohibition: [
+                { name: 'R5 - STOP', desc: 'Detención obligatoria', fn: () => wrapSVG(createStopSign()) },
+                { name: 'R6 - Ceda el Paso', desc: 'Prioridad a vía principal', fn: () => wrapSVG(createYieldSign()) },
+                { name: 'R101 - Entrada Prohibida', desc: 'Prohibición total de acceso', fn: () => wrapSVG(createNoEntrySign()) },
+                { name: 'R301 - Velocidad 50', desc: 'Límite de velocidad', fn: () => wrapSVG(createSpeedLimitSign('50')) },
+                { name: 'R301 - Velocidad 120', desc: 'Autopista/Autovía', fn: () => wrapSVG(createSpeedLimitSign('120')) },
+                { name: 'R306 - Prohibido Adelantar', desc: 'No se puede adelantar', fn: () => wrapSVG(createNoOvertakingSign()) }
+            ],
+            warning: [
+                { name: 'P1 - Curva Peligrosa', desc: 'Curva cerrada a la derecha', fn: () => wrapSVG(createDangerousCurveSign()) },
+                { name: 'P11a - Advertencia', desc: 'Peligro genérico', fn: () => wrapSVG(createGenericWarningSign()) }
+            ],
+            info: [
+                { name: 'S13 - Paso Peatones', desc: 'Paso de peatones señalizado', fn: () => wrapSVG(createPedestrianCrossingSign()) },
+                { name: 'R402 - Rotonda', desc: 'Circulación rotatoria', fn: () => wrapSVG(createRoundaboutSign()) },
+                { name: 'Semáforo', desc: 'Semáforo con luz verde', fn: () => wrapSVG(createTrafficLightSign()) }
+            ],
+            situations: [
+                { name: 'Cruce/Intersección', desc: 'Vista cenital con 2 coches', fn: () => wrapSVG(createIntersectionSituation()) },
+                { name: 'Adelantamiento', desc: 'Línea discontinua permitida', fn: () => wrapSVG(createOvertakingSituation()) },
+                { name: 'Aparcamiento', desc: '3 plazas delimitadas', fn: () => wrapSVG(createParkingSituation()) },
+                { name: 'Arcén', desc: 'Sección transversal de vía', fn: () => wrapSVG(createRoadShoulderSituation()) },
+                { name: 'Marcas Viales', desc: 'Continua vs Discontinua', fn: () => wrapSVG(createRoadMarkings()) },
+                { name: 'Carretera', desc: 'Perspectiva 3D', fn: () => wrapSVG(createRoadSituation()) }
+            ],
+            elements: [
+                { name: 'Chaleco Reflectante', desc: 'V16 amarillo con bandas', fn: () => wrapSVG(createReflectiveVestIllustration()) },
+                { name: 'Neumático', desc: 'Banda de rodadura', fn: () => wrapSVG(createTireIllustration()) }
+            ]
+        };
+        
+        function renderCards(containerId, items) {
+            const container = document.getElementById(containerId);
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    ${item.fn()}
+                    <div class="card-name">${item.name}</div>
+                    <div class="card-description">${item.desc}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+        
+        renderCards('prohibition-signs', illustrations.prohibition);
+        renderCards('warning-signs', illustrations.warning);
+        renderCards('info-signs', illustrations.info);
+        renderCards('situations', illustrations.situations);
+        renderCards('elements', illustrations.elements);
+        
+        console.log('✅ Test de ilustraciones cargado correctamente');
+        console.log('📊 Total de ilustraciones:', 
+            illustrations.prohibition.length + 
+            illustrations.warning.length + 
+            illustrations.info.length + 
+            illustrations.situations.length + 
+            illustrations.elements.length
+        );
+    </script>
+</body>
+</html>

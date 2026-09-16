@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#007AFF">
+    <title>Carnet B - Test DGT</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/icon.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+</head>
+<body>
+    <div id="app" class="app-container">
+        
+        <!-- Vista Principal / Home -->
+        <div id="homeView" class="view active">
+            <!-- Dark/Light Mode Toggle -->
+            <div class="theme-toggle">
+                <button id="themeButton" class="theme-button" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+            
+            <div class="glass-container">
+                <div class="header-section">
+                    <h1 class="app-title">Carnet B</h1>
+                    <p class="subtitle">Tests de preparación para el permiso B</p>
+                    <p class="disclaimer">Esta aplicación no está afiliada ni respaldada por la DGT</p>
+                </div>
+
+                <!-- Setup Prompt (si no hay perfil) -->
+                <div id="setupPrompt" class="setup-prompt glass-card hidden">
+                    <h3 class="setup-title">Personaliza tu preparación</h3>
+                    <p class="setup-subtitle">Opcional - puedes configurarlo después</p>
+                    <div class="form-group">
+                        <label class="form-label">Fecha de examen</label>
+                        <input type="date" id="examDate" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tiempo diario de estudio</label>
+                        <select id="dailyMinutes" class="form-select">
+                            <option value="10">10 minutos</option>
+                            <option value="20">20 minutos</option>
+                            <option value="30">30 minutos</option>
+                        </select>
+                    </div>
+                    <div class="button-group">
+                        <button id="skipSetupBtn" class="btn-secondary">Más tarde</button>
+                        <button id="saveProfileBtn" class="btn-primary">Guardar</button>
+                    </div>
+                </div>
+
+                <!-- Sesión de Hoy -->
+                <div id="dailySessionCard" class="daily-session-card glass-card hidden">
+                    <h3 class="session-title">Tu sesión de hoy</h3>
+                    <p id="dailySessionDescription" class="session-description">Repasa prioridades, recupera errores pendientes, comprueba lo aprendido</p>
+                    <button id="startDailyBtn" class="mode-button primary full-width">
+                        <span class="button-text">
+                            <strong>Empezar sesión adaptativa</strong>
+                            <small id="dailySessionTime">~10 minutos</small>
+                        </span>
+                    </button>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card glass-card">
+                        <div class="stat-number" id="totalQuestions">2947</div>
+                        <div class="stat-label">Preguntas</div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-number" id="completedQuestions">0</div>
+                        <div class="stat-label">Completadas</div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-number" id="weakTopics">0</div>
+                        <div class="stat-label">Temas a reforzar</div>
+                    </div>
+                </div>
+
+                <div class="mode-selection">
+                    <button id="examModeBtn" class="mode-button primary" data-mode="exam">
+                        <span class="button-text">
+                            <strong>Examen Oficial</strong>
+                            <small>30 preguntas · Máx 3 fallos</small>
+                        </span>
+                    </button>
+
+                    <button id="practiceModeBtn" class="mode-button" data-mode="practice">
+                        <span class="button-text">
+                            <strong>Modo Práctica</strong>
+                            <small>Feedback inmediato</small>
+                        </span>
+                    </button>
+
+                    <button id="libraryBtn" class="mode-button">
+                        <span class="button-text">
+                            <strong>Biblioteca</strong>
+                            <small>Explora todas las preguntas</small>
+                        </span>
+                    </button>
+
+                    <button id="glossaryBtn" class="mode-button">
+                        <span class="button-text">
+                            <strong>Glosario Visual</strong>
+                            <small>Términos confusos explicados</small>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vista de Test -->
+        <div id="testView" class="view">
+            <div class="test-header glass-container">
+                <button id="exitTestBtn" class="back-button">← Salir</button>
+                <div class="test-info">
+                    <span id="questionCounter">1/30</span>
+                    <span id="errorsCounter" class="errors">Fallos: 0/3</span>
+                </div>
+            </div>
+
+            <div class="question-container glass-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+                
+                <div class="question-card">
+                    <div class="question-header">
+                        <div class="question-header-left">
+                            <span class="question-category" id="questionCategory">Señales</span>
+                            <span class="question-difficulty" id="questionDifficulty">★★★☆☆</span>
+                        </div>
+                        <button class="menu-button" id="questionMenuButton" aria-label="Opciones de pregunta">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
+                                <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+                                <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <h2 class="question-text" id="questionText"></h2>
+                    
+                    <div id="questionImage" class="question-image"></div>
+                    
+                    <div class="answers-container" id="answersContainer"></div>
+                    
+                    <button class="doubt-button glass-button hidden" id="doubtButton">
+                        🤔 He dudado con esta
+                    </button>
+                    
+                    <button class="next-button glass-button primary hidden" id="nextButton">
+                        Siguiente →
+                    </button>
+                </div>
+
+                <div class="question-explanation glass-card hidden" id="explanationCard">
+                    <div class="explanation-header">
+                        <span id="explanationIcon"></span>
+                        <strong id="explanationTitle"></strong>
+                    </div>
+                    <p id="explanationText"></p>
+                </div>
+            </div>
+            
+            <!-- Feedback Menu Dropdown -->
+            <div id="feedbackMenu" class="feedback-menu hidden">
+                <button class="feedback-menu-item" data-action="wrong_question">
+                    <span class="feedback-icon">⚠️</span>
+                    <span class="feedback-text">La pregunta está mal formulada</span>
+                </button>
+                <button class="feedback-menu-item" data-action="wrong_answer">
+                    <span class="feedback-icon">⚠️</span>
+                    <span class="feedback-text">La respuesta correcta es otra</span>
+                </button>
+                <button class="feedback-menu-item" data-action="wrong_explanation">
+                    <span class="feedback-icon">⚠️</span>
+                    <span class="feedback-text">La explicación es incorrecta</span>
+                </button>
+                <button class="feedback-menu-item" data-action="attach_photo">
+                    <span class="feedback-icon">📷</span>
+                    <span class="feedback-text">Adjuntar evidencia (foto)</span>
+                </button>
+                <button class="feedback-menu-item" data-action="suggestion">
+                    <span class="feedback-icon">💬</span>
+                    <span class="feedback-text">Sugerencia general</span>
+                </button>
+                <button class="feedback-menu-item cancel" data-action="cancel">
+                    <span class="feedback-text">Cancelar</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Vista de Resultados -->
+        <div id="resultsView" class="view">
+            <div class="results-container glass-container">
+                <div class="results-header">
+                    <div class="result-icon" id="resultIcon">✅</div>
+                    <h1 id="resultTitle">¡Aprobado!</h1>
+                    <p id="resultSubtitle">Has superado el examen</p>
+                </div>
+
+                <div class="results-stats">
+                    <div class="result-stat glass-card">
+                        <div class="result-stat-value" id="correctAnswers">27</div>
+                        <div class="result-stat-label">Correctas</div>
+                    </div>
+                    <div class="result-stat glass-card">
+                        <div class="result-stat-value" id="wrongAnswers">3</div>
+                        <div class="result-stat-label">Incorrectas</div>
+                    </div>
+                    <div class="result-stat glass-card">
+                        <div class="result-stat-value" id="finalScore">90%</div>
+                        <div class="result-stat-label">Puntuación</div>
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button id="resetTestBtn" class="glass-button primary">Repetir Examen</button>
+                    <button id="goHomeBtn" class="glass-button">Volver al Inicio</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vista de Biblioteca -->
+        <div id="libraryView" class="view">
+            <div class="library-header glass-container">
+                <button id="libraryBackBtn" class="back-button">← Inicio</button>
+                <h2>Biblioteca de Preguntas</h2>
+            </div>
+
+            <div class="filters glass-container">
+                <div class="filter-group">
+                    <label>Categoría</label>
+                    <select id="categoryFilter">
+                        <option value="all">Todas</option>
+                        <option value="signals">Señales</option>
+                        <option value="priority">Prioridad</option>
+                        <option value="speed">Velocidad</option>
+                        <option value="safety">Seguridad</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Dificultad</label>
+                    <select id="difficultyFilter">
+                        <option value="all">Todas</option>
+                        <option value="easy">Fácil</option>
+                        <option value="medium">Media</option>
+                        <option value="hard">Difícil</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Ordenar por</label>
+                    <select id="sortBy">
+                        <option value="importance">Importancia</option>
+                        <option value="difficulty">Dificultad</option>
+                        <option value="frequency">Frecuencia en examen</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="questions-list" id="questionsList"></div>
+        </div>
+
+        <!-- Vista de Glosario -->
+        <div id="glossaryView" class="view">
+            <div class="glossary-header glass-container">
+                <button id="glossaryBackBtn" class="back-button">← Inicio</button>
+                <h2>Glosario Visual</h2>
+                <p class="subtitle">Términos confusos explicados con dibujos</p>
+            </div>
+
+            <div class="glossary-grid" id="glossaryGrid"></div>
+        </div>
+
+    </div>
+    
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden"></div>
+    
+    <!-- Photo Upload Modal -->
+    <div id="photoModal" class="modal hidden">
+        <div class="modal-content">
+            <h3 class="modal-title">Adjuntar Evidencia</h3>
+            <p class="modal-subtitle">Captura de pantalla del manual DGT, etc.</p>
+            <input type="file" id="photoInput" accept="image/*" style="display: none;">
+            <button class="glass-button primary" id="selectPhotoBtn">
+                📷 Seleccionar Foto
+            </button>
+            <div id="photoPreview" class="photo-preview hidden"></div>
+            <div class="modal-actions">
+                <button class="glass-button" id="cancelPhotoBtn">Cancelar</button>
+                <button class="glass-button primary" id="submitPhotoBtn" disabled>Enviar</button>
+            </div>
+            <p class="modal-note">Límite: 5MB por foto</p>
+        </div>
+    </div>
+
+    <script src="js/illustrations-dgt.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

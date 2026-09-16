@@ -1,0 +1,180 @@
+
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║             🚗 CARNET B - TEST DGT ESPAÑA 🚗                ║
+║                                                              ║
+║              App completa y lista para usar                  ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+
+📍 UBICACIÓN DEL PROYECTO
+═══════════════════════════════════════════════════════════════
+   /agent/carnet-conducir-app
+
+
+🚀 INSTRUCCIONES DE USO (3 opciones)
+═══════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────┐
+│ OPCIÓN 1: LA MÁS FÁCIL (Recomendada)                       │
+└─────────────────────────────────────────────────────────────┘
+
+   1. Abre tu terminal
+   2. Ejecuta estos comandos:
+
+      cd /agent/carnet-conducir-app
+      ./start.sh
+
+   3. Se abrirá automáticamente en:
+      👉 http://localhost:8000
+
+   4. ¡Listo! Empieza a practicar
+
+
+┌─────────────────────────────────────────────────────────────┐
+│ OPCIÓN 2: DOBLE CLICK                                       │
+└─────────────────────────────────────────────────────────────┘
+
+   1. Ve a la carpeta: /agent/carnet-conducir-app
+   2. Haz doble click en: index.html
+   3. Se abrirá en tu navegador
+   4. ¡Funciona inmediatamente!
+
+
+┌─────────────────────────────────────────────────────────────┐
+│ OPCIÓN 3: NAVEGADOR DIRECTO                                 │
+└─────────────────────────────────────────────────────────────┘
+
+   1. Abre tu navegador (Chrome, Firefox, Safari)
+   2. Presiona Ctrl+O (o Cmd+O en Mac)
+   3. Busca: /agent/carnet-conducir-app/index.html
+   4. Abre el archivo
+
+
+📱 USAR EN MÓVIL
+═══════════════════════════════════════════════════════════════
+
+   iPhone/iPad (Safari):
+   1. Abre la app en Safari
+   2. Toca el botón de Compartir (📤)
+   3. Selecciona "Añadir a pantalla de inicio"
+   4. ¡Ahora es como una app nativa!
+
+   Android (Chrome):
+   1. Abre la app en Chrome
+   2. Toca el menú (⋮)
+   3. Selecciona "Añadir a pantalla de inicio"
+   4. ¡Listo!
+
+
+📚 CARACTERÍSTICAS DE LA APP
+═══════════════════════════════════════════════════════════════
+
+✅ 380 preguntas oficiales DGT
+✅ Diseño iOS con efecto Liquid Glass
+✅ Animaciones suaves tipo Apple
+✅ Modo Examen (30 preguntas, máx 3 fallos)
+✅ Modo Práctica (feedback inmediato)
+✅ Biblioteca con filtros avanzados
+✅ Glosario visual (9 términos explicados con dibujos)
+✅ Sistema de métricas (importancia/dificultad/frecuencia)
+✅ Estadísticas personales
+✅ Funciona sin internet (después de 1ª carga)
+✅ Instalable como PWA
+✅ Responsive (móvil/tablet/desktop)
+✅ Dark mode automático
+
+
+🎯 CÓMO ESTUDIAR MEJOR
+═══════════════════════════════════════════════════════════════
+
+1️⃣  Empieza con el GLOSARIO
+    → Aprende los términos confusos primero
+
+2️⃣  Usa el MODO PRÁCTICA
+    → 15 minutos al día, todos los días
+
+3️⃣  Explora la BIBLIOTECA
+    → Filtra por categoría y dificultad
+    → Enfócate en preguntas importantes
+
+4️⃣  Haz SIMULACROS DE EXAMEN
+    → Cuando tengas 90%+ de precisión
+    → Intenta aprobar 5 seguidos
+
+5️⃣  Revisa tus ESTADÍSTICAS
+    → Identifica tus puntos débiles
+
+
+📖 ARCHIVOS IMPORTANTES
+═══════════════════════════════════════════════════════════════
+
+   README.md          → Documentación técnica completa
+   RESUMEN.md         → Guía de uso detallada
+   REPORTE_FINAL.txt  → Reporte técnico del proyecto
+   COMO_USAR.txt      → Este archivo (instrucciones)
+
+
+🔧 SI ALGO NO FUNCIONA
+═══════════════════════════════════════════════════════════════
+
+✅ Verifica que todos los archivos estén en su lugar:
+   /agent/carnet-conducir-app/
+   ├── index.html
+   ├── css/styles.css
+   ├── js/app.js
+   ├── data/questions.json
+   └── assets/icon.svg
+
+✅ Usa un navegador moderno:
+   • Chrome 90+
+   • Firefox 88+
+   • Safari 14+
+   • Edge 90+
+
+✅ Si usas start.sh, asegúrate de que Python 3 esté instalado:
+   python3 --version
+
+
+💡 CONSEJOS RÁPIDOS
+═══════════════════════════════════════════════════════════════
+
+• La app guarda tu progreso automáticamente
+• Puedes cerrar el navegador y continuar después
+• En modo examen, no puedes volver atrás
+• En modo práctica, ves la respuesta correcta inmediatamente
+• Las preguntas se ordenan por importancia por defecto
+• Los términos del glosario son clave para aprobar
+
+
+🎓 ¿CUÁNDO ESTÁS LISTO PARA EL EXAMEN REAL?
+═══════════════════════════════════════════════════════════════
+
+✅ Consigues 90%+ de precisión consistentemente
+✅ Apruebas 5 simulacros de examen seguidos
+✅ Conoces todos los términos del glosario
+✅ Te sientes cómodo con preguntas difíciles (★★★★★)
+✅ Has practicado al menos 2 semanas
+
+
+📞 MÁS INFORMACIÓN
+═══════════════════════════════════════════════════════════════
+
+   Lee los archivos:
+   • README.md → Documentación técnica
+   • RESUMEN.md → Guía completa del usuario
+
+   Examen oficial DGT:
+   • 30 preguntas
+   • Máximo 3 fallos
+   • 30 minutos
+   • 3 opciones por pregunta
+
+
+═══════════════════════════════════════════════════════════════
+
+              ¡BUENA SUERTE EN TU EXAMEN! 🚗💨
+
+═══════════════════════════════════════════════════════════════
+
