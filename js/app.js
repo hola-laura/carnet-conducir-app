@@ -49,11 +49,16 @@ function loadTheme() {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', async () => {
-    await loadQuestions();
-    loadUserStats();
-    updateHomeStats();
-    loadTheme();
-    initializeEventListeners();
+    try {
+        loadUserStats();
+        loadTheme();
+        initializeEventListeners();
+        await loadQuestions();
+        updateHomeStats();
+    } catch (error) {
+        console.error(error);
+        updateHomeStats();
+    }
 });
 
 // ============================================
@@ -175,41 +180,68 @@ function questionsFileUrl() {
     return dir + 'data/questions.json';
 }
 
+function applyQuestions(data) {
+    const processed = processQuestions(data && data.questions);
+    if (!processed.length) return false;
+    questionsData = processed;
+    try {
+        localStorage.setItem('carnetBQuestionCount', String(processed.length));
+    } catch (error) {}
+    return true;
+}
+
 async function loadQuestions() {
+    const saved = await readSavedQuestions();
+    if (saved) applyQuestions(saved);
+
     try {
         const response = await fetch(questionsFileUrl());
         if (!response.ok) throw new Error(response.status);
         const data = await response.json();
-        const processed = processQuestions(data.questions);
-        if (!processed.length) throw new Error('empty');
-        questionsData = processed;
-        localStorage.setItem('carnetBQuestionCount', String(processed.length));
-        cacheQuestions(data);
-        console.log(`✅ Cargadas ${questionsData.length} preguntas`);
+        if (applyQuestions(data)) await saveQuestions(data);
     } catch (error) {
         console.error('❌ Error cargando preguntas:', error);
-        const cached = await readCachedQuestions();
-        if (cached.length) questionsData = cached;
     }
 }
 
-async function cacheQuestions(data) {
-    try {
-        const cache = await caches.open('carnet-b-questions');
-        await cache.put('questions', new Response(JSON.stringify(data)));
-    } catch (error) {}
+function saveQuestions(data) {
+    return new Promise(resolve => {
+        try {
+            const req = indexedDB.open('carnet-b', 1);
+            req.onupgradeneeded = () => {
+                req.result.createObjectStore('data');
+            };
+            req.onsuccess = () => {
+                const tx = req.result.transaction('data', 'readwrite');
+                tx.objectStore('data').put(data, 'questions');
+                tx.oncomplete = () => resolve();
+                tx.onerror = () => resolve();
+            };
+            req.onerror = () => resolve();
+        } catch (error) {
+            resolve();
+        }
+    });
 }
 
-async function readCachedQuestions() {
-    try {
-        const cache = await caches.open('carnet-b-questions');
-        const response = await cache.match('questions');
-        if (!response) return [];
-        const data = await response.json();
-        return processQuestions(data.questions || []);
-    } catch (error) {
-        return [];
-    }
+function readSavedQuestions() {
+    return new Promise(resolve => {
+        try {
+            const req = indexedDB.open('carnet-b', 1);
+            req.onupgradeneeded = () => {
+                req.result.createObjectStore('data');
+            };
+            req.onsuccess = () => {
+                const tx = req.result.transaction('data', 'readonly');
+                const get = tx.objectStore('data').get('questions');
+                get.onsuccess = () => resolve(get.result || null);
+                get.onerror = () => resolve(null);
+            };
+            req.onerror = () => resolve(null);
+        } catch (error) {
+            resolve(null);
+        }
+    });
 }
 
 function processQuestions(questions) {
@@ -1125,19 +1157,17 @@ function loadGlossary() {
 // ============================================
 
 function loadUserStats() {
-    const saved = localStorage.getItem('carnetBStats');
-    if (saved) {
-        userStats = JSON.parse(saved);
-    }
-    
-    // Asegurar estructura correcta
-    if (!userStats.questionHistory) {
-        userStats.questionHistory = {};
-    }
+    try {
+        const saved = localStorage.getItem('carnetBStats');
+        if (saved) userStats = { ...userStats, ...JSON.parse(saved) };
+    } catch (error) {}
+    if (!userStats.questionHistory) userStats.questionHistory = {};
 }
 
 function saveUserStats() {
-    localStorage.setItem('carnetBStats', JSON.stringify(userStats));
+    try {
+        localStorage.setItem('carnetBStats', JSON.stringify(userStats));
+    } catch (error) {}
 }
 
 function updateHomeStats() {
