@@ -16,6 +16,310 @@ let userStats = {
     userProfile: null // { examDate, dailyMinutes }
 };
 
+let currentLang = 'es';
+
+const I18N = {
+    es: {
+        changeLanguage: 'Cambiar idioma',
+        changeTheme: 'Cambiar tema',
+        homeSubtitle: 'Prácticas para el carné B',
+        setupTitle: 'Personaliza tu preparación',
+        setupSubtitle: 'Opcional - puedes configurarlo después',
+        examDate: 'Fecha de examen',
+        dailyTime: 'Tiempo diario de estudio',
+        min10: '10 minutos',
+        min20: '20 minutos',
+        min30: '30 minutos',
+        later: 'Más tarde',
+        save: 'Guardar',
+        sessionTitle: 'Tu sesión de hoy',
+        startAdaptive: 'Empezar sesión adaptativa',
+        sessionTime: '~{n} minutos',
+        pendingErrors: '{n} errores pendientes de repasar',
+        doubtedQs: '{n} preguntas dudadas',
+        mixNew: 'Mezcla de repaso y preguntas nuevas',
+        statQuestions: 'Preguntas',
+        statDone: 'Hechas',
+        statReview: 'A repasar',
+        statAccuracy: 'Acierto',
+        streakUnit: 'días',
+        levelN: 'Nivel {n}',
+        examOfficial: 'Examen oficial',
+        examMeta: '30 preguntas · Máx 3 fallos',
+        practiceMode: 'Modo práctica',
+        practiceMeta: 'Feedback al instante',
+        library: 'Biblioteca',
+        libraryMeta: 'Explora todas las preguntas',
+        glossary: 'Glosario visual',
+        glossaryMeta: 'Señales explicadas',
+        disclaimer: 'Esta app no está afiliada ni respaldada por la DGT',
+        exit: '← Salir',
+        errors: 'Fallos: {n}/3',
+        questionN: 'Pregunta {n}',
+        needsReview: 'Necesitas repasarlo',
+        questionOptions: 'Opciones de pregunta',
+        doubt: '🤔 He dudado con esta',
+        markedReview: '✓ Marcada para repasar',
+        next: 'Siguiente →',
+        correct: '¡Correcto!',
+        incorrect: 'Incorrecto',
+        correctLead: 'Has seleccionado la respuesta correcta.',
+        wrongLead: 'La respuesta correcta es:',
+        passed: '¡Aprobado!',
+        failed: 'No Aprobado',
+        passedSub: 'Has superado el examen',
+        failedSub: 'Sigue practicando',
+        correctLabel: 'Correctas',
+        wrongLabel: 'Incorrectas',
+        scoreLabel: 'Puntuación',
+        retryExam: 'Repetir Examen',
+        goHome: 'Volver al Inicio',
+        backHome: '← Inicio',
+        libraryTitle: 'Biblioteca de Preguntas',
+        category: 'Categoría',
+        catAll: 'Todas',
+        catSignals: 'Señales',
+        catPriority: 'Prioridad',
+        catSpeed: 'Velocidad',
+        catSafety: 'Seguridad',
+        catSafetyRoad: 'Seguridad Vial',
+        catDistances: 'Distancias',
+        catParking: 'Estacionamiento',
+        catLights: 'Alumbrado',
+        catRoads: 'Vías',
+        catVulnerable: 'Usuarios Vulnerables',
+        catDocs: 'Documentación',
+        catGeneral: 'General',
+        glossarySubtitle: 'Palabras de la vía. Texto y fotos oficiales de la DGT.',
+        glossaryCredit: 'Fuente: DGT. Diccionario en Lectura Fácil. Permiso B.',
+        fbWrongQuestion: 'La pregunta está mal formulada',
+        fbWrongAnswer: 'La respuesta correcta es otra',
+        fbWrongExplanation: 'La explicación es incorrecta',
+        fbPhoto: 'Adjuntar evidencia (foto)',
+        fbSuggestion: 'Sugerencia general',
+        cancel: 'Cancelar',
+        loading: 'Cargando',
+        autoTranslated: 'Traducción automática',
+        photoTitle: 'Adjuntar Evidencia',
+        photoSubtitle: 'Captura de pantalla del manual DGT, etc.',
+        choosePhoto: '📷 Seleccionar Foto',
+        send: 'Enviar',
+        photoLimit: 'Límite: 5MB por foto',
+        libraryEmpty: 'No se encontraron preguntas',
+        seeMore: 'Ver más',
+        showExplanation: '💡 Ver Explicación Detallada',
+        hideExplanation: '🔼 Ocultar Explicación',
+        whyCorrect: '¿Por qué es correcta?',
+        toastProfile: '✓ Perfil guardado correctamente',
+        toastReport: '✓ Reporte enviado. Gracias por ayudarnos a mejorar.',
+        toastSuggestion: '✓ Sugerencia enviada. ¡Gracias!',
+        toastPhotoBig: '⚠️ La foto es demasiado grande (máx 5MB)',
+        toastPhotoType: '⚠️ Solo se permiten imágenes',
+        toastPhotoSent: '✓ Foto enviada. ¡Gracias!',
+        confirmExit: '¿Seguro que quieres salir del test? Perderás tu progreso.'
+    },
+    en: {
+        changeLanguage: 'Change language',
+        changeTheme: 'Change theme',
+        homeSubtitle: 'Practice for licence B',
+        setupTitle: 'Personalise your prep',
+        setupSubtitle: 'Optional — you can do this later',
+        examDate: 'Exam date',
+        dailyTime: 'Daily study time',
+        min10: '10 minutes',
+        min20: '20 minutes',
+        min30: '30 minutes',
+        later: 'Later',
+        save: 'Save',
+        sessionTitle: "Today's session",
+        startAdaptive: 'Start adaptive session',
+        sessionTime: '~{n} minutes',
+        pendingErrors: '{n} mistakes to review',
+        doubtedQs: '{n} unsure questions',
+        mixNew: 'Mix of review and new questions',
+        statQuestions: 'Questions',
+        statDone: 'Done',
+        statReview: 'To review',
+        statAccuracy: 'Accuracy',
+        streakUnit: 'days',
+        levelN: 'Level {n}',
+        examOfficial: 'Official exam',
+        examMeta: '30 questions · Max 3 mistakes',
+        practiceMode: 'Practice mode',
+        practiceMeta: 'Instant feedback',
+        library: 'Library',
+        libraryMeta: 'Browse all questions',
+        glossary: 'Visual glossary',
+        glossaryMeta: 'Signs explained',
+        disclaimer: 'This app is not affiliated with or endorsed by the DGT',
+        exit: '← Exit',
+        errors: 'Mistakes: {n}/3',
+        questionN: 'Question {n}',
+        needsReview: 'Needs review',
+        questionOptions: 'Question options',
+        doubt: '🤔 I was unsure',
+        markedReview: '✓ Marked for review',
+        next: 'Next →',
+        correct: 'Correct!',
+        incorrect: 'Incorrect',
+        correctLead: 'You chose the right answer.',
+        wrongLead: 'The correct answer is:',
+        passed: 'Passed!',
+        failed: 'Not passed',
+        passedSub: 'You passed the exam',
+        failedSub: 'Keep practising',
+        correctLabel: 'Correct',
+        wrongLabel: 'Incorrect',
+        scoreLabel: 'Score',
+        retryExam: 'Retry exam',
+        goHome: 'Back home',
+        backHome: '← Home',
+        libraryTitle: 'Question library',
+        category: 'Category',
+        catAll: 'All',
+        catSignals: 'Signs',
+        catPriority: 'Priority',
+        catSpeed: 'Speed',
+        catSafety: 'Safety',
+        catSafetyRoad: 'Road safety',
+        catDistances: 'Distances',
+        catParking: 'Parking',
+        catLights: 'Lights',
+        catRoads: 'Roads',
+        catVulnerable: 'Vulnerable users',
+        catDocs: 'Documents',
+        catGeneral: 'General',
+        glossarySubtitle: 'Road words. Official DGT text and photos.',
+        glossaryCredit: 'Source: DGT. Easy-read dictionary. Licence B.',
+        fbWrongQuestion: 'The question is poorly worded',
+        fbWrongAnswer: 'The right answer is a different one',
+        fbWrongExplanation: 'The explanation is wrong',
+        fbPhoto: 'Attach evidence (photo)',
+        fbSuggestion: 'General suggestion',
+        cancel: 'Cancel',
+        loading: 'Loading',
+        autoTranslated: 'Automatic translation',
+        photoTitle: 'Attach evidence',
+        photoSubtitle: 'Screenshot from the DGT manual, etc.',
+        choosePhoto: '📷 Choose photo',
+        send: 'Send',
+        photoLimit: 'Limit: 5MB per photo',
+        libraryEmpty: 'No questions found',
+        seeMore: 'See more',
+        showExplanation: '💡 See detailed explanation',
+        hideExplanation: '🔼 Hide explanation',
+        whyCorrect: 'Why is this correct?',
+        toastProfile: '✓ Profile saved',
+        toastReport: '✓ Report sent. Thanks for helping us improve.',
+        toastSuggestion: '✓ Suggestion sent. Thank you!',
+        toastPhotoBig: '⚠️ Photo is too large (max 5MB)',
+        toastPhotoType: '⚠️ Images only',
+        toastPhotoSent: '✓ Photo sent. Thank you!',
+        confirmExit: 'Leave the test? Your progress will be lost.'
+    }
+};
+
+function t(key, vars) {
+    const table = I18N[currentLang] || I18N.es;
+    let s = table[key] || I18N.es[key] || key;
+    if (vars) s = s.replace(/\{(\w+)\}/g, (_, k) => vars[k]);
+    return s;
+}
+
+function displayCategory(name) {
+    const map = {
+        'Señales': 'catSignals',
+        'Prioridad': 'catPriority',
+        'Velocidad': 'catSpeed',
+        'Seguridad': 'catSafety',
+        'Seguridad Vial': 'catSafetyRoad',
+        'Distancias': 'catDistances',
+        'Estacionamiento': 'catParking',
+        'Alumbrado': 'catLights',
+        'Vías': 'catRoads',
+        'Usuarios Vulnerables': 'catVulnerable',
+        'Documentación': 'catDocs',
+        'General': 'catGeneral'
+    };
+    return map[name] ? t(map[name]) : name;
+}
+
+function applyI18n() {
+    document.documentElement.lang = currentLang;
+    document.body.classList.toggle('lang-en', currentLang === 'en');
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+        el.textContent = t(el.dataset.i18n);
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
+        el.setAttribute('aria-label', t(el.dataset.i18nAria));
+    });
+    const credit = document.querySelector('.glossary-credit');
+    if (credit) credit.textContent = t('glossaryCredit');
+    const langBtn = document.getElementById('langButton');
+    if (langBtn) langBtn.setAttribute('aria-pressed', currentLang === 'en' ? 'true' : 'false');
+}
+
+function toggleLang() {
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    localStorage.setItem('lang', currentLang);
+    applyI18n();
+    updateHomeStats();
+}
+
+function loadLang() {
+    if (localStorage.getItem('lang') === 'en') currentLang = 'en';
+    applyI18n();
+}
+
+const liveTranslateCache = new Map();
+let questionLoadToken = 0;
+
+async function translateText(text) {
+    if (currentLang !== 'en' || !text) return text;
+    if (liveTranslateCache.has(text)) return liveTranslateCache.get(text);
+    try {
+        const out = await fetchTranslation(text);
+        liveTranslateCache.set(text, out);
+        return out;
+    } catch (error) {
+        return text;
+    }
+}
+
+async function fetchTranslation(text) {
+    const pieces = [];
+    for (let i = 0; i < text.length; i += 700) pieces.push(text.slice(i, i + 700));
+    const parts = [];
+    for (const piece of pieces) parts.push(await fetchTranslationChunk(piece));
+    return parts.join('');
+}
+
+async function fetchTranslationChunk(text) {
+    try {
+        const url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=es&tl=en&dt=t&q=' + encodeURIComponent(text);
+        const data = await fetchJson(url);
+        const out = (data[0] || []).map((part) => part[0]).join('');
+        if (out) return out;
+    } catch (error) {}
+    const url = 'https://api.mymemory.translated.net/get?langpair=es|en&q=' + encodeURIComponent(text);
+    const data = await fetchJson(url);
+    const out = data && data.responseData && data.responseData.translatedText;
+    if (!out) throw new Error('translate');
+    return out;
+}
+
+async function fetchJson(url) {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 8000);
+    try {
+        const res = await fetch(url, { signal: ctrl.signal });
+        if (!res.ok) throw new Error('bad');
+        return await res.json();
+    } finally {
+        clearTimeout(timer);
+    }
+}
+
 function syncThemeButton() {
     const btn = document.getElementById('themeButton');
     if (btn) btn.setAttribute('aria-pressed', document.body.classList.contains('light-mode') ? 'true' : 'false');
@@ -42,8 +346,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         loadUserStats();
         loadTheme();
+        loadLang();
         initializeEventListeners();
-        await runWithLoader(loadQuestions);
+        await loadQuestions();
         updateHomeStats();
     } catch (error) {
         console.error(error);
@@ -56,6 +361,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 // ============================================
 
 function initializeEventListeners() {
+    const enterAppBtn = document.getElementById('enterAppBtn');
+    if (enterAppBtn) {
+        enterAppBtn.addEventListener('click', () => showView('homeView'));
+    }
+
+    const langButton = document.getElementById('langButton');
+    if (langButton) {
+        langButton.addEventListener('click', toggleLang);
+    }
+
     // Theme toggle
     const themeButton = document.getElementById('themeButton');
     if (themeButton) {
@@ -67,7 +382,7 @@ function initializeEventListeners() {
     if (saveProfileBtn) {
         saveProfileBtn.addEventListener('click', () => {
             saveUserProfile();
-            showToast('✓ Perfil guardado correctamente');
+            showToast(t('toastProfile'));
         });
     }
     
@@ -559,7 +874,7 @@ function markAsDoubt() {
     
     // Feedback visual
     const btn = document.getElementById('doubtButton');
-    btn.textContent = '✓ Marcada para repasar';
+    btn.textContent = t('markedReview');
     btn.style.background = 'rgba(139, 154, 122, 0.3)';
     btn.style.border = '2px solid var(--success)';
     btn.style.color = 'var(--success)';
@@ -618,13 +933,14 @@ function loadQuestion() {
     }
     
     const question = currentTest[currentQuestionIndex];
+    const token = ++questionLoadToken;
     
     // Update header
     if (testMode === 'exam') {
         document.getElementById('questionCounter').textContent = 
             `${currentQuestionIndex + 1}/30`;
         document.getElementById('errorsCounter').textContent = 
-            `Fallos: ${wrongAnswers}/3`;
+            t('errors', { n: wrongAnswers });
         document.getElementById('errorsCounter').style.display = 'inline';
     } else if (testMode === 'daily') {
         document.getElementById('questionCounter').textContent = 
@@ -632,7 +948,7 @@ function loadQuestion() {
         document.getElementById('errorsCounter').style.display = 'none';
     } else {
         document.getElementById('questionCounter').textContent = 
-            `Pregunta ${currentQuestionIndex + 1}`;
+            t('questionN', { n: currentQuestionIndex + 1 });
         document.getElementById('errorsCounter').style.display = 'none';
     }
     
@@ -641,9 +957,12 @@ function loadQuestion() {
     document.getElementById('progressBar').style.width = `${progress}%`;
     
     // Update question
-    document.getElementById('questionCategory').textContent = question.category;
+    document.getElementById('questionCategory').textContent = displayCategory(question.category);
     updateReviewChip(question.id);
     document.getElementById('questionText').textContent = question.question;
+    document.getElementById('questionText').classList.toggle('is-translating', currentLang === 'en');
+    const note = document.getElementById('questionTranslatedNote');
+    note.classList.add('hidden');
     
     const imageContainer = document.getElementById('questionImage');
     const illustrationHTML = getQuestionIllustration(question);
@@ -665,6 +984,22 @@ function loadQuestion() {
     document.getElementById('nextButton').classList.add('hidden');
     document.getElementById('doubtButton').classList.add('hidden');
     document.getElementById('explanationCard').classList.add('hidden');
+
+    if (currentLang === 'en') fillQuestionInEnglish(question, token);
+}
+
+async function fillQuestionInEnglish(question, token) {
+    const pieces = [question.question, ...question.answers];
+    const out = await Promise.all(pieces.map(translateText));
+    if (token !== questionLoadToken) return;
+    document.getElementById('questionText').textContent = out[0];
+    document.getElementById('questionText').classList.remove('is-translating');
+    if (out[0] !== question.question) {
+        document.getElementById('questionTranslatedNote').classList.remove('hidden');
+    }
+    document.querySelectorAll('#answersContainer .answer-button').forEach((btn, i) => {
+        if (out[i + 1]) btn.textContent = out[i + 1];
+    });
 }
 
 // ============================================
@@ -717,7 +1052,7 @@ function selectAnswer(selectedIndex) {
     const doubtBtn = document.getElementById('doubtButton');
     doubtBtn.classList.remove('hidden');
     doubtBtn.disabled = false;
-    doubtBtn.textContent = 'He dudado con esta';
+    doubtBtn.textContent = t('doubt');
     
     if (testMode === 'exam' && wrongAnswers > 3) {
         setTimeout(() => showResults(), 1500);
@@ -727,24 +1062,34 @@ function selectAnswer(selectedIndex) {
     document.getElementById('nextButton').classList.remove('hidden');
 }
 
-function showExplanation(isCorrect, question) {
+async function showExplanation(isCorrect, question) {
     const card = document.getElementById('explanationCard');
     const icon = document.getElementById('explanationIcon');
     const title = document.getElementById('explanationTitle');
     const text = document.getElementById('explanationText');
-    
     const explanationHTML = getExplanationText(question);
-    
-    if (isCorrect) {
-        icon.textContent = '✅';
-        title.textContent = '¡Correcto!';
-        text.innerHTML = `<div class="explanation-lead">Has seleccionado la respuesta correcta.</div>${explanationHTML}`;
-    } else {
-        icon.textContent = '❌';
-        title.textContent = 'Incorrecto';
-        text.innerHTML = `<div class="explanation-lead"><strong>La respuesta correcta es:</strong><br/>"${question.answers[question.correctIndex]}"</div>${explanationHTML}`;
+    let bodyHTML = explanationHTML;
+    let correctAnswer = question.answers[question.correctIndex];
+
+    if (currentLang === 'en') {
+        const tmp = document.createElement('div');
+        tmp.innerHTML = explanationHTML;
+        const [body, answer] = await Promise.all([
+            translateText(tmp.textContent.trim()),
+            translateText(correctAnswer)
+        ]);
+        tmp.textContent = body;
+        bodyHTML = tmp.innerHTML;
+        correctAnswer = answer;
     }
-    
+
+    icon.textContent = isCorrect ? '✅' : '❌';
+    title.textContent = isCorrect ? t('correct') : t('incorrect');
+    if (isCorrect) {
+        text.innerHTML = `<div class="explanation-lead">${t('correctLead')}</div><div>${bodyHTML}</div>`;
+    } else {
+        text.innerHTML = `<div class="explanation-lead"><strong>${t('wrongLead')}</strong><br/>"${correctAnswer}"</div><div>${bodyHTML}</div>`;
+    }
     card.classList.remove('hidden');
 }
 
@@ -759,7 +1104,7 @@ function nextQuestion() {
 }
 
 function exitTest() {
-    if (confirm('¿Seguro que quieres salir del test? Perderás tu progreso.')) {
+    if (confirm(t('confirmExit'))) {
         goHome();
     }
 }
@@ -774,10 +1119,10 @@ function showResults() {
     const passed = testMode === 'exam' ? wrongAnswers <= 3 : score >= 90;
     
     document.getElementById('resultIcon').textContent = passed ? '✅' : '❌';
-    document.getElementById('resultTitle').textContent = passed ? '¡Aprobado!' : 'No Aprobado';
+    document.getElementById('resultTitle').textContent = passed ? t('passed') : t('failed');
     document.getElementById('resultSubtitle').textContent = passed 
-        ? 'Has superado el examen' 
-        : 'Sigue practicando';
+        ? t('passedSub') 
+        : t('failedSub');
     
     document.getElementById('correctAnswers').textContent = correctAnswers;
     document.getElementById('wrongAnswers').textContent = wrongAnswers;
@@ -830,7 +1175,7 @@ function displayQuestions(questions) {
     container.innerHTML = '';
 
     if (questions.length === 0) {
-        container.innerHTML = '<p class="library-empty">No se encontraron preguntas</p>';
+        container.innerHTML = `<p class="library-empty">${t('libraryEmpty')}</p>`;
         return;
     }
 
@@ -853,7 +1198,7 @@ function appendLibraryPage() {
         const illustrationHTML = getQuestionIllustration(q);
 
         item.innerHTML = `
-            <button class="menu-button" data-question-id="${q.id}" aria-label="Opciones de pregunta">
+            <button class="menu-button" data-question-id="${q.id}" aria-label="${t('questionOptions')}">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
                     <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
@@ -861,8 +1206,8 @@ function appendLibraryPage() {
                 </svg>
             </button>
             <div class="question-item-header">
-                <span class="question-category">${q.category}</span>
-                ${needsReview(q.id) ? '<span class="review-chip">Necesitas repasarlo</span>' : ''}
+                <span class="question-category">${displayCategory(q.category)}</span>
+                ${needsReview(q.id) ? `<span class="review-chip">${t('needsReview')}</span>` : ''}
             </div>
             ${illustrationHTML || ''}
             <div class="question-item-text" style="margin-top: 16px;">${q.question}</div>
@@ -877,7 +1222,7 @@ function appendLibraryPage() {
             
             <div class="explanation-section" style="margin-top: 16px;">
                 <button class="expand-button" onclick="toggleExplanation(${index})" style="width: 100%; padding: 14px; background: rgba(217, 119, 87, 0.1); border: 2px solid var(--primary-warm); border-radius: 50px; color: var(--primary-warm); font-weight: 700; font-size: 14px; cursor: pointer; transition: all 0.3s;">
-                    💡 Ver Explicación Detallada
+                    ${t('showExplanation')}
                 </button>
                 <div id="explanation-${index}" class="explanation-content" style="display: none; margin-top: 12px; padding: 20px; background: linear-gradient(135deg, rgba(217, 119, 87, 0.08) 0%, rgba(139, 154, 122, 0.08) 100%); border-radius: 16px; border: 1px solid var(--border-color);"></div>
             </div>
@@ -899,7 +1244,7 @@ function appendLibraryPage() {
         const btn = document.createElement('button');
         btn.id = 'libraryLoadMore';
         btn.className = 'library-more';
-        btn.textContent = 'Ver más';
+        btn.textContent = t('seeMore');
         btn.addEventListener('click', appendLibraryPage);
         container.appendChild(btn);
     }
@@ -914,7 +1259,7 @@ function toggleExplanation(index) {
         const explanation = q.explanation ? softenCaps(q.explanation) : generateExplanation(q);
         content.innerHTML = `
                     <div style="font-size: 12px; color: var(--success); font-weight: 700; margin-bottom: 12px;">
-                        ¿Por qué es correcta?
+                        ${t('whyCorrect')}
                     </div>
                     <div style="font-size: 15px; line-height: 1.7; color: var(--text-primary);">
                         ${explanation}
@@ -925,12 +1270,12 @@ function toggleExplanation(index) {
     
     if (content.style.display === 'none') {
         content.style.display = 'block';
-        button.textContent = '🔼 Ocultar Explicación';
+        button.textContent = t('hideExplanation');
         button.style.background = 'var(--primary-warm)';
         button.style.color = '#FFFFFF';
     } else {
         content.style.display = 'none';
-        button.textContent = '💡 Ver Explicación Detallada';
+        button.textContent = t('showExplanation');
         button.style.background = 'rgba(217, 119, 87, 0.1)';
         button.style.color = 'var(--primary-warm)';
     }
@@ -1140,7 +1485,7 @@ function loadGlossary() {
 
     const credit = document.createElement('p');
     credit.className = 'glossary-credit';
-    credit.textContent = 'Fuente: DGT. Diccionario en Lectura Fácil. Permiso B.';
+    credit.textContent = t('glossaryCredit');
     container.appendChild(credit);
 }
 
@@ -1162,14 +1507,60 @@ function saveUserStats() {
     } catch (error) {}
 }
 
+function dayKey(ts) {
+    const d = new Date(ts);
+    return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+}
+
+function getStudyStreak() {
+    const days = new Set();
+    Object.values(userStats.questionHistory || {}).forEach((h) => {
+        if (h.lastAnswered) days.add(dayKey(h.lastAnswered));
+        if (h.lastDoubt) days.add(dayKey(h.lastDoubt));
+    });
+    if (!days.size) return 0;
+    const cursor = new Date();
+    cursor.setHours(12, 0, 0, 0);
+    if (!days.has(dayKey(cursor))) {
+        cursor.setDate(cursor.getDate() - 1);
+        if (!days.has(dayKey(cursor))) return 0;
+    }
+    let streak = 0;
+    while (days.has(dayKey(cursor))) {
+        streak++;
+        cursor.setDate(cursor.getDate() - 1);
+    }
+    return streak;
+}
+
+function getLevelInfo() {
+    const xp = (userStats.totalCorrect || 0) * 10;
+    const per = 100;
+    return {
+        level: Math.floor(xp / per) + 1,
+        into: xp % per,
+        per
+    };
+}
+
+function getReviewCount() {
+    return Object.keys(userStats.questionHistory || {}).filter(needsReview).length;
+}
+
 function updateHomeStats() {
     const known = questionsData.length || Number(localStorage.getItem('carnetBQuestionCount') || 0);
     document.getElementById('totalQuestions').textContent = known || '—';
     document.getElementById('completedQuestions').textContent = userStats.totalAnswered;
-    
-    // Calcular temas débiles
-    const weakCategories = getWeakCategories();
-    document.getElementById('weakTopics').textContent = weakCategories.length;
+    document.getElementById('weakTopics').textContent = getReviewCount();
+    const acc = userStats.totalAnswered
+        ? Math.round((userStats.totalCorrect / userStats.totalAnswered) * 100)
+        : 0;
+    document.getElementById('accuracyStat').textContent = `${acc}%`;
+    document.getElementById('streakCount').textContent = getStudyStreak();
+    const level = getLevelInfo();
+    document.getElementById('levelLabel').textContent = t('levelN', { n: level.level });
+    document.getElementById('levelXp').textContent = `${level.into} / ${level.per} XP`;
+    document.getElementById('levelFill').style.width = `${(level.into / level.per) * 100}%`;
     
     // Mostrar setup o sesión diaria
     const setupPrompt = document.getElementById('setupPrompt');
@@ -1184,7 +1575,7 @@ function updateHomeStats() {
         
         // Actualizar descripción de sesión
         const minutes = userStats.userProfile.dailyMinutes || 10;
-        document.getElementById('dailySessionTime').textContent = `~${minutes} minutos`;
+        document.getElementById('dailySessionTime').textContent = t('sessionTime', { n: minutes });
         
         // Contar pendientes
         const pendingReviews = getPendingReviewQuestions();
@@ -1192,14 +1583,14 @@ function updateHomeStats() {
         
         let description = '';
         if (pendingReviews.length > 0) {
-            description = `${pendingReviews.length} errores pendientes de repasar`;
+            description = t('pendingErrors', { n: pendingReviews.length });
         }
         if (doubtedQuestions.length > 0) {
             if (description) description += ' · ';
-            description += `${doubtedQuestions.length} preguntas dudadas`;
+            description += t('doubtedQs', { n: doubtedQuestions.length });
         }
         if (!description) {
-            description = 'Mezcla de repaso y preguntas nuevas';
+            description = t('mixNew');
         }
         
         document.getElementById('dailySessionDescription').textContent = description;
@@ -1276,10 +1667,10 @@ function handleErrorReport(type) {
     
     if (userNote === null) {
         saveFeedback(type, question, '');
-        showToast('✓ Reporte enviado. Gracias por ayudarnos a mejorar.');
+        showToast(t('toastReport'));
     } else {
         saveFeedback(type, question, userNote);
-        showToast('✓ Reporte enviado. Gracias por ayudarnos a mejorar.');
+        showToast(t('toastReport'));
     }
     
     currentLibraryQuestion = null;
@@ -1291,7 +1682,7 @@ function handleSuggestion() {
     
     if (suggestion && suggestion.trim()) {
         saveFeedback('suggestion', question, suggestion);
-        showToast('✓ Sugerencia enviada. ¡Gracias!');
+        showToast(t('toastSuggestion'));
     }
     
     currentLibraryQuestion = null;
@@ -1354,12 +1745,12 @@ function handlePhotoSelect(e) {
     if (!file) return;
     
     if (file.size > 5 * 1024 * 1024) {
-        showToast('⚠️ La foto es demasiado grande (máx 5MB)');
+        showToast(t('toastPhotoBig'));
         return;
     }
     
     if (!file.type.startsWith('image/')) {
-        showToast('⚠️ Solo se permiten imágenes');
+        showToast(t('toastPhotoType'));
         return;
     }
     
@@ -1383,7 +1774,7 @@ function submitPhoto() {
     const note = prompt('Descripción de la evidencia (opcional):');
     
     saveFeedback('photo_evidence', question, note || 'Evidencia adjunta', selectedPhoto);
-    showToast('✓ Foto enviada. ¡Gracias!');
+    showToast(t('toastPhotoSent'));
     closePhotoModal();
     currentLibraryQuestion = null;
 }

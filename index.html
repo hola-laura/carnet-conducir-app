@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#007AFF">
-    <title>Carnet B - Test DGT</title>
+    <title>Drivo Test</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="assets/icon.svg">
@@ -14,12 +14,26 @@
 </head>
 <body>
     <div id="app" class="app-container">
+
+        <div id="landingView" class="view active">
+            <video class="landing-media" autoplay muted loop playsinline preload="metadata" src="https://videos.pexels.com/video-files/32793923/13979518_1080_1920_30fps.mp4"></video>
+            <div class="landing-scrim"></div>
+            <div class="landing-brand">
+                <img class="home-logo" src="assets/logo-car-dark.svg" width="99" height="61" alt="">
+                <h1 class="landing-title">Drivo Test</h1>
+            </div>
+            <button type="button" id="enterAppBtn" class="landing-enter">Carnet B →</button>
+        </div>
         
         <!-- Vista Principal / Home -->
-        <div id="homeView" class="view active">
-            <!-- Dark/Light Mode Toggle -->
+        <div id="homeView" class="view">
             <div class="theme-toggle">
-                <button id="themeButton" class="theme-switch" type="button" aria-label="Cambiar tema" aria-pressed="false">
+                <button id="langButton" class="lang-switch" type="button" aria-label="Cambiar idioma" data-i18n-aria="changeLanguage">
+                    <span class="lang-flag lang-flag-en" aria-hidden="true">🇬🇧</span>
+                    <span class="lang-flag lang-flag-es" aria-hidden="true">🇪🇸</span>
+                    <span class="lang-knob"></span>
+                </button>
+                <button id="themeButton" class="theme-switch" type="button" aria-label="Cambiar tema" data-i18n-aria="changeTheme" aria-pressed="false">
                     <span class="theme-knob">
                         <img class="theme-icon-moon" src="assets/icon-moon.svg" width="14" height="14" alt="">
                         <img class="theme-icon-sun" src="assets/icon-sun.svg" width="20" height="20" alt="">
@@ -28,97 +42,130 @@
             </div>
             
             <div class="glass-container">
+                <div class="home-bar">
+                    <div class="streak-chip">
+                        <svg class="streak-fire" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M480-80q-134 0-227-93t-93-227q0-116 71.5-225T428-811q17-11 34.5-.5T480-780v72q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658q8-9 18-12.5t19 2.5q66 45 103.5 116T800-400q0 134-93 227T480-80ZM220-400q0 63 28.5 118.5T328-189q-4-12-6-24.5t-2-24.5q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60q0 12-2 24.5t-6 24.5q51-37 79.5-92.5T740-400q0-54-23-105.5T651-600q-21 15-44 23.5t-46 8.5q-61 0-101-41.5T420-714v-20q-92 66-146 156.5T220-400Zm260 24-71 70q-14 14-21.5 31t-7.5 37q0 41 29 69.5t71 28.5q42 0 71-28.5t29-69.5q0-20-7.5-37T551-306l-71-70Z"/></svg>
+                        <span id="streakCount">0</span>
+                        <span data-i18n="streakUnit">días</span>
+                    </div>
+                </div>
                 <div class="header-section">
-                    <h1 class="app-title">Carnet B</h1>
-                    <p class="subtitle">Tests de preparación para el permiso B</p>
-                    <p class="disclaimer">Esta aplicación no está afiliada ni respaldada por la DGT</p>
+                    <img class="home-logo home-logo-dark" src="assets/logo-car-dark.svg" width="42" height="26" alt="">
+                    <img class="home-logo home-logo-light" src="assets/logo-car-light.svg" width="42" height="26" alt="">
+                    <h1 class="app-title">Drivo Test</h1>
+                    <p class="subtitle" data-i18n="homeSubtitle">Prácticas para el carné B</p>
                 </div>
 
                 <!-- Setup Prompt (si no hay perfil) -->
                 <div id="setupPrompt" class="setup-prompt glass-card hidden">
-                    <h3 class="setup-title">Personaliza tu preparación</h3>
-                    <p class="setup-subtitle">Opcional - puedes configurarlo después</p>
+                    <h3 class="setup-title" data-i18n="setupTitle">Personaliza tu preparación</h3>
+                    <p class="setup-subtitle" data-i18n="setupSubtitle">Opcional - puedes configurarlo después</p>
                     <div class="form-group">
-                        <label class="form-label">Fecha de examen</label>
+                        <label class="form-label" data-i18n="examDate">Fecha de examen</label>
                         <input type="date" id="examDate" class="form-input">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Tiempo diario de estudio</label>
+                        <label class="form-label" data-i18n="dailyTime">Tiempo diario de estudio</label>
                         <select id="dailyMinutes" class="form-select">
-                            <option value="10">10 minutos</option>
-                            <option value="20">20 minutos</option>
-                            <option value="30">30 minutos</option>
+                            <option value="10" data-i18n="min10">10 minutos</option>
+                            <option value="20" data-i18n="min20">20 minutos</option>
+                            <option value="30" data-i18n="min30">30 minutos</option>
                         </select>
                     </div>
                     <div class="button-group">
-                        <button id="skipSetupBtn" class="btn-secondary">Más tarde</button>
-                        <button id="saveProfileBtn" class="btn-primary">Guardar</button>
+                        <button id="skipSetupBtn" class="btn-secondary" data-i18n="later">Más tarde</button>
+                        <button id="saveProfileBtn" class="btn-primary" data-i18n="save">Guardar</button>
                     </div>
                 </div>
 
                 <!-- Sesión de Hoy -->
                 <div id="dailySessionCard" class="daily-session-card glass-card hidden">
-                    <h3 class="session-title">Tu sesión de hoy</h3>
+                    <h3 class="session-title" data-i18n="sessionTitle">Tu sesión de hoy</h3>
                     <p id="dailySessionDescription" class="session-description">Repasa prioridades, recupera errores pendientes, comprueba lo aprendido</p>
                     <button id="startDailyBtn" class="mode-button primary full-width">
                         <span class="button-text">
-                            <strong>Empezar sesión adaptativa</strong>
+                            <strong data-i18n="startAdaptive">Empezar sesión adaptativa</strong>
                             <small id="dailySessionTime">~10 minutos</small>
                         </span>
                     </button>
                 </div>
 
+                <div class="level-card">
+                    <div class="level-row">
+                        <span id="levelLabel">Nivel 1</span>
+                        <span id="levelXp">0 / 100 XP</span>
+                    </div>
+                    <div class="level-bar"><div class="level-fill" id="levelFill"></div></div>
+                </div>
+
                 <div class="stats-grid">
                     <div class="stat-card glass-card">
                         <div class="stat-number" id="totalQuestions">2947</div>
-                        <div class="stat-label">Preguntas</div>
+                        <div class="stat-label" data-i18n="statQuestions">Preguntas</div>
                     </div>
                     <div class="stat-card glass-card">
                         <div class="stat-number" id="completedQuestions">0</div>
-                        <div class="stat-label">Completadas</div>
+                        <div class="stat-label" data-i18n="statDone">Hechas</div>
                     </div>
                     <div class="stat-card glass-card">
                         <div class="stat-number" id="weakTopics">0</div>
-                        <div class="stat-label">A reforzar</div>
+                        <div class="stat-label" data-i18n="statReview">A repasar</div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-number" id="accuracyStat">0%</div>
+                        <div class="stat-label" data-i18n="statAccuracy">Acierto</div>
                     </div>
                 </div>
 
                 <div class="mode-selection">
                     <button id="examModeBtn" class="mode-button primary" data-mode="exam">
+                        <span class="mode-icon" aria-hidden="true">
+                            <svg viewBox="0 -960 960 960" fill="currentColor"><path d="M513-492v-171q0-13-8.5-21.5T483-693q-13 0-21.5 8.5T453-663v183q0 6 2 11t6 10l144 149q9 10 22.5 9.5T650-310q9-9 9-22t-9-22L513-492ZM480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-82 31.5-155t86-127.5Q252-817 325-848.5T480-880q82 0 155 31.5t127.5 86Q817-708 848.5-635T880-480q0 82-31.5 155t-86 127.5Q708-143 635-111.5T480-80Zm0-400Zm0 340q140 0 240-100t100-240q0-140-100-240T480-820q-140 0-240 100T140-480q0 140 100 240t240 100Z"/></svg>
+                        </span>
                         <span class="button-text">
-                            <strong>Examen Oficial</strong>
-                            <small>30 preguntas · Máx 3 fallos</small>
+                            <strong data-i18n="examOfficial">Examen oficial</strong>
+                            <small data-i18n="examMeta">30 preguntas · Máx 3 fallos</small>
                         </span>
                     </button>
 
                     <button id="practiceModeBtn" class="mode-button" data-mode="practice">
+                        <span class="mode-icon" aria-hidden="true">
+                            <svg viewBox="0 -960 960 960" fill="currentColor"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q13 0 21.5 8.5T510-850v296q22 9 36 29t14 45q0 33-23.5 56.5T480-400q-33 0-56.5-23.5T400-480q0-25 14-45t36-29v-104q-65 11-107.5 60.5T300-480q0 75 52.5 127.5T480-300q75 0 127.5-52.5T660-480q0-32-10.5-60T621-591q-8-10-8-23t9-22q9-9 21.5-8.5T664-634q26 32 41 70.5t15 83.5q0 100-70 170t-170 70q-100 0-170-70t-70-170q0-93 60-160.5T450-719v-100q-131 11-220.5 108T140-480q0 142 99 241t241 99q142 0 241-99t99-241q0-65-22-122t-62-102q-9-10-9.5-23t8.5-22q9-9 22-8.5t21 10.5q48 54 75 121.5T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
+                        </span>
                         <span class="button-text">
-                            <strong>Modo Práctica</strong>
-                            <small>Feedback inmediato</small>
+                            <strong data-i18n="practiceMode">Modo práctica</strong>
+                            <small data-i18n="practiceMeta">Feedback al instante</small>
                         </span>
                     </button>
 
                     <button id="libraryBtn" class="mode-button">
+                        <span class="mode-icon" aria-hidden="true">
+                            <svg viewBox="0 -960 960 960" fill="currentColor"><path d="M248-300q53.57 0 104.28 12.5Q403-275 452-250v-427q-45-30-97.62-46.5Q301.76-740 248-740q-38 0-74.5 9.5T100-707v434q31-14 70.5-20.5T248-300Zm264 50q50-25 98-37.5T712-300q38 0 78.5 6t69.5 16v-429q-34-17-71.82-25-37.82-8-76.18-8-54 0-104.5 16.5T512-677v427Zm-30 79q-7.54 0-14.27-1.5Q461-174 456-178q-47-29-99.85-45-52.84-16-108.15-16-36.54 0-71.77 9T106-208q-23.1 11-44.55-3Q40-225 40-251v-463q0-15 7-27.5T68-761q42-20 87.39-29.5 45.4-9.5 92.61-9.5 63 0 122.5 17T482-731q51-35 109.5-52T712-800q46.87 0 91.93 9.5Q849-781 891-761q14 7 21.5 19.5T920-714v463q0 27.89-22.5 42.45Q875-194 853-208q-34-14-69.23-22.5Q748.54-239 712-239q-54.27 0-106.14 16Q554-207 508-178q-5 4-11.73 5.5T482-171ZM276-489Zm284-119q0-5.52 4.02-11.34 4.03-5.82 8.98-7.66 30-11 61.34-17 31.33-6 65.91-6 21.61 0 42.68 2.5T784-640q6 2 11 7.4 5 5.39 5 12.13 0 11.47-7.5 17.47-7.5 6-18.5 3-16.8-5-35.4-7.5Q720-610 700-610q-29 0-56 5.5T591-588q-14 5-22.5-.5T560-608Zm0 220q0-5.81 4.02-11.94 4.03-6.12 8.98-8.06 30-11 61.34-16.5 31.33-5.5 65.91-5.5 21.61 0 42.68 2.5T784-420q6 2 11 7.4 5 5.39 5 12.13 0 11.47-7.5 17.47-7.5 6-18.5 3-16.8-5-35.4-7.5Q720-390 700-390q-29 0-56 5t-53 16q-14 5-22.5 0t-8.5-19Zm0-110q0-5.52 4.02-11.34 4.03-5.82 8.98-7.66 30-11 61.34-17 31.33-6 65.91-6 21.61 0 42.68 2.5T784-530q6 2 11 7.4 5 5.39 5 12.13 0 11.47-7.5 17.47-7.5 6-18.5 3-16.8-5-35.4-7.5Q720-500 700-500q-29 0-56 5.5T591-478q-14 5-22.5-.5T560-498Z"/></svg>
+                        </span>
                         <span class="button-text">
-                            <strong>Biblioteca</strong>
-                            <small>Explora todas las preguntas</small>
+                            <strong data-i18n="library">Biblioteca</strong>
+                            <small data-i18n="libraryMeta">Explora todas las preguntas</small>
                         </span>
                     </button>
 
                     <button id="glossaryBtn" class="mode-button">
+                        <span class="mode-icon" aria-hidden="true">
+                            <svg viewBox="0 -960 960 960" fill="currentColor"><path d="M480.18-284q12.82 0 21.32-8.63 8.5-8.62 8.5-21.37v-197q0-12.75-8.68-21.38-8.67-8.62-21.5-8.62-12.82 0-21.32 8.62-8.5 8.63-8.5 21.38v197q0 12.75 8.68 21.37 8.67 8.63 21.5 8.63ZM480-607q14.45 0 24.23-9.78Q514-626.55 514-641t-9.77-24.22Q494.45-675 480-675q-14.45 0-24.23 9.78Q446-655.45 446-641t9.77 24.22Q465.55-607 480-607Zm0 523q-5.32 0-9.88-1-4.56-1-9.12-3-139-47-220-168.5t-81-266.61V-719q0-19.26 10.88-34.66Q181.75-769.07 199-776l260-97q11-4 21-4t21 4l260 97q17.25 6.93 28.13 22.34Q800-738.26 800-719v195.89Q800-378 719-256.5T499-88q-4.56 2-9.12 3T480-84Zm0-59q115-38 187.5-143.5T740-523v-196l-260-98-260 98v196q0 131 72.5 236.5T480-143Zm0-337Z"/></svg>
+                        </span>
                         <span class="button-text">
-                            <strong>Glosario Visual</strong>
-                            <small>Palabras de la vía, con fotos de la DGT</small>
+                            <strong data-i18n="glossary">Glosario visual</strong>
+                            <small data-i18n="glossaryMeta">Señales explicadas</small>
                         </span>
                     </button>
                 </div>
+                <p class="disclaimer" data-i18n="disclaimer">Esta app no está afiliada ni respaldada por la DGT</p>
             </div>
         </div>
 
         <!-- Vista de Test -->
         <div id="testView" class="view">
             <div class="test-header glass-container">
-                <button id="exitTestBtn" class="back-button">← Salir</button>
+                <button id="exitTestBtn" class="back-button" data-i18n="exit">← Salir</button>
                 <div class="test-info">
                     <span id="questionCounter">1/30</span>
                     <span id="errorsCounter" class="errors">Fallos: 0/3</span>
@@ -134,9 +181,9 @@
                     <div class="question-header">
                         <div class="question-header-left">
                             <span class="question-category" id="questionCategory">Señales</span>
-                            <span class="review-chip hidden" id="reviewChip">Necesitas repasarlo</span>
+                            <span class="review-chip hidden" id="reviewChip" data-i18n="needsReview">Necesitas repasarlo</span>
                         </div>
-                        <button class="menu-button" id="questionMenuButton" aria-label="Opciones de pregunta">
+                        <button class="menu-button" id="questionMenuButton" aria-label="Opciones de pregunta" data-i18n-aria="questionOptions">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
                                 <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
@@ -146,16 +193,17 @@
                     </div>
                     
                     <h2 class="question-text" id="questionText"></h2>
+                    <p id="questionTranslatedNote" class="translate-note hidden" data-i18n="autoTranslated">Traducción automática</p>
                     
                     <div id="questionImage" class="question-image"></div>
                     
                     <div class="answers-container" id="answersContainer"></div>
                     
-                    <button class="doubt-button glass-button hidden" id="doubtButton">
+                    <button class="doubt-button glass-button hidden" id="doubtButton" data-i18n="doubt">
                         🤔 He dudado con esta
                     </button>
                     
-                    <button class="next-button glass-button primary hidden" id="nextButton">
+                    <button class="next-button glass-button primary hidden" id="nextButton" data-i18n="next">
                         Siguiente →
                     </button>
                 </div>
@@ -182,21 +230,21 @@
                 <div class="results-stats">
                     <div class="result-stat glass-card">
                         <div class="result-stat-value" id="correctAnswers">27</div>
-                        <div class="result-stat-label">Correctas</div>
+                        <div class="result-stat-label" data-i18n="correctLabel">Correctas</div>
                     </div>
                     <div class="result-stat glass-card">
                         <div class="result-stat-value" id="wrongAnswers">3</div>
-                        <div class="result-stat-label">Incorrectas</div>
+                        <div class="result-stat-label" data-i18n="wrongLabel">Incorrectas</div>
                     </div>
                     <div class="result-stat glass-card">
                         <div class="result-stat-value" id="finalScore">90%</div>
-                        <div class="result-stat-label">Puntuación</div>
+                        <div class="result-stat-label" data-i18n="scoreLabel">Puntuación</div>
                     </div>
                 </div>
 
                 <div class="results-actions">
-                    <button id="resetTestBtn" class="glass-button primary">Repetir Examen</button>
-                    <button id="goHomeBtn" class="glass-button">Volver al Inicio</button>
+                    <button id="resetTestBtn" class="glass-button primary" data-i18n="retryExam">Repetir Examen</button>
+                    <button id="goHomeBtn" class="glass-button" data-i18n="goHome">Volver al Inicio</button>
                 </div>
             </div>
         </div>
@@ -204,19 +252,19 @@
         <!-- Vista de Biblioteca -->
         <div id="libraryView" class="view">
             <div class="library-header glass-container">
-                <button id="libraryBackBtn" class="back-button">← Inicio</button>
-                <h2>Biblioteca de Preguntas</h2>
+                <button id="libraryBackBtn" class="back-button" data-i18n="backHome">← Inicio</button>
+                <h2 data-i18n="libraryTitle">Biblioteca de Preguntas</h2>
             </div>
 
             <div class="filters glass-container">
                 <div class="filter-group">
-                    <label>Categoría</label>
+                    <label data-i18n="category">Categoría</label>
                     <select id="categoryFilter">
-                        <option value="all">Todas</option>
-                        <option value="signals">Señales</option>
-                        <option value="priority">Prioridad</option>
-                        <option value="speed">Velocidad</option>
-                        <option value="safety">Seguridad</option>
+                        <option value="all" data-i18n="catAll">Todas</option>
+                        <option value="signals" data-i18n="catSignals">Señales</option>
+                        <option value="priority" data-i18n="catPriority">Prioridad</option>
+                        <option value="speed" data-i18n="catSpeed">Velocidad</option>
+                        <option value="safety" data-i18n="catSafety">Seguridad</option>
                     </select>
                 </div>
 
@@ -228,9 +276,9 @@
         <!-- Vista de Glosario -->
         <div id="glossaryView" class="view">
             <div class="glossary-header glass-container">
-                <button id="glossaryBackBtn" class="back-button">← Inicio</button>
-                <h2>Glosario Visual</h2>
-                <p class="subtitle">Palabras de la vía. Texto y fotos oficiales de la DGT.</p>
+                <button id="glossaryBackBtn" class="back-button" data-i18n="backHome">← Inicio</button>
+                <h2 data-i18n="glossary">Glosario Visual</h2>
+                <p class="subtitle" data-i18n="glossarySubtitle">Palabras de la vía. Texto y fotos oficiales de la DGT.</p>
             </div>
 
             <div class="glossary-grid" id="glossaryGrid"></div>
@@ -241,32 +289,32 @@
     <div id="feedbackMenu" class="feedback-menu hidden">
         <button class="feedback-menu-item" data-action="wrong_question">
             <span class="feedback-icon">⚠️</span>
-            <span class="feedback-text">La pregunta está mal formulada</span>
+            <span class="feedback-text" data-i18n="fbWrongQuestion">La pregunta está mal formulada</span>
         </button>
         <button class="feedback-menu-item" data-action="wrong_answer">
             <span class="feedback-icon">⚠️</span>
-            <span class="feedback-text">La respuesta correcta es otra</span>
+            <span class="feedback-text" data-i18n="fbWrongAnswer">La respuesta correcta es otra</span>
         </button>
         <button class="feedback-menu-item" data-action="wrong_explanation">
             <span class="feedback-icon">⚠️</span>
-            <span class="feedback-text">La explicación es incorrecta</span>
+            <span class="feedback-text" data-i18n="fbWrongExplanation">La explicación es incorrecta</span>
         </button>
         <button class="feedback-menu-item" data-action="attach_photo">
             <span class="feedback-icon">📷</span>
-            <span class="feedback-text">Adjuntar evidencia (foto)</span>
+            <span class="feedback-text" data-i18n="fbPhoto">Adjuntar evidencia (foto)</span>
         </button>
         <button class="feedback-menu-item" data-action="suggestion">
             <span class="feedback-icon">💬</span>
-            <span class="feedback-text">Sugerencia general</span>
+            <span class="feedback-text" data-i18n="fbSuggestion">Sugerencia general</span>
         </button>
         <button class="feedback-menu-item cancel" data-action="cancel">
-            <span class="feedback-text">Cancelar</span>
+            <span class="feedback-text" data-i18n="cancel">Cancelar</span>
         </button>
     </div>
 
     <div id="screenLoader" class="screen-loader hidden" aria-live="polite">
         <div class="loader-car">🚗</div>
-        <p class="loader-label">Cargando</p>
+        <p class="loader-label" data-i18n="loading">Cargando</p>
     </div>
 
     <!-- Toast Notification -->
@@ -275,18 +323,18 @@
     <!-- Photo Upload Modal -->
     <div id="photoModal" class="modal hidden">
         <div class="modal-content">
-            <h3 class="modal-title">Adjuntar Evidencia</h3>
-            <p class="modal-subtitle">Captura de pantalla del manual DGT, etc.</p>
+            <h3 class="modal-title" data-i18n="photoTitle">Adjuntar Evidencia</h3>
+            <p class="modal-subtitle" data-i18n="photoSubtitle">Captura de pantalla del manual DGT, etc.</p>
             <input type="file" id="photoInput" accept="image/*" style="display: none;">
-            <button class="glass-button primary" id="selectPhotoBtn">
+            <button class="glass-button primary" id="selectPhotoBtn" data-i18n="choosePhoto">
                 📷 Seleccionar Foto
             </button>
             <div id="photoPreview" class="photo-preview hidden"></div>
             <div class="modal-actions">
-                <button class="glass-button" id="cancelPhotoBtn">Cancelar</button>
-                <button class="glass-button primary" id="submitPhotoBtn" disabled>Enviar</button>
+                <button class="glass-button" id="cancelPhotoBtn" data-i18n="cancel">Cancelar</button>
+                <button class="glass-button primary" id="submitPhotoBtn" disabled data-i18n="send">Enviar</button>
             </div>
-            <p class="modal-note">Límite: 5MB por foto</p>
+            <p class="modal-note" data-i18n="photoLimit">Límite: 5MB por foto</p>
         </div>
     </div>
 
