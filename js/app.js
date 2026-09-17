@@ -16,32 +16,22 @@ let userStats = {
     userProfile: null // { examDate, dailyMinutes }
 };
 
-function toggleTheme() {
-    const body = document.body;
-    const themeIcon = document.querySelector('.theme-icon');
-    
-    body.classList.toggle('light-mode');
-    
-    if (body.classList.contains('light-mode')) {
-        themeIcon.textContent = '☀️';
-        localStorage.setItem('theme', 'light');
-    } else {
-        themeIcon.textContent = '🌙';
-        localStorage.setItem('theme', 'dark');
-    }
+function syncThemeButton() {
+    const btn = document.getElementById('themeButton');
+    if (btn) btn.setAttribute('aria-pressed', document.body.classList.contains('light-mode') ? 'true' : 'false');
 }
 
-// Load saved theme on startup
+function toggleTheme() {
+    document.body.classList.toggle('light-mode');
+    localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    syncThemeButton();
+}
+
 function loadTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    const themeIcon = document.querySelector('.theme-icon');
-    
-    if (savedTheme === 'light') {
+    if (localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-mode');
-        if (themeIcon) themeIcon.textContent = '☀️';
-    } else {
-        if (themeIcon) themeIcon.textContent = '🌙';
     }
+    syncThemeButton();
 }
 
 // ============================================
@@ -151,21 +141,39 @@ function initializeEventListeners() {
         categoryFilter.addEventListener('change', filterQuestions);
     }
     
-    const difficultyFilter = document.getElementById('difficultyFilter');
-    if (difficultyFilter) {
-        difficultyFilter.addEventListener('change', filterQuestions);
-    }
-    
-    const sortBy = document.getElementById('sortBy');
-    if (sortBy) {
-        sortBy.addEventListener('change', filterQuestions);
-    }
-    
     // Glossary button
     const glossaryBackBtn = document.getElementById('glossaryBackBtn');
     if (glossaryBackBtn) {
         glossaryBackBtn.addEventListener('click', goHome);
     }
+
+    const menuButton = document.getElementById('questionMenuButton');
+    if (menuButton) {
+        menuButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleFeedbackMenu();
+        });
+    }
+
+    document.querySelectorAll('.feedback-menu-item').forEach(item => {
+        item.addEventListener('click', () => handleFeedbackAction(item.dataset.action));
+    });
+
+    document.getElementById('selectPhotoBtn')?.addEventListener('click', selectPhoto);
+    document.getElementById('cancelPhotoBtn')?.addEventListener('click', closePhotoModal);
+    document.getElementById('submitPhotoBtn')?.addEventListener('click', submitPhoto);
+    document.getElementById('photoInput')?.addEventListener('change', handlePhotoSelect);
+
+    document.addEventListener('click', (e) => {
+        const menu = document.getElementById('feedbackMenu');
+        if (!menu || menu.classList.contains('hidden')) return;
+        if (e.target.closest('.feedback-menu') || e.target.closest('.menu-button')) return;
+        closeFeedbackMenu();
+    });
+
+    document.getElementById('photoModal')?.addEventListener('click', (e) => {
+        if (e.target.id === 'photoModal') closePhotoModal();
+    });
 }
 
 // ============================================
@@ -191,21 +199,27 @@ function applyQuestions(data) {
 }
 
 async function loadQuestions() {
-    if (typeof QUESTIONS_DATA !== 'undefined') applyQuestions(QUESTIONS_DATA);
-
-    const saved = await readSavedQuestions();
-    if (saved) applyQuestions(saved);
-
-    if (location.protocol === 'file:') {
-        if (typeof QUESTIONS_DATA !== 'undefined') await saveQuestions(QUESTIONS_DATA);
-        return;
+    if (typeof QUESTIONS_DATA !== 'undefined') {
+        applyQuestions(QUESTIONS_DATA);
+        if (location.protocol === 'file:') {
+            await saveQuestions(QUESTIONS_DATA);
+            return;
+        }
+    } else {
+        const saved = await readSavedQuestions();
+        if (saved) applyQuestions(saved);
     }
+
+    if (location.protocol === 'file:') return;
 
     try {
         const response = await fetch(questionsFileUrl());
         if (!response.ok) throw new Error(response.status);
         const data = await response.json();
-        if (applyQuestions(data)) await saveQuestions(data);
+        const incoming = data && data.questions ? data.questions.length : 0;
+        if (incoming > questionsData.length && applyQuestions(data)) {
+            await saveQuestions(data);
+        }
     } catch (error) {
         console.error('❌ Error cargando preguntas:', error);
     }
@@ -264,9 +278,6 @@ function processQuestions(questions) {
                 answers: q.answers.map(a => a.es),
                 correctIndex: q.correctIndex,
                 category: categorizeQuestion(q),
-                difficulty: calculateDifficulty(q, index),
-                importance: calculateImportance(q, index),
-                frequency: calculateFrequency(index),
                 source: q.source,
                 explanation: q.explanation || '',
                 image: (q.image && String(q.image).startsWith('assets/')) ? q.image : ''
@@ -295,50 +306,6 @@ function categorizeQuestion(q) {
     if (text.includes('documento') || text.includes('permiso')) return 'Documentación';
     
     return 'General';
-}
-
-function calculateDifficulty(q, index) {
-    let score = 0;
-    const text = q.question.es;
-    
-    if (text.length > 100) score += 1;
-    if (text.length > 150) score += 1;
-    
-    const technicalTerms = ['calzada', 'arcén', 'carril', 'vehículo prioritario', 'ciclo', 'intersección'];
-    technicalTerms.forEach(term => {
-        if (text.toLowerCase().includes(term)) score += 0.5;
-    });
-    
-    if (q.images && q.images.length > 0) score += 1;
-    
-    if (index < 50) score -= 0.5;
-    if (index > 300) score += 1;
-    
-    const normalized = Math.min(5, Math.max(1, Math.round(score)));
-    
-    return normalized;
-}
-
-function calculateImportance(q, index) {
-    let score = 3;
-    const text = q.question.es.toLowerCase();
-    
-    if (text.includes('alcohol') || text.includes('droga')) score = 5;
-    if (text.includes('velocidad')) score = 5;
-    if (text.includes('peatón') || text.includes('niño')) score = 5;
-    if (text.includes('señal de stop') || text.includes('prioridad')) score = 5;
-    if (text.includes('distancia de seguridad')) score = 5;
-    
-    if (text.includes('adelantamiento')) score = Math.max(score, 4);
-    if (text.includes('luz') || text.includes('alumbrado')) score = Math.max(score, 4);
-    if (text.includes('túnel') || text.includes('autopista')) score = Math.max(score, 4);
-    
-    return score;
-}
-
-function calculateFrequency(index) {
-    const randomFactor = Math.random() * 0.3 + 0.7;
-    return Math.round((questionsData[index]?.importance || 3) * randomFactor * 20);
 }
 
 // ============================================
@@ -547,6 +514,18 @@ function getMasteredQuestions() {
     return mastered;
 }
 
+function needsReview(questionId) {
+    const history = userStats.questionHistory[questionId];
+    if (!history) return false;
+    return (history.wrong || 0) > 0 || (history.doubts || 0) > 0;
+}
+
+function updateReviewChip(questionId) {
+    const chip = document.getElementById('reviewChip');
+    if (!chip) return;
+    chip.classList.toggle('hidden', !needsReview(questionId));
+}
+
 function shouldReviewQuestion(questionId, now) {
     const history = userStats.questionHistory[questionId];
     if (!history || !history.lastAnswered) return true;
@@ -585,6 +564,7 @@ function markAsDoubt() {
     btn.style.border = '2px solid var(--success)';
     btn.style.color = 'var(--success)';
     btn.disabled = true;
+    updateReviewChip(question.id);
 }
 
 // ============================================
@@ -662,7 +642,7 @@ function loadQuestion() {
     
     // Update question
     document.getElementById('questionCategory').textContent = question.category;
-    document.getElementById('questionDifficulty').textContent = '★'.repeat(question.difficulty) + '☆'.repeat(5 - question.difficulty);
+    updateReviewChip(question.id);
     document.getElementById('questionText').textContent = question.question;
     
     const imageContainer = document.getElementById('questionImage');
@@ -728,6 +708,7 @@ function selectAnswer(selectedIndex) {
     userStats.questionHistory[question.id].lastAnswered = Date.now();
     
     saveUserStats();
+    updateReviewChip(question.id);
     
     if (testMode === 'practice' || testMode === 'daily') {
         showExplanation(isCorrect, question);
@@ -757,11 +738,11 @@ function showExplanation(isCorrect, question) {
     if (isCorrect) {
         icon.textContent = '✅';
         title.textContent = '¡Correcto!';
-        text.innerHTML = `<div style="margin-bottom: 16px; font-size: 16px;">Has seleccionado la respuesta correcta.</div>${explanationHTML}`;
+        text.innerHTML = `<div class="explanation-lead">Has seleccionado la respuesta correcta.</div>${explanationHTML}`;
     } else {
         icon.textContent = '❌';
         title.textContent = 'Incorrecto';
-        text.innerHTML = `<div style="margin-bottom: 16px; font-size: 16px; padding: 12px; background: rgba(217,119,87,0.1); border-radius: 16px; border-left: 3px solid var(--error);"><strong>La respuesta correcta es:</strong><br/>"${question.answers[question.correctIndex]}"</div>${explanationHTML}`;
+        text.innerHTML = `<div class="explanation-lead"><strong>La respuesta correcta es:</strong><br/>"${question.answers[question.correctIndex]}"</div>${explanationHTML}`;
     }
     
     card.classList.remove('hidden');
@@ -823,9 +804,6 @@ async function showLibrary() {
 
 function filterQuestions() {
     const category = document.getElementById('categoryFilter').value;
-    const difficulty = document.getElementById('difficultyFilter').value;
-    const sortBy = document.getElementById('sortBy').value;
-    
     let filtered = [...questionsData];
     
     if (category !== 'all') {
@@ -837,18 +815,6 @@ function filterQuestions() {
         };
         filtered = filtered.filter(q => q.category === categoryMap[category]);
     }
-    
-    if (difficulty !== 'all') {
-        const diffMap = { 'easy': [1, 2], 'medium': [3], 'hard': [4, 5] };
-        filtered = filtered.filter(q => diffMap[difficulty].includes(q.difficulty));
-    }
-    
-    filtered.sort((a, b) => {
-        if (sortBy === 'importance') return b.importance - a.importance;
-        if (sortBy === 'difficulty') return b.difficulty - a.difficulty;
-        if (sortBy === 'frequency') return b.frequency - a.frequency;
-        return 0;
-    });
     
     displayQuestions(filtered);
 }
@@ -896,17 +862,14 @@ function appendLibraryPage() {
             </button>
             <div class="question-item-header">
                 <span class="question-category">${q.category}</span>
-                <span class="question-difficulty">${'★'.repeat(q.difficulty)}${'☆'.repeat(5 - q.difficulty)}</span>
+                ${needsReview(q.id) ? '<span class="review-chip">Necesitas repasarlo</span>' : ''}
             </div>
             ${illustrationHTML || ''}
             <div class="question-item-text" style="margin-top: 16px;">${q.question}</div>
             
-            <div class="all-answers-box" style="margin-top: 16px; padding: 16px; background: rgba(255, 255, 255, 0.03); border-radius: 16px;">
-                <div style="font-size: 11px; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px;">
-                    📝 Opciones de Respuesta
-                </div>
+            <div class="library-answers">
                 ${q.answers.map((answer, idx) => `
-                    <div style="padding: 12px; margin: 8px 0; border-radius: 16px; font-size: 15px; ${idx === q.correctIndex ? 'background: rgba(139, 154, 122, 0.15); border-left: 4px solid var(--success); font-weight: 600;' : 'background: rgba(255, 255, 255, 0.02); border-left: 4px solid transparent;'}">
+                    <div class="library-answer${idx === q.correctIndex ? ' is-correct' : ''}">
                         ${idx === q.correctIndex ? '✓ ' : ''}${answer}
                     </div>
                 `).join('')}
@@ -919,10 +882,6 @@ function appendLibraryPage() {
                 <div id="explanation-${index}" class="explanation-content" style="display: none; margin-top: 12px; padding: 20px; background: linear-gradient(135deg, rgba(217, 119, 87, 0.08) 0%, rgba(139, 154, 122, 0.08) 100%); border-radius: 16px; border: 1px solid var(--border-color);"></div>
             </div>
             
-            <div style="margin-top: 12px; font-size: 12px; color: var(--text-secondary);">
-                <span>📊 Importancia: ${q.importance}/5</span> · 
-                <span>📈 Frecuencia: ${q.frequency}%</span>
-            </div>
         `;
 
         item.querySelector('.menu-button').addEventListener('click', (e) => {
@@ -952,10 +911,10 @@ function toggleExplanation(index) {
 
     if (!content.dataset.ready) {
         const q = libraryList[index];
-        const explanation = q.explanation || generateExplanation(q);
+        const explanation = q.explanation ? softenCaps(q.explanation) : generateExplanation(q);
         content.innerHTML = `
-                    <div style="font-size: 12px; color: var(--success); font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px;">
-                        ✓ ¿Por qué es correcta?
+                    <div style="font-size: 12px; color: var(--success); font-weight: 700; margin-bottom: 12px;">
+                        ¿Por qué es correcta?
                     </div>
                     <div style="font-size: 15px; line-height: 1.7; color: var(--text-primary);">
                         ${explanation}
@@ -975,6 +934,16 @@ function toggleExplanation(index) {
         button.style.background = 'rgba(217, 119, 87, 0.1)';
         button.style.color = 'var(--primary-warm)';
     }
+}
+
+function softenCaps(text) {
+    if (!text || typeof text !== 'string') return text;
+    const letters = text.replace(/[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/g, '');
+    if (!letters) return text;
+    const upper = (letters.match(/[A-ZÁÉÍÓÚÜÑ]/g) || []).length;
+    if (upper / letters.length < 0.55) return text;
+    const lower = text.toLocaleLowerCase('es');
+    return lower.replace(/(^|[.!?¿¡\n]\s*)(\p{L})/gu, (_, p, c) => p + c.toLocaleUpperCase('es'));
 }
 
 function generateExplanation(question) {
@@ -1023,7 +992,7 @@ function generateExplanation(question) {
 // Genera el razonamiento de por qué la respuesta es correcta
 function generateCorrectReasoning(questionText, correctAnswer, baseExplanation) {
     if (baseExplanation) {
-        return baseExplanation;
+        return softenCaps(baseExplanation);
     }
     
     if (questionText.includes('arcén')) {
@@ -1151,6 +1120,8 @@ async function showGlossary() {
 
 function loadGlossary() {
     const container = document.getElementById('glossaryGrid');
+    if (container.dataset.ready === '1') return;
+    container.dataset.ready = '1';
     container.innerHTML = '';
 
     glossaryDgt.forEach(item => {
@@ -1245,53 +1216,11 @@ let currentFeedbackQuestionId = null;
 let selectedPhoto = null;
 let currentLibraryQuestion = null;
 
-// Initialize feedback system
-document.addEventListener('DOMContentLoaded', () => {
-    // Menu button in test view
-    const menuButton = document.getElementById('questionMenuButton');
-    if (menuButton) {
-        menuButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleFeedbackMenu();
-        });
-    }
-    
-    // Menu items
-    const menuItems = document.querySelectorAll('.feedback-menu-item');
-    menuItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const action = item.dataset.action;
-            handleFeedbackAction(action);
-        });
-    });
-    
-    // Photo modal
-    document.getElementById('selectPhotoBtn')?.addEventListener('click', selectPhoto);
-    document.getElementById('cancelPhotoBtn')?.addEventListener('click', closePhotoModal);
-    document.getElementById('submitPhotoBtn')?.addEventListener('click', submitPhoto);
-    document.getElementById('photoInput')?.addEventListener('change', handlePhotoSelect);
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        const menu = document.getElementById('feedbackMenu');
-        const menuButton = document.getElementById('questionMenuButton');
-        if (!menu?.contains(e.target) && e.target !== menuButton) {
-            closeFeedbackMenu();
-        }
-    });
-    
-    // Close modal when clicking backdrop
-    document.getElementById('photoModal')?.addEventListener('click', (e) => {
-        if (e.target.id === 'photoModal') {
-            closePhotoModal();
-        }
-    });
-});
-
 function toggleFeedbackMenu() {
     const menu = document.getElementById('feedbackMenu');
     const question = currentTest[currentQuestionIndex];
-    
+    if (!question) return;
+
     if (menu.classList.contains('hidden')) {
         currentFeedbackQuestionId = question.id;
         menu.classList.remove('hidden');
@@ -1303,6 +1232,7 @@ function toggleFeedbackMenu() {
 
 function closeFeedbackMenu() {
     const menu = document.getElementById('feedbackMenu');
+    if (!menu || menu.classList.contains('hidden')) return;
     menu.style.animation = 'slideDown 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
     setTimeout(() => {
         menu.classList.add('hidden');

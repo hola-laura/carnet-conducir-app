@@ -1,0 +1,18 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Sun" clip-path="url(#clip0_0_14)">
+<circle id="Ellipse" cx="10" cy="10" r="4" fill="white" style="fill:white;fill-opacity:1;"/>
+<line id="Line" x1="17.25" y1="8.75" x2="18.25" y2="8.75" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="2.5" stroke-linecap="round"/>
+<line id="Line_2" x1="16.0104" y1="14.2426" x2="16.7175" y2="14.9497" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="2.5" stroke-linecap="round"/>
+<line id="Line_3" x1="11.25" y1="17.25" x2="11.25" y2="18.25" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="2.5" stroke-linecap="round"/>
+<line id="Line_4" x1="5.75736" y1="16.0104" x2="5.05025" y2="16.7175" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="2.5" stroke-linecap="round"/>
+<line id="Line_5" x1="2.75" y1="11.25" x2="1.75" y2="11.25" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="2.5" stroke-linecap="round"/>
+<line id="Line_6" x1="3.98959" y1="5.75736" x2="3.28249" y2="5.05025" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="2.5" stroke-linecap="round"/>
+<line id="Line_7" x1="8.75" y1="2.75" x2="8.75" y2="1.75" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="2.5" stroke-linecap="round"/>
+<line id="Line_8" x1="14.2426" y1="3.98959" x2="14.9497" y2="3.28249" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="2.5" stroke-linecap="round"/>
+</g>
+<defs>
+<clipPath id="clip0_0_14">
+<rect width="20" height="20" fill="white" style="fill:white;fill-opacity:1;"/>
+</clipPath>
+</defs>
+</svg>

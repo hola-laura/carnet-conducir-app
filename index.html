@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -19,8 +19,11 @@
         <div id="homeView" class="view active">
             <!-- Dark/Light Mode Toggle -->
             <div class="theme-toggle">
-                <button id="themeButton" class="theme-button" aria-label="Toggle theme">
-                    <span class="theme-icon">🌙</span>
+                <button id="themeButton" class="theme-switch" type="button" aria-label="Cambiar tema" aria-pressed="false">
+                    <span class="theme-knob">
+                        <img class="theme-icon-moon" src="assets/icon-moon.svg" width="14" height="14" alt="">
+                        <img class="theme-icon-sun" src="assets/icon-sun.svg" width="20" height="20" alt="">
+                    </span>
                 </button>
             </div>
             
@@ -131,7 +134,7 @@
                     <div class="question-header">
                         <div class="question-header-left">
                             <span class="question-category" id="questionCategory">Señales</span>
-                            <span class="question-difficulty" id="questionDifficulty">★★★☆☆</span>
+                            <span class="review-chip hidden" id="reviewChip">Necesitas repasarlo</span>
                         </div>
                         <button class="menu-button" id="questionMenuButton" aria-label="Opciones de pregunta">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -164,33 +167,6 @@
                     </div>
                     <p id="explanationText"></p>
                 </div>
-            </div>
-            
-            <!-- Feedback Menu Dropdown -->
-            <div id="feedbackMenu" class="feedback-menu hidden">
-                <button class="feedback-menu-item" data-action="wrong_question">
-                    <span class="feedback-icon">⚠️</span>
-                    <span class="feedback-text">La pregunta está mal formulada</span>
-                </button>
-                <button class="feedback-menu-item" data-action="wrong_answer">
-                    <span class="feedback-icon">⚠️</span>
-                    <span class="feedback-text">La respuesta correcta es otra</span>
-                </button>
-                <button class="feedback-menu-item" data-action="wrong_explanation">
-                    <span class="feedback-icon">⚠️</span>
-                    <span class="feedback-text">La explicación es incorrecta</span>
-                </button>
-                <button class="feedback-menu-item" data-action="attach_photo">
-                    <span class="feedback-icon">📷</span>
-                    <span class="feedback-text">Adjuntar evidencia (foto)</span>
-                </button>
-                <button class="feedback-menu-item" data-action="suggestion">
-                    <span class="feedback-icon">💬</span>
-                    <span class="feedback-text">Sugerencia general</span>
-                </button>
-                <button class="feedback-menu-item cancel" data-action="cancel">
-                    <span class="feedback-text">Cancelar</span>
-                </button>
             </div>
         </div>
 
@@ -244,24 +220,6 @@
                     </select>
                 </div>
 
-                <div class="filter-group">
-                    <label>Dificultad</label>
-                    <select id="difficultyFilter">
-                        <option value="all">Todas</option>
-                        <option value="easy">Fácil</option>
-                        <option value="medium">Media</option>
-                        <option value="hard">Difícil</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label>Ordenar por</label>
-                    <select id="sortBy">
-                        <option value="importance">Importancia</option>
-                        <option value="difficulty">Dificultad</option>
-                        <option value="frequency">Frecuencia en examen</option>
-                    </select>
-                </div>
             </div>
 
             <div class="questions-list" id="questionsList"></div>
@@ -280,6 +238,32 @@
 
     </div>
     
+    <div id="feedbackMenu" class="feedback-menu hidden">
+        <button class="feedback-menu-item" data-action="wrong_question">
+            <span class="feedback-icon">⚠️</span>
+            <span class="feedback-text">La pregunta está mal formulada</span>
+        </button>
+        <button class="feedback-menu-item" data-action="wrong_answer">
+            <span class="feedback-icon">⚠️</span>
+            <span class="feedback-text">La respuesta correcta es otra</span>
+        </button>
+        <button class="feedback-menu-item" data-action="wrong_explanation">
+            <span class="feedback-icon">⚠️</span>
+            <span class="feedback-text">La explicación es incorrecta</span>
+        </button>
+        <button class="feedback-menu-item" data-action="attach_photo">
+            <span class="feedback-icon">📷</span>
+            <span class="feedback-text">Adjuntar evidencia (foto)</span>
+        </button>
+        <button class="feedback-menu-item" data-action="suggestion">
+            <span class="feedback-icon">💬</span>
+            <span class="feedback-text">Sugerencia general</span>
+        </button>
+        <button class="feedback-menu-item cancel" data-action="cancel">
+            <span class="feedback-text">Cancelar</span>
+        </button>
+    </div>
+
     <div id="screenLoader" class="screen-loader hidden" aria-live="polite">
         <div class="loader-car">🚗</div>
         <p class="loader-label">Cargando</p>

@@ -444,6 +444,9 @@ function getQuestionIllustration(question) {
     if (questionText.includes('rotonda') || questionText.includes('glorieta')) {
         return wrapSVG(createRoundaboutSign());
     }
+    if (questionText.includes('animales') && questionText.includes('prioridad')) {
+        return wrapSVG(createAnimalsCrossing());
+    }
     if (questionText.includes('tractor')) {
         return wrapSVG(createTractorOnShoulder());
     }
@@ -528,6 +531,33 @@ function createCoexistenceSign() {
             <rect x="72" y="138" width="12" height="22" rx="3" fill="${DGT_COLORS.white}"/>
             <circle cx="122" cy="132" r="8" fill="${DGT_COLORS.white}"/>
             <rect x="108" y="138" width="28" height="8" rx="3" fill="${DGT_COLORS.white}"/>
+        </svg>
+    `;
+}
+
+function createAnimalsCrossing() {
+    return `
+        <svg viewBox="0 0 280 160" style="width: 260px; height: 148px;">
+            <rect x="0" y="0" width="280" height="160" fill="#4a6b3a"/>
+            <rect x="88" y="0" width="72" height="160" fill="${DGT_COLORS.road}"/>
+            <rect x="160" y="52" width="120" height="56" fill="${DGT_COLORS.road}"/>
+            <rect x="120" y="10" width="6" height="16" fill="${DGT_COLORS.white}"/>
+            <rect x="120" y="36" width="6" height="16" fill="${DGT_COLORS.white}"/>
+            <rect x="176" y="76" width="16" height="6" fill="${DGT_COLORS.white}"/>
+            <rect x="204" y="76" width="16" height="6" fill="${DGT_COLORS.white}"/>
+            <rect x="232" y="76" width="16" height="6" fill="${DGT_COLORS.white}"/>
+            <rect x="104" y="108" width="28" height="42" rx="5" fill="#4989ff"/>
+            <rect x="108" y="112" width="20" height="12" rx="2" fill="#dbeafe"/>
+            <circle cx="110" cy="150" r="5" fill="${DGT_COLORS.black}"/>
+            <circle cx="126" cy="150" r="5" fill="${DGT_COLORS.black}"/>
+            <path d="M118 104 C118 78 150 80 188 80" stroke="${DGT_COLORS.yellow}" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M176 72 L192 80 L176 88" fill="${DGT_COLORS.yellow}"/>
+            <ellipse cx="214" cy="68" rx="14" ry="8" fill="#f5f0e6"/>
+            <circle cx="226" cy="64" r="5" fill="#f5f0e6"/>
+            <ellipse cx="246" cy="90" rx="12" ry="7" fill="#efe6d6"/>
+            <circle cx="256" cy="86" r="4" fill="#efe6d6"/>
+            <text x="118" y="22" text-anchor="middle" fill="${DGT_COLORS.white}" font-size="11" font-weight="700" font-family="Inter, Arial, sans-serif">VEHÍCULO</text>
+            <text x="230" y="148" text-anchor="middle" fill="${DGT_COLORS.white}" font-size="11" font-weight="700" font-family="Inter, Arial, sans-serif">ANIMALES</text>
         </svg>
     `;
 }
