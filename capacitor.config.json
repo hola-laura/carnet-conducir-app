@@ -1,0 +1,9 @@
+{
+  "appId": "com.drivotest.app",
+  "appName": "Drivo Test",
+  "webDir": "www",
+  "ios": {
+    "contentInset": "never",
+    "backgroundColor": "#011434"
+  }
+}

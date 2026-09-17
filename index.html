@@ -2,7 +2,8 @@
 <html lang="es" translate="no">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>if (window.Capacitor) document.documentElement.classList.add('native-app');</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#011434">
@@ -175,7 +176,9 @@
         <!-- Vista de Test -->
         <div id="testView" class="view">
             <div class="test-header glass-container">
-                <button id="exitTestBtn" class="back-button" data-i18n="exit">← Salir</button>
+                <button id="exitTestBtn" class="back-button" type="button" aria-label="Salir" data-i18n-aria="exit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 19l-7-7 7-7"/></svg>
+                </button>
                 <div class="test-info">
                     <span id="questionCounter">1/30</span>
                     <span id="errorsCounter" class="errors">Fallos: 0/3</span>
@@ -262,7 +265,9 @@
         <!-- Vista de Biblioteca -->
         <div id="libraryView" class="view">
             <div class="library-header glass-container">
-                <button id="libraryBackBtn" class="back-button" data-i18n="backHome">← Inicio</button>
+                <button id="libraryBackBtn" class="back-button" type="button" aria-label="Inicio" data-i18n-aria="backHome">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 19l-7-7 7-7"/></svg>
+                </button>
                 <h2 data-i18n="libraryTitle">Biblioteca de Preguntas</h2>
             </div>
 
@@ -286,7 +291,9 @@
         <!-- Vista de Glosario -->
         <div id="glossaryView" class="view">
             <div class="glossary-header glass-container">
-                <button id="glossaryBackBtn" class="back-button" data-i18n="backHome">← Inicio</button>
+                <button id="glossaryBackBtn" class="back-button" type="button" aria-label="Inicio" data-i18n-aria="backHome">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 19l-7-7 7-7"/></svg>
+                </button>
                 <h2 data-i18n="glossary">Glosario Visual</h2>
                 <p class="subtitle" data-i18n="glossarySubtitle">Palabras de la vía. Texto y fotos oficiales de la DGT.</p>
             </div>
