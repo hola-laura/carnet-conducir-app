@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 :root {
     /* ========================================
        MOODIST NEUTRAL PALETTE
@@ -129,8 +141,55 @@ body.light-mode {
     max-width: 600px;
     margin: 0 auto;
     min-height: 100vh;
+    min-height: 100dvh;
     position: relative;
     padding-bottom: var(--space-xl);
+    background: var(--bg-black);
+}
+
+@media (min-width: 480px) {
+    html,
+    body,
+    body.light-mode {
+        background: #ffffff;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        overflow: hidden;
+    }
+
+    .app-container {
+        width: 402px;
+        max-width: 402px;
+        height: min(874px, calc(100dvh - 48px));
+        min-height: 0;
+        padding-bottom: 0;
+        border-radius: 48px;
+        overflow: hidden;
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.14);
+    }
+
+    #landingView {
+        min-height: 100%;
+        height: 100%;
+    }
+
+    .view.active:not(#landingView) {
+        height: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .screen-loader,
+    .feedback-menu,
+    .toast,
+    .modal {
+        position: absolute;
+    }
 }
 
 .glass-container {
@@ -273,7 +332,8 @@ body.light-mode {
 
 #landingView {
     position: relative;
-    min-height: 100vh;
+    min-height: 100%;
+    height: 100%;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -361,6 +421,10 @@ body.light-mode .home-logo-light {
     padding-top: 8px;
 }
 
+#homeView .header-section {
+    padding-top: 40px;
+}
+
 #homeView .app-title {
     font-size: 32px;
     font-weight: 700;
@@ -370,8 +434,10 @@ body.light-mode .home-logo-light {
 .home-bar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 8px;
     min-height: 36px;
-    padding-top: 8px;
+    padding-top: 0;
 }
 
 .streak-chip {
@@ -621,11 +687,11 @@ body.light-mode .level-fill {
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    top: var(--space-md);
+    top: 0;
     z-index: 100;
-    margin-bottom: var(--space-md);
+    margin: 0;
     background: var(--bg-black);
-    padding: var(--space-sm) var(--space-md);
+    padding: 24px 24px 12px;
 }
 
 .back-button {
@@ -669,7 +735,7 @@ body.light-mode .level-fill {
     background: var(--surface-ghost);
     border-radius: 2px;
     overflow: hidden;
-    margin-bottom: var(--space-lg);
+    margin-bottom: 16px;
 }
 
 .progress-fill {
@@ -681,7 +747,8 @@ body.light-mode .level-fill {
 }
 
 .question-container {
-    padding: 0 24px;
+    margin: 0;
+    padding: 0 24px 24px;
 }
 
 .question-card {
@@ -1279,111 +1346,56 @@ body.light-mode .library-answer.is-correct {
 }
 
 .theme-toggle {
-    position: fixed;
-    top: 24px;
-    right: 24px;
-    z-index: 1000;
+    position: relative;
+    z-index: 1;
     display: flex;
     gap: 8px;
     align-items: center;
+    flex-shrink: 0;
 }
 
-.lang-switch {
-    position: relative;
-    width: 72px;
+.lang-switch,
+.theme-switch {
+    width: 36px;
     height: 36px;
     padding: 0;
     border: none;
-    border-radius: 50px;
-    background: #224d5f;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.light-mode .lang-switch,
+body.light-mode .theme-switch {
+    background: rgba(0, 0, 0, 0.06);
 }
 
 .lang-flag {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1;
     pointer-events: none;
 }
 
-.lang-flag-en { left: 7px; }
-.lang-flag-es { right: 7px; }
+.lang-flag-en { display: none; }
 
-.lang-knob {
-    position: absolute;
-    top: 2px;
-    left: 38px;
-    width: 32px;
-    height: 32px;
-    border-radius: 16px;
-    background: #6692a4;
-    transition: left 0.25s ease, background 0.25s ease;
-}
-
-body.lang-en .lang-knob {
-    left: 2px;
-}
-
-body.light-mode .lang-switch {
-    background: #d7e4f5;
-    border: 1px solid #e5e7eb;
-}
-
-body.light-mode .lang-knob {
-    background: #ffffff;
-}
-
-.theme-switch {
-    position: relative;
-    width: 72px;
-    height: 36px;
-    padding: 0;
-    border: none;
-    border-radius: 50px;
-    background: #224d5f;
-    cursor: pointer;
-}
-
-.theme-knob {
-    position: absolute;
-    top: 2px;
-    left: 38px;
-    width: 32px;
-    height: 32px;
-    border-radius: 16px;
-    background: #6692a4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: left 0.25s ease, background 0.25s ease, width 0.25s ease, height 0.25s ease, top 0.25s ease;
-}
+body.lang-en .lang-flag-en { display: block; }
+body.lang-en .lang-flag-es { display: none; }
 
 .theme-icon-moon {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     display: block;
 }
 
 .theme-icon-sun {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     display: none;
-}
-
-body.light-mode .theme-switch {
-    background: #f5e6c8;
-    border: 1px solid #e5e7eb;
-}
-
-body.light-mode .theme-knob {
-    top: 3px;
-    left: 2px;
-    width: 28px;
-    height: 28px;
-    background: #e8a838;
 }
 
 body.light-mode .theme-icon-moon {
@@ -1392,6 +1404,7 @@ body.light-mode .theme-icon-moon {
 
 body.light-mode .theme-icon-sun {
     display: block;
+    filter: brightness(0);
 }
 
 @keyframes fadeIn {
@@ -1567,8 +1580,8 @@ body {
     }
     
     .test-header {
-        padding: 12px 24px;
-        margin: 8px 0;
+        padding: 24px 24px 12px;
+        margin: 0;
     }
     
     .back-button {
@@ -1611,11 +1624,6 @@ body {
     .filter-group select {
         padding: 10px 14px;
         font-size: 13px;
-    }
-    
-    .theme-toggle {
-        top: 20px;
-        right: 20px;
     }
     
     .glossary-grid {
@@ -1719,7 +1727,7 @@ body {
 }
 
 #homeView .glass-container {
-    padding: 8px 24px 40px;
+    padding: 24px 24px 40px;
     margin: 0;
 }
 
@@ -1769,7 +1777,7 @@ body.light-mode #homeView .stat-card {
 }
 
 body.light-mode #homeView .glass-container {
-    padding: 8px 24px 40px;
+    padding: 24px 24px 40px;
     margin: 0;
 }
 

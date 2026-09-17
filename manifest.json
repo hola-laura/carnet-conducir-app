@@ -1,12 +1,14 @@
 {
     "name": "Drivo Test",
     "short_name": "Drivo Test",
-    "description": "Tests de preparación para el permiso B de conducir en España",
-    "start_url": "/index.html",
+    "description": "Tests gratis para el carnet B: preguntas tipo examen DGT, modo práctica y glosario visual.",
+    "start_url": "./index.html",
+    "scope": "./",
     "display": "standalone",
-    "background_color": "#667eea",
-    "theme_color": "#007AFF",
+    "background_color": "#011434",
+    "theme_color": "#011434",
     "orientation": "portrait-primary",
+    "lang": "es",
     "icons": [
         {
             "src": "assets/icon.svg",

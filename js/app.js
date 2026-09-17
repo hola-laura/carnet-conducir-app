@@ -23,6 +23,9 @@ const I18N = {
         changeLanguage: 'Cambiar idioma',
         changeTheme: 'Cambiar tema',
         homeSubtitle: 'Prácticas para el carné B',
+        docTitle: 'Drivo Test — Test del carnet B (España)',
+        docDescription: 'Tests gratis para el carnet B: preguntas tipo examen DGT, modo práctica y glosario visual. No afiliada a la DGT.',
+        landingLead: 'Tests gratis para el carnet B y el permiso de conducir en España.',
         setupTitle: 'Personaliza tu preparación',
         setupSubtitle: 'Opcional - puedes configurarlo después',
         examDate: 'Fecha de examen',
@@ -43,6 +46,7 @@ const I18N = {
         statReview: 'A repasar',
         statAccuracy: 'Acierto',
         streakUnit: 'días',
+        streakUnitOne: 'día',
         levelN: 'Nivel {n}',
         examOfficial: 'Examen oficial',
         examMeta: '30 preguntas · Máx 3 fallos',
@@ -51,7 +55,7 @@ const I18N = {
         library: 'Biblioteca',
         libraryMeta: 'Explora todas las preguntas',
         glossary: 'Glosario visual',
-        glossaryMeta: 'Señales explicadas',
+        glossaryMeta: 'Palabras de la vía, con fotos DGT',
         disclaimer: 'Esta app no está afiliada ni respaldada por la DGT',
         exit: '← Salir',
         errors: 'Fallos: {n}/3',
@@ -122,6 +126,9 @@ const I18N = {
         changeLanguage: 'Change language',
         changeTheme: 'Change theme',
         homeSubtitle: 'Practice for licence B',
+        docTitle: 'Drivo Test — Spain driving licence B tests',
+        docDescription: 'Free practice tests for Spain’s licence B: DGT-style questions, practice mode and a visual glossary. Not affiliated with the DGT.',
+        landingLead: 'Free practice tests for Spain’s licence B driving exam.',
         setupTitle: 'Personalise your prep',
         setupSubtitle: 'Optional — you can do this later',
         examDate: 'Exam date',
@@ -142,6 +149,7 @@ const I18N = {
         statReview: 'To review',
         statAccuracy: 'Accuracy',
         streakUnit: 'days',
+        streakUnitOne: 'day',
         levelN: 'Level {n}',
         examOfficial: 'Official exam',
         examMeta: '30 questions · Max 3 mistakes',
@@ -150,7 +158,7 @@ const I18N = {
         library: 'Library',
         libraryMeta: 'Browse all questions',
         glossary: 'Visual glossary',
-        glossaryMeta: 'Signs explained',
+        glossaryMeta: 'Road words, with DGT photos',
         disclaimer: 'This app is not affiliated with or endorsed by the DGT',
         exit: '← Exit',
         errors: 'Mistakes: {n}/3',
@@ -257,6 +265,19 @@ function applyI18n() {
     if (credit) credit.textContent = t('glossaryCredit');
     const langBtn = document.getElementById('langButton');
     if (langBtn) langBtn.setAttribute('aria-pressed', currentLang === 'en' ? 'true' : 'false');
+    document.title = t('docTitle');
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute('content', t('docDescription'));
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', t('docTitle'));
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', t('docDescription'));
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.setAttribute('content', t('docTitle'));
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) twDesc.setAttribute('content', t('docDescription'));
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) ogLocale.setAttribute('content', currentLang === 'en' ? 'en_GB' : 'es_ES');
 }
 
 function toggleLang() {
@@ -1556,7 +1577,10 @@ function updateHomeStats() {
         ? Math.round((userStats.totalCorrect / userStats.totalAnswered) * 100)
         : 0;
     document.getElementById('accuracyStat').textContent = `${acc}%`;
-    document.getElementById('streakCount').textContent = getStudyStreak();
+    const streakN = getStudyStreak();
+    document.getElementById('streakCount').textContent = streakN;
+    const streakUnit = document.getElementById('streakUnit');
+    if (streakUnit) streakUnit.textContent = streakN === 1 ? t('streakUnitOne') : t('streakUnit');
     const level = getLevelInfo();
     document.getElementById('levelLabel').textContent = t('levelN', { n: level.level });
     document.getElementById('levelXp').textContent = `${level.into} / ${level.per} XP`;
