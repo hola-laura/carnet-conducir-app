@@ -5,5 +5,12 @@
   "ios": {
     "contentInset": "never",
     "backgroundColor": "#011434"
+  },
+  "plugins": {
+    "StatusBar": {
+      "overlaysWebView": false,
+      "style": "LIGHT",
+      "backgroundColor": "#011434"
+    }
   }
 }

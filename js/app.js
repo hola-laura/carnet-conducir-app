@@ -346,10 +346,26 @@ function syncThemeButton() {
     if (btn) btn.setAttribute('aria-pressed', document.body.classList.contains('light-mode') ? 'true' : 'false');
 }
 
+function isNativeApp() {
+    return !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+}
+
+function syncNativeChrome() {
+    if (!isNativeApp()) return;
+    document.documentElement.classList.add('native-app');
+    const Bar = window.Capacitor.Plugins && window.Capacitor.Plugins.StatusBar;
+    if (!Bar) return;
+    const light = document.body.classList.contains('light-mode');
+    Bar.setOverlaysWebView({ overlay: false });
+    Bar.setBackgroundColor({ color: light ? '#edf4ff' : '#011434' });
+    Bar.setStyle({ style: light ? 'DARK' : 'LIGHT' });
+}
+
 function toggleTheme() {
     document.body.classList.toggle('light-mode');
     localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
     syncThemeButton();
+    syncNativeChrome();
 }
 
 function loadTheme() {
@@ -357,6 +373,7 @@ function loadTheme() {
         document.body.classList.add('light-mode');
     }
     syncThemeButton();
+    syncNativeChrome();
 }
 
 // ============================================
@@ -365,6 +382,7 @@ function loadTheme() {
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
+        if (isNativeApp()) document.documentElement.classList.add('native-app');
         loadUserStats();
         loadTheme();
         loadLang();
