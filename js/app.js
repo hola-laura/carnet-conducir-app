@@ -526,13 +526,10 @@ function initializeEventListeners() {
         glossaryBackBtn.addEventListener('click', goHome);
     }
 
-    const menuButton = document.getElementById('questionMenuButton');
-    if (menuButton) {
-        menuButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleFeedbackMenu();
-        });
-    }
+    document.getElementById('questionReportBtn')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleFeedbackMenu();
+    });
 
     document.querySelectorAll('.feedback-menu-item').forEach(item => {
         item.addEventListener('click', () => handleFeedbackAction(item.dataset.action));
@@ -1171,21 +1168,12 @@ async function showExplanation(isCorrect, question) {
     const text = document.getElementById('explanationText');
     const explanationHTML = getExplanationText(question);
     let bodyHTML = explanationHTML;
-    let correctAnswer = question.answers[question.correctIndex];
 
-    if (currentLang === 'en' && (explanationHTML || !isCorrect)) {
+    if (currentLang === 'en' && explanationHTML) {
         const tmp = document.createElement('div');
         tmp.innerHTML = explanationHTML;
-        const jobs = [translateText(correctAnswer)];
-        if (explanationHTML) jobs.unshift(translateText(tmp.textContent.trim()));
-        const out = await Promise.all(jobs);
-        if (explanationHTML) {
-            tmp.textContent = out[0];
-            bodyHTML = tmp.innerHTML;
-            correctAnswer = out[1];
-        } else {
-            correctAnswer = out[0];
-        }
+        tmp.textContent = await translateText(tmp.textContent.trim());
+        bodyHTML = tmp.innerHTML;
     }
 
     if (isCorrect) {
@@ -1199,9 +1187,7 @@ async function showExplanation(isCorrect, question) {
         header.classList.remove('hidden');
         icon.textContent = '❌';
         title.textContent = t('incorrect');
-        const lead = `<div class="explanation-lead"><strong>${t('wrongLead')}</strong><br/>"${correctAnswer}"</div>`;
-        const extra = bodyHTML ? `<div class="explanation-section">${bodyHTML}</div>` : '';
-        text.innerHTML = lead + extra;
+        text.innerHTML = bodyHTML ? `<div class="explanation-section">${bodyHTML}</div>` : '';
     }
     card.classList.remove('hidden');
 }
@@ -1278,8 +1264,8 @@ function filterQuestions() {
 
     if (query) {
         filtered = filtered.filter(q => {
-            const answers = (q.answers || []).join(' ');
-            return normalizeSearch(`${q.question} ${answers} ${q.explanation || ''} ${q.category || ''}`).includes(query);
+            const haystack = `${q.question || ''} ${q.answers?.[q.correctIndex] || ''} ${q.explanation || ''}`;
+            return normalizeSearch(haystack).includes(query);
         });
     }
     
