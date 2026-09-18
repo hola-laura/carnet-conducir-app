@@ -118,10 +118,10 @@
                         <div class="stat-number" id="completedQuestions">0</div>
                         <div class="stat-label" data-i18n="statDone">Hechas</div>
                     </div>
-                    <div class="stat-card glass-card">
+                    <button type="button" class="stat-card glass-card" id="reviewStatBtn">
                         <div class="stat-number" id="weakTopics">0</div>
                         <div class="stat-label" data-i18n="statReview">A repasar</div>
-                    </div>
+                    </button>
                     <div class="stat-card glass-card">
                         <div class="stat-number" id="accuracyStat">0%</div>
                         <div class="stat-label" data-i18n="statAccuracy">Acierto</div>
@@ -212,13 +212,14 @@
                     
                     <div class="answers-container" id="answersContainer"></div>
                     
-                    <button class="doubt-button glass-button hidden" id="doubtButton" data-i18n="doubt">
-                        🤔 He dudado con esta
-                    </button>
-                    
-                    <button class="next-button glass-button primary hidden" id="nextButton" data-i18n="next">
-                        Siguiente →
-                    </button>
+                    <div class="question-actions">
+                        <button class="doubt-button glass-button hidden" id="doubtButton" data-i18n="doubt">
+                            Tengo dudas
+                        </button>
+                        <button class="next-button glass-button primary hidden" id="nextButton" data-i18n="next">
+                            Siguiente →
+                        </button>
+                    </div>
                 </div>
 
                 <div class="question-explanation glass-card hidden" id="explanationCard">
@@ -264,14 +265,20 @@
 
         <!-- Vista de Biblioteca -->
         <div id="libraryView" class="view">
-            <div class="library-header glass-container">
+            <div class="page-back-bar">
                 <button id="libraryBackBtn" class="back-button" type="button" aria-label="Inicio" data-i18n-aria="backHome">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 19l-7-7 7-7"/></svg>
                 </button>
+            </div>
+            <div class="library-header glass-container">
                 <h2 data-i18n="libraryTitle">Biblioteca de Preguntas</h2>
             </div>
 
             <div class="filters glass-container">
+                <label class="library-search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+                    <input id="librarySearch" type="search" autocomplete="off" enterkeyhint="search" data-i18n-placeholder="searchPlaceholder" placeholder="Buscar">
+                </label>
                 <div class="filter-group">
                     <label data-i18n="category">Categoría</label>
                     <select id="categoryFilter">

@@ -204,7 +204,7 @@ html.native-app body {
     overflow-x: hidden;
 }
 
-html.native-app .library-header,
+html.native-app .page-back-bar,
 html.native-app .glossary-header,
 html.native-app .test-header {
     padding-top: 24px;
@@ -851,12 +851,13 @@ body.light-mode .question-category {
 }
 
 .question-text {
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.3;
     margin-bottom: 16px;
     color: var(--text-primary);
     letter-spacing: 0;
+    hyphens: none;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -874,21 +875,20 @@ body.light-mode .question-category {
 
 .question-image {
     width: 100%;
-    height: 220px;
+    height: auto;
     margin-bottom: 16px;
-    border-radius: var(--radius-lg);
+    border-radius: 20px;
     overflow: hidden;
-    border: 1px solid var(--border-hairline);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .question-image img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    object-position: center;
     display: block;
+    border-radius: 20px;
 }
 
 .answers-container {
@@ -929,53 +929,71 @@ body.light-mode .question-category {
     color: var(--primary-warm);
 }
 
+.answer-button.correct,
+.answer-button.wrong {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+    padding: 14px 16px 14px 14px;
+    border-radius: 28px;
+    border-bottom: none;
+    border: 1.5px solid;
+    text-align: left;
+    opacity: 1;
+}
+
+.answer-button.correct:hover,
+.answer-button.wrong:hover {
+    transform: none;
+    box-shadow: none;
+    color: var(--text-primary);
+}
+
+.answer-button.correct::before,
+.answer-button.wrong::before {
+    content: '';
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px;
+}
+
 .answer-button.correct {
-    border-color: var(--border-hairline);
-    background: transparent;
-    color: var(--success);
+    background: rgba(34, 255, 85, 0.08);
+    border-color: #22FF55;
+    color: var(--text-primary);
     animation: none;
 }
 
-.answer-button.correct::after {
-    content: '✓';
-    position: absolute;
-    right: var(--space-lg);
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--success);
-    animation: checkmark 0.4s var(--transition);
-}
-
-@keyframes correctPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-}
-
-@keyframes checkmark {
-    0% { 
-        transform: scale(0);
-        opacity: 0;
-    }
-    100% { 
-        transform: scale(1);
-        opacity: 1;
-    }
+.answer-button.correct::before {
+    background-color: #22FF55;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23011434' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E");
 }
 
 .answer-button.wrong {
-    border-color: var(--border-hairline);
-    background: transparent;
-    color: var(--error);
+    background: rgba(255, 59, 48, 0.12);
+    border-color: #FF3B30;
+    color: var(--text-primary);
     animation: none;
 }
 
-.answer-button.wrong::after {
-    content: '✗';
-    position: absolute;
-    right: var(--space-lg);
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--error);
+.answer-button.wrong::before {
+    background-color: #FF3B30;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6L6 18'/%3E%3C/svg%3E");
+}
+
+body.light-mode .answer-button.correct {
+    background: #f0fff4;
+    border-color: #16C247;
+}
+
+body.light-mode .answer-button.wrong {
+    background: #fff5f5;
+    border-color: #FF3B30;
 }
 
 .answer-button:disabled {
@@ -983,11 +1001,24 @@ body.light-mode .question-category {
     opacity: 0.7;
 }
 
-.next-button {
-    width: 100%;
-    padding: 18px 24px;
-    font-size: 16px;
+.answer-button.correct:disabled,
+.answer-button.wrong:disabled {
+    opacity: 1;
+}
+
+.question-actions {
+    display: flex;
+    gap: 8px;
     margin-top: 16px;
+    align-items: stretch;
+}
+
+.next-button {
+    flex: 1;
+    width: auto;
+    padding: 14px 16px;
+    font-size: 15px;
+    margin-top: 0;
     font-weight: 600;
 }
 
@@ -1149,20 +1180,24 @@ body.light-mode .explanation-section {
     font-size: 16px;
 }
 
-.library-header {
-    text-align: center;
+.page-back-bar {
     position: sticky;
     top: 0;
-    z-index: 100;
-    background: var(--bg-black);
-    padding: calc(env(safe-area-inset-top, 0px) + 24px) 24px 24px;
+    z-index: 101;
+    padding: calc(env(safe-area-inset-top, 0px) + 24px) 24px 0;
+    pointer-events: none;
+}
+
+.page-back-bar .back-button {
+    pointer-events: auto;
+}
+
+.library-header {
+    text-align: center;
+    padding: 12px 24px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.library-header .back-button {
-    align-self: flex-start;
 }
 
 .library-header h2 {
@@ -1172,6 +1207,52 @@ body.light-mode .explanation-section {
     letter-spacing: 0;
     line-height: 1.05;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.library-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.18);
+}
+
+.library-search svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--text-secondary);
+}
+
+.library-search input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.library-search input::placeholder {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.library-search input::-webkit-search-decoration,
+.library-search input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+body.light-mode .library-search {
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.08);
 }
 
 .filters {
@@ -1312,12 +1393,30 @@ body.light-mode .library-answer {
 }
 
 .library-answer.is-correct {
-    background: rgba(99, 102, 241, 0.16);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(34, 255, 85, 0.08);
+    border: 1.5px solid #22FF55;
     font-weight: 600;
 }
 
+.library-answer.is-correct::before {
+    content: '';
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-color: #22FF55;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23011434' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E");
+}
+
 body.light-mode .library-answer.is-correct {
-    background: #eef2ff;
+    background: #f0fff4;
+    border-color: #16C247;
 }
 
 .glossary-header {
@@ -1545,7 +1644,6 @@ body.light-mode .theme-icon-sun {
     }
 }
 
-.question-text,
 .answer-button,
 .button-text,
 .app-title,
@@ -1621,12 +1719,12 @@ body {
     }
     
     .question-text {
-        font-size: 28px;
-        line-height: 1.2;
+        font-size: 22px;
+        line-height: 1.3;
         margin-bottom: 16px;
         word-wrap: break-word;
         overflow-wrap: break-word;
-        hyphens: auto;
+        hyphens: none;
         max-width: 100%;
     }
     
@@ -1634,24 +1732,23 @@ body {
         font-size: 10px;
         padding: 0;
     }
+
+    .question-item .question-category {
+        font-size: 8px;
+        padding: 3px 8px;
+    }
     
     .question-difficulty {
         font-size: 16px;
     }
     
-    .answer-button {
+    .answer-button:not(.correct):not(.wrong) {
         padding: 18px 0;
         font-size: 16px;
         line-height: 1.4;
         word-wrap: break-word;
         overflow-wrap: break-word;
         max-width: 100%;
-    }
-    
-    .answer-button.correct::after,
-    .answer-button.wrong::after {
-        right: 16px;
-        font-size: 20px;
     }
     
     .test-header {
@@ -1690,6 +1787,16 @@ body {
     .glass-button {
         padding: 18px 40px;
         font-size: 15px;
+    }
+
+    .question-actions .glass-button {
+        padding: 14px 12px;
+        font-size: 14px;
+    }
+
+    .question-actions .doubt-button {
+        font-size: 12px;
+        padding: 14px 8px;
     }
     
     .filters {
@@ -1731,11 +1838,11 @@ body {
     }
     
     .question-text {
-        font-size: 24px;
-        line-height: 1.2;
+        font-size: 20px;
+        line-height: 1.3;
     }
     
-    .answer-button {
+    .answer-button:not(.correct):not(.wrong) {
         padding: 18px 0;
         font-size: 15px;
     }
@@ -1752,7 +1859,7 @@ body {
 
 @media (min-width: 641px) {
     .question-text {
-        font-size: 28px;
+        font-size: 22px;
     }
     
     .mode-button.primary {
@@ -1773,24 +1880,32 @@ body {
 
 .expand-button {
     width: 100%;
-    padding: 16px var(--space-md);
-    background: rgba(217, 119, 87, 0.08);
-    border: 2px solid var(--primary-warm);
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
     border-radius: var(--radius-pill);
-    color: var(--primary-warm);
-    font-weight: 500;
-    font-size: 14px;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 15px;
     cursor: pointer;
-    transition: all var(--transition-slow);
+    transition: opacity var(--transition);
     font-family: 'Inter', -apple-system, sans-serif;
     letter-spacing: -0.01em;
 }
 
 .expand-button:hover {
-    background: var(--primary-warm);
-    color: #FFFFFF;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(217, 119, 87, 0.3);
+    opacity: 0.8;
+    transform: none;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+body.light-mode .expand-button,
+body.light-mode .expand-button:hover {
+    background: #edf4ff;
+    color: #111827;
+    box-shadow: none;
 }
 
 .explanation-content {
@@ -1823,6 +1938,20 @@ body {
     padding: 10px 2px 8px;
 }
 
+#homeView button.stat-card {
+    appearance: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    width: 100%;
+}
+
+#homeView button.stat-card:hover {
+    transform: none;
+    box-shadow: none;
+    background: #224d5f;
+}
+
 #homeView .stat-number {
     font-size: 20px;
     margin-bottom: 4px;
@@ -1836,6 +1965,10 @@ body {
 body.light-mode #homeView .stat-card {
     background: #e0ecff;
     padding: 8px 4px;
+}
+
+body.light-mode #homeView button.stat-card:hover {
+    background: #d4e4ff;
 }
 
 .mode-button {
@@ -2016,17 +2149,64 @@ body.light-mode .filter-group select {
 
 /* Doubt Button */
 .doubt-button {
-    width: 100%;
-    margin-top: 16px;
-    background: var(--surface-ghost);
-    border: 1px solid var(--border-hairline);
+    flex: 1;
+    width: auto;
+    margin-top: 0;
+    padding: 14px 10px;
+    font-size: 13px;
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
     color: var(--text-primary);
     font-weight: 600;
+    box-shadow: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.doubt-button.is-marked::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    background: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.5l5.2 5.3L20 7'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.5l5.2 5.3L20 7'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.doubt-button.is-marked,
+.doubt-button.is-marked:hover {
+    background: rgba(139, 154, 122, 0.28);
+    border-color: rgba(255, 255, 255, 0.35);
+    color: var(--text-primary);
 }
 
 .doubt-button:hover {
-    background: var(--surface-ghost);
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+    border-color: rgba(255, 255, 255, 0.55);
     color: var(--text-primary);
+}
+
+body.light-mode .doubt-button {
+    background: transparent;
+    border-color: #111827;
+    color: #111827;
+}
+
+body.light-mode .doubt-button:hover {
+    background: transparent;
+    border-color: #111827;
+    color: #111827;
+}
+
+body.light-mode .doubt-button.is-marked,
+body.light-mode .doubt-button.is-marked:hover {
+    background: #e8ebe6;
+    border-color: #111827;
+    color: #111827;
 }
 
 /* ========================================
@@ -2307,13 +2487,36 @@ body.light-mode .review-chip {
     font-style: italic;
 }
 
-/* Library Question Item Menu Button */
-.question-item {
-    position: relative;
+.question-item .question-category {
+    font-size: 8px;
+    padding: 3px 8px;
+    letter-spacing: 0.06em;
 }
 
-.question-item .menu-button {
-    position: absolute;
-    top: var(--space-md);
-    right: var(--space-md);
+.library-explain {
+    margin-top: 16px;
+}
+
+.library-report {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #9ec4e8;
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: 'Inter', -apple-system, sans-serif;
+    text-align: center;
+}
+
+.library-report:hover {
+    opacity: 0.7;
+}
+
+body.light-mode .library-report {
+    color: #1c3e4e;
 }

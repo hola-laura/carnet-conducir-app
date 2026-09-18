@@ -18,6 +18,15 @@ let userStats = {
 
 let currentLang = 'es';
 
+const FEEDBACK_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwTrNXvQdzm2I-WFr_v4aojYbk_dLbxTVfov05Vg1q5w7wgdgmn0IKGR5YhELUVu74/exec';
+const FEEDBACK_TYPE_LABEL = {
+    wrong_question: 'La pregunta está mal formulada',
+    wrong_answer: 'La respuesta correcta es otra',
+    wrong_explanation: 'La explicación es incorrecta',
+    photo_evidence: 'Foto',
+    suggestion: 'Sugerencia'
+};
+
 const I18N = {
     es: {
         changeLanguage: 'Cambiar idioma',
@@ -45,6 +54,7 @@ const I18N = {
         statDone: 'Hechas',
         statReview: 'A repasar',
         statAccuracy: 'Acierto',
+        noReview: 'Aún no hay preguntas para repasar',
         streakUnit: 'días',
         streakUnitOne: 'día',
         levelN: 'Nivel {n}',
@@ -61,9 +71,9 @@ const I18N = {
         errors: 'Fallos: {n}/3',
         questionN: 'Pregunta {n}',
         needsReview: 'Necesitas repasarlo',
-        questionOptions: 'Opciones de pregunta',
-        doubt: '🤔 He dudado con esta',
-        markedReview: '✓ Marcada para repasar',
+        somethingWrong: 'Hay algo mal?',
+        doubt: 'Tengo dudas',
+        markedReview: 'Marcada para repasar',
         next: 'Siguiente →',
         correct: '¡Correcto!',
         incorrect: 'Incorrecto',
@@ -109,6 +119,7 @@ const I18N = {
         choosePhoto: '📷 Seleccionar Foto',
         send: 'Enviar',
         photoLimit: 'Límite: 5MB por foto',
+        searchPlaceholder: 'Buscar',
         libraryEmpty: 'No se encontraron preguntas',
         seeMore: 'Ver más',
         showExplanation: '💡 Ver Explicación Detallada',
@@ -148,6 +159,7 @@ const I18N = {
         statDone: 'Done',
         statReview: 'To review',
         statAccuracy: 'Accuracy',
+        noReview: 'No questions to review yet',
         streakUnit: 'days',
         streakUnitOne: 'day',
         levelN: 'Level {n}',
@@ -164,9 +176,9 @@ const I18N = {
         errors: 'Mistakes: {n}/3',
         questionN: 'Question {n}',
         needsReview: 'Needs review',
-        questionOptions: 'Question options',
-        doubt: '🤔 I was unsure',
-        markedReview: '✓ Marked for review',
+        somethingWrong: 'Something wrong?',
+        doubt: 'Unsure',
+        markedReview: 'Marked for review',
         next: 'Next →',
         correct: 'Correct!',
         incorrect: 'Incorrect',
@@ -212,6 +224,7 @@ const I18N = {
         choosePhoto: '📷 Choose photo',
         send: 'Send',
         photoLimit: 'Limit: 5MB per photo',
+        searchPlaceholder: 'Search',
         libraryEmpty: 'No questions found',
         seeMore: 'See more',
         showExplanation: '💡 See detailed explanation',
@@ -260,6 +273,9 @@ function applyI18n() {
     });
     document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
         el.setAttribute('aria-label', t(el.dataset.i18nAria));
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+        el.setAttribute('placeholder', t(el.dataset.i18nPlaceholder));
     });
     const credit = document.querySelector('.glossary-credit');
     if (credit) credit.textContent = t('glossaryCredit');
@@ -441,10 +457,15 @@ function initializeEventListeners() {
     if (examModeBtn) {
         examModeBtn.addEventListener('click', () => startMode('exam'));
     }
-    
+
     const practiceModeBtn = document.getElementById('practiceModeBtn');
     if (practiceModeBtn) {
         practiceModeBtn.addEventListener('click', () => startMode('practice'));
+    }
+    
+    const reviewStatBtn = document.getElementById('reviewStatBtn');
+    if (reviewStatBtn) {
+        reviewStatBtn.addEventListener('click', startReviewSession);
     }
     
     const libraryBtn = document.getElementById('libraryBtn');
@@ -494,6 +515,10 @@ function initializeEventListeners() {
     if (categoryFilter) {
         categoryFilter.addEventListener('change', filterQuestions);
     }
+    const librarySearch = document.getElementById('librarySearch');
+    if (librarySearch) {
+        librarySearch.addEventListener('input', filterQuestions);
+    }
     
     // Glossary button
     const glossaryBackBtn = document.getElementById('glossaryBackBtn');
@@ -521,7 +546,7 @@ function initializeEventListeners() {
     document.addEventListener('click', (e) => {
         const menu = document.getElementById('feedbackMenu');
         if (!menu || menu.classList.contains('hidden')) return;
-        if (e.target.closest('.feedback-menu') || e.target.closest('.menu-button')) return;
+        if (e.target.closest('.feedback-menu') || e.target.closest('.menu-button') || e.target.closest('.library-report')) return;
         closeFeedbackMenu();
     });
 
@@ -619,6 +644,16 @@ function readSavedQuestions() {
     });
 }
 
+function questionImagePath(image) {
+    if (!image) return '';
+    const value = String(image).trim();
+    if (value.startsWith('assets/')) return value;
+    if (/^[\w.-]+\.(jpe?g|png|gif|webp)$/i.test(value)) {
+        return 'assets/questions/' + value;
+    }
+    return '';
+}
+
 function processQuestions(questions) {
     if (!Array.isArray(questions)) return [];
     const out = [];
@@ -634,7 +669,7 @@ function processQuestions(questions) {
                 category: categorizeQuestion(q),
                 source: q.source,
                 explanation: q.explanation || '',
-                image: (q.image && String(q.image).startsWith('assets/')) ? q.image : ''
+                image: questionImagePath(q.image)
             });
         } catch (error) {}
     });
@@ -868,6 +903,31 @@ function getMasteredQuestions() {
     return mastered;
 }
 
+function getReviewQuestions() {
+    return questionsData.filter(q => needsReview(q.id));
+}
+
+async function startReviewSession() {
+    const ready = await runWithLoader(async () => {
+        if (!(await ensureQuestions())) return false;
+        const review = getReviewQuestions();
+        if (!review.length) return 'empty';
+        testMode = 'review';
+        currentQuestionIndex = 0;
+        correctAnswers = 0;
+        wrongAnswers = 0;
+        currentTest = shuffleArray(review);
+        return true;
+    });
+    if (ready === 'empty') {
+        showToast(t('noReview'));
+        return;
+    }
+    if (!ready) return;
+    showView('testView');
+    loadQuestion();
+}
+
 function needsReview(questionId) {
     const history = userStats.questionHistory[questionId];
     if (!history) return false;
@@ -914,9 +974,7 @@ function markAsDoubt() {
     // Feedback visual
     const btn = document.getElementById('doubtButton');
     btn.textContent = t('markedReview');
-    btn.style.background = 'rgba(139, 154, 122, 0.3)';
-    btn.style.border = '2px solid var(--success)';
-    btn.style.color = 'var(--success)';
+    btn.classList.add('is-marked');
     btn.disabled = true;
     updateReviewChip(question.id);
 }
@@ -981,7 +1039,7 @@ function loadQuestion() {
         document.getElementById('errorsCounter').textContent = 
             t('errors', { n: wrongAnswers });
         document.getElementById('errorsCounter').style.display = 'inline';
-    } else if (testMode === 'daily') {
+    } else if (testMode === 'daily' || testMode === 'review') {
         document.getElementById('questionCounter').textContent = 
             `${currentQuestionIndex + 1}/${currentTest.length}`;
         document.getElementById('errorsCounter').style.display = 'none';
@@ -1006,7 +1064,7 @@ function loadQuestion() {
     const imageContainer = document.getElementById('questionImage');
     const illustrationHTML = getQuestionIllustration(question);
     imageContainer.innerHTML = illustrationHTML;
-    imageContainer.style.display = illustrationHTML ? 'flex' : 'none';
+    imageContainer.style.display = illustrationHTML ? 'block' : 'none';
     
     // Load answers
     const answersContainer = document.getElementById('answersContainer');
@@ -1084,7 +1142,7 @@ function selectAnswer(selectedIndex) {
     saveUserStats();
     updateReviewChip(question.id);
     
-    if (testMode === 'practice' || testMode === 'daily') {
+    if (testMode === 'practice' || testMode === 'daily' || testMode === 'review') {
         showExplanation(isCorrect, question);
     }
     
@@ -1092,6 +1150,10 @@ function selectAnswer(selectedIndex) {
     doubtBtn.classList.remove('hidden');
     doubtBtn.disabled = false;
     doubtBtn.textContent = t('doubt');
+    doubtBtn.classList.remove('is-marked');
+    doubtBtn.style.background = '';
+    doubtBtn.style.border = '';
+    doubtBtn.style.color = '';
     
     if (testMode === 'exam' && wrongAnswers > 3) {
         setTimeout(() => showResults(), 1500);
@@ -1103,6 +1165,7 @@ function selectAnswer(selectedIndex) {
 
 async function showExplanation(isCorrect, question) {
     const card = document.getElementById('explanationCard');
+    const header = card.querySelector('.explanation-header');
     const icon = document.getElementById('explanationIcon');
     const title = document.getElementById('explanationTitle');
     const text = document.getElementById('explanationText');
@@ -1110,31 +1173,42 @@ async function showExplanation(isCorrect, question) {
     let bodyHTML = explanationHTML;
     let correctAnswer = question.answers[question.correctIndex];
 
-    if (currentLang === 'en') {
+    if (currentLang === 'en' && (explanationHTML || !isCorrect)) {
         const tmp = document.createElement('div');
         tmp.innerHTML = explanationHTML;
-        const [body, answer] = await Promise.all([
-            translateText(tmp.textContent.trim()),
-            translateText(correctAnswer)
-        ]);
-        tmp.textContent = body;
-        bodyHTML = tmp.innerHTML;
-        correctAnswer = answer;
+        const jobs = [translateText(correctAnswer)];
+        if (explanationHTML) jobs.unshift(translateText(tmp.textContent.trim()));
+        const out = await Promise.all(jobs);
+        if (explanationHTML) {
+            tmp.textContent = out[0];
+            bodyHTML = tmp.innerHTML;
+            correctAnswer = out[1];
+        } else {
+            correctAnswer = out[0];
+        }
     }
 
-    icon.textContent = isCorrect ? '✅' : '❌';
-    title.textContent = isCorrect ? t('correct') : t('incorrect');
     if (isCorrect) {
-        text.innerHTML = `<div class="explanation-lead">${t('correctLead')}</div><div>${bodyHTML}</div>`;
+        if (!bodyHTML) {
+            card.classList.add('hidden');
+            return;
+        }
+        header.classList.add('hidden');
+        text.innerHTML = `<div class="explanation-section">${bodyHTML}</div>`;
     } else {
-        text.innerHTML = `<div class="explanation-lead"><strong>${t('wrongLead')}</strong><br/>"${correctAnswer}"</div><div>${bodyHTML}</div>`;
+        header.classList.remove('hidden');
+        icon.textContent = '❌';
+        title.textContent = t('incorrect');
+        const lead = `<div class="explanation-lead"><strong>${t('wrongLead')}</strong><br/>"${correctAnswer}"</div>`;
+        const extra = bodyHTML ? `<div class="explanation-section">${bodyHTML}</div>` : '';
+        text.innerHTML = lead + extra;
     }
     card.classList.remove('hidden');
 }
 
 function getExplanationText(question) {
-    const fullExplanation = generateExplanation(question);
-    return fullExplanation;
+    const raw = (question.explanation || '').trim();
+    return raw ? softenCaps(raw) : '';
 }
 
 function nextQuestion() {
@@ -1171,7 +1245,8 @@ function showResults() {
 }
 
 function resetTest() {
-    startMode(testMode);
+    if (testMode === 'review') startReviewSession();
+    else startMode(testMode);
 }
 
 // ============================================
@@ -1188,6 +1263,7 @@ async function showLibrary() {
 
 function filterQuestions() {
     const category = document.getElementById('categoryFilter').value;
+    const query = normalizeSearch(document.getElementById('librarySearch')?.value || '');
     let filtered = [...questionsData];
     
     if (category !== 'all') {
@@ -1199,8 +1275,19 @@ function filterQuestions() {
         };
         filtered = filtered.filter(q => q.category === categoryMap[category]);
     }
+
+    if (query) {
+        filtered = filtered.filter(q => {
+            const answers = (q.answers || []).join(' ');
+            return normalizeSearch(`${q.question} ${answers} ${q.explanation || ''} ${q.category || ''}`).includes(query);
+        });
+    }
     
     displayQuestions(filtered);
+}
+
+function normalizeSearch(text) {
+    return String(text).toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
 }
 
 let libraryList = [];
@@ -1237,38 +1324,31 @@ function appendLibraryPage() {
         const illustrationHTML = getQuestionIllustration(q);
 
         item.innerHTML = `
-            <button class="menu-button" data-question-id="${q.id}" aria-label="${t('questionOptions')}">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10" cy="4" r="1.5" fill="currentColor"/>
-                    <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
-                    <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
-                </svg>
-            </button>
             <div class="question-item-header">
                 <span class="question-category">${displayCategory(q.category)}</span>
                 ${needsReview(q.id) ? `<span class="review-chip">${t('needsReview')}</span>` : ''}
             </div>
-            ${illustrationHTML || ''}
+            ${illustrationHTML ? `<div class="question-image">${illustrationHTML}</div>` : ''}
             <div class="question-item-text" style="margin-top: 16px;">${q.question}</div>
             
             <div class="library-answers">
                 ${q.answers.map((answer, idx) => `
                     <div class="library-answer${idx === q.correctIndex ? ' is-correct' : ''}">
-                        ${idx === q.correctIndex ? '✓ ' : ''}${answer}
+                        ${answer}
                     </div>
                 `).join('')}
             </div>
             
-            <div class="explanation-section" style="margin-top: 16px;">
-                <button class="expand-button" onclick="toggleExplanation(${index})" style="width: 100%; padding: 14px; background: rgba(217, 119, 87, 0.1); border: 2px solid var(--primary-warm); border-radius: 50px; color: var(--primary-warm); font-weight: 700; font-size: 14px; cursor: pointer; transition: all 0.3s;">
+            <div class="library-explain">
+                <button class="expand-button" onclick="toggleExplanation(${index})">
                     ${t('showExplanation')}
                 </button>
                 <div id="explanation-${index}" class="explanation-content" style="display: none; margin-top: 12px; padding: 20px; background: linear-gradient(135deg, rgba(217, 119, 87, 0.08) 0%, rgba(139, 154, 122, 0.08) 100%); border-radius: 16px; border: 1px solid var(--border-color);"></div>
             </div>
-            
+            <button type="button" class="library-report">${t('somethingWrong')}</button>
         `;
 
-        item.querySelector('.menu-button').addEventListener('click', (e) => {
+        item.querySelector('.library-report').addEventListener('click', (e) => {
             e.stopPropagation();
             openLibraryFeedbackMenu(q);
         });
@@ -1295,28 +1375,19 @@ function toggleExplanation(index) {
 
     if (!content.dataset.ready) {
         const q = libraryList[index];
-        const explanation = q.explanation ? softenCaps(q.explanation) : generateExplanation(q);
-        content.innerHTML = `
-                    <div style="font-size: 12px; color: var(--success); font-weight: 700; margin-bottom: 12px;">
-                        ${t('whyCorrect')}
-                    </div>
-                    <div style="font-size: 15px; line-height: 1.7; color: var(--text-primary);">
-                        ${explanation}
-                    </div>
-        `;
+        const explanation = getExplanationText(q);
+        content.innerHTML = explanation
+            ? `<div style="font-size: 15px; line-height: 1.7; color: var(--text-primary);">${explanation}</div>`
+            : '';
         content.dataset.ready = '1';
     }
     
     if (content.style.display === 'none') {
         content.style.display = 'block';
         button.textContent = t('hideExplanation');
-        button.style.background = 'var(--primary-warm)';
-        button.style.color = '#FFFFFF';
     } else {
         content.style.display = 'none';
         button.textContent = t('showExplanation');
-        button.style.background = 'rgba(217, 119, 87, 0.1)';
-        button.style.color = 'var(--primary-warm)';
     }
 }
 
@@ -1328,167 +1399,6 @@ function softenCaps(text) {
     if (upper / letters.length < 0.55) return text;
     const lower = text.toLocaleLowerCase('es');
     return lower.replace(/(^|[.!?¿¡\n]\s*)(\p{L})/gu, (_, p, c) => p + c.toLocaleUpperCase('es'));
-}
-
-function generateExplanation(question) {
-    const category = question.category;
-    const correctAnswer = question.answers[question.correctIndex];
-    const questionText = question.question.toLowerCase();
-    
-    // Si existe explicación en los datos, úsala como base
-    let baseExplanation = '';
-    if (question.explanation && question.explanation.trim()) {
-        baseExplanation = question.explanation;
-    }
-    
-    // Generar explicación completa estructurada
-    let explanation = '<div class="explanation-structured">';
-    
-    // 1. Por qué es correcta
-    explanation += '<div class="explanation-section">';
-    explanation += '<strong>✓ Por qué es correcta:</strong><br>';
-    explanation += generateCorrectReasoning(questionText, correctAnswer, baseExplanation);
-    explanation += '</div>';
-    
-    // 2. Por qué las otras NO lo son
-    explanation += '<div class="explanation-section">';
-    explanation += '<strong>✗ Por qué las otras opciones no:</strong><br>';
-    explanation += generateWrongReasoning(questionText, question.answers, question.correctIndex);
-    explanation += '</div>';
-    
-    // 3. Detalle clave a identificar
-    explanation += '<div class="explanation-section">';
-    explanation += '<strong>🔍 Detalle clave:</strong><br>';
-    explanation += generateKeyDetail(questionText, category);
-    explanation += '</div>';
-    
-    // 4. Normativa aplicable
-    explanation += '<div class="explanation-section">';
-    explanation += '<strong>📋 Normativa:</strong><br>';
-    explanation += generateNormative(questionText, category);
-    explanation += '</div>';
-    
-    explanation += '</div>';
-    
-    return explanation;
-}
-
-// Genera el razonamiento de por qué la respuesta es correcta
-function generateCorrectReasoning(questionText, correctAnswer, baseExplanation) {
-    if (baseExplanation) {
-        return softenCaps(baseExplanation);
-    }
-    
-    if (questionText.includes('arcén')) {
-        return 'Es más seguro mantener el arcén libre porque actúa como zona de escape para emergencias. Cuando un vehículo tiene una avería o necesita realizar una parada urgente, el arcén le proporciona un espacio seguro fuera del flujo de tráfico. Si está ocupado, ese conductor queda expuesto a ser golpeado desde atrás por otros vehículos. Además, los servicios de emergencia (ambulancias, grúas, bomberos) necesitan circular por el arcén para llegar rápidamente a accidentes sin quedar atrapados en el tráfico.';
-    } else if (questionText.includes('chaleco')) {
-        return 'Es más seguro llevar el chaleco en el habitáculo porque necesitas ponértelo ANTES de salir del vehículo. Si está en el maletero, tendrías que bajarte sin protección y exponerte al tráfico para buscarlo. Los conductores que circulan a alta velocidad necesitan verte desde la mayor distancia posible para poder frenar o cambiar de carril. Un chaleco reflectante puede hacerte visible hasta 150 metros de distancia, mientras que sin él podrías ser invisible hasta estar a menos de 30 metros, dando tiempo insuficiente para reaccionar.';
-    } else if (questionText.includes('neumático')) {
-        return 'Los neumáticos son tu único contacto con el asfalto, y su estado determina si puedes frenar, girar o mantener control. Un neumático deteriorado tiene menos agarre porque la banda de rodadura está desgastada, lo que aumenta tu distancia de frenado hasta un 50% en mojado. Además, un neumático en mal estado puede reventar súbitamente a alta velocidad, haciendo que pierdas control del volante de forma brusca y potencialmente volcando o saliendo de la vía. Es especialmente peligroso en curvas o al adelantar.';
-    } else if (questionText.includes('velocidad') && questionText.includes('autopista')) {
-        return 'Las autopistas permiten 120 km/h porque están diseñadas con múltiples características de seguridad: carriles más anchos, arcén amplio, separación física entre sentidos (evita choques frontales), curvas más suaves, y mejor visibilidad. Estas condiciones te dan más margen de reacción. En carreteras convencionales, el límite es 90 km/h porque suele haber solo un carril por sentido, sin separación física, curvas más cerradas, y posibilidad de que aparezcan peatones, animales o tractores. A mayor velocidad en esas condiciones, el riesgo de colisión frontal o salida de vía se multiplica.';
-    } else if (questionText.includes('adelant')) {
-        return 'Para adelantar con seguridad necesitas tres elementos críticos que trabajan juntos. Primero, visibilidad: debes ver al menos 200 metros de carretera despejada para asegurarte de que no viene ningún vehículo de frente; sin esto, arriesgas una colisión frontal (el tipo de accidente más mortal). Segundo, espacio suficiente: necesitas acelerar, adelantar y volver a tu carril sin forzar al vehículo adelantado a frenar; si cortas su trayectoria, puede perderse el control. Tercero, comunicación: señalizar con el intermitente avisa a los demás de tu intención, evitando que otro conductor intente adelantar al mismo tiempo.';
-    } else if (questionText.includes('intersección') || questionText.includes('cruce')) {
-        return 'En intersecciones sin señalizar, ceder el paso a quien viene por la derecha crea un sistema predecible que evita colisiones. Si ambos conductores conocen y aplican esta regla, cada uno sabe qué esperar del otro, reduciendo la indecisión y las paradas bruscas. Esta predictibilidad es crucial porque en cruces hay múltiples trayectorias que se intersectan; sin una regla clara, dos vehículos podrían avanzar simultáneamente y colisionar. Es especialmente importante en rotondas, donde mantener el flujo ordenado previene embotellamientos y alcances traseros.';
-    } else if (questionText.includes('alcohol')) {
-        return 'El alcohol afecta tu cerebro de múltiples formas peligrosas para conducir. Primero, ralentiza tu tiempo de reacción: donde normalmente reaccionarías en 0.7 segundos, con alcohol puedes tardar 1.5 segundos o más; esos 0.8 segundos extra a 90 km/h significan 20 metros adicionales sin frenar. Segundo, reduce tu visión periférica hasta un 30%, haciendo que no veas peatones o vehículos a los lados. Tercero, afecta tu juicio, haciéndote sentir más confiado y tomando riesgos que normalmente evitarías (adelantamientos peligrosos, exceso de velocidad). Incluso pequeñas cantidades deterioran estas capacidades de forma medible.';
-    } else if (questionText.includes('peatón')) {
-        return 'Los peatones son usuarios vulnerables porque no tienen ninguna protección: un impacto a 50 km/h tiene 80% de probabilidad de ser mortal para ellos, mientras que a 30 km/h baja a 10%. Cederles el paso les permite cruzar sin tener que calcular velocidades o distancias, lo cual es especialmente importante para niños, personas mayores o con discapacidades que pueden moverse más lento o tener menor visión. Cuando un peatón inicia el cruce confiando en que le cederás el paso, si no lo haces, puede quedarse paralizado a mitad del paso, creando una situación aún más peligrosa.';
-    } else if (questionText.includes('distancia')) {
-        return 'Mantener distancia de seguridad te da el espacio y tiempo necesarios para reaccionar y frenar completamente. Tu distancia debe cubrir dos factores: tiempo de reacción (el segundo que tardas en ver el peligro y pisar el freno) más distancia de frenado (los metros que tu coche necesita para detenerse). A 100 km/h, solo el tiempo de reacción consume 28 metros. Si vas demasiado cerca, cuando el de adelante frene de golpe, colisionarás antes de que tu pie llegue al pedal. En lluvia o niebla, tu distancia de frenado puede duplicarse porque los neumáticos tienen menos agarre.';
-    } else if (questionText.includes('curva')) {
-        return 'Las curvas requieren velocidad reducida por física básica: tu vehículo tiene inercia que quiere seguir recto, y los neumáticos deben proporcionar la fuerza lateral para mantener la curva. A mayor velocidad, más fuerza necesitan ejercer. Si vas demasiado rápido, los neumáticos pierden agarre y el coche sigue recto en lugar de girar, sacándote de la vía. Esto se agrava con lluvia, gravilla o hielo. Además, en curvas tu visibilidad se reduce porque no ves qué hay más adelante, podría haber un obstáculo, vehículo lento o animal.';
-    } else if (questionText.includes('placa') && questionText.includes('l')) {
-        return 'Es más seguro colocar la placa "L" en la parte posterior derecha porque maximiza la visibilidad para los conductores que vienen detrás. Cuando ven que eres conductor novel, pueden anticipar que puedas realizar maniobras más lentas, dudosas o con errores (cambios de carril tardíos, frenadas bruscas, arranques lentos). Esta información les permite mantener mayor distancia de seguridad, tener más paciencia, y evitar adelantamientos arriesgados. Es como una comunicación preventiva que reduce las probabilidades de colisión por alcance o situaciones de estrés mutuo.';
-    } else if (questionText.includes('luz') || questionText.includes('alumbrado')) {
-        return 'El uso correcto de luces te hace visible y te permite ver. Las luces no solo iluminan lo que tienes delante, sino que comunican tu presencia, tamaño y dirección a otros. En niebla, lluvia o de noche, sin luces eres prácticamente invisible hasta estar a pocos metros. Un vehículo sin luces en una rotonda puede causar que otro conductor entre pensando que está libre, provocando colisión. Las luces largas en ciudad o con tráfico de frente deslumbran a otros conductores, dejándolos temporalmente ciegos y sin control.';
-    } else {
-        return `Esta respuesta es más segura porque previene situaciones de riesgo. Cuando sigues esta norma, reduces las probabilidades de colisión y proteges tanto a ti como a otros usuarios de la vía. La lógica detrás es crear comportamientos predecibles que todos los conductores puedan anticipar, evitando así reacciones de último momento o decisiones improvisadas que suelen terminar en accidentes.`;
-    }
-}
-
-// Genera explicación de por qué las otras opciones son incorrectas
-function generateWrongReasoning(questionText, answers, correctIndex) {
-    const wrongAnswers = answers.filter((_, idx) => idx !== correctIndex);
-    
-    if (questionText.includes('arcén')) {
-        return 'Ocupar el arcén sin emergencia bloquea la única vía de escape disponible. Cuando alguien tiene una avería real, se ve forzado a quedarse en el carril de circulación, expuesto a ser golpeado por detrás. Los vehículos de emergencia que necesitan pasar quedan atrapados en el tráfico, retrasando su llegada a accidentes donde cada segundo cuenta. Además, crear una situación donde se normaliza usar el arcén confunde a otros conductores sobre cuándo es realmente aceptable, erosionando la cultura de seguridad.';
-    } else if (questionText.includes('chaleco')) {
-        return 'Si el chaleco está en el maletero, tienes que caminar por detrás del vehículo, de espaldas al tráfico, sin protección visible. Los conductores que circulan a 100 km/h pueden no verte hasta que es tarde porque tu ropa oscura se mimetiza con el entorno. Una vez golpeado, las lesiones suelen ser mortales. Sin chaleco directamente, ni siquiera tienes la opción de protegerte, quedando completamente vulnerable ante cualquier emergencia.';
-    } else if (questionText.includes('adelant')) {
-        return 'Adelantar sin visibilidad completa es jugar a la ruleta rusa: puede que no venga nadie, o puede que haya un vehículo que aparece en el último segundo, sin tiempo para volver a tu carril. El resultado es una colisión frontal a velocidad combinada (tu velocidad + la suya), frecuentemente mortal. Adelantar sin espacio suficiente obliga al vehículo adelantado a frenar bruscamente, pudiendo hacer que pierda control o sea golpeado por quien viene detrás de él. Sin señalizar, otro conductor puede intentar adelantar al mismo tiempo, creando una situación caótica donde tres vehículos compiten por el mismo espacio.';
-    } else if (questionText.includes('alcohol')) {
-        return 'Creer que "un poco de alcohol" es seguro ignora que el deterioro comienza con la primera gota. Puedes sentirte bien, pero tus reflejos ya están comprometidos. Cuando un niño cruza inesperadamente, esos 0.8 segundos extras de reacción son la diferencia entre frenar a tiempo o atropellarlo. Las opciones que minimizan el riesgo del alcohol llevan a conducir bajo sus efectos, multiplicando las probabilidades de accidentes graves. Además, el alcohol reduce tu percepción de riesgo, haciéndote creer que conduces bien cuando objetivamente no es así.';
-    } else if (questionText.includes('peatón')) {
-        return 'No ceder el paso a peatones los pone en peligro mortal directo. Un peatón que ha comenzado a cruzar confiando en que vas a parar puede quedarse paralizado a mitad del paso si no frenas, sin tiempo para volver atrás ni para avanzar. Los peatones no pueden calcular tu velocidad con precisión, especialmente niños o personas mayores. Si dudas y aceleras en lugar de ceder, el peatón puede decidir cruzar al mismo tiempo, causando un atropello evitable.';
-    } else if (questionText.includes('distancia')) {
-        return 'Circular demasiado cerca del vehículo de adelante elimina tu margen de seguridad. Cuando ese conductor frena de emergencia (por un niño, animal u otro obstáculo), tú colisionas inevitablemente porque físicamente no puedes detenerte a tiempo. Las lesiones por alcance suelen afectar el cuello (latigazo cervical) y pueden ser permanentes. Además, estar muy cerca reduce tu campo visual: no ves qué pasa más adelante en el tráfico, perdiendo información crítica para anticipar peligros.';
-    } else if (questionText.includes('curva')) {
-        return 'Tomar curvas a velocidad excesiva hace que pierdas control por las leyes de física. La fuerza centrífuga empuja tu vehículo hacia fuera de la curva, y si supera el agarre de los neumáticos, el coche derrapa hacia el exterior. Esto puede sacarte de la vía, haciéndote impactar contra árboles, barreras o precipicios. En curvas hacia la izquierda, podrías invadir el carril contrario y colisionar frontalmente. Frenar dentro de la curva empeora la situación, pudiendo hacer que el coche gire sobre sí mismo (trompo).';
-    } else if (questionText.includes('placa') && questionText.includes('l')) {
-        return 'Colocar la placa "L" en otro lugar reduce su efectividad. Si va en la parte delantera, los conductores detrás de ti no la ven hasta que te adelantan, perdiendo la información cuando más la necesitan (al seguirte). Esto puede llevarles a presionarte con luces o acercarse demasiado, generando estrés y aumentando las probabilidades de que cometas errores. Sin la placa visible, otros esperan que conduzcas con fluidez y experiencia, y tus vacilaciones se convierten en sorpresas que pueden causar alcances o maniobras bruscas.';
-    } else if (questionText.includes('luz') || questionText.includes('alumbrado')) {
-        return 'Circular sin luces cuando son necesarias te hace invisible para otros conductores. En situaciones de baja visibilidad (niebla, lluvia, túneles, noche), pueden no verte hasta estar a metros de distancia, sin tiempo para reaccionar. Usar luces largas cuando no corresponde deslumbra a los conductores que vienen de frente, dejándolos temporalmente ciegos: no ven el carril, obstáculos ni peatones. Este deslumbramiento puede durar varios segundos después de que pases, creando un período peligroso donde circulan sin control visual.';
-    } else if (questionText.includes('intersección') || questionText.includes('cruce')) {
-        return 'No respetar la prioridad en intersecciones crea colisiones laterales (impactos en ángulo), que son muy peligrosas porque los laterales del coche tienen menos protección que el frente o la parte trasera. Los pasajeros en los asientos laterales quedan especialmente vulnerables. La indecisión sobre quién tiene prioridad lleva a arranques y paradas bruscas, aumentando el riesgo de alcances traseros. Además, otros conductores pueden confiar en que respetarás la prioridad y no esperan que avances, eliminando su capacidad de reacción.';
-    } else {
-        return 'Las otras opciones crean situaciones de riesgo innecesarias donde las consecuencias pueden ser graves. Generalmente aumentan las probabilidades de colisión, reducen el tiempo de reacción disponible, o exponen a usuarios vulnerables a peligros evitables. Seguir esas opciones compromete no solo tu seguridad, sino también la de pasajeros, peatones y otros conductores que confían en que todos respetan las normas de seguridad básicas.';
-    }
-}
-
-// Genera el detalle clave a identificar en la pregunta
-function generateKeyDetail(questionText, category) {
-    if (questionText.includes('autopista') || questionText.includes('autovía')) {
-        return 'Identifica el <strong>tipo de vía</strong> porque determina la velocidad segura: autopista (120 km/h con separación física de sentidos), autovía (120 km/h), carretera convencional (90 km/h, un carril por sentido), o travesía (50 km/h, zona urbana con peatones).';
-    } else if (questionText.includes('intersección') || questionText.includes('cruce')) {
-        return 'Busca <strong>señalización</strong> primero (señal de STOP, ceda el paso, semáforo). Si no hay ninguna, aplica la regla de prioridad a la derecha. La presencia o ausencia de señales cambia completamente quién debe ceder.';
-    } else if (questionText.includes('adelant')) {
-        return 'Verifica TRES condiciones simultáneas: <strong>visibilidad</strong> (¿ves al menos 200m despejados?), <strong>línea de la calzada</strong> (continua = prohibido adelantar), y <strong>espacio</strong> (¿puedes completar la maniobra sin forzar a otros a frenar?). Las tres deben cumplirse.';
-    } else if (questionText.includes('distancia')) {
-        return 'Considera la <strong>relación velocidad + condiciones meteorológicas</strong>: a mayor velocidad o peores condiciones (lluvia, niebla, hielo), necesitas más distancia porque tu capacidad de frenado se reduce exponencialmente.';
-    } else if (questionText.includes('peatón')) {
-        return 'Localiza si hay <strong>paso de peatones señalizado</strong> y si el peatón <strong>ha iniciado el cruce</strong> o está esperando. Si ha dado un solo paso hacia la calzada, tienes obligación de ceder, incluso si el semáforo está en ámbar.';
-    } else if (questionText.includes('curva')) {
-        return 'Evalúa la <strong>señalización de la curva</strong> (curva peligrosa con señal triangular) y las <strong>condiciones del asfalto</strong>. Las curvas con señal requieren reducir velocidad significativamente antes de entrar, no durante.';
-    } else if (questionText.includes('luz') || questionText.includes('alumbrado')) {
-        return 'Identifica <strong>tres factores</strong>: hora del día (noche obligatorio), condiciones meteorológicas (lluvia/niebla reducen visibilidad), y tipo de vía (túneles siempre requieren luces, incluso de día).';
-    } else if (questionText.includes('placa') && questionText.includes('l')) {
-        return 'La clave está en <strong>quién necesita ver la información</strong>: los conductores que vienen detrás son quienes más se benefician de saber que eres novel, por eso la placa va en la parte posterior derecha.';
-    } else {
-        return `Identifica <strong>palabras clave</strong> en el enunciado que indiquen restricciones ("prohibido", "obligatorio"), condiciones especiales ("en caso de"), o usuarios vulnerables ("peatón", "ciclista", "niño"). Estas palabras suelen señalar la respuesta correcta.`;
-    }
-}
-
-// Genera la normativa aplicable con artículos específicos (solo como referencia)
-function generateNormative(questionText, category) {
-    if (questionText.includes('arcén')) {
-        return '<em>Referencia legal:</em> <strong>Art. 49 RGC</strong> (Real Decreto 1428/2003) sobre uso del arcén. Revisado en Enero 2024. Solo para emergencias.';
-    } else if (questionText.includes('chaleco')) {
-        return '<em>Referencia legal:</em> <strong>Art. 118 RGC</strong> (RD 1428/2003) sobre señalización de vehículos inmovilizados. Última actualización: Marzo 2023. Un chaleco en habitáculo.';
-    } else if (questionText.includes('velocidad') && questionText.includes('autopista')) {
-        return '<em>Referencia legal:</em> <strong>Art. 48-50 RGC</strong> (RD 1428/2003). Límites vigentes desde 2022: autopista/autovía 120 km/h, carretera convencional 90 km/h, zona urbana/travesía 50 km/h.';
-    } else if (questionText.includes('adelant')) {
-        return '<em>Referencia legal:</em> <strong>Art. 36 RGC</strong> (RD 1428/2003) sobre adelantamientos. Revisión 2021: prohibido sin visibilidad suficiente y con línea continua.';
-    } else if (questionText.includes('intersección') || questionText.includes('cruce')) {
-        return '<em>Referencia legal:</em> <strong>Art. 25 RGC</strong> (RD 1428/2003) sobre prioridad de paso. Norma general: ceder a la derecha en intersecciones sin señalizar. Vigente desde 2003.';
-    } else if (questionText.includes('alcohol')) {
-        return '<em>Referencia legal:</em> <strong>Art. 20-21 RGC + Art. 383 Código Penal</strong>. Límite administrativo: 0.25 mg/l aire (0.5 g/l sangre). Delito penal a partir de 0.60 mg/l. Reforma 2024.';
-    } else if (questionText.includes('peatón')) {
-        return '<em>Referencia legal:</em> <strong>Art. 25-26 RGC</strong> (RD 1428/2003) sobre protección de peatones. Prioridad absoluta en pasos señalizados. Actualización 2023.';
-    } else if (questionText.includes('distancia')) {
-        return '<em>Referencia legal:</em> <strong>Art. 54 RGC</strong> (RD 1428/2003) sobre separación entre vehículos. Criterio: distancia suficiente para poder detenerse sin colisión. Actualizado 2022.';
-    } else if (questionText.includes('neumático')) {
-        return '<em>Referencia legal:</em> <strong>Art. 23 RGC</strong> (RD 1428/2003) sobre estado del vehículo. Los neumáticos deben tener profundidad mínima de 1.6mm en toda la banda de rodadura. Vigente desde 2010.';
-    } else if (questionText.includes('curva')) {
-        return '<em>Referencia legal:</em> <strong>Art. 46 RGC</strong> (RD 1428/2003) sobre velocidad adecuada a las circunstancias. En curvas señalizadas, reducir velocidad. Actualizado 2015.';
-    } else if (questionText.includes('luz') || questionText.includes('alumbrado')) {
-        return '<em>Referencia legal:</em> <strong>Art. 43-44 RGC</strong> (RD 1428/2003) sobre alumbrado. Obligatorio desde el ocaso hasta el amanecer, y en condiciones de baja visibilidad. Reforma 2021.';
-    } else if (questionText.includes('placa') && questionText.includes('l')) {
-        return '<em>Referencia legal:</em> <strong>Art. 13.3 RGC</strong> (RD 1428/2003). Conductores noveles deben colocar placa "L" en parte posterior derecha durante el primer año. Vigente desde 2003.';
-    } else {
-        return '<em>Referencia legal:</em> <strong>Reglamento General de Circulación</strong> (Real Decreto 1428/2003, modificado por RD 965/2006 y sucesivas actualizaciones hasta 2026). La normativa refleja principios de seguridad vial basados en evidencia.';
-    }
 }
 
 // ============================================
@@ -1736,15 +1646,56 @@ function saveFeedback(type, question, userNote, photoData = null) {
         type: type,
         timestamp: Date.now(),
         questionText: question.question,
-        userNote: userNote,
-        photo: photoData
+        userNote: userNote || '',
+        photo: photoData || ''
     };
-    
-    const allFeedback = JSON.parse(localStorage.getItem('userFeedback') || '[]');
-    allFeedback.push(feedback);
-    localStorage.setItem('userFeedback', JSON.stringify(allFeedback));
-    
-    console.log('📝 Feedback guardado:', feedback);
+
+    try {
+        const allFeedback = JSON.parse(localStorage.getItem('userFeedback') || '[]');
+        allFeedback.push({ ...feedback, photo: photoData ? 'yes' : '' });
+        localStorage.setItem('userFeedback', JSON.stringify(allFeedback));
+    } catch (error) {}
+
+    sendFeedbackRemote(feedback);
+}
+
+function sendFeedbackRemote(feedback) {
+    if (!FEEDBACK_WEBAPP_URL) return;
+    fetch(FEEDBACK_WEBAPP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+            type: FEEDBACK_TYPE_LABEL[feedback.type] || feedback.type,
+            questionId: feedback.questionId,
+            questionText: feedback.questionText,
+            userNote: feedback.userNote,
+            photo: feedback.photo
+        })
+    }).catch(() => {});
+}
+
+function compressPhoto(dataUrl) {
+    return new Promise(resolve => {
+        const img = new Image();
+        img.onload = () => {
+            const canvas = document.createElement('canvas');
+            const max = 1200;
+            let w = img.width;
+            let h = img.height;
+            if (w > max || h > max) {
+                const scale = Math.min(max / w, max / h);
+                w = Math.round(w * scale);
+                h = Math.round(h * scale);
+            }
+            canvas.width = w;
+            canvas.height = h;
+            canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+            resolve(canvas.toDataURL('image/jpeg', 0.72));
+        };
+        img.onerror = () => resolve(dataUrl);
+        img.src = dataUrl;
+    });
 }
 
 function showToast(message) {
@@ -1809,13 +1760,14 @@ function handlePhotoSelect(e) {
     reader.readAsDataURL(file);
 }
 
-function submitPhoto() {
+async function submitPhoto() {
     if (!selectedPhoto) return;
-    
+
     const question = currentLibraryQuestion || currentTest[currentQuestionIndex];
     const note = prompt('Descripción de la evidencia (opcional):');
-    
-    saveFeedback('photo_evidence', question, note || 'Evidencia adjunta', selectedPhoto);
+    const photo = await compressPhoto(selectedPhoto);
+
+    saveFeedback('photo_evidence', question, note || 'Evidencia adjunta', photo);
     showToast(t('toastPhotoSent'));
     closePhotoModal();
     currentLibraryQuestion = null;
