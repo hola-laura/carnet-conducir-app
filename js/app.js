@@ -84,12 +84,12 @@ const I18N = {
         passedSub: 'Has superado el examen',
         failedSub: 'Sigue practicando',
         correctLabel: 'Correctas',
-        wrongLabel: 'Incorrectas',
-        scoreLabel: 'Puntuación',
-        retryExam: 'Repetir Examen',
-        goHome: 'Volver al Inicio',
+        wrongLabel: 'Fallos',
+        scoreLabel: 'Nota',
+        retryExam: 'Repetir examen',
+        goHome: 'Volver al inicio',
         backHome: 'Inicio',
-        libraryTitle: 'Biblioteca de Preguntas',
+        libraryTitle: 'Biblioteca',
         category: 'Categoría',
         catAll: 'Todas',
         catSignals: 'Señales',
@@ -189,12 +189,12 @@ const I18N = {
         passedSub: 'You passed the exam',
         failedSub: 'Keep practising',
         correctLabel: 'Correct',
-        wrongLabel: 'Incorrect',
-        scoreLabel: 'Score',
+        wrongLabel: 'Fails',
+        scoreLabel: 'Grade',
         retryExam: 'Retry exam',
         goHome: 'Back home',
         backHome: 'Home',
-        libraryTitle: 'Question library',
+        libraryTitle: 'Library',
         category: 'Category',
         catAll: 'All',
         catSignals: 'Signs',
@@ -1217,7 +1217,9 @@ function showResults() {
     const score = Math.round((correctAnswers / totalQuestions) * 100);
     const passed = testMode === 'exam' ? wrongAnswers <= 3 : score >= 90;
     
-    document.getElementById('resultIcon').textContent = passed ? '✅' : '❌';
+    const resultIcon = document.getElementById('resultIcon');
+    resultIcon.textContent = passed ? '✓' : '✕';
+    resultIcon.classList.toggle('is-fail', !passed);
     document.getElementById('resultTitle').textContent = passed ? t('passed') : t('failed');
     document.getElementById('resultSubtitle').textContent = passed 
         ? t('passedSub') 
@@ -1315,7 +1317,7 @@ function appendLibraryPage() {
                 ${needsReview(q.id) ? `<span class="review-chip">${t('needsReview')}</span>` : ''}
             </div>
             ${illustrationHTML ? `<div class="question-image">${illustrationHTML}</div>` : ''}
-            <div class="question-item-text" style="margin-top: 16px;">${q.question}</div>
+            <div class="question-item-text">${q.question}</div>
             
             <div class="library-answers">
                 ${q.answers.map((answer, idx) => `
@@ -1411,9 +1413,9 @@ function loadGlossary() {
             ? `<div class="glossary-illustration"><img src="${item.image}" alt="${item.term}" loading="lazy"></div>`
             : '';
         card.innerHTML = `
+            ${photo || '<div class="glossary-illustration"></div>'}
             <h3 class="glossary-term">${item.term}</h3>
             <p class="glossary-definition">${item.definition}</p>
-            ${photo}
         `;
         container.appendChild(card);
     });

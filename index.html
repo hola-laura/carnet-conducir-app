@@ -111,18 +111,22 @@
 
                 <div class="stats-grid">
                     <div class="stat-card glass-card">
-                        <div class="stat-number" id="totalQuestions">2947</div>
+                        <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7a6 6 0 0 0-8-1v12a6 6 0 0 1 8-1 6 6 0 0 1 8 1V6a6 6 0 0 0-8 1z"/><path d="M12 7v11"/></svg></span>
+                        <div class="stat-number" id="totalQuestions">3000</div>
                         <div class="stat-label" data-i18n="statQuestions">Preguntas</div>
                     </div>
                     <div class="stat-card glass-card">
+                        <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l2.4 6.2L21 10l-5 4.4L17.5 21 12 17.6 6.5 21 8 14.4 3 10l6.6-.8z"/></svg></span>
                         <div class="stat-number" id="completedQuestions">0</div>
                         <div class="stat-label" data-i18n="statDone">Hechas</div>
                     </div>
                     <button type="button" class="stat-card glass-card" id="reviewStatBtn">
+                        <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="7" cy="14" r="3.2"/><circle cx="17" cy="14" r="3.2"/><path d="M10.2 14h3.6M4 14H3M21 14h-1"/></svg></span>
                         <div class="stat-number" id="weakTopics">0</div>
                         <div class="stat-label" data-i18n="statReview">A repasar</div>
                     </button>
                     <div class="stat-card glass-card">
+                        <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21h6"/><path d="M12 3a5 5 0 0 0-3 9v3h6v-3a5 5 0 0 0-3-9z"/></svg></span>
                         <div class="stat-number" id="accuracyStat">0%</div>
                         <div class="stat-label" data-i18n="statAccuracy">Acierto</div>
                     </div>
@@ -230,29 +234,32 @@
         <div id="resultsView" class="view">
             <div class="results-container glass-container">
                 <div class="results-header">
-                    <div class="result-icon" id="resultIcon">✅</div>
+                    <div class="result-icon" id="resultIcon">✓</div>
                     <h1 id="resultTitle">¡Aprobado!</h1>
                     <p id="resultSubtitle">Has superado el examen</p>
                 </div>
 
                 <div class="results-stats">
                     <div class="result-stat glass-card">
+                        <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7a6 6 0 0 0-8-1v12a6 6 0 0 1 8-1 6 6 0 0 1 8 1V6a6 6 0 0 0-8 1z"/><path d="M12 7v11"/></svg></span>
                         <div class="result-stat-value" id="correctAnswers">27</div>
                         <div class="result-stat-label" data-i18n="correctLabel">Correctas</div>
                     </div>
                     <div class="result-stat glass-card">
+                        <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l2.4 6.2L21 10l-5 4.4L17.5 21 12 17.6 6.5 21 8 14.4 3 10l6.6-.8z"/></svg></span>
                         <div class="result-stat-value" id="wrongAnswers">3</div>
-                        <div class="result-stat-label" data-i18n="wrongLabel">Incorrectas</div>
+                        <div class="result-stat-label" data-i18n="wrongLabel">Fallos</div>
                     </div>
                     <div class="result-stat glass-card">
+                        <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="7" cy="14" r="3.2"/><circle cx="17" cy="14" r="3.2"/><path d="M10.2 14h3.6M4 14H3M21 14h-1"/></svg></span>
                         <div class="result-stat-value" id="finalScore">90%</div>
-                        <div class="result-stat-label" data-i18n="scoreLabel">Puntuación</div>
+                        <div class="result-stat-label" data-i18n="scoreLabel">Nota</div>
                     </div>
                 </div>
 
                 <div class="results-actions">
-                    <button id="resetTestBtn" class="glass-button primary" data-i18n="retryExam">Repetir Examen</button>
-                    <button id="goHomeBtn" class="glass-button" data-i18n="goHome">Volver al Inicio</button>
+                    <button id="resetTestBtn" class="glass-button primary" data-i18n="retryExam">Repetir examen</button>
+                    <button id="goHomeBtn" class="glass-button" data-i18n="goHome">Volver al inicio</button>
                 </div>
             </div>
         </div>
@@ -263,9 +270,7 @@
                 <button id="libraryBackBtn" class="back-button" type="button" aria-label="Inicio" data-i18n-aria="backHome">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 19l-7-7 7-7"/></svg>
                 </button>
-            </div>
-            <div class="library-header glass-container">
-                <h2 data-i18n="libraryTitle">Biblioteca de Preguntas</h2>
+                <h2 data-i18n="libraryTitle">Biblioteca</h2>
             </div>
 
             <div class="filters glass-container">
@@ -295,10 +300,7 @@
                 <button id="glossaryBackBtn" class="back-button" type="button" aria-label="Inicio" data-i18n-aria="backHome">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 19l-7-7 7-7"/></svg>
                 </button>
-            </div>
-            <div class="glossary-header glass-container">
-                <h2 data-i18n="glossary">Glosario Visual</h2>
-                <p class="subtitle" data-i18n="glossarySubtitle">Palabras de la vía. Texto y fotos oficiales de la DGT.</p>
+                <h2 data-i18n="glossary">Glosario visual</h2>
             </div>
 
             <div class="glossary-grid" id="glossaryGrid"></div>

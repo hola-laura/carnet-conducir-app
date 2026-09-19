@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
   "license": "Permiso B",
-  "updatedAt": "2026-09-17",
+  "updatedAt": "2026-09-18",
   "source": "anki-carnet-conducir",
-  "totalQuestions": 2983,
+  "totalQuestions": 3000,
   "questions": [
     {
       "id": "anki-b-1",
@@ -107341,6 +107341,618 @@
         "rightsApproved": true,
         "accuracyApproved": true,
         "rightsBasis": "Reglamento General de Circulación y normativa DGT 2026"
+      }
+    },
+    {
+      "id": "anki-b-2948",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "El consumo de LSD. produce en el conductor...",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "fatiga.",
+          "en": ""
+        },
+        {
+          "es": "alucinaciones y distorsiones en la percepción.",
+          "en": ""
+        },
+        {
+          "es": "estabilidad emocional.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "LSD: ES UNA DROGA PERTURBADORA, SUS EFECTOS SON: DISTORSIÓN EN LA PERCEPCIÓN Y ALUCINACIONES. \" SUS EFECTOS DURAN ENTRE 10 A 12 HORAS\".",
+      "image": "8373.JPG",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2949",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Las anfetaminas, ¿son peligrosas para conducir?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "No, porque son tranquilizantes.",
+          "en": ""
+        },
+        {
+          "es": "No, porque retrasan la aparición del sueño.",
+          "en": ""
+        },
+        {
+          "es": "Sí.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": "CON ANFETAMINAS. EL CONDUCTOR ES: IMPACIENTE E IMPULSIVO.",
+      "image": "5218.JPG",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2950",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "El permiso de conducción de la clase A1, ¿autoriza a conducir motocicletas con sidecar?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "No, en ningún caso.",
+          "en": ""
+        },
+        {
+          "es": "Sí, motocicletas de cualquier cilindrada.",
+          "en": ""
+        },
+        {
+          "es": "Sí, motocicletas con una cilindrada de 125  centímetros cúbicos como máximo y una potencia no superior a 11 kilovatios.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": " EL\"  A1 \"  AUTORIZA A CONDUCIR MOTOCICLETAS CON Y SIN SIDECAR. \" CILINDRADA HASTA  125 C.C.\". Y UNA POTENCIA NO SUPERIOR A: 11 KILOVATIOS\".",
+      "image": "12938.jpg",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2951",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "El conductor que consume cocaína...",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "puede volverse más competitivo y agresivo.",
+          "en": ""
+        },
+        {
+          "es": "es más tranquilo y menos competitivo.",
+          "en": ""
+        },
+        {
+          "es": "es más agresivo y menos competitivo.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "LA COCAÍNA ES UNA DROGA ESTIMULANTE, SUS EFECTOS SON: COMPETITIVIDAD, AGRESIVIDAD, IMPULSIVO Y MENOS CONCENTRACIÓN.",
+      "image": "14036.jpg",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2952",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Los efectos que provoca el LSD en el comportamiento del conductor...",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "pueden llegar a prolongarse de 10 a 12 horas desde su consumo.",
+          "en": ""
+        },
+        {
+          "es": "son muy breves, pero pueden reaparecer por sorpresa algún tiempo después.",
+          "en": ""
+        },
+        {
+          "es": "proporcionan un estado de relajación.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "EL LSD SON DROGAS ALUCINÓGENAS Y DISTORSIONAN LA REALIDAD. SU EFECTOS PUEDEN DURAR DE: 10 A 12 HORAS.",
+      "image": "8373.JPG",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2953",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "En caso de no disponer del dispositivo luminoso V-16 y hasta el 1 de enero del 2026, ¿está permitido colocar los triángulos de preseñalización de peligro a menos de 50 metros del vehículo averiado?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "No, deben estar al menos a 100 metros.",
+          "en": ""
+        },
+        {
+          "es": "No.",
+          "en": ""
+        },
+        {
+          "es": "Sí, a esa distancia ya son visibles.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "EN CASO DE AVERÍA SE DEBE SEÑALIZAR EL OBSTÁCULO CREADO, CON LA SEÑAL V-16 (que se pondrá en el techo del vehículo)  O BIEN MEDIANTE LOS TRIÁNGULOS DE PRESEÑALIZACIÓN DE PELIGRO( hasta 01-0-2026). ESTOS DISPOSITIVOS SE COLOCARÁN UNO POR DELANTE Y OTRO POR DETRÁS DEL VEHÍCULO, COMO MÍNIMO A 50 METROS DE DISTANCIA Y DE FORMA QUE SEAN VISIBLES POR LOS CONDUCTORES QUE SE APROXIMEN DESDE AL MENOS 100 METROS.",
+      "image": "3355.JPG",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2954",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "E una inmovilización por emergencia de un vehículo, en caso de no disponer del dispositivo luminoso, señal V-16, y hasta el 1 de enero del 2026, ¿a qué distancia del mismo deben colocarse los triángulos de preseñalización de peligro?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "A 100 metros y deben ser visibles desde, al menos, 150 metros.",
+          "en": ""
+        },
+        {
+          "es": "A 50 metros como mínimo y deben ser visibles desde, al menos, 100 metros.",
+          "en": ""
+        },
+        {
+          "es": "A 50 metros como máximo y deben ser visibles desde al menos 100 metros.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "",
+      "image": "6536.JPG",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2955",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "El turismo amarillo sale de una gasolinera para incorporarse a la circulación, en caso necesario, ¿cuándo tiene que ceder el paso?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Cuando se incorpore por la derecha.",
+          "en": ""
+        },
+        {
+          "es": "Cuando se incorpore por la izquierda.",
+          "en": ""
+        },
+        {
+          "es": "Siempre que se incorpore, ya sea por la derecha o por la izquierda.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": "",
+      "image": "15031.jpg",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2956",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "El consumo de éxtasis, ¿cómo afecta en el comportamiento del conductor?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Disminuye su capacidad de concentración.",
+          "en": ""
+        },
+        {
+          "es": "Reduce su sensibilidad al deslumbramiento.",
+          "en": ""
+        },
+        {
+          "es": "Provoca un agotamiento físico y mental mientras que están presentes los síntomas.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "DISMINUYE LA CAPACIDAD DE CONCENTRACIÓN DEL CONDUCTOR Y ES MÁS SENSIBLE A LOS DESLUMBRAMIENTOS.",
+      "image": "5138.JPG",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2957",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "En un conductor el consumo de anfetaminas...",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "favorece la fatiga y el sueño.",
+          "en": ""
+        },
+        {
+          "es": "proporciona un estado de relajación.",
+          "en": ""
+        },
+        {
+          "es": "genera comportamientos impacientes o impulsivos.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": "PRODUCE: COMPORTAMIENTO, IMPULSIVO E IMPACIENTE.",
+      "image": "5138.JPG",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2958",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Un camión de más de 3.500 kilogramos de masa máxima autorizada destinado al servicio público debe llevar siempre...",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "un extintor de incendios.",
+          "en": ""
+        },
+        {
+          "es": "un extintor de incendios y al menos un calzo adecuado para el vehículo.",
+          "en": ""
+        },
+        {
+          "es": "un calzo adecuado para el vehículo.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "CAMIONES DE MÁS DE 3.500 KILOGRAMOS, AUTOBUSES Y CONJUNTO DE VEHÍCULOS (Sin especificar peso): TIENEN QUE LLEVAR UN EXTINTOR DE INCENDIOS.",
+      "image": "B_766.jpg",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2959",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "Un conductor que ha consumido cocaína será...",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "inseguro, ya que el conductor no valora correctamente sus capacidades al volante.",
+          "en": ""
+        },
+        {
+          "es": "muy relajado, ya que baja su capacidad de concentración.",
+          "en": ""
+        },
+        {
+          "es": "competitivo e impulsivo.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": ".LA COCAÍNA ES UNA DROGA ESTIMULANTE, SUS EFECTOS SON: COMPETITIVIDAD, AGRESIVIDAD, IMPULSIVO Y MENOS CONCENTRACIÓN.",
+      "image": "8373.JPG",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2960",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "El consumo de éxtasis, ¿cómo afecta al comportamiento del conductor?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Reduce su sensibilidad al deslumbramiento.",
+          "en": ""
+        },
+        {
+          "es": "Disminuye su capacidad de concentración.",
+          "en": ""
+        },
+        {
+          "es": "Provoca un agotamiento físico y mental mientras duran sus síntomas.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "",
+      "image": "B_1211.jpg",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2961",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "¿Cómo afectan las anfetaminas a la conducción?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Se produce una fuerte somnolencia.",
+          "en": ""
+        },
+        {
+          "es": "Aumentan la sensación de fatiga.",
+          "en": ""
+        },
+        {
+          "es": "Disminuyen la sensación de fatiga y producen falsa seguridad.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": "",
+      "image": "5218.JPG",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2962",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "El consumo de anfetaminas en la conducción, ¿está prohibido?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "No, si forma parte de un tratamiento médico.",
+          "en": ""
+        },
+        {
+          "es": "Sí.",
+          "en": ""
+        },
+        {
+          "es": "No, porque no afecta a la conducción.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "",
+      "image": "14036.jpg",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2963",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "¿De qué color es el fondo de la placa de matrícula de las autocaravanas?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Amarillo",
+          "en": ""
+        },
+        {
+          "es": "Blanco",
+          "en": ""
+        },
+        {
+          "es": "Rojo",
+          "en": ""
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Las placas de matrícula de las autocaravanas tendrán fondo retrorreflectante de color blanco y sus caracteres estampados en relieve irán pintados en color negro mate para su mejor visualización.\n\n¿Crees que la respuesta es incorrecta?",
+      "image": "B_243.jpg",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
+      }
+    },
+    {
+      "id": "anki-b-2964",
+      "source": {
+        "name": "DGT - Base de datos Anki",
+        "url": "https://github.com/donmerendolo/anki-carnet-conducir",
+        "attribution": "Fuente: Repositorio Anki Carnet Conducir (GitHub)"
+      },
+      "category": "PERMISO B",
+      "question": {
+        "es": "¿Qué efectos secundarios tiene el LSD durante la conducción?",
+        "en": ""
+      },
+      "answers": [
+        {
+          "es": "Aumenta la sensación de fatiga y la somnolencia.",
+          "en": ""
+        },
+        {
+          "es": "Se sobrevaloran las capacidades del conductor.",
+          "en": ""
+        },
+        {
+          "es": "Se pueden sufrir alucinaciones y alteraciones emocionales.",
+          "en": ""
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": "",
+      "image": "8373.JPG",
+      "review": {
+        "status": "official-data",
+        "rightsApproved": true,
+        "accuracyApproved": true,
+        "rightsBasis": "Public data from GitHub repository"
       }
     }
   ]
