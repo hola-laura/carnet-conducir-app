@@ -1966,7 +1966,7 @@ body.light-mode .expand-button:hover {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 2px;
     height: 108px;
     min-height: 108px;
@@ -1975,7 +1975,7 @@ body.light-mode .expand-button:hover {
     -webkit-backdrop-filter: none;
     border: none;
     border-radius: 20px;
-    padding: 18px 8px 14px;
+    padding: 12px 8px 14px;
     overflow: hidden;
     box-shadow: none;
     position: relative;
@@ -2003,9 +2003,9 @@ body.light-mode .expand-button:hover {
 }
 
 #homeView .stat-icon {
-    position: absolute;
-    top: 5px;
-    left: 6px;
+    position: static;
+    top: auto;
+    left: auto;
     transform: none;
     width: 30px;
     height: 30px;
@@ -2019,6 +2019,8 @@ body.light-mode .expand-button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 0 auto;
+    flex-shrink: 0;
 }
 
 #homeView .stat-icon svg {
@@ -2046,15 +2048,15 @@ body.light-mode #homeView .stat-card.glass-card {
     background: #ffffff;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    padding: 18px 8px 14px;
-    box-shadow: 0 4px 16px rgba(17, 24, 39, 0.06);
+    padding: 12px 8px 14px;
+    box-shadow: none;
 }
 
 body.light-mode #homeView .stat-card:hover,
 body.light-mode #homeView .stat-card.glass-card:hover,
 body.light-mode #homeView button.stat-card:hover {
     background: #ffffff;
-    box-shadow: 0 6px 20px rgba(17, 24, 39, 0.08);
+    box-shadow: none;
 }
 
 body.light-mode #homeView .stat-icon,
@@ -2700,7 +2702,17 @@ body.light-mode .library-report {
 }
 
 #homeView .stat-card,
-#homeView .stat-card.glass-card,
+#homeView .stat-card.glass-card {
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 108px;
+    min-height: 108px;
+    border-radius: 20px;
+    padding: 12px 8px 14px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+}
+
 .results-stats .result-stat,
 .results-stats .result-stat.glass-card {
     position: relative;
@@ -2714,7 +2726,23 @@ body.light-mode .library-report {
     background: rgba(255, 255, 255, 0.1);
 }
 
-#homeView .stat-icon,
+#homeView .stat-icon {
+    position: static;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background: rgba(74, 116, 176, 0.85);
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 auto;
+}
+
 .results-stats .stat-icon {
     position: absolute;
     top: 5px;
@@ -2742,43 +2770,78 @@ body.light-mode .library-report {
 
 #homeView .stat-label {
     color: #9ec4e8;
+    text-transform: uppercase;
 }
 
-.mode-button {
-    padding: 16px 18px;
-    gap: 14px;
-    border-radius: 28px;
-}
-
-.mode-icon {
-    width: 22px;
-    height: 22px;
-}
-
-#homeView .mode-icon svg {
-    width: 22px;
-    height: 22px;
-}
-
-#homeView .mode-button:not(.primary) .mode-icon {
-    color: #9ec4e8;
-}
-
-.mode-button.primary,
-.mode-button.primary:hover {
-    background: #d6e6ff;
+#homeView .mode-selection .mode-button,
+#homeView .mode-selection .mode-button.primary,
+#homeView .mode-selection .mode-button:hover,
+#homeView .mode-selection .mode-button.primary:hover {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 2px;
+    height: 94px;
+    min-height: 94px;
+    padding: 18px;
     border: none;
+    border-radius: 24px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
     box-shadow: none;
     transform: none;
 }
 
-.mode-button.primary .mode-icon,
-.mode-button.primary .button-text strong {
-    color: #0b1f3d;
+#homeView .mode-card-photo {
+    position: absolute;
+    left: 0;
+    bottom: -46px;
+    width: 363px;
+    height: 242px;
+    max-width: none;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 0;
 }
 
-.mode-button.primary .button-text small {
-    color: #3b4d6b;
+#homeView .mode-card-photo-exam {
+    left: -8px;
+    bottom: -55px;
+    width: 371px;
+    height: 247px;
+    transform: scaleX(-1);
+}
+
+#homeView .mode-selection .mode-button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(236deg, rgba(255, 255, 255, 0) 35%, rgba(1, 20, 52, 0.4) 91%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+#homeView .mode-selection .button-text {
+    position: relative;
+    z-index: 2;
+    gap: 2px;
+}
+
+#homeView .mode-selection .button-text strong,
+#homeView .mode-selection .mode-button.primary .button-text strong {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fafafa;
+}
+
+#homeView .mode-selection .button-text small,
+#homeView .mode-selection .mode-button.primary .button-text small {
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    color: #d0e8ff;
+    white-space: nowrap;
 }
 
 .button-text small {
@@ -3091,8 +3154,23 @@ body.light-mode .results-actions .glass-button.primary {
     color: #ffffff;
 }
 
-body.light-mode #homeView .mode-button:not(.primary) .mode-icon {
-    color: #6b7280;
+body.light-mode #homeView .mode-selection .mode-button,
+body.light-mode #homeView .mode-selection .mode-button.primary,
+body.light-mode #homeView .mode-selection .mode-button:hover,
+body.light-mode #homeView .mode-selection .mode-button.primary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+    transform: none;
+}
+
+body.light-mode #homeView .mode-selection .button-text strong,
+body.light-mode #homeView .mode-selection .mode-button.primary .button-text strong {
+    color: #fafafa;
+}
+
+body.light-mode #homeView .mode-selection .button-text small,
+body.light-mode #homeView .mode-selection .mode-button.primary .button-text small {
+    color: #d0e8ff;
 }
 
 body.light-mode .mode-button.primary .button-text small {
