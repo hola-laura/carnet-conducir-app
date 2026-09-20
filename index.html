@@ -45,7 +45,7 @@
             <div class="glass-container">
                 <div class="home-bar">
                     <div class="streak-chip">
-                        <svg class="streak-fire" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M480-80q-134 0-227-93t-93-227q0-116 71.5-225T428-811q17-11 34.5-.5T480-780v72q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658q8-9 18-12.5t19 2.5q66 45 103.5 116T800-400q0 134-93 227T480-80ZM220-400q0 63 28.5 118.5T328-189q-4-12-6-24.5t-2-24.5q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60q0 12-2 24.5t-6 24.5q51-37 79.5-92.5T740-400q0-54-23-105.5T651-600q-21 15-44 23.5t-46 8.5q-61 0-101-41.5T420-714v-20q-92 66-146 156.5T220-400Zm260 24-71 70q-14 14-21.5 31t-7.5 37q0 41 29 69.5t71 28.5q42 0 71-28.5t29-69.5q0-20-7.5-37T551-306l-71-70Z"/></svg>
+                        <span class="streak-mark" aria-hidden="true">▲</span>
                         <span id="streakCount">0</span>
                         <span id="streakUnit" data-i18n="streakUnit">días</span>
                     </div>
@@ -111,22 +111,22 @@
 
                 <div class="stats-grid">
                     <div class="stat-card glass-card">
-                        <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7a6 6 0 0 0-8-1v12a6 6 0 0 1 8-1 6 6 0 0 1 8 1V6a6 6 0 0 0-8 1z"/><path d="M12 7v11"/></svg></span>
+                        <span class="stat-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 4.66667C7.35258 3.91303 6.44786 3.42731 5.46199 3.30407C4.47612 3.18084 3.47968 3.42892 2.66667 4V12C3.31409 11.2464 4.21881 10.7606 5.20468 10.6374C6.19054 10.5142 7.18699 10.7623 8 11.3333C8.81301 10.7623 9.80946 10.5142 10.7953 10.6374C11.7812 10.7606 12.6859 11.2464 13.3333 12V4C12.5203 3.42892 11.5239 3.18084 10.538 3.30407C9.55214 3.42731 8.64742 3.91303 8 4.66667Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 4.66667V12" stroke="currentColor" stroke-width="1.2"/></svg></span>
                         <div class="stat-number" id="totalQuestions">3000</div>
                         <div class="stat-label" data-i18n="statQuestions">Preguntas</div>
                     </div>
                     <div class="stat-card glass-card">
-                        <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l2.4 6.2L21 10l-5 4.4L17.5 21 12 17.6 6.5 21 8 14.4 3 10l6.6-.8z"/></svg></span>
+                        <span class="stat-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2L9.6 6.13333L14 6.66667L10.6667 9.6L11.6667 14L8 11.7333L4.33333 14L5.33333 9.6L2 6.66667L6.4 6.13333L8 2Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg></span>
                         <div class="stat-number" id="completedQuestions">0</div>
                         <div class="stat-label" data-i18n="statDone">Hechas</div>
                     </div>
                     <button type="button" class="stat-card glass-card" id="reviewStatBtn">
-                        <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="7" cy="14" r="3.2"/><circle cx="17" cy="14" r="3.2"/><path d="M10.2 14h3.6M4 14H3M21 14h-1"/></svg></span>
+                        <span class="stat-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4.66667 11.4667C5.84487 11.4667 6.8 10.5115 6.8 9.33333C6.8 8.15513 5.84487 7.2 4.66667 7.2C3.48846 7.2 2.53333 8.15513 2.53333 9.33333C2.53333 10.5115 3.48846 11.4667 4.66667 11.4667Z" stroke="currentColor" stroke-width="1.2"/><path d="M11.3333 11.4667C12.5115 11.4667 13.4667 10.5115 13.4667 9.33333C13.4667 8.15513 12.5115 7.2 11.3333 7.2C10.1551 7.2 9.2 8.15513 9.2 9.33333C9.2 10.5115 10.1551 11.4667 11.3333 11.4667Z" stroke="currentColor" stroke-width="1.2"/><path d="M6.8 9.33333H9.2M2.66667 9.33333H2M14 9.33333H13.3333" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
                         <div class="stat-number" id="weakTopics">0</div>
                         <div class="stat-label" data-i18n="statReview">A repasar</div>
                     </button>
                     <div class="stat-card glass-card">
-                        <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21h6"/><path d="M12 3a5 5 0 0 0-3 9v3h6v-3a5 5 0 0 0-3-9z"/></svg></span>
+                        <span class="stat-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 14H10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M8 2C7.30039 2 6.61852 2.22012 6.05097 2.62919C5.48341 3.03826 5.05896 3.61553 4.83772 4.27924C4.61649 4.94295 4.60969 5.65944 4.81829 6.32723C5.02689 6.99501 5.44031 7.58023 6 8V10H10V8C10.5597 7.58023 10.9731 6.99501 11.1817 6.32723C11.3903 5.65944 11.3835 4.94295 11.1623 4.27924C10.941 3.61553 10.5166 3.03826 9.94903 2.62919C9.38148 2.22012 8.69961 2 8 2Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg></span>
                         <div class="stat-number" id="accuracyStat">0%</div>
                         <div class="stat-label" data-i18n="statAccuracy">Acierto</div>
                     </div>
@@ -135,7 +135,7 @@
                 <div class="mode-selection">
                     <button id="examModeBtn" class="mode-button primary" data-mode="exam">
                         <span class="mode-icon" aria-hidden="true">
-                            <svg viewBox="0 -960 960 960" fill="currentColor"><path d="M513-492v-171q0-13-8.5-21.5T483-693q-13 0-21.5 8.5T453-663v183q0 6 2 11t6 10l144 149q9 10 22.5 9.5T650-310q9-9 9-22t-9-22L513-492ZM480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-82 31.5-155t86-127.5Q252-817 325-848.5T480-880q82 0 155 31.5t127.5 86Q817-708 848.5-635T880-480q0 82-31.5 155t-86 127.5Q708-143 635-111.5T480-80Zm0-400Zm0 340q140 0 240-100t100-240q0-140-100-240T480-820q-140 0-240 100T140-480q0 140 100 240t240 100Z"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 19.25C15.5563 19.25 19.25 15.5563 19.25 11C19.25 6.44365 15.5563 2.75 11 2.75C6.44365 2.75 2.75 6.44365 2.75 11C2.75 15.5563 6.44365 19.25 11 19.25Z" stroke="currentColor" stroke-width="1.65"/><path d="M11 6.41667V11L13.75 12.8333" stroke="currentColor" stroke-width="1.65" stroke-linecap="round"/></svg>
                         </span>
                         <span class="button-text">
                             <strong data-i18n="examOfficial">Examen oficial</strong>
@@ -145,7 +145,7 @@
 
                     <button id="practiceModeBtn" class="mode-button" data-mode="practice">
                         <span class="mode-icon" aria-hidden="true">
-                            <svg viewBox="0 -960 960 960" fill="currentColor"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q13 0 21.5 8.5T510-850v296q22 9 36 29t14 45q0 33-23.5 56.5T480-400q-33 0-56.5-23.5T400-480q0-25 14-45t36-29v-104q-65 11-107.5 60.5T300-480q0 75 52.5 127.5T480-300q75 0 127.5-52.5T660-480q0-32-10.5-60T621-591q-8-10-8-23t9-22q9-9 21.5-8.5T664-634q26 32 41 70.5t15 83.5q0 100-70 170t-170 70q-100 0-170-70t-70-170q0-93 60-160.5T450-719v-100q-131 11-220.5 108T140-480q0 142 99 241t241 99q142 0 241-99t99-241q0-65-22-122t-62-102q-9-10-9.5-23t8.5-22q9-9 22-8.5t21 10.5q48 54 75 121.5T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2.75V9.16667" stroke="currentColor" stroke-width="1.65" stroke-linecap="round"/><path d="M6.41667 5.95833C5.23064 6.90792 4.36883 8.20244 3.95034 9.66301C3.53185 11.1236 3.57734 12.6781 4.08053 14.1117C4.58372 15.5452 5.51977 16.7871 6.7593 17.6657C7.99884 18.5443 9.48066 19.0162 11 19.0162C12.5193 19.0162 14.0012 18.5443 15.2407 17.6657C16.4802 16.7871 17.4163 15.5452 17.9195 14.1117C18.4227 12.6781 18.4682 11.1236 18.0497 9.66301C17.6312 8.20244 16.7694 6.90792 15.5833 5.95833" stroke="currentColor" stroke-width="1.65" stroke-linecap="round"/></svg>
                         </span>
                         <span class="button-text">
                             <strong data-i18n="practiceMode">Modo práctica</strong>
@@ -155,7 +155,7 @@
 
                     <button id="libraryBtn" class="mode-button">
                         <span class="mode-icon" aria-hidden="true">
-                            <svg viewBox="0 -960 960 960" fill="currentColor"><path d="M248-300q53.57 0 104.28 12.5Q403-275 452-250v-427q-45-30-97.62-46.5Q301.76-740 248-740q-38 0-74.5 9.5T100-707v434q31-14 70.5-20.5T248-300Zm264 50q50-25 98-37.5T712-300q38 0 78.5 6t69.5 16v-429q-34-17-71.82-25-37.82-8-76.18-8-54 0-104.5 16.5T512-677v427Zm-30 79q-7.54 0-14.27-1.5Q461-174 456-178q-47-29-99.85-45-52.84-16-108.15-16-36.54 0-71.77 9T106-208q-23.1 11-44.55-3Q40-225 40-251v-463q0-15 7-27.5T68-761q42-20 87.39-29.5 45.4-9.5 92.61-9.5 63 0 122.5 17T482-731q51-35 109.5-52T712-800q46.87 0 91.93 9.5Q849-781 891-761q14 7 21.5 19.5T920-714v463q0 27.89-22.5 42.45Q875-194 853-208q-34-14-69.23-22.5Q748.54-239 712-239q-54.27 0-106.14 16Q554-207 508-178q-5 4-11.73 5.5T482-171ZM276-489Zm284-119q0-5.52 4.02-11.34 4.03-5.82 8.98-7.66 30-11 61.34-17 31.33-6 65.91-6 21.61 0 42.68 2.5T784-640q6 2 11 7.4 5 5.39 5 12.13 0 11.47-7.5 17.47-7.5 6-18.5 3-16.8-5-35.4-7.5Q720-610 700-610q-29 0-56 5.5T591-588q-14 5-22.5-.5T560-608Zm0 220q0-5.81 4.02-11.94 4.03-6.12 8.98-8.06 30-11 61.34-16.5 31.33-5.5 65.91-5.5 21.61 0 42.68 2.5T784-420q6 2 11 7.4 5 5.39 5 12.13 0 11.47-7.5 17.47-7.5 6-18.5 3-16.8-5-35.4-7.5Q720-390 700-390q-29 0-56 5t-53 16q-14 5-22.5 0t-8.5-19Zm0-110q0-5.52 4.02-11.34 4.03-5.82 8.98-7.66 30-11 61.34-17 31.33-6 65.91-6 21.61 0 42.68 2.5T784-530q6 2 11 7.4 5 5.39 5 12.13 0 11.47-7.5 17.47-7.5 6-18.5 3-16.8-5-35.4-7.5Q720-500 700-500q-29 0-56 5.5T591-478q-14 5-22.5-.5T560-498Z"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4.58333 3.66667V18.3333M8.25 3.66667V18.3333M4.58333 7.33333H8.25M4.58333 14.6667H8.25M12.8333 5.5H18.3333V17.4167H12.8333V5.5Z" stroke="currentColor" stroke-width="1.65" stroke-linecap="round"/></svg>
                         </span>
                         <span class="button-text">
                             <strong data-i18n="library">Biblioteca</strong>
@@ -165,7 +165,7 @@
 
                     <button id="glossaryBtn" class="mode-button">
                         <span class="mode-icon" aria-hidden="true">
-                            <svg viewBox="0 -960 960 960" fill="currentColor"><path d="M480.18-284q12.82 0 21.32-8.63 8.5-8.62 8.5-21.37v-197q0-12.75-8.68-21.38-8.67-8.62-21.5-8.62-12.82 0-21.32 8.62-8.5 8.63-8.5 21.38v197q0 12.75 8.68 21.37 8.67 8.63 21.5 8.63ZM480-607q14.45 0 24.23-9.78Q514-626.55 514-641t-9.77-24.22Q494.45-675 480-675q-14.45 0-24.23 9.78Q446-655.45 446-641t9.77 24.22Q465.55-607 480-607Zm0 523q-5.32 0-9.88-1-4.56-1-9.12-3-139-47-220-168.5t-81-266.61V-719q0-19.26 10.88-34.66Q181.75-769.07 199-776l260-97q11-4 21-4t21 4l260 97q17.25 6.93 28.13 22.34Q800-738.26 800-719v195.89Q800-378 719-256.5T499-88q-4.56 2-9.12 3T480-84Zm0-59q115-38 187.5-143.5T740-523v-196l-260-98-260 98v196q0 131 72.5 236.5T480-143Zm0-337Z"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2.75L18.3333 5.5V11C18.3333 15.5833 15.125 18.3333 11 20.1667C6.875 18.3333 3.66667 15.5833 3.66667 11V5.5L11 2.75Z" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round"/></svg>
                         </span>
                         <span class="button-text">
                             <strong data-i18n="glossary">Glosario visual</strong>
