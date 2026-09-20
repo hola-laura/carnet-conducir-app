@@ -2784,13 +2784,16 @@ body.light-mode .library-report {
     gap: 2px;
     height: 94px;
     min-height: 94px;
+    max-height: 94px;
     padding: 18px;
     border: none;
-    border-radius: 24px;
+    border-radius: 20px;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: none;
     transform: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 #homeView .mode-card-photo {
@@ -2817,14 +2820,27 @@ body.light-mode .library-report {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(236deg, rgba(255, 255, 255, 0) 35%, rgba(1, 20, 52, 0.4) 91%);
+    background: linear-gradient(236.02deg, rgba(255, 255, 255, 0) 35.09%, rgba(1, 20, 52, 0.4) 91.1%);
     pointer-events: none;
     z-index: 1;
+}
+
+#homeView .mode-selection .mode-button:nth-child(2)::after {
+    background: linear-gradient(232.6deg, rgba(255, 255, 255, 0) 12.8%, rgba(1, 20, 52, 0.4) 75.97%);
+}
+
+#homeView .mode-selection .mode-button:nth-child(3)::after {
+    background: linear-gradient(236.63deg, rgba(255, 255, 255, 0) 33.05%, rgba(1, 20, 52, 0.4) 92.36%);
+}
+
+#homeView .mode-selection .mode-button:nth-child(4)::after {
+    background: linear-gradient(239.49deg, rgba(255, 255, 255, 0) 29.73%, rgba(1, 20, 52, 0.4) 93.99%);
 }
 
 #homeView .mode-selection .button-text {
     position: relative;
     z-index: 2;
+    flex: none;
     gap: 2px;
 }
 
@@ -2832,6 +2848,7 @@ body.light-mode .library-report {
 #homeView .mode-selection .mode-button.primary .button-text strong {
     font-size: 20px;
     font-weight: 600;
+    line-height: 24px;
     color: #fafafa;
 }
 
@@ -2839,6 +2856,7 @@ body.light-mode .library-report {
 #homeView .mode-selection .mode-button.primary .button-text small {
     font-size: 8px;
     font-weight: 500;
+    line-height: 10px;
     letter-spacing: 0.6px;
     color: #d0e8ff;
     white-space: nowrap;
