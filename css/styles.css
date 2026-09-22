@@ -2877,7 +2877,7 @@ body.light-mode .library-report {
 .store-footer {
     display: flex;
     justify-content: center;
-    margin: 16px 0 8px;
+    margin: 8px 0 4px;
 }
 
 .store-footer img {
