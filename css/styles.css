@@ -371,12 +371,20 @@ html.native-app .view.active:not(#landingView) {
     font-family: 'Inter', -apple-system, sans-serif;
 }
 
-.landing-enter {
+.landing-actions {
     position: absolute;
     z-index: 1;
     left: 30px;
     right: 30px;
     bottom: calc(48px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.landing-enter {
+    display: block;
+    width: 100%;
     padding: 20px 24px;
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -385,7 +393,14 @@ html.native-app .view.active:not(#landingView) {
     font-size: 20px;
     font-weight: 400;
     font-family: 'Inter', -apple-system, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
     cursor: pointer;
+}
+
+html.native-app .landing-store {
+    display: none;
 }
 
 #landingView {
