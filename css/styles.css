@@ -1259,6 +1259,14 @@ body.light-mode .explanation-section {
     padding: 32px 24px 0;
 }
 
+#glossaryView .page-back-bar {
+    padding-bottom: 0;
+}
+
+#glossaryView .glossary-grid {
+    padding-top: 32px;
+}
+
 .library-header {
     text-align: center;
     padding: 12px 24px 24px;
