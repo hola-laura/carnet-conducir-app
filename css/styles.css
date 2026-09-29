@@ -70,7 +70,7 @@
     --border-default: var(--neutral-700);
     
     /* Light mode — Figma Home Light */
-    --light-bg: #fff8f0;
+    --light-bg: #eef4fa;
     --light-card: #ffffff;
     --light-text: #3b3555;
     --light-text-secondary: #6b6685;
@@ -124,7 +124,7 @@ body {
 /* Light Mode */
 body.light-mode {
     background: var(--light-bg);
-    background-image: radial-gradient(140% 90% at 50% -18%, #fffdf8 0%, #fff0d8 62%);
+    background-image: radial-gradient(140% 90% at 50% -18%, #f7fbff 0%, #dce8f4 62%);
     color: var(--light-text);
     --primary-warm: #6a55e8;
     --text-primary: var(--light-text);
@@ -138,7 +138,7 @@ body.light-mode {
     --surface-ghost: var(--light-card);
     --border-hairline: var(--light-border);
     --surface-background: var(--light-bg);
-    --bg-wash: radial-gradient(140% 90% at 50% -18%, #fffdf8 0%, #fff0d8 62%);
+    --bg-wash: radial-gradient(140% 90% at 50% -18%, #f7fbff 0%, #dce8f4 62%);
 }
 
 .app-container {
@@ -156,7 +156,7 @@ body.light-mode {
     html,
     body,
     body.light-mode {
-        background: #fff8f0;
+        background: #eef4fa;
     }
 
     body {
@@ -205,7 +205,7 @@ html.native-app body {
 
 html.native-app body.light-mode {
     background: var(--light-bg);
-    background-image: radial-gradient(140% 90% at 50% -18%, #fffdf8 0%, #fff0d8 62%);
+    background-image: radial-gradient(140% 90% at 50% -18%, #f7fbff 0%, #dce8f4 62%);
 }
 
 html.native-app body {
@@ -564,9 +564,12 @@ body.light-mode .streak-chip {
 .xp-car {
     position: absolute;
     left: calc((100% - 42px) * var(--p, 0));
-    bottom: 2px;
+    bottom: 4px;
+    z-index: 1;
     width: 42px;
     height: 26px;
+    opacity: 1;
+    filter: brightness(0) invert(1);
     transition: left 0.4s ease;
     pointer-events: none;
 }
@@ -1246,6 +1249,14 @@ body.light-mode .explanation-section {
 #libraryView .glass-container,
 #glossaryView .glass-container {
     margin: 0;
+}
+
+#libraryView .page-back-bar {
+    padding-bottom: 0;
+}
+
+#libraryView .filters {
+    padding: 32px 24px 0;
 }
 
 .library-header {
@@ -3313,4 +3324,82 @@ html.native-app .app-tabbar {
 
 #landingView.active ~ .app-tabbar {
     display: none !important;
+}
+
+#gameView {
+    padding-bottom: 100px;
+}
+
+.dash-wrap {
+    padding: 4px 24px 0;
+    text-align: center;
+}
+
+.dash-sub,
+.dash-note {
+    margin: 0 auto;
+    max-width: 340px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.dash-note {
+    margin-top: 14px;
+}
+
+#dashCanvas {
+    display: block;
+    width: min(100%, 300px);
+    height: auto;
+    margin: 14px auto 0;
+    border-radius: 16px;
+    touch-action: none;
+}
+
+.dash-pad {
+    display: flex;
+    gap: 10px;
+    max-width: 300px;
+    margin: 12px auto 0;
+}
+
+.dash-pad button {
+    flex: 1;
+    height: 56px;
+    border: 0;
+    border-radius: 999px;
+    background: #fff;
+    color: #3b3555;
+    cursor: pointer;
+}
+
+.dash-pad button svg {
+    width: 26px;
+    height: 26px;
+    margin: 0 auto;
+}
+
+.dash-play {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto 0;
+    border: 0;
+    border-radius: 999px;
+    padding: 16px;
+    background: #6a55e8;
+    color: #fff;
+    font: 600 17px Inter, -apple-system, sans-serif;
+    cursor: pointer;
+}
+
+body:not(.light-mode) .dash-pad button {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+body.light-mode .dash-sub,
+body.light-mode .dash-note {
+    color: var(--light-text-secondary);
 }

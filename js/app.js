@@ -133,7 +133,20 @@ const I18N = {
         toastPhotoBig: '⚠️ La foto es demasiado grande (máx 5MB)',
         toastPhotoType: '⚠️ Solo se permiten imágenes',
         toastPhotoSent: '✓ Foto enviada. ¡Gracias!',
-        confirmExit: '¿Seguro que quieres salir del test? Perderás tu progreso.'
+        confirmExit: '¿Seguro que quieres salir del test? Perderás tu progreso.',
+        navGame: 'Juego',
+        gameSub: 'Esquiva los conos y recoge estrellas. Mejor marca: {n}',
+        gameStart: 'Empezar',
+        gameRestart: 'Reiniciar',
+        gameAgain: 'Jugar otra vez',
+        gameCrash: '¡Choque!',
+        gameReady: '¿Listo?',
+        gamePressStart: 'Pulsa Empezar',
+        gameHint: 'Toca los lados del juego, usa los botones o las flechas. Cada 10 puntos dan 1 XP.',
+        gameScoreXp: '{score} puntos, +{xp} XP',
+        dashLeft: 'Carril izquierdo',
+        dashRight: 'Carril derecho',
+        dashAria: 'Juego de conducción de tres carriles'
     },
     en: {
         changeLanguage: 'Change language',
@@ -240,7 +253,20 @@ const I18N = {
         toastPhotoBig: '⚠️ Photo is too large (max 5MB)',
         toastPhotoType: '⚠️ Images only',
         toastPhotoSent: '✓ Photo sent. Thank you!',
-        confirmExit: 'Leave the test? Your progress will be lost.'
+        confirmExit: 'Leave the test? Your progress will be lost.',
+        navGame: 'Game',
+        gameSub: 'Dodge the cones and collect stars. Best: {n}',
+        gameStart: 'Start',
+        gameRestart: 'Restart',
+        gameAgain: 'Play again',
+        gameCrash: 'Crash!',
+        gameReady: 'Ready?',
+        gamePressStart: 'Tap Start',
+        gameHint: 'Tap the sides, use the buttons or the arrow keys. Every 10 points give 1 XP.',
+        gameScoreXp: '{score} points, +{xp} XP',
+        dashLeft: 'Left lane',
+        dashRight: 'Right lane',
+        dashAria: 'Three-lane driving game'
     }
 };
 
@@ -298,6 +324,7 @@ function applyI18n() {
     if (twDesc) twDesc.setAttribute('content', t('docDescription'));
     const ogLocale = document.querySelector('meta[property="og:locale"]');
     if (ogLocale) ogLocale.setAttribute('content', currentLang === 'en' ? 'en_GB' : 'es_ES');
+    refreshDashCopy();
 }
 
 function toggleLang() {
@@ -490,8 +517,41 @@ function initializeEventListeners() {
             if (btn.dataset.tab === 'home') goHome();
             if (btn.dataset.tab === 'library') showLibrary();
             if (btn.dataset.tab === 'glossary') showGlossary();
+            if (btn.dataset.tab === 'game') showGame();
         });
     }
+
+    const gameBackBtn = document.getElementById('gameBackBtn');
+    if (gameBackBtn) gameBackBtn.addEventListener('click', goHome);
+
+    const dashPlay = document.getElementById('dashPlay');
+    if (dashPlay) dashPlay.addEventListener('click', playDash);
+
+    const dashLeft = document.getElementById('dashLeft');
+    if (dashLeft) dashLeft.addEventListener('click', () => moveDash(-1));
+
+    const dashRight = document.getElementById('dashRight');
+    if (dashRight) dashRight.addEventListener('click', () => moveDash(1));
+
+    const dashCanvas = document.getElementById('dashCanvas');
+    if (dashCanvas) {
+        dashCanvas.addEventListener('pointerdown', (e) => {
+            const r = dashCanvas.getBoundingClientRect();
+            moveDash(e.clientX < r.left + r.width / 2 ? -1 : 1);
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (!document.getElementById('gameView')?.classList.contains('active')) return;
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            moveDash(-1);
+        }
+        if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            moveDash(1);
+        }
+    });
     
     // Test view buttons
     const exitTestBtn = document.getElementById('exitTestBtn');
@@ -721,7 +781,8 @@ function showView(viewId) {
     window.scrollTo(0, 0);
     const tabs = document.getElementById('appTabbar');
     if (!tabs) return;
-    const tabFor = { homeView: 'home', libraryView: 'library', glossaryView: 'glossary' };
+    if (viewId !== 'gameView') stopDash();
+    const tabFor = { homeView: 'home', libraryView: 'library', glossaryView: 'glossary', gameView: 'game' };
     const tab = tabFor[viewId];
     tabs.hidden = !tab;
     if (tab) {
@@ -1497,7 +1558,7 @@ function getStudyStreak() {
 }
 
 function getLevelInfo() {
-    const xp = (userStats.totalCorrect || 0) * 10;
+    const xp = (userStats.totalCorrect || 0) * 10 + (userStats.gameXp || 0);
     const per = 100;
     return {
         level: Math.floor(xp / per) + 1,
@@ -1813,3 +1874,203 @@ function exportFeedback() {
 }
 
 window.exportFeedback = exportFeedback;
+
+// ============================================
+// DRIVO DASH
+// ============================================
+
+let dash = null;
+let dashRaf = 0;
+
+function dashScore() {
+    if (!dash) return 0;
+    return Math.floor(dash.dist / 40) + dash.stars * 5;
+}
+
+function freshDash(run) {
+    return {
+        run,
+        over: false,
+        lane: 1,
+        px: 150,
+        items: [],
+        dist: 0,
+        stars: 0,
+        sp: 400,
+        speed: 2.6,
+        t: performance.now(),
+        gain: 0
+    };
+}
+
+function stopDash() {
+    if (dash) dash.run = false;
+    if (dashRaf) cancelAnimationFrame(dashRaf);
+    dashRaf = 0;
+}
+
+function showGame() {
+    showView('gameView');
+    dash = freshDash(false);
+    refreshDashCopy();
+    drawDash();
+}
+
+function refreshDashCopy() {
+    const sub = document.getElementById('dashSub');
+    if (sub) sub.textContent = t('gameSub', { n: userStats.gameBest || 0 });
+    const note = document.getElementById('dashNote');
+    if (note) note.textContent = t('gameHint');
+    const play = document.getElementById('dashPlay');
+    if (play) {
+        if (dash?.run) play.textContent = t('gameRestart');
+        else if (dash?.over) play.textContent = t('gameAgain');
+        else play.textContent = t('gameStart');
+    }
+    const left = document.getElementById('dashLeft');
+    const right = document.getElementById('dashRight');
+    if (left) left.setAttribute('aria-label', t('dashLeft'));
+    if (right) right.setAttribute('aria-label', t('dashRight'));
+    const canvas = document.getElementById('dashCanvas');
+    if (canvas) canvas.setAttribute('aria-label', t('dashAria'));
+    if (dash) drawDash();
+}
+
+function moveDash(dir) {
+    if (dash?.run) dash.lane = Math.max(0, Math.min(2, dash.lane + dir));
+}
+
+function playDash() {
+    stopDash();
+    dash = freshDash(true);
+    refreshDashCopy();
+    dashRaf = requestAnimationFrame(loopDash);
+}
+
+function loopDash(now) {
+    const canvas = document.getElementById('dashCanvas');
+    if (!canvas || !dash?.run) return;
+    const dt = Math.min(now - dash.t, 50);
+    const k = dt / 16.7;
+    dash.t = now;
+    dash.speed = Math.min(2.6 + dash.dist / 5000, 6);
+    dash.dist += dash.speed * k;
+    dash.px += (dash.lane * 100 + 50 - dash.px) * Math.min(1, 0.25 * k);
+    dash.sp -= dt;
+    if (dash.sp <= 0) {
+        dash.items.push({ x: (Math.random() * 3 | 0) * 100 + 50, y: -30, s: Math.random() < 0.35 });
+        dash.sp = (500 + Math.random() * 450) * 2.6 / dash.speed;
+    }
+    for (let i = 0; i < dash.items.length; i++) {
+        const it = dash.items[i];
+        it.y += dash.speed * 2.2 * k;
+        if (Math.abs(it.x - dash.px) < 30 && Math.abs(it.y - 360) < 32) {
+            if (it.s) {
+                dash.stars++;
+                it.y = 999;
+            } else {
+                endDash(canvas);
+                return;
+            }
+        }
+    }
+    dash.items = dash.items.filter((it) => it.y < 470);
+    drawDash();
+    dashRaf = requestAnimationFrame(loopDash);
+}
+
+function endDash(canvas) {
+    dash.run = false;
+    dash.over = true;
+    dash.gain = Math.floor(dashScore() / 10);
+    userStats.gameXp = (userStats.gameXp || 0) + dash.gain;
+    userStats.gameBest = Math.max(userStats.gameBest || 0, dashScore());
+    saveUserStats();
+    drawDash(canvas);
+    refreshDashCopy();
+}
+
+function drawDash() {
+    const canvas = document.getElementById('dashCanvas');
+    if (!canvas || !dash) return;
+    const x = canvas.getContext('2d');
+    const px = dash.px;
+    x.fillStyle = '#4A4468';
+    x.fillRect(0, 0, 300, 440);
+    x.fillStyle = '#FFF8F0';
+    [100, 200].forEach((lx) => {
+        for (let y = -40 + dash.dist % 40; y < 440; y += 40) x.fillRect(lx - 2, y, 4, 20);
+    });
+    dash.items.forEach((it) => {
+        if (it.s) {
+            x.fillStyle = '#FFE066';
+            x.beginPath();
+            x.arc(it.x, it.y, 13, 0, 7);
+            x.fill();
+            x.fillStyle = '#FFF8F0';
+            x.beginPath();
+            x.arc(it.x - 4, it.y - 4, 4, 0, 7);
+            x.fill();
+        } else {
+            x.fillStyle = '#FF9E7D';
+            x.beginPath();
+            x.moveTo(it.x, it.y - 20);
+            x.lineTo(it.x + 16, it.y + 16);
+            x.lineTo(it.x - 16, it.y + 16);
+            x.closePath();
+            x.fill();
+            x.fillStyle = '#fff';
+            x.fillRect(it.x - 9, it.y + 2, 18, 5);
+        }
+    });
+    x.fillStyle = '#FFF8F0';
+    x.fillRect(px - 26, 338, 8, 18);
+    x.fillRect(px + 18, 338, 8, 18);
+    x.fillRect(px - 26, 366, 8, 18);
+    x.fillRect(px + 18, 366, 8, 18);
+    x.fillStyle = '#FFB3CF';
+    x.beginPath();
+    if (x.roundRect) x.roundRect(px - 20, 330, 40, 58, 14);
+    else x.rect(px - 20, 330, 40, 58);
+    x.fill();
+    [-8, 8].forEach((o) => {
+        x.fillStyle = '#fff';
+        x.beginPath();
+        x.arc(px + o, 348, 6, 0, 7);
+        x.fill();
+        x.fillStyle = '#3B3555';
+        x.beginPath();
+        x.arc(px + o, 349, 3, 0, 7);
+        x.fill();
+    });
+    x.strokeStyle = '#3B3555';
+    x.lineWidth = 2;
+    x.lineCap = 'round';
+    x.beginPath();
+    x.arc(px, 358, 5, 0.15 * Math.PI, 0.85 * Math.PI);
+    x.stroke();
+    x.fillStyle = '#FFF8F0';
+    x.font = '800 24px Inter, sans-serif';
+    x.textAlign = 'left';
+    x.fillText(String(dashScore()), 16, 34);
+    x.fillStyle = '#FFE066';
+    x.beginPath();
+    x.arc(252, 26, 9, 0, 7);
+    x.fill();
+    x.fillStyle = '#FFF8F0';
+    x.fillText(String(dash.stars), 268, 34);
+    if (!dash.run) {
+        x.fillStyle = 'rgba(59,53,85,.72)';
+        x.fillRect(0, 150, 300, 120);
+        x.fillStyle = '#FFF8F0';
+        x.textAlign = 'center';
+        x.font = '800 32px Inter, sans-serif';
+        x.fillText(dash.over ? t('gameCrash') : t('gameReady'), 150, 200);
+        x.font = '600 18px Inter, sans-serif';
+        x.fillText(
+            dash.over ? t('gameScoreXp', { score: dashScore(), xp: dash.gain }) : t('gamePressStart'),
+            150,
+            236
+        );
+    }
+}

@@ -108,8 +108,7 @@
                     </div>
                     <div class="xp-road" id="xpRoad" style="--p: 0">
                         <div class="xp-road-fill" id="levelFill"></div>
-                        <img class="xp-car home-logo-dark" src="assets/logo-car-dark.svg" width="42" height="26" alt="">
-                        <img class="xp-car home-logo-light" src="assets/logo-car-light.svg" width="42" height="26" alt="">
+                        <img class="xp-car" src="assets/logo-car-dark.svg" width="42" height="26" alt="">
                     </div>
                 </div>
 
@@ -290,6 +289,29 @@
             <div class="glossary-grid" id="glossaryGrid"></div>
         </div>
 
+        <div id="gameView" class="view">
+            <div class="page-back-bar">
+                <button id="gameBackBtn" class="back-button" type="button" aria-label="Inicio" data-i18n-aria="backHome">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <h2>Drivo Dash</h2>
+            </div>
+            <div class="dash-wrap">
+                <p class="dash-sub" id="dashSub"></p>
+                <canvas id="dashCanvas" width="300" height="440" role="img"></canvas>
+                <div class="dash-pad">
+                    <button type="button" id="dashLeft" aria-label="Carril izquierdo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+                    </button>
+                    <button type="button" id="dashRight" aria-label="Carril derecho">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
+                </div>
+                <button type="button" class="dash-play" id="dashPlay">Empezar</button>
+                <p class="dash-note" id="dashNote"></p>
+            </div>
+        </div>
+
         <div id="feedbackMenu" class="feedback-menu hidden">
         <button class="feedback-menu-item" data-action="wrong_question">
             <span class="feedback-icon">⚠️</span>
@@ -354,6 +376,10 @@
         <button type="button" data-tab="glossary">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
             <span data-i18n="navGlossary">Glosario</span>
+        </button>
+        <button type="button" data-tab="game">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12h4M8 10v4M15 12h.01M18 10h.01M17.3 5H6.7a4 4 0 0 0-3.9 3.2l-1.6 7A3 3 0 0 0 5 19a3 3 0 0 0 2.4-1.2L9 15h6l1.6 2.8A3 3 0 0 0 19 19a3 3 0 0 0 3.8-3.8l-1.6-7A4 4 0 0 0 17.3 5z"/></svg>
+            <span data-i18n="navGame">Juego</span>
         </button>
     </nav>
 
