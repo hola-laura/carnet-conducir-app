@@ -568,8 +568,9 @@ body.light-mode .streak-chip {
     z-index: 1;
     width: 42px;
     height: 26px;
-    opacity: 1;
-    filter: brightness(0) invert(1);
+    background: #fff0a6;
+    -webkit-mask: url("../assets/logo-car-dark.svg") center / contain no-repeat;
+    mask: url("../assets/logo-car-dark.svg") center / contain no-repeat;
     transition: left 0.4s ease;
     pointer-events: none;
 }
