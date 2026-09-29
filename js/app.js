@@ -62,6 +62,8 @@ const I18N = {
         examMeta: '30 preguntas · Máx 3 fallos · Sin pistas',
         practiceMode: 'Modo práctica',
         practiceMeta: 'Feedback al instante · Si fallas, ves por qué y sigues.',
+        navHome: 'Inicio',
+        navGlossary: 'Glosario',
         library: 'Biblioteca',
         libraryMeta: '3000 preguntas · Buscar, filtrar, leer.',
         glossary: 'Glosario visual',
@@ -167,6 +169,8 @@ const I18N = {
         examMeta: '30 questions · Max 3 mistakes · No hints',
         practiceMode: 'Practice mode',
         practiceMeta: 'Instant feedback · If you miss, you see why and keep going.',
+        navHome: 'Home',
+        navGlossary: 'Glossary',
         library: 'Library',
         libraryMeta: '3000 questions · Search, filter, read.',
         glossary: 'Visual glossary',
@@ -477,6 +481,17 @@ function initializeEventListeners() {
     if (glossaryBtn) {
         glossaryBtn.addEventListener('click', showGlossary);
     }
+
+    const appTabbar = document.getElementById('appTabbar');
+    if (appTabbar) {
+        appTabbar.addEventListener('click', (event) => {
+            const btn = event.target.closest('[data-tab]');
+            if (!btn) return;
+            if (btn.dataset.tab === 'home') goHome();
+            if (btn.dataset.tab === 'library') showLibrary();
+            if (btn.dataset.tab === 'glossary') showGlossary();
+        });
+    }
     
     // Test view buttons
     const exitTestBtn = document.getElementById('exitTestBtn');
@@ -704,6 +719,17 @@ function showView(viewId) {
     });
     document.getElementById(viewId).classList.add('active');
     window.scrollTo(0, 0);
+    const tabs = document.getElementById('appTabbar');
+    if (!tabs) return;
+    const tabFor = { homeView: 'home', libraryView: 'library', glossaryView: 'glossary' };
+    const tab = tabFor[viewId];
+    tabs.hidden = !tab;
+    if (tab) {
+        tabs.querySelectorAll('[data-tab]').forEach((btn) => {
+            if (btn.dataset.tab === tab) btn.setAttribute('aria-current', 'page');
+            else btn.removeAttribute('aria-current');
+        });
+    }
 }
 
 async function runWithLoader(task) {
@@ -1500,7 +1526,10 @@ function updateHomeStats() {
     const level = getLevelInfo();
     document.getElementById('levelLabel').textContent = t('levelN', { n: level.level });
     document.getElementById('levelXp').textContent = `${level.into} / ${level.per} XP`;
-    document.getElementById('levelFill').style.width = `${(level.into / level.per) * 100}%`;
+    const xpPct = level.into / level.per;
+    document.getElementById('levelFill').style.width = `${xpPct * 100}%`;
+    const xpRoad = document.getElementById('xpRoad');
+    if (xpRoad) xpRoad.style.setProperty('--p', String(xpPct));
     
     // Mostrar setup o sesión diaria
     const setupPrompt = document.getElementById('setupPrompt');

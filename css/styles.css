@@ -70,12 +70,12 @@
     --border-default: var(--neutral-700);
     
     /* Light mode — Figma Home Light */
-    --light-bg: #edf4ff;
-    --light-card: #f3f4f6;
-    --light-text: #111827;
-    --light-text-secondary: #6b7280;
-    --light-border: #e5e7eb;
-    --light-primary-btn: #111827;
+    --light-bg: #fff8f0;
+    --light-card: #ffffff;
+    --light-text: #3b3555;
+    --light-text-secondary: #6b6685;
+    --light-border: rgba(59, 53, 85, 0.12);
+    --light-primary-btn: #3b3555;
     
     /* Shadows - Moodist inspired */
     --shadow-sm: 0 1px 2px rgba(9, 9, 11, 0.05);
@@ -124,9 +124,9 @@ body {
 /* Light Mode */
 body.light-mode {
     background: var(--light-bg);
-    background-image: radial-gradient(140% 90% at 50% -18%, #ffffff 0%, #edf4ff 60%);
+    background-image: radial-gradient(140% 90% at 50% -18%, #fffdf8 0%, #fff0d8 62%);
     color: var(--light-text);
-    --primary-warm: #6366F1;
+    --primary-warm: #6a55e8;
     --text-primary: var(--light-text);
     --text-secondary: var(--light-text-secondary);
     --text-tertiary: var(--light-text-secondary);
@@ -138,7 +138,7 @@ body.light-mode {
     --surface-ghost: var(--light-card);
     --border-hairline: var(--light-border);
     --surface-background: var(--light-bg);
-    --bg-wash: radial-gradient(140% 90% at 50% -18%, #ffffff 0%, #edf4ff 60%);
+    --bg-wash: radial-gradient(140% 90% at 50% -18%, #fffdf8 0%, #fff0d8 62%);
 }
 
 .app-container {
@@ -147,7 +147,7 @@ body.light-mode {
     min-height: 100vh;
     min-height: 100dvh;
     position: relative;
-    padding-bottom: var(--space-xl);
+    padding-bottom: 96px;
     background: var(--bg-black);
     background-image: var(--bg-wash);
 }
@@ -156,7 +156,7 @@ body.light-mode {
     html,
     body,
     body.light-mode {
-        background: #ffffff;
+        background: #fff8f0;
     }
 
     body {
@@ -205,7 +205,7 @@ html.native-app body {
 
 html.native-app body.light-mode {
     background: var(--light-bg);
-    background-image: radial-gradient(140% 90% at 50% -18%, #ffffff 0%, #edf4ff 60%);
+    background-image: radial-gradient(140% 90% at 50% -18%, #fffdf8 0%, #fff0d8 62%);
 }
 
 html.native-app body {
@@ -536,26 +536,47 @@ body.light-mode .streak-chip {
     color: var(--text-secondary);
 }
 
-.level-bar {
-    height: 8px;
-    border-radius: 50px;
-    overflow: hidden;
-    background: rgba(73, 137, 255, 0.2);
+.xp-road {
+    position: relative;
+    height: 22px;
+    border-radius: 11px;
+    background: #24365c;
+    overflow: visible;
 }
 
-.level-fill {
+.xp-road::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: 10px;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, rgba(250, 250, 250, 0.55) 0 10px, transparent 10px 20px);
+}
+
+.xp-road-fill {
     height: 100%;
     width: 0;
-    border-radius: 50px;
-    background: #4989ff;
+    border-radius: 11px;
+    background: rgba(255, 214, 184, 0.45);
 }
 
-body.light-mode .level-bar {
-    background: #e0ecff;
+.xp-car {
+    position: absolute;
+    left: calc((100% - 42px) * var(--p, 0));
+    bottom: 2px;
+    width: 42px;
+    height: 26px;
+    transition: left 0.4s ease;
+    pointer-events: none;
 }
 
-body.light-mode .level-fill {
-    background: #6366f1;
+body.light-mode .xp-road {
+    background: #4a4468;
+}
+
+body.light-mode .xp-road-fill {
+    background: rgba(255, 214, 184, 0.55);
 }
 
 .mode-icon {
@@ -2111,7 +2132,7 @@ body.light-mode .mode-selection {
 }
 
 body.light-mode .mode-button {
-    background: #e0ecff;
+    background: #f3ede2;
     border: none;
     box-shadow: none;
 }
@@ -3234,5 +3255,59 @@ body.light-mode .glossary-illustration {
 }
 
 body.light-mode .disclaimer {
-    color: #6b7280;
+    color: #6b6685;
+}
+
+.app-tabbar[hidden] {
+    display: none !important;
+}
+
+.app-tabbar {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    z-index: 30;
+    display: flex;
+    gap: 4px;
+    padding: 6px;
+    border-radius: 999px;
+    background: #24365c;
+}
+
+.app-tabbar button {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 0 6px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #ddd8f0;
+    font: 600 12px/1.2 Inter, -apple-system, sans-serif;
+    cursor: pointer;
+}
+
+.app-tabbar button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.app-tabbar button[aria-current="page"] {
+    background: #fff0a6;
+    color: #3b3555;
+}
+
+body.light-mode .app-tabbar {
+    background: #4a4468;
+}
+
+html.native-app .app-tabbar {
+    position: fixed;
+}
+
+#landingView.active ~ .app-tabbar {
+    display: none !important;
 }
