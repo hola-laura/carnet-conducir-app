@@ -2902,20 +2902,23 @@ body.light-mode .library-report {
 }
 
 .store-footer img {
-    display: block;
     height: 40px;
     width: auto;
 }
 
-.store-badge-light {
+.store-footer .store-badge-light {
     display: none;
 }
 
-body.light-mode .store-badge-dark {
+.store-footer .store-badge-dark {
+    display: block;
+}
+
+body.light-mode .store-footer .store-badge-dark {
     display: none;
 }
 
-body.light-mode .store-badge-light {
+body.light-mode .store-footer .store-badge-light {
     display: block;
 }
 
