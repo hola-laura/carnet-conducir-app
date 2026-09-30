@@ -403,12 +403,14 @@ function isNativeApp() {
 
 function syncNativeChrome() {
     if (!isNativeApp()) return;
+    const light = document.body.classList.contains('light-mode');
     document.documentElement.classList.add('native-app');
+    document.documentElement.classList.toggle('light-mode', light);
+    const theme = document.querySelector('meta[name="theme-color"]');
+    if (theme) theme.setAttribute('content', light ? '#eef4fa' : '#011434');
     const Bar = window.Capacitor.Plugins && window.Capacitor.Plugins.StatusBar;
     if (!Bar) return;
-    const light = document.body.classList.contains('light-mode');
-    Bar.setOverlaysWebView({ overlay: false });
-    Bar.setBackgroundColor({ color: light ? '#edf4ff' : '#011434' });
+    Bar.setOverlaysWebView({ overlay: true });
     Bar.setStyle({ style: light ? 'DARK' : 'LIGHT' });
 }
 

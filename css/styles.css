@@ -198,12 +198,15 @@ body.light-mode {
 }
 
 html.native-app,
-html.native-app body {
+html.native-app body,
+html.native-app .app-container {
     background: var(--bg-black);
     background-image: var(--bg-wash);
 }
 
-html.native-app body.light-mode {
+html.native-app.light-mode,
+html.native-app body.light-mode,
+html.native-app body.light-mode .app-container {
     background: var(--light-bg);
     background-image: radial-gradient(140% 90% at 50% -18%, #f7fbff 0%, #dce8f4 62%);
 }
@@ -213,15 +216,7 @@ html.native-app body {
     padding: 0;
     height: 100dvh;
     overflow: hidden;
-}
-
-html.native-app .page-back-bar,
-html.native-app .test-header {
-    padding-top: 24px;
-}
-
-html.native-app #homeView .glass-container {
-    padding-top: 24px;
+    overscroll-behavior: none;
 }
 
 html.native-app .app-container {
@@ -235,10 +230,22 @@ html.native-app .app-container {
     overflow: hidden;
 }
 
+html.native-app .view.active {
+    position: fixed;
+    inset: 0;
+    height: 100dvh;
+    background: inherit;
+}
+
 html.native-app .view.active:not(#landingView) {
-    height: 100%;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
     padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+}
+
+html.native-app #landingView.active {
+    overflow: hidden;
 }
 
 .glass-container {
@@ -1765,6 +1772,11 @@ body {
     padding-bottom: env(safe-area-inset-bottom);
 }
 
+html.native-app body,
+html.native-app body.light-mode {
+    padding: 0;
+}
+
 @media screen and (max-width: 430px) {
     .glass-container {
         margin: 0;
@@ -3052,6 +3064,10 @@ html.native-app .store-footer {
 
 .results-container {
     padding: 80px 24px 32px;
+}
+
+html.native-app .results-container {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 24px);
 }
 
 .result-icon {

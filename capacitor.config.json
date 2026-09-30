@@ -4,13 +4,12 @@
   "webDir": "www",
   "ios": {
     "contentInset": "never",
-    "backgroundColor": "#011434"
+    "backgroundColor": "#eef4fa"
   },
   "plugins": {
     "StatusBar": {
-      "overlaysWebView": false,
-      "style": "LIGHT",
-      "backgroundColor": "#011434"
+      "overlaysWebView": true,
+      "style": "LIGHT"
     }
   }
 }
