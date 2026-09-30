@@ -3363,6 +3363,8 @@ html.native-app .app-tabbar {
     height: auto;
     margin: 14px auto 0;
     border-radius: 16px;
+    overflow: hidden;
+    background: #4A4468;
     touch-action: none;
 }
 

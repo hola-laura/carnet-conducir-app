@@ -1948,8 +1948,7 @@ function playDash() {
 }
 
 function loopDash(now) {
-    const canvas = document.getElementById('dashCanvas');
-    if (!canvas || !dash?.run) return;
+    if (!document.getElementById('dashCanvas') || !dash?.run) return;
     const dt = Math.min(now - dash.t, 50);
     const k = dt / 16.7;
     dash.t = now;
@@ -1969,7 +1968,7 @@ function loopDash(now) {
                 dash.stars++;
                 it.y = 999;
             } else {
-                endDash(canvas);
+                endDash();
                 return;
             }
         }
@@ -1979,98 +1978,49 @@ function loopDash(now) {
     dashRaf = requestAnimationFrame(loopDash);
 }
 
-function endDash(canvas) {
+function endDash() {
     dash.run = false;
     dash.over = true;
     dash.gain = Math.floor(dashScore() / 10);
     userStats.gameXp = (userStats.gameXp || 0) + dash.gain;
     userStats.gameBest = Math.max(userStats.gameBest || 0, dashScore());
     saveUserStats();
-    drawDash(canvas);
+    drawDash();
     refreshDashCopy();
 }
 
 function drawDash() {
-    const canvas = document.getElementById('dashCanvas');
-    if (!canvas || !dash) return;
-    const x = canvas.getContext('2d');
+    const svg = document.getElementById('dashCanvas');
+    if (!svg || !dash) return;
     const px = dash.px;
-    x.fillStyle = '#4A4468';
-    x.fillRect(0, 0, 300, 440);
-    x.fillStyle = '#FFF8F0';
+    let marks = '';
     [100, 200].forEach((lx) => {
-        for (let y = -40 + dash.dist % 40; y < 440; y += 40) x.fillRect(lx - 2, y, 4, 20);
-    });
-    dash.items.forEach((it) => {
-        if (it.s) {
-            x.fillStyle = '#FFE066';
-            x.beginPath();
-            x.arc(it.x, it.y, 13, 0, 7);
-            x.fill();
-            x.fillStyle = '#FFF8F0';
-            x.beginPath();
-            x.arc(it.x - 4, it.y - 4, 4, 0, 7);
-            x.fill();
-        } else {
-            x.fillStyle = '#FF9E7D';
-            x.beginPath();
-            x.moveTo(it.x, it.y - 20);
-            x.lineTo(it.x + 16, it.y + 16);
-            x.lineTo(it.x - 16, it.y + 16);
-            x.closePath();
-            x.fill();
-            x.fillStyle = '#fff';
-            x.fillRect(it.x - 9, it.y + 2, 18, 5);
+        for (let y = -40 + dash.dist % 40; y < 440; y += 40) {
+            marks += `<rect x="${lx - 2}" y="${y}" width="4" height="20" rx="1" fill="#FFF8F0"/>`;
         }
     });
-    x.fillStyle = '#FFF8F0';
-    x.fillRect(px - 26, 338, 8, 18);
-    x.fillRect(px + 18, 338, 8, 18);
-    x.fillRect(px - 26, 366, 8, 18);
-    x.fillRect(px + 18, 366, 8, 18);
-    x.fillStyle = '#FFB3CF';
-    x.beginPath();
-    if (x.roundRect) x.roundRect(px - 20, 330, 40, 58, 14);
-    else x.rect(px - 20, 330, 40, 58);
-    x.fill();
-    [-8, 8].forEach((o) => {
-        x.fillStyle = '#fff';
-        x.beginPath();
-        x.arc(px + o, 348, 6, 0, 7);
-        x.fill();
-        x.fillStyle = '#3B3555';
-        x.beginPath();
-        x.arc(px + o, 349, 3, 0, 7);
-        x.fill();
-    });
-    x.strokeStyle = '#3B3555';
-    x.lineWidth = 2;
-    x.lineCap = 'round';
-    x.beginPath();
-    x.arc(px, 358, 5, 0.15 * Math.PI, 0.85 * Math.PI);
-    x.stroke();
-    x.fillStyle = '#FFF8F0';
-    x.font = '800 24px Inter, sans-serif';
-    x.textAlign = 'left';
-    x.fillText(String(dashScore()), 16, 34);
-    x.fillStyle = '#FFE066';
-    x.beginPath();
-    x.arc(252, 26, 9, 0, 7);
-    x.fill();
-    x.fillStyle = '#FFF8F0';
-    x.fillText(String(dash.stars), 268, 34);
-    if (!dash.run) {
-        x.fillStyle = 'rgba(59,53,85,.72)';
-        x.fillRect(0, 150, 300, 120);
-        x.fillStyle = '#FFF8F0';
-        x.textAlign = 'center';
-        x.font = '800 32px Inter, sans-serif';
-        x.fillText(dash.over ? t('gameCrash') : t('gameReady'), 150, 200);
-        x.font = '600 18px Inter, sans-serif';
-        x.fillText(
-            dash.over ? t('gameScoreXp', { score: dashScore(), xp: dash.gain }) : t('gamePressStart'),
-            150,
-            236
-        );
-    }
+    const items = dash.items.map((it) => {
+        if (it.s) {
+            return `<circle cx="${it.x}" cy="${it.y}" r="13" fill="#FFE066"/><circle cx="${it.x - 4}" cy="${it.y - 4}" r="4" fill="#FFF8F0"/>`;
+        }
+        return `<polygon points="${it.x},${it.y - 20} ${it.x + 16},${it.y + 16} ${it.x - 16},${it.y + 16}" fill="#FF9E7D"/><rect x="${it.x - 9}" y="${it.y + 2}" width="18" height="5" fill="#fff"/>`;
+    }).join('');
+    const overlay = !dash.run
+        ? `<rect y="150" width="300" height="120" fill="rgba(59,53,85,.72)"/>
+           <text x="150" y="200" text-anchor="middle" fill="#FFF8F0" font-weight="800" font-size="32" font-family="Inter,sans-serif">${dash.over ? t('gameCrash') : t('gameReady')}</text>
+           <text x="150" y="236" text-anchor="middle" fill="#FFF8F0" font-weight="600" font-size="18" font-family="Inter,sans-serif">${dash.over ? t('gameScoreXp', { score: dashScore(), xp: dash.gain }) : t('gamePressStart')}</text>`
+        : '';
+    svg.innerHTML = `<rect width="300" height="440" fill="#4A4468"/>${marks}${items}
+        <rect x="${px - 26}" y="338" width="8" height="18" rx="2" fill="#FFF8F0"/>
+        <rect x="${px + 18}" y="338" width="8" height="18" rx="2" fill="#FFF8F0"/>
+        <rect x="${px - 26}" y="366" width="8" height="18" rx="2" fill="#FFF8F0"/>
+        <rect x="${px + 18}" y="366" width="8" height="18" rx="2" fill="#FFF8F0"/>
+        <rect x="${px - 20}" y="330" width="40" height="58" rx="14" fill="#FFB3CF"/>
+        <circle cx="${px - 8}" cy="348" r="6" fill="#fff"/><circle cx="${px - 8}" cy="349" r="3" fill="#3B3555"/>
+        <circle cx="${px + 8}" cy="348" r="6" fill="#fff"/><circle cx="${px + 8}" cy="349" r="3" fill="#3B3555"/>
+        <path d="M${px - 5} 360 a5 5 0 0 0 10 0" fill="none" stroke="#3B3555" stroke-width="2" stroke-linecap="round"/>
+        <text x="16" y="34" fill="#FFF8F0" font-weight="800" font-size="24" font-family="Inter,sans-serif">${dashScore()}</text>
+        <circle cx="252" cy="26" r="9" fill="#FFE066"/>
+        <text x="268" y="34" fill="#FFF8F0" font-weight="800" font-size="24" font-family="Inter,sans-serif">${dash.stars}</text>
+        ${overlay}`;
 }
