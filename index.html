@@ -18,7 +18,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Drivo Test — Test del carnet B (España)">
     <meta name="twitter:description" content="Tests gratis para el carnet B: preguntas tipo examen DGT, modo práctica y glosario visual. No afiliada a la DGT.">
-    <link rel="stylesheet" href="css/styles.css?v=12">
+    <link rel="stylesheet" href="css/styles.css?v=16">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="assets/icon.svg">
     <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
@@ -298,7 +298,16 @@
             </div>
             <div class="dash-wrap">
                 <p class="dash-sub" id="dashSub"></p>
-                <svg id="dashCanvas" viewBox="0 0 300 440" role="img"></svg>
+                <div class="dash-stage">
+                    <svg id="dashCanvas" viewBox="0 0 300 440" role="img"></svg>
+                    <div class="dash-overlay" id="dashOverlay">
+                        <div class="dash-overlay-card">
+                            <p class="dash-overlay-title" id="dashOverlayTitle">¿Listo?</p>
+                            <p class="dash-overlay-sub" id="dashOverlaySub" hidden></p>
+                            <button type="button" class="dash-play" id="dashPlay">Empezar</button>
+                        </div>
+                    </div>
+                </div>
                 <div class="dash-pad">
                     <button type="button" id="dashLeft" aria-label="Carril izquierdo">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
@@ -307,7 +316,6 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
                     </button>
                 </div>
-                <button type="button" class="dash-play" id="dashPlay">Empezar</button>
                 <p class="dash-note" id="dashNote"></p>
             </div>
         </div>
@@ -388,6 +396,6 @@
     <script src="js/illustrations-dgt.js"></script>
     <script src="js/glossary-dgt.js"></script>
     <script src="js/questions-data.js"></script>
-    <script src="js/app.js?v=9"></script>
+    <script src="js/app.js?v=11"></script>
 </body>
 </html>

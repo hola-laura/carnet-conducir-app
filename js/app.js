@@ -295,6 +295,10 @@ function displayCategory(name) {
     return map[name] ? t(map[name]) : name;
 }
 
+function categoryTone(name) {
+    return name === 'Seguridad' || name === 'Seguridad Vial' ? 'is-safety' : '';
+}
+
 function applyI18n() {
     document.documentElement.lang = currentLang;
     document.body.classList.toggle('lang-en', currentLang === 'en');
@@ -1138,7 +1142,9 @@ function loadQuestion() {
     document.getElementById('progressBar').style.width = `${progress}%`;
     
     // Update question
-    document.getElementById('questionCategory').textContent = displayCategory(question.category);
+    const categoryEl = document.getElementById('questionCategory');
+    categoryEl.className = `question-category ${categoryTone(question.category)}`.trim();
+    categoryEl.textContent = displayCategory(question.category);
     updateReviewChip(question.id);
     document.getElementById('questionText').textContent = question.question;
     document.getElementById('questionText').classList.toggle('is-translating', currentLang === 'en');
@@ -1400,7 +1406,7 @@ function appendLibraryPage() {
 
         item.innerHTML = `
             <div class="question-item-header">
-                <span class="question-category">${displayCategory(q.category)}</span>
+                <span class="question-category ${categoryTone(q.category)}">${displayCategory(q.category)}</span>
                 ${needsReview(q.id) ? `<span class="review-chip">${t('needsReview')}</span>` : ''}
             </div>
             ${illustrationHTML ? `<div class="question-image">${illustrationHTML}</div>` : ''}
@@ -1921,10 +1927,18 @@ function refreshDashCopy() {
     if (sub) sub.textContent = t('gameSub', { n: userStats.gameBest || 0 });
     const note = document.getElementById('dashNote');
     if (note) note.textContent = t('gameHint');
+    const overlay = document.getElementById('dashOverlay');
+    if (overlay) overlay.hidden = !!dash?.run;
+    const title = document.getElementById('dashOverlayTitle');
+    if (title) title.textContent = dash?.over ? t('gameCrash') : t('gameReady');
+    const overlaySub = document.getElementById('dashOverlaySub');
+    if (overlaySub) {
+        overlaySub.hidden = !dash?.over;
+        overlaySub.textContent = dash?.over ? t('gameScoreXp', { score: dashScore(), xp: dash.gain }) : '';
+    }
     const play = document.getElementById('dashPlay');
     if (play) {
-        if (dash?.run) play.textContent = t('gameRestart');
-        else if (dash?.over) play.textContent = t('gameAgain');
+        if (dash?.over) play.textContent = t('gameAgain');
         else play.textContent = t('gameStart');
     }
     const left = document.getElementById('dashLeft');
@@ -2005,11 +2019,6 @@ function drawDash() {
         }
         return `<polygon points="${it.x},${it.y - 20} ${it.x + 16},${it.y + 16} ${it.x - 16},${it.y + 16}" fill="#FF9E7D"/><rect x="${it.x - 9}" y="${it.y + 2}" width="18" height="5" fill="#fff"/>`;
     }).join('');
-    const overlay = !dash.run
-        ? `<rect y="150" width="300" height="120" fill="rgba(59,53,85,.72)"/>
-           <text x="150" y="200" text-anchor="middle" fill="#FFF8F0" font-weight="800" font-size="32" font-family="Inter,sans-serif">${dash.over ? t('gameCrash') : t('gameReady')}</text>
-           <text x="150" y="236" text-anchor="middle" fill="#FFF8F0" font-weight="600" font-size="18" font-family="Inter,sans-serif">${dash.over ? t('gameScoreXp', { score: dashScore(), xp: dash.gain }) : t('gamePressStart')}</text>`
-        : '';
     svg.innerHTML = `<rect width="300" height="440" fill="#4A4468"/>${marks}${items}
         <rect x="${px - 26}" y="338" width="8" height="18" rx="2" fill="#FFF8F0"/>
         <rect x="${px + 18}" y="338" width="8" height="18" rx="2" fill="#FFF8F0"/>
@@ -2021,6 +2030,5 @@ function drawDash() {
         <path d="M${px - 5} 360 a5 5 0 0 0 10 0" fill="none" stroke="#3B3555" stroke-width="2" stroke-linecap="round"/>
         <text x="16" y="34" fill="#FFF8F0" font-weight="800" font-size="24" font-family="Inter,sans-serif">${dashScore()}</text>
         <circle cx="252" cy="26" r="9" fill="#FFE066"/>
-        <text x="268" y="34" fill="#FFF8F0" font-weight="800" font-size="24" font-family="Inter,sans-serif">${dash.stars}</text>
-        ${overlay}`;
+        <text x="268" y="34" fill="#FFF8F0" font-weight="800" font-size="24" font-family="Inter,sans-serif">${dash.stars}</text>`;
 }
