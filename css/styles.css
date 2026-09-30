@@ -3287,9 +3287,9 @@ body.light-mode .disclaimer {
 
 .app-tabbar {
     position: absolute;
-    left: 18px;
-    right: 18px;
-    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    left: 16px;
+    right: 16px;
+    bottom: 6px;
     z-index: 30;
     display: flex;
     gap: 4px;
@@ -3329,6 +3329,10 @@ body.light-mode .app-tabbar {
 
 html.native-app .app-tabbar {
     position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 0;
+    padding: 6px 6px calc(4px + env(safe-area-inset-bottom, 0px));
 }
 
 #landingView.active ~ .app-tabbar {
