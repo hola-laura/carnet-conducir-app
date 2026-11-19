@@ -2334,3 +2334,33 @@ html.native-app .app-tabbar {
         position: absolute;
     }
 }
+
+/* Tras responder: la foto se encoge y la explicación entra en pantalla */
+#testView .question-image {
+    transition: max-height 0.25s ease, min-height 0.25s ease;
+}
+
+#testView .question-container.is-answered .question-image {
+    flex: 0 0 auto;
+    min-height: 0;
+    max-height: 120px;
+    height: 120px;
+}
+
+.explanation-correct {
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: var(--ok-soft);
+    color: var(--ink);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.explanation-correct span {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ok);
+}
