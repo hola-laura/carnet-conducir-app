@@ -200,10 +200,10 @@
   "correctIndex": 2
  },
  "anki-b-455": {
-  "question": "En una travesía con dos carriles por sentido y sin señales de velocidad, ¿cuál es la velocidad máxima permitida?"
+  "question": "En una travesía sin señales de velocidad y sin plataforma única, ¿cuál es la velocidad máxima permitida?"
  },
  "anki-b-1053": {
-  "question": "En una travesía con dos carriles por sentido, ¿cuál es la velocidad máxima permitida para una motocicleta?"
+  "question": "En una travesía sin señales de velocidad y sin plataforma única, ¿cuál es la velocidad máxima permitida para una motocicleta?"
  },
  "anki-b-1899": {
   "question": "A partir de la señal de entrada a poblado, ¿cuál es la velocidad máxima en una calle con un solo carril por sentido, si no hay otra señal?",
@@ -255,5 +255,14 @@
  },
  "anki-b-2139": {
   "image": "v16-roof-closeup.jpg"
+ },
+ "anki-b-799": {
+  "question": "Respecto a la antigüedad de los neumáticos, ¿qué se recomienda?",
+  "answers": [
+   "Cambiarlos obligatoriamente cada 5 años, aunque tengan dibujo suficiente.",
+   "Revisarlos cada año a partir de los 5 años y sustituirlos como máximo a los 10.",
+   "No hace falta revisarlos mientras el dibujo supere 1,6 mm."
+  ],
+  "correctIndex": 1
  }
 }
