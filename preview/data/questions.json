@@ -38538,13 +38538,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "",
+      "explanation": "Aunque la enfermedad sea leve, muchos medicamentos que se compran sin receta (antigripales, antihistamínicos, relajantes) producen sueño o reflejos más lentos. Antes de conducir, pregunta al médico o al farmacéutico y fíjate si la caja lleva el pictograma de un coche en un triángulo, que avisa de que puede afectar a la conducción.",
       "image": "8546.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {

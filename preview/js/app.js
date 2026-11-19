@@ -1275,6 +1275,12 @@ function loadQuestion() {
     const note = document.getElementById('questionTranslatedNote');
     note.classList.add('hidden');
     
+    const testContainer = document.querySelector('#testView .question-container');
+    if (testContainer) {
+        testContainer.classList.remove('is-answered');
+        testContainer.scrollTop = 0;
+    }
+
     const imageContainer = document.getElementById('questionImage');
     const illustrationHTML = getQuestionIllustration(question);
     imageContainer.innerHTML = illustrationHTML;
@@ -1403,13 +1409,33 @@ async function showExplanation(isCorrect, question) {
         icon.textContent = '';
         title.textContent = t('correct');
         text.innerHTML = `<div class="explanation-section">${bodyHTML}</div>`;
+        card.classList.remove('hidden');
+        revealExplanation();
+        return;
     } else {
         header.classList.remove('hidden');
         icon.textContent = '';
         title.textContent = t('incorrect');
-        text.innerHTML = bodyHTML ? `<div class="explanation-section">${bodyHTML}</div>` : '';
+        const correctText = escapeHTML(question.answers[question.correctIndex] || '');
+        text.innerHTML = `<p class="explanation-correct"><span>${t('wrongLead')}</span> ${correctText}</p>`
+            + (bodyHTML ? `<div class="explanation-section">${bodyHTML}</div>` : '');
     }
     card.classList.remove('hidden');
+    revealExplanation();
+}
+
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+}
+
+function revealExplanation() {
+    const container = document.querySelector('#testView .question-container');
+    if (!container) return;
+    container.classList.add('is-answered');
+    // Wait for the photo to shrink, then bring the explanation into view.
+    setTimeout(() => {
+        container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' });
+    }, 260);
 }
 
 function getExplanationText(question) {
