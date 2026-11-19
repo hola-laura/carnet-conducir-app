@@ -848,7 +848,7 @@ document.addEventListener('load', (event) => {
 }, true);
 
 document.addEventListener('click', (event) => {
-    const img = event.target.closest('.question-image img');
+    const img = event.target.closest('.question-image img, .glossary-illustration img');
     const viewer = document.getElementById('imageViewer');
     if (!viewer) return;
     if (img) {

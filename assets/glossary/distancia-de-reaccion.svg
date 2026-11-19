@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="DM Sans, Arial, Helvetica, sans-serif">
+<defs><symbol id="car" viewBox="0 0 84 38">
+  <path d="M6 26 Q4 18 12 16 L24 14 Q32 4 44 4 L58 4 Q66 5 72 14 L78 17 Q83 19 82 26 L82 28 Q82 30 79 30 L8 30 Q5 30 6 26 Z" fill="#d6463a"/>
+  <path d="M28 14 Q34 7 43 7 L50 7 L50 14 Z M53 7 L58 7 Q64 8 68 14 L53 14 Z" fill="#cfe3f4"/>
+  <rect x="74" y="18" width="7" height="4" rx="2" fill="#ffe08a"/>
+  <rect x="6" y="19" width="5" height="4" rx="2" fill="#8f1f17"/>
+  <circle cx="22" cy="30" r="7" fill="#262626"/><circle cx="22" cy="30" r="3" fill="#bdbdbd"/>
+  <circle cx="66" cy="30" r="7" fill="#262626"/><circle cx="66" cy="30" r="3" fill="#bdbdbd"/>
+</symbol>
+<symbol id="warn" viewBox="0 0 40 36"><path d="M20 2 L38 34 L2 34 Z" fill="#fff" stroke="#d6463a" stroke-width="4" stroke-linejoin="round"/><path d="M20 12 V24" stroke="#141414" stroke-width="4" stroke-linecap="round"/><circle cx="20" cy="29" r="2.3" fill="#141414"/></symbol>
+</defs>
+<rect width="400" height="300" fill="#f5f3ef"/>
+<rect x="0" y="150" width="400" height="70" fill="#9b9790"/>
+<rect x="0" y="150" width="400" height="4" fill="#ffffff" opacity="0.8"/>
+<rect x="0" y="216" width="400" height="4" fill="#ffffff" opacity="0.8"/>
+<g fill="#ffffff"><rect x="-6" y="183" width="20" height="4" rx="2"/><rect x="30" y="183" width="20" height="4" rx="2"/><rect x="66" y="183" width="20" height="4" rx="2"/><rect x="102" y="183" width="20" height="4" rx="2"/><rect x="138" y="183" width="20" height="4" rx="2"/><rect x="174" y="183" width="20" height="4" rx="2"/><rect x="210" y="183" width="20" height="4" rx="2"/><rect x="246" y="183" width="20" height="4" rx="2"/><rect x="282" y="183" width="20" height="4" rx="2"/><rect x="318" y="183" width="20" height="4" rx="2"/><rect x="354" y="183" width="20" height="4" rx="2"/><rect x="390" y="183" width="20" height="4" rx="2"/></g>
+<use href="#car" x="30" y="164" width="84" height="38" opacity="0.45"/><use href="#car" x="220" y="164" width="84" height="38" /><use href="#warn" x="350" y="160" width="36" height="32"/><line x1="72" y1="140" x2="72" y2="236" stroke="#d97a1e" stroke-width="2" stroke-dasharray="4 4"/><line x1="262" y1="140" x2="262" y2="236" stroke="#d97a1e" stroke-width="2" stroke-dasharray="4 4"/><g><rect x="13" y="104" width="119" height="26" rx="13" fill="#fff" stroke="#d97a1e" stroke-width="2"/><text x="72" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#d97a1e">Ves el peligro</text></g><g><rect x="203" y="104" width="119" height="26" rx="13" fill="#fff" stroke="#d97a1e" stroke-width="2"/><text x="262" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#d97a1e">Pisas el freno</text></g><g stroke="#d97a1e" stroke-width="3" stroke-linecap="round"><line x1="72" y1="244" x2="262" y2="244"/><line x1="72" y1="236" x2="72" y2="252"/><line x1="262" y1="236" x2="262" y2="252"/></g><text x="167.0" y="268" text-anchor="middle" font-size="15" font-weight="800" fill="#d97a1e">Distancia de reacción</text><text x="167.0" y="285" text-anchor="middle" font-size="12" font-weight="500" fill="#5f5b56">Aún no has empezado a frenar</text><text x="200" y="40" text-anchor="middle" font-size="20" font-weight="800" fill="#141414">Distancia de reacción</text><text x="200" y="62" text-anchor="middle" font-size="13" fill="#5f5b56">Más velocidad o cansancio = más metros</text></svg>

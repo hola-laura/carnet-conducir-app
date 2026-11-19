@@ -2364,3 +2364,12 @@ html.native-app .app-tabbar {
     font-weight: 600;
     color: var(--ok);
 }
+
+.glossary-illustration img[src$=".svg"] {
+    object-fit: contain;
+    background: #f5f3ef;
+}
+
+.glossary-illustration img {
+    cursor: zoom-in;
+}

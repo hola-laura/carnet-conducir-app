@@ -479,7 +479,7 @@ function getQuestionIllustration(question) {
         return wrapSVG(createRoadTwoPlusOneSign());
     }
     if (questionText.includes('multicarril')) {
-        return `<img src="assets/glossary/carretera-multicarril.jpg" alt="Señal de carretera multicarril">`;
+        return `<img src="assets/glossary/carretera-multicarril.svg" alt="Señal de carretera multicarril">`;
     }
 
     return '';

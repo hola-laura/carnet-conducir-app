@@ -106223,7 +106223,7 @@
       ],
       "correctIndex": 1,
       "explanation": "Una carretera multicarril es una carretera convencional con al menos dos carriles para cada sentido, separados o delimitados. A diferencia de autopistas y autovías, puede tener cruces, semáforos o accesos directos al mismo nivel.",
-      "image": "assets/glossary/carretera-multicarril.jpg",
+      "image": "assets/glossary/carretera-multicarril.svg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -106259,7 +106259,7 @@
       ],
       "correctIndex": 1,
       "explanation": "Las multicarril no son autopistas ni autovías. Pueden tener cruces, semáforos y accesos directos al mismo nivel.",
-      "image": "assets/glossary/carretera-multicarril.jpg",
+      "image": "assets/glossary/carretera-multicarril.svg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -106295,7 +106295,7 @@
       ],
       "correctIndex": 1,
       "explanation": "Para el cómputo no se suman los carriles adicionales, de espera, de trenzado o de cambio de velocidad. Solo los destinados a la circulación en cada dirección.",
-      "image": "assets/glossary/carretera-multicarril.jpg",
+      "image": "assets/glossary/carretera-multicarril.svg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
