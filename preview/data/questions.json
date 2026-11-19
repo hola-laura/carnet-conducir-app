@@ -1882,13 +1882,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "ESTARÁ PERMITIDO SIEMPRE QUE EL CÓDIGO DE VELOCIDAD SEA SUPERIOR AL RECOMENDADO, POR EL FABRICANTE Y SEA IGUAL EN TODAS LAS RUEDAS O AL MENOS LAS DEL MISMO EJE.",
+      "explanation": "Puedes montar neumáticos con un código de velocidad distinto al del fabricante solo si es superior, nunca inferior, porque un código más bajo no aguanta la velocidad que alcanza el coche. Además, las dos ruedas de un mismo eje deben llevar el mismo.",
       "image": "8414.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -1918,13 +1919,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "",
+      "explanation": "Una velocidad inadecuada, aunque esté por debajo del límite, te deja menos tiempo para reaccionar y alarga la frenada. Por eso aumenta el riesgo de accidente, aunque la vía esté en buen estado.",
       "image": "9791.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -1954,13 +1956,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "LOS CUADRICICLOS DOTADOS DE ESTRUCTURA DE PROTECCIÓN Y CINTURONES DE SEGURIDAD Y ASÍ CONSTE EN LA TARJETA DE INSPECCIÓN TÉCNICA ESTÁN EXCLUIDOS DEL USO DEL CASCO. \" PERO SI DEBEN UTILIZAR LOS CINTURONES EN TODAS LAS VÍAS\".",
+      "explanation": "Si el cuadriciclo ligero tiene cinturones, hay que abrochárselos en cualquier vía, urbana o interurbana. A cambio, si tiene estructura de protección, no hace falta llevar casco.",
       "image": "5254.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -1990,13 +1993,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "PUENTE MÓVIL . PELIGRO ANTE LA PROXIMIDAD DE UN PUENTE QUE PUEDE SER LEVANTADO O GIRADO , INTERRUMPIÉNDOSE ASÍ TEMPORALMENTE LA CIRCULACIÓN.",
+      "explanation": "Es la señal de puente móvil: avisa de un puente que puede levantarse o girar para dejar pasar barcos. Mientras lo hace, la circulación se corta un rato, así que prepárate para parar.",
       "image": "1456.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2026,13 +2030,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "",
+      "explanation": "Cuando cambias de carril, la prioridad la tiene quien ya circula por el carril al que quieres pasar. Tú eres el que debe esperar a tener hueco, sea cual sea tu vehículo.",
       "image": "5256.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2062,13 +2067,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "",
+      "explanation": "Dormir a horas distintas o despertarte varias veces por la noche hace que el descanso sea de peor calidad. El resultado es más somnolencia al volante, sobre todo en vías monótonas.",
       "image": "7181.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2098,13 +2104,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "NORMALMENTE NO SE LE QUITA EL CASCO COMO NORMA GENERAL, PORQUE SE PUEDEN AGRAVAR LAS POSIBLES LESIONES QUE PUEDA TENER. EXCEPCIONALMENTE CUANDO SEA NECESARIO  RETIRÁRSELO DEBE REALIZARLO UNA PERSONA QUE CONOZCA LA TÉCNICA.",
+      "explanation": "Como norma general no hay que quitar el casco a un motorista herido: si tiene una lesión en el cuello, moverle la cabeza puede agravarla. Solo se quita si es imprescindible, por ejemplo si no respira, y con la técnica adecuada.",
       "image": "5204.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2134,13 +2141,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "EL SEMÁFORO AMARILLO INTERMITENTE O DESTELLANTE NOS EXIGE EXTREMAR LA PRECAUCIÓN Y RESPETAR EL RESTO DE SEÑALES Y SI NO LAS HAY CEDER EL PASO A LA VÍA TRANSVERSAL. EN ESTE CASO DEBEMOS RESPETAR EL STOP.",
+      "explanation": "El amarillo intermitente pide precaución, pero no anula las demás señales. Aquí hay un STOP debajo, así que tienes que detenerte igualmente y ceder el paso.",
       "image": "13683.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2170,13 +2178,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "El éxtasis altera la percepción: puede provocar ilusiones ópticas y una falsa sensación de control. No mejora la concentración y te hace más sensible a los deslumbramientos, no menos.",
       "image": "8163.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2206,13 +2215,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "",
+      "explanation": "La depresión afecta a la atención, a la rapidez de reacción y a la toma de decisiones. Y muchos de sus medicamentos también influyen, así que consulta con tu médico si puedes conducir.",
       "image": "13657.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2242,13 +2252,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "ADELANTAMIENTO PROHIBIDO PARA CAMIONES DE MÁS DE: 3.500 KG. MMA.. \" LOS DEMÁS VEHÍCULOS PUEDEN ADELANTAR\".",
+      "explanation": "Esta señal prohíbe adelantar solo a los camiones de más de 3.500 kg. Con un turismo puedes adelantar con normalidad, siempre que se cumplan las demás condiciones.",
       "image": "1277.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2278,13 +2289,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "La marcha atrás se hace despacio, avisando con las luces o con el brazo, y comprobando que no hay peligro. Si no ves bien, bájate a mirar. Las luces de emergencia y el claxon no son obligatorios.",
       "image": "7341.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2314,13 +2326,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "Los menores que miden 135 cm o menos deben ir en un sistema de retención infantil adaptado a su talla y peso. El cinturón del coche, sin más, no los sujeta bien y puede hacerles daño en un choque.",
       "image": "5179.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2350,13 +2363,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "Un aspa roja encima de un carril significa que no puedes circular por ese carril. Los demás carriles pueden estar abiertos, así que no significa que la calzada entera esté cerrada.",
       "image": "9092.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2386,13 +2400,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "TARDAMOS MÁS EN REACCIONAR.",
+      "explanation": "Con sueño, los movimientos se vuelven más lentos y menos precisos: corriges tarde el volante y frenas tarde. No ganas rapidez ni automatismo, al contrario.",
       "image": "7651.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2422,13 +2437,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "CUANDO CIRCULEMOS POR UNA CALZADA ESTRECHA, \" CONSIDERADA ESTA CUANTO TENGA 6,5 METROS DE ANCHO O INFERIOR\". CON CURVAS Y QUE ESTÉ DEBIDAMENTE SEÑALIZADA, SE PUEDEN LLEVAR ENCENDIDAS LAS LUCES DELANTERAS DE NIEBLA.\"",
+      "explanation": "La señal avisa de curvas peligrosas. En una carretera estrecha (6,5 m de ancho o menos) con muchas curvas, puedes llevar los antiniebla delanteros de noche aunque no haya niebla. En otro caso, solo con niebla, lluvia o nieve.",
       "image": "1440.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2458,13 +2474,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "Según un estudio realizado en España, los conductores fumadores tienen el doble de accidentes que los no fumadores. Fumar al volante distrae: buscar el tabaco, encenderlo, la ceniza, el humo.",
       "image": "8042.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2494,13 +2511,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "ENTRADA PROHIBIDA A VEHÍCULOS DE MOTOR CON REMOLQUE, QUE NO SEA UN:  SEMIRREMOLQUE O UN REMOLQUE DE UN SOLO EJE.",
+      "explanation": "Esta señal prohíbe la entrada a vehículos con remolque, salvo que sea un semirremolque o un remolque de un solo eje. Con un remolque de un eje no te afecta.",
       "image": "9641.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2530,13 +2548,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "POR DELANTE NADA. \" POR LA PARTE DE ATRÁS: 10% CUANDO LA CARGA SEA DIVISIBLE Y UN 15% CUANDO SEA INDIVISIBLE\".",
+      "explanation": "Una carga indivisible, como un tubo o un poste, puede sobresalir por detrás hasta un 15 % de la longitud del vehículo. Si la carga se puede dividir, el máximo es un 10 %. Por delante no puede sobresalir nada.",
       "image": "8684.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2566,13 +2585,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "CAMBIAR MARCHAS: LADO IZQUIERDO.  \" EMBRAGUE MANO IZQUIERDA Y CAMBIO PIE IZQUIERDO\" .FRENAR: LADO DERECHO:  FRENO DELANTERO: MANO DERECHA. FRENO TRASERO: PIE DERECHO.",
+      "explanation": "En una moto, el embrague se acciona con la mano izquierda y las marchas se cambian con el pie izquierdo. En el lado derecho van el acelerador y el freno delantero (mano) y el freno trasero (pie).",
       "image": "7309.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2602,13 +2622,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "PAS: 1Âº PROTEGER,2Âº  ALERTAR Y 3Âº SOCORRER.",
+      "explanation": "PAS son las tres pautas ante un accidente, en este orden: Proteger la zona para que no haya más accidentes, Alertar a los servicios de emergencia (112) y Socorrer a los heridos.",
       "image": "5884.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2638,13 +2659,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "INFERIOR A: 3 METROS.",
+      "explanation": "Se considera que una parada estorba la circulación si entre tu coche y el borde opuesto de la calzada quedan menos de 3 metros, porque los demás no pueden pasar con seguridad.",
       "image": "8713.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2674,13 +2696,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "",
+      "explanation": "El GPS ayuda, pero quien decide eres tú: si te manda por una calle prohibida o hay una señal que contradice sus instrucciones, mandan las señales y tu criterio. Y no hace falta mirar el mapa todo el rato.",
       "image": "8970.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2710,13 +2733,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "ESTÁ PROHIBIDO ADELANTAR EN LAS CURVAS Y CAMBIOS DE RASANTE DE VISIBILIDAD REDUCIDA. EXCEPTO: QUE PARA ELLO NO SE INVADA EL SENTIDO CONTRARIO. \" y a vehículos de dos ruedas dejando 1,50 metros).",
+      "explanation": "En una curva sin visibilidad no puedes ver lo que viene de frente. Por eso está prohibido adelantar invadiendo el carril contrario, aunque sea a una moto y dejes 1,5 metros.",
       "image": "15008.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2746,13 +2770,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "LA DISTANCIA DE REACCIÓN ES DESDE QUE EL CONDUCTOR PERCIBE EL PELIGRO HASTA QUE REACCIONA .\" LA DISTANCIA DE FRENADO ES DESDE QUE EL CONDUCTOR PISA EL PEDAL DEL FRENO HASTA QUE EL VEHÍCULO SE DETIENE\" Y  LA DISTANCIA DE DETENCIÓN ES LA SUMA DE AMBAS.",
+      "explanation": "La distancia de frenado empieza cuando pisas el freno y termina cuando el coche se para. Lo que recorres desde que ves el peligro hasta que frenas es la de reacción, y la suma de las dos es la de detención.",
       "image": "9615.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2782,13 +2807,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "CEDER EL PASO CUANDO CIRCULEN VEHÍCULOS POR LA VÍA A LA QUE VAMOS A INCORPORARNOS.",
+      "explanation": "El triángulo es la señal de ceda el paso: solo te obliga a parar si viene alguien por la vía a la que te incorporas. Si no viene nadie, puedes seguir sin detenerte.",
       "image": "5638.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2818,13 +2844,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "QUE LA CABEZA QUEDE AL MISMO NIVEL QUE EL REPOSACABEZAS. O BIEN HASTA QUE LA PARTE CENTRAL QUEDE A LA ALTURA DE LOS OJOS Y A UNA DISTANCIA MÍNIMA RESPECTO A LA CABEZA, NUNCA INFERIOR A 4 CM.",
+      "explanation": "El reposacabezas no es un accesorio de comodidad: en un golpe por detrás sujeta la cabeza y evita el latigazo cervical. Ajústalo a cada ocupante, con la parte central a la altura de los ojos y cerca de la cabeza.",
       "image": "5761.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2854,13 +2881,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "",
+      "explanation": "El copo de nieve avisa de que el suelo puede estar muy resbaladizo por hielo o nieve. La gravilla tiene su propia señal, con piedrecitas saltando.",
       "image": "1415.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2890,13 +2918,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "",
+      "explanation": "Todos los vehículos a motor deben llevar un silenciador de escape en buen estado; circular con el escape libre está prohibido. Las correas de repuesto o el extintor no son obligatorios en un turismo.",
       "image": "8084.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2926,13 +2955,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "PAS: 1Âº PROTEGER, 2Âº ALERTAR, 3Âº SOCORRER.",
+      "explanation": "Lo primero al llegar a un accidente es proteger la zona: aparcar en un lugar seguro, encender la luz de emergencia, ponerse el chaleco y señalizar. Después avisar al 112 y, por último, socorrer. Trasladar heridos en tu coche puede empeorar sus lesiones.",
       "image": "5608.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2962,13 +2992,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "",
+      "explanation": "La señal es un ceda el paso, no un STOP. Solo tienes que detenerte si viene algún vehículo al que debas dejar pasar; si no viene nadie, puedes seguir.",
       "image": "9800.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -2998,13 +3029,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "CUANDO SE DISPONGA UN DISPOSITIVO DE MANOS LIBRES. AUNQUE DEBERÁ SABERSE QUE PUEDE PRODUCIR DISTRACCIONES.",
+      "explanation": "Conduciendo solo puedes hablar por el móvil con un manos libres que no necesite usar las manos ni auriculares. Aun así, la conversación distrae, así que lo mejor es dejarla para cuando pares.",
       "image": "6153.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3034,13 +3066,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "Para cambiar de sentido en una carretera estrecha, arrímate al borde derecho y espera hasta que puedas hacerlo sin peligro. Así los que vienen detrás pueden pasar mientras esperas.",
       "image": "9000.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3070,13 +3103,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "A MEDIDA QUE AUMENTA LA VELOCIDAD TENDREMOS MÁS DIFICULTADES PARA CONTROLAR EL VEHÍCULO Y LA FATIGA PUEDE APARECER CON FACILIDAD.",
+      "explanation": "Cuanto más rápido vas, menos tiempo tienes para reaccionar, más larga es la frenada y más fácil es perder el control en una curva o con una maniobra brusca.",
       "image": "8069.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3106,13 +3140,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "LOS CONDUCTORES Y PASAJEROS DE CUADRICILCOS QUE NO ESTÉN DOTADOS DE ESTRUCTURA DE PROTECCIÓN, DEBERÁN LLEVAR CASCO DE PROTECCIÓN EN TODAS LAS VÍAS. \" SI TIENEN ESTRUCTURA DE PROTECCIÓN Y CINTURONES, NO TIENEN OBLIGACIÓN DE LLEVAR CASCO, PERO SI LOS CINTURONES\".",
+      "explanation": "Si el cuadriciclo no tiene estructura de protección, el conductor y el pasajero tienen que llevar casco, igual que en una moto. Si la tiene y además cinturones, basta con el cinturón.",
       "image": "9273.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3142,13 +3177,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "ES UNA ZONA, QUE NO SE PUEDE PISAR. \"(zona excluida al tráfico)\".",
+      "explanation": "El cebreado (las rayas blancas oblicuas) es una zona en la que no se puede entrar. Al incorporarte, usa el carril de aceleración y espera al final de la zona rayada, aunque ya vayas a buena velocidad.",
       "image": "9643.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3178,13 +3214,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "",
+      "explanation": "Está prohibido adelantar en intersecciones y cerca de ellas. Una de las excepciones es circular por una vía con prioridad que esté señalizada como tal. Si no está señalizada, no hay excepción.",
       "image": "8540.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3214,13 +3251,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "",
+      "explanation": "La placa amarilla con borde rojo detrás de un vehículo indica que mide más de 12 metros, él solo o con el remolque. Avisa a los demás de que adelantarlo lleva más tiempo y espacio.",
       "image": "15307.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3250,13 +3288,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "",
+      "explanation": "Fumar al volante reduce la concentración: te distraes al buscar, encender y apagar el cigarro, y el humo y la nicotina afectan a la atención. No te protege de la fatiga.",
       "image": "8042.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3286,13 +3325,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "EN UNA VÍA DE POBLADO PARA PODER UTILIZAR EL CARRIL QUE MEJOR CONVENGA A NUESTRO DESTINO, TIENE QUE HABER MÁS DE UN CARRIL PARA CADA SENTIDO Y ESTAR DEBIDAMENTE DELIMITADOS.",
+      "explanation": "Dentro de poblado, si solo hay un carril por sentido, debes circular lo más cerca posible del borde derecho. Puedes elegir carril solo cuando hay al menos dos por sentido bien marcados.",
       "image": "15241.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3322,13 +3362,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "LOS TURISMOS Y MOTOCICLETAS EN AUTOPISTAS Y AUTOVÍAS: 100 KM/H. CONVENCIONALES: 90 KM/H. \" INCLUIDO PARA ADELANTAR\"",
+      "explanation": "En una carretera convencional, aunque tenga dos carriles por sentido, el límite para turismos y motos es 90 km/h, también para adelantar. Los 120 km/h son para autopistas y autovías.",
       "image": "3315.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3358,13 +3399,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "VÍA RESERVADA PARA CICLOMOTORES. OBLIGACIÓN PARA LOS CONDUCTORES DE CICLOMOTORES DE CIRCULAR POR LA VÍA A CUYA ENTRADA ESTÁ SITUADA Y PROHIBICIÓN A LOS DEMÁS USUARIOS DE LA VÍA DE UTILIZARLA. \" FIJARSE EN LA SEÑAL: PEDAL.- CICLOMOTOR. SIN PEDAL CICLOS\". CON CONDUCTOR MOTOCICLETAS.",
+      "explanation": "La señal azul con un ciclomotor (con pedales) marca una vía reservada para ciclomotores: ellos deben usarla y el resto de usuarios no puede circular por ella, ni siquiera las bicis.",
       "image": "9502.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3394,13 +3436,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "Un panel direccional en obras es de balizamiento: te prohíbe pasar por donde está y te indica hacia qué lado tienes que ir. Al ser de balizamiento, está por encima de las señales fijas y de las marcas del suelo.",
       "image": "6300.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3430,13 +3473,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "",
+      "explanation": "Con mucho tráfico, avisa del cambio de carril con tiempo para que los demás lo vean y te dejen hueco, y hazlo de forma progresiva. Hacerlo de golpe o usar el arcén es peligroso y está prohibido.",
       "image": "10663.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3466,13 +3510,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "Mezclar alcohol con otras drogas suma y potencia sus efectos: reaccionas más tarde, controlas peor y te arriesgas más. Una sustancia no compensa a la otra.",
       "image": "9730.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3502,13 +3547,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "En un accidente grave, el cinturón soporta una fuerza enorme: la cinta puede deformarse y los anclajes o el pretensor dañarse. Hay que revisarlo y, si hace falta, cambiarlo, aunque parezca que funcionó bien.",
       "image": "8073.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3538,13 +3584,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "CON LA SEÑAL V-16, LUCES DE EMERGENCIA Y SI LAS CONDICIONES ATMOSFÉRICAS LO REQUIEREN LA LUZ DE: POSICIÓN.",
+      "explanation": "En una autopista, un vehículo inmovilizado se señaliza con la luz de emergencia y, si la visibilidad lo pide, con las de posición. Desde 2026 se añade la baliza V-16 en el techo.",
       "image": "15080.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3574,13 +3621,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "LIGERO: 45 KM/H. \" NO LIGERO: 70 KM/H\". LOS NO LIGEROS: PODRÁN TAMBIÉN CIRCULAR POR AUTOPISTA Y AUTOVÍA, DADO QUE SUPERAN LOS: 60 KM/H.",
+      "explanation": "Un cuadriciclo ligero no puede pasar de 45 km/h en ninguna vía. Los cuadriciclos no ligeros llegan a 70 km/h fuera de poblado.",
       "image": "5254.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3610,13 +3658,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "Una racha de viento puede desplazar a un ciclista de golpe. Al adelantarlo, deja más separación lateral que el mínimo de 1,5 m y no lo asustes con el claxon.",
       "image": "6408.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3646,13 +3695,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "",
+      "explanation": "En un cambio de rasante sin visibilidad, la norma general prohíbe adelantar. Pero si hay dos carriles por sentido bien separados y no tienes que invadir el contrario, sí puedes.",
       "image": "6149.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3682,13 +3732,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "LA FECHA DE LA PRIMERA MATRICULACIÓN, QUE CONSTA EN EL PERMISO DE CIRCULACIÓN DEL VEHÍCULO Y LAS SIGUIENTES COMPROBAREMOS LA FICHA TÉCNICA DEL VEHÍCULO,",
+      "explanation": "La antigüedad que cuenta para la ITV es la de la primera matriculación, que aparece en el permiso de circulación. No cuenta la fecha de compra ni la de fábrica.",
       "image": "12043.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3718,13 +3769,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "Un cojín bajo el cuerpo hace que el cinturón quede mal colocado y puedas deslizarte por debajo en un choque. Para ver mejor, ajusta la altura del asiento.",
       "image": "13989.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3754,13 +3806,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "",
+      "explanation": "La señal azul cuadrada con la flecha blanca grande y la roja pequeña indica que tienes prioridad sobre los que vienen de frente en un estrechamiento. Ellos deben esperarte. No te obliga a detenerte.",
       "image": "1389.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3790,13 +3843,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "ANTE UN \"STOP\"  1Âº DETENERSE Y 2Âª CEDER EL PASO A LOS VEHÍCULOS DE AMBOS LADOS.",
+      "explanation": "En un STOP tienes que detenerte siempre en la línea, aunque no venga nadie, y después ceder el paso a los vehículos que lleguen por los dos lados.",
       "image": "8799.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3826,13 +3880,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "SEÑALES: AZUL CIRCULAR.- OBLIGATORIO. AZUL RECTANGULAR O CUADRADA: INDICAN ALGO. CIRCULAR ROJA: PROHIBIDO. \"OBLIGACIÓN DE SEGUIR LA FLECHA\"",
+      "explanation": "Las señales azules redondas son de obligación: esta flecha te obliga a seguir en esa dirección y sentido. Las azules cuadradas informan y las rojas redondas prohíben.",
       "image": "1585.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3862,13 +3917,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "DISMINUYA LA CAPACIDAD DEL CONDUCTOR.",
+      "explanation": "Los síntomas de una alergia respiratoria (estornudos, picor de ojos, lagrimeo) pueden dejarte sin ver unos segundos, y algunos antihistamínicos dan sueño. Por eso aumentan el riesgo, en cualquier época del año.",
       "image": "13600.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3898,13 +3954,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "PUESTO EN TODAS LAS VÍAS.",
+      "explanation": "El cinturón es obligatorio en cualquier vehículo que lo tenga instalado y en todas las vías, también en un camión de 3.000 kg.",
       "image": "8962.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3934,13 +3991,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "/  HASTA LOS 65 AÑOS: CADA 10 AÑOS. A PARTIR DE LOS 65: CADA 5 AÑOS.",
+      "explanation": "El permiso B dura 10 años hasta que cumples 65. A partir de esa edad hay que renovarlo cada 5 años.",
       "image": "8564.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -3970,13 +4028,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "HASTA 4 AÑOS: EXENTO, DE 4 HASTA DIEZ: CADA 2 AÑOS Y A PARTIR DE 10: ANUAL.",
+      "explanation": "Un turismo particular pasa la primera ITV a los 4 años. Después, cada 2 años hasta los 10 años de antigüedad, y a partir de ahí cada año.",
       "image": "12433.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4006,13 +4065,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "",
+      "explanation": "Si un agente te ha parado con el brazo extendido, solo puedes seguir cuando te lo indique con otra señal. Bajar el brazo o tocar el silbato no son, por sí solos, la señal de que puedes seguir.",
       "image": "14163.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4042,13 +4102,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "FUERA DE LA VÍA PÚBLICA SE PUEDE PARAR Y ESTACIONAR. Y EN ESTE CASO AL NO HABER ARCÉN, SE PUEDE ESTACIONAR FUERA DE LA CALZADA. \" ( En vía interurbana está prohibido parar o estacionar en el arcén).  \" SOLO ESTA PERMITIDO LA DETENCIÓN EN EL ARCÉN POR: AVERÍA O MAL ESTADO FÍSICO DEL CONDUCTOR O SUS OCUPANTES).",
+      "explanation": "Si no hay arcén, puedes parar y estacionar fuera de la calzada, en el lado derecho, sin ocupar la vía. Lo que está prohibido en una vía interurbana es estacionar en la calzada o en el arcén.",
       "image": "4440.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4078,13 +4139,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "ADEMÁS DE OTRAS CARACTERÍSTICAS, DOS PRINCIPALES:  EL PESO, TALLA Y QUE ESTÉ HOMOLOGADA.,",
+      "explanation": "Los menores que miden 135 cm o menos deben ir en un sistema de retención infantil homologado y adaptado a su talla y peso, normalmente en los asientos traseros. Nunca en brazos: en un choque es imposible sujetarlos.",
       "image": "1939.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4114,13 +4176,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "TODOS LOS VEHÍCULOS DE MOTOR Y CICLOMOTORES TIENEN PROHIBIDO CIRCULAR POR TODAS LAS VÍAS CON EL DENOMINADO ESCAPE LIBRE. ES OBLIGATORIO QUE DISPONGAN DE UN DISPOSITIVO SILENCIADOR DE LAS EXPLOSIONES DEL MOTOR.",
+      "explanation": "El escape libre (sin silenciador) está prohibido para todos los vehículos de motor y también para los ciclomotores, en cualquier vía.",
       "image": "9041.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4187,13 +4250,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "DEBEMOS RESPETAR EL SEMÁFORO. \" AUNQUE ESTÉ DESPUÉS DE LA INTERSECCIÓN\".",
+      "explanation": "El semáforo en rojo, aunque esté al otro lado del cruce, regula toda la intersección. Tienes que parar antes de entrar en ella, también si vas a girar a la derecha.",
       "image": "9272.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4223,13 +4287,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "",
+      "explanation": "Al girar para entrar en otra vía, si hay peatones cruzándola, debes cederles el paso aunque no haya paso de peatones. Tú cambias de dirección y ellos ya están cruzando.",
       "image": "8170.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4259,13 +4324,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "LAS CALZADAS EN MAL ESTADO, PRODUCEN FATIGA EN EL CONDUCTOR.",
+      "explanation": "Una vía en mal estado te obliga a estar más atento y a corregir más el volante, y las vibraciones cansan. Por eso favorece la fatiga, de día o de noche.",
       "image": "9760.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4295,13 +4361,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "LAS MENTALES Y LOS TRASTORNOS NEUROLÓGICOS,  SON LAS DE MAYOR RIESGO DE PRODUCIR UN ACCIDENTE DE TRÁFICO.",
+      "explanation": "Los trastornos neurológicos (como la epilepsia) y las enfermedades mentales son las que más riesgo de accidente suponen, porque afectan a la consciencia, la atención y las decisiones.",
       "image": "8482.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4331,13 +4398,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "",
+      "explanation": "La conducción preventiva consiste en anticiparte a los errores propios y ajenos y a los peligros de la vía para evitar el accidente. La eficiente busca gastar menos combustible.",
       "image": "9263.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4367,13 +4435,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "PELIGRO INCORPORACIÓN POR LA DERECHA, CUYOS USUARIOS DEBEN CEDER EL PASO. \" NOSOTROS TENEMOS PRIORIDAD, PERO DEBEMOS FACILITAR LA INCORPORACIÓN EN LA MEDIDA QUE NOS SEA POSIBLE\".",
+      "explanation": "La señal avisa de que por la derecha se incorporan vehículos que deben cederte el paso. Tú tienes la prioridad, pero debes facilitarles la incorporación en la medida de lo posible, por ejemplo dejando hueco.",
       "image": "8079.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4403,13 +4472,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "EL TIEMPO DE REACCIÓN ES EXCLUSIVO DEL CONDUCTOR. PUEDE TARDAR MÁS O MENOS EN REACCIONAR DEPENDIENDO DE SUS CONDICIONES.",
+      "explanation": "La distancia de reacción depende del conductor: el cansancio, el alcohol, las distracciones o el sueño hacen que tardes más en reaccionar. Los amortiguadores o el estado de la calzada afectan a la frenada, no a la reacción.",
       "image": "8538.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4439,13 +4509,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "SE DEBE COMPROBAR AL PRINCIPIO DEL CARRIL Y DETENERSE EN ESE MISMO LUGAR, PARA QUE  EN CASO DE NO PODER ACCEDER, NOS DE TIEMPO A DETENERNOS Y POSTERIORMENTE TENER ESPACIO SUFICIENTE PARA AUMENTAR LA VELOCIDAD Y ADECUARLA A LA VÍA QUE NOS INCORPORAMOS.",
+      "explanation": "Si tienes que ceder el paso en un carril de aceleración, detente al principio del carril. Así, cuando haya hueco, te queda todo el carril para coger velocidad antes de entrar.",
       "image": "6343.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4475,13 +4546,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "Al incorporarte, fíjate en la posición, la trayectoria y la velocidad de los que vienen para encontrar un hueco seguro. Tienes que cederles el paso, pero no estás obligado a detenerte si hay hueco.",
       "image": "14422.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4511,13 +4583,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "Con lluvia los neumáticos agarran menos, la frenada se alarga y puede haber aquaplaning. Las primeras gotas son especialmente peligrosas porque mezclan el agua con la grasa y el polvo del asfalto.",
       "image": "14054.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4547,13 +4620,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "El aceite en buen estado lubrica las piezas del motor y reduce su desgaste. Con el uso se ensucia y pierde propiedades, por eso hay que cambiarlo cada cierto tiempo o kilómetros.",
       "image": "8842.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4583,13 +4657,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "CUANDO UN CONDUCTOR ADVIERTA QUE LE VAN A  ADELANTAR , DEBE DEJAR LIBRE , SI NO HAY OBSTÁCULOS QUE LO IMPIDAN , EL MAYOR ESPACIO POSIBLE , PARA LO QUE , COMO NORMA GENERAL , DEBERÁ CEÑIRSE AL BORDE DERECHO DE LA CALZADA , SIN INVADIR EL ARCÉN.",
+      "explanation": "No se puede circular por el arcén para dejar paso a otro. Cuando te van a adelantar, arrímate todo lo posible al borde derecho de la calzada, pero sin invadir el arcén.",
       "image": "5391.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4619,13 +4694,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "AUTOPISTAS Y AUTOVÍAS, PARA: 1/AUTOBUSES, 2/DERIVADOS, 3/ MIXTOS ADAPTABLES : 100 KM/H. \"CONVENCIONALES: 90 KM/ \" INCLUIDO PARA ADELANTAR\"",
+      "explanation": "Un vehículo mixto adaptable puede ir como máximo a 100 km/h en autopistas y autovías, igual que autobuses y derivados de turismo. En carreteras convencionales, 90 km/h.",
       "image": "14062.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4655,13 +4731,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "DESDE QUE SE OBSERVA UN OBSTÁCULO HASTA QUE SE DETIENE. \" QUE ES LA SUMA DE LA DISTANCIA DE REACCIÓN MÁS LA DE FRENADO\".",
+      "explanation": "La distancia de detención va desde que ves el peligro hasta que el coche se para del todo. Es la suma de la distancia de reacción y la de frenado.",
       "image": "10016.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4691,13 +4768,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "NO SE DEBE HACER NUNCA ESTE ADELANTAMIENTO, NO HAY VISIBILIDAD, CUANDO TERMINE DE ADELANTAR EL CAMIÓN, PUEDE VENIR UN VEHÍCULO DE FRENTE QUE NO VEÍAMOS.",
+      "explanation": "Si un camión que adelanta te tapa la vista, no puedes saber si viene alguien de frente. No te pongas detrás para adelantar a la vez: espera a ver la vía despejada.",
       "image": "9218.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4727,13 +4805,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "COMPLEMENTA AL CINTURÓN DE SEGURIDAD, NUNCA LO SUSTITUYE.",
+      "explanation": "El airbag está diseñado para funcionar junto con el cinturón, no en lugar de él. Sin cinturón, el cuerpo sale despedido hacia el airbag y puede sufrir lesiones graves.",
       "image": "8267.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4763,13 +4842,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "SEGÚN ESTE ORDEN: 1Âº AGENTES, 2Âº BALIZAMIENTO, 3Âº SEMÁFOROS, 4Âº SEÑALES VERTICALES, 5Âº MARCAS VIALES Y 6Âº LAS NORMAS DE CIRCULACIÓN. \"SI SON DEL MISMO TIPO PREVALECE LA MÁS RESTRICTIVA\".",
+      "explanation": "Si dos señales de distinto tipo parecen contradecirse, manda la de mayor rango: agentes, luego balizamiento, semáforos, señales verticales y marcas viales. Solo entre señales del mismo tipo gana la más restrictiva.",
       "image": "8723.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4799,13 +4879,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "V-2: LUZ ROTATIVA AMARILLA. DEBEN LLEVARLA DÍA Y NOCHE. Y SE SI LE AVERÍA: DEBERÁN LLEVAR LA LUZ DE CRUCE Y LAS LUCES DE EMERGENCIA ENCENDIDAS.",
+      "explanation": "Los vehículos especiales deben llevar encendida la luz rotativa amarilla (V-2) siempre que circulen por una vía pública, de día y de noche, para que se les vea a tiempo.",
       "image": "9689.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4835,13 +4916,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "EN LAS CALZADAS DE DOBLE SENTIDO, Y MUY ESPECIALMENTE SI NO SE ENCUENTRAN DELIMITADOS LOS SENTIDOS, SE DEBE CIRCULAR CEÑIDO AL BORDE DERECHO DE LA CALZADA.",
+      "explanation": "En una calzada de doble sentido sin carriles marcados, circula lo más cerca posible del borde derecho, para dejar espacio a los que vienen de frente.",
       "image": "1424.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4871,13 +4953,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "Si hay una raqueta u otro elemento parecido para girar, debes usarlo aunque no haya ninguna señal que lo indique. Está ahí para que no tengas que parar en mitad de la calzada.",
       "image": "6302.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4907,13 +4990,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "SU CAPACIDAD VISUAL DISMINUYE, INCLUSO PIERDE VISIÓN POR LOS LATERALES. \" LLAMADO EFECTO TÚNEL, PRODUCIDO POR LOS EFECTOS DEL ALCOHOL\".",
+      "explanation": "El alcohol reduce la capacidad visual: ves peor de lejos y de noche, te deslumbras más y se estrecha el campo visual (efecto túnel), así que no ves lo que pasa a los lados.",
       "image": "2653.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4943,13 +5027,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "AUTOPISTAS Y AUTOVÍAS: 1/ CAMIONES, 2/TRACTOCAMIONES, 3/FURGONES, 4/ AUTOCARAVANAS SUPERIOR A 3.500 KG, 5/ARTICULADOS, 6/REMOLQUES : 90 KM/H \"CONVENCIONALES: 80 KM/H.",
+      "explanation": "Un camión puede ir como máximo a 80 km/h en una carretera convencional como esta y a 90 km/h en autopistas y autovías.",
       "image": "9739.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -4979,13 +5064,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "Aparcar sobre la acera obliga a los peatones a bajar a la calzada, a veces con carritos o sillas de ruedas, y los pone en peligro. Además está prohibido.",
       "image": "6622.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5015,13 +5101,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "",
+      "explanation": "Es la señal de «advertencias acústicas prohibidas»: no puedes tocar el claxon, salvo para evitar un accidente. Los atascos no son una excepción.",
       "image": "7316.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5051,13 +5138,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "",
+      "explanation": "Desde su vehículo, el agente te indica que pares a la derecha con el brazo extendido hacia abajo, inclinado y fijo. Las banderas las usan otras personas, como en obras o en pruebas deportivas.",
       "image": "8126.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5087,13 +5175,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "Si dejas el vehículo para cargar o descargar, tienes que parar el motor y desconectar el sistema de arranque, para que nadie pueda moverlo y por seguridad.",
       "image": "9370.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5123,13 +5212,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "",
+      "explanation": "Un peatón que va hablando por el móvil se distrae y puede cruzar sin mirar. Presta más atención a ellos. Tú, conduciendo, no debes marcar ni hablar sin un manos libres, dure lo que dure la llamada.",
       "image": "10974.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5159,13 +5249,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "DE NOCHE UNA MOTOCICLETA NO PUEDE ARRASTRAR UN REMOLQUE. \" SOLO LO PUEDE ARRASTRAR DE DÍA\".",
+      "explanation": "Una motocicleta no puede arrastrar un remolque entre la puesta y la salida del sol. Solo puede hacerlo de día, y sin pasar del 10 % menos de su velocidad máxima.",
       "image": "4345.gif",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5195,13 +5286,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "",
+      "explanation": "La niebla deja el asfalto húmedo y resbaladizo aunque no llueva. Además de verte peor, los neumáticos agarran menos, así que reduce la velocidad y aumenta la distancia.",
       "image": "15302.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5231,13 +5323,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "CUANDO SE HABILITA UN CARRIL EN SENTIDO CONTRARIO AL HABITUAL, POR CIRCUNSTANCIAS DEL TRÁFICO, SOLO LO PUEDEN UTILIZAR TURISMOS SIN REMOLQUE Y MOTOCICLETAS. \"CUANDO SE HABILITA POR OBRAS LO PUEDEN UTILIZAR TODOS LOS VEHÍCULOS, SALVO QUE HAYA ALGUNA SEÑAL QUE SE LO PROHÍBA\"",
+      "explanation": "Si el carril en sentido contrario se habilita por obras, lo pueden usar todos los vehículos que pueden circular por esa vía, salvo que una señal lo prohíba. Si se habilita para mejorar el tráfico, solo turismos sin remolque y motos.",
       "image": "9685.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5267,13 +5360,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "POR LA PARTE DELANTERA: NADA. POR LA PARTE TRASERA: 25 CM. Y POR LOS LATERALES 50 CM DESDE EL EJE LONGITUDINAL DEL VEHÍCULO.",
+      "explanation": "En una moto, la carga puede sobresalir por cada lateral hasta 50 cm desde el eje longitudinal. Por detrás puede sobresalir hasta 25 cm y por delante nada.",
       "image": "4754.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5303,13 +5397,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "En una vía con tres calzadas, las laterales son de sentido único y la central puede abrirse para un sentido u otro. Circula por la de la derecha y usa la central solo cuando las señales o los paneles lo permitan.",
       "image": "3118.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5339,13 +5434,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "LA RESPONSABILIDAD, ES DEL CONDUCTOR, QUE TIENE QUE INDICARLE QUE TIENE QUE PONER EL CASCO.",
+      "explanation": "El responsable de que el pasajero de una moto lleve casco es el conductor. Si el pasajero no lo lleva, la multa es para el conductor.",
       "image": "8275.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5375,13 +5471,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "HASTA LOS 4 AÑOS: EXENTOS.DE 4 A 10 CADA 2  AÑOS Y A PARTIR DE: 10, ANUAL. \" SIEMPRE DESDE LA FECHA DE MATRICULACIÓN\".",
+      "explanation": "Un turismo particular nuevo no pasa ITV hasta cumplir 4 años desde su primera matriculación. Después, cada 2 años hasta los 10 y a partir de ahí cada año.",
       "image": "12043.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5411,13 +5508,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "En las vías de tres calzadas, las laterales se usan en un solo sentido, aunque puede habilitarse algún carril para el sentido contrario según el tráfico.",
       "image": "15272.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5447,13 +5545,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "VELOCIDAD MÁXIMA EN AUTOPISTA: 120 KM/H. CUANDO TRANSCURRE POR ZONA URBANA: 80 KM/H.",
+      "explanation": "En una autopista o autovía que pasa por suelo urbano, el límite para un turismo es de 80 km/h si no hay otra señal. Los 120 km/h son para el resto de tramos.",
       "image": "8784.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5483,13 +5582,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "",
+      "explanation": "Una crisis de estornudos te hace cerrar los ojos varias veces y apartar la atención del tráfico. Por eso disminuye tu capacidad para concentrarte y reaccionar.",
       "image": "13600.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5519,13 +5619,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "UNA VEZ SE HAYA BEBIDO ALCOHOL. LA ÚNICA ESTRATEGIA ES DEJAR PASAR EL TIEMPO HASTA QUE BAJE A LA TASA AUTORIZADA. \" EL METABOLISMO NECESITA HORAS PARA CUMPLIR CON ESE PROCESO\"",
+      "explanation": "Ni el café, ni el té, ni el agua bajan la tasa de alcohol. El cuerpo necesita horas para eliminarlo; lo único que funciona es esperar o no beber.",
       "image": "15270.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5555,13 +5656,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "A UN VEHÍCULO INMOVILIZADO LO PODEMOS SOBREPASAR PORQUE ES UN REBASAMIENTO , AUNQUE PARA ELLO NECESITE PISAR LA LÍNEA CONTINUA .\" DESPUÉS DE ASEGURARSE QUE SE PUEDE REALIZAR SIN PELIGRO\".",
+      "explanation": "Sobrepasar un vehículo averiado y parado no es un adelantamiento, es un rebasamiento. Puedes cruzar la línea continua para hacerlo, pero solo si no viene nadie y no hay peligro.",
       "image": "15060.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5591,13 +5693,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "",
+      "explanation": "Lo que más ayuda a no chocar con el de delante es mantener la distancia de seguridad, para tener tiempo de reaccionar y frenar si él frena de golpe. El ABS ayuda a controlar el coche al frenar, pero no acorta tanto la distancia.",
       "image": "8538.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5627,13 +5730,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "",
+      "explanation": "En los accidentes de moto, las lesiones más graves y frecuentes son en la cabeza y la cara. Por eso el casco, a ser posible integral, es tan importante.",
       "image": "5608.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5663,13 +5767,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "AL ESTACIONAR HAY QUE DEJAR EL VEHÍCULO CON EL FRENO DE ESTACIONAMIENTO PUESTO SIEMPRE. \"ADEMÁS PODEMOS PONER LA PRIMERA VELOCIDAD: EN ASCENSOS Y MARCHA ATRÁS: EN DESCENSOS.",
+      "explanation": "Al estacionar en una cuesta hay que dejar siempre puesto el freno de mano. Si sube, además puedes dejar metida la primera, y si baja, la marcha atrás.",
       "image": "12955.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5699,13 +5804,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "",
+      "explanation": "Fuera de poblado, si no hay zona peatonal ni arcén transitable, el peatón puede ir por la calzada tomando precauciones: pegado al borde y, normalmente, por la izquierda para ver de frente a los coches.",
       "image": "3323.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5735,13 +5841,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "VELOCIDAD MÁXIMA: 80 KM/H. MÍNIMA: 60 KM/H. Y LUZ DE CRUCE ENCENDIDA. PARA TODOS.",
+      "explanation": "En un carril adicional circunstancial, como el de los conos, el máximo es 80 km/h y el mínimo 60 km/h, y hay que llevar la luz de cruce encendida.",
       "image": "15313.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5771,13 +5878,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "SE CIRCULARÁ CON LA MARCHA MÁS LARGA POSIBLE. \"SI NECESITA PONER CADENAS, SE PONDRÁN EN LAS RUEDAS MOTRICES DEL VEHÍCULO\"",
+      "explanation": "Sobre la nieve el agarre es mínimo: acelera, frena y gira con suavidad, usa marchas largas y deja más distancia. Las cadenas van en las ruedas motrices, que no siempre son las delanteras.",
       "image": "9596.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5807,13 +5915,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "LO MÁS IMPORTANTE ES SALVAR LAS PERSONAS Y DESPUÉS EL VEHÍCULO SI ES POSIBLE.",
+      "explanation": "Si el coche se queda parado en un paso a nivel, lo primero es que todos salgan del coche y se alejen de la vía. Las personas van antes que el vehículo; después, si se puede, se intenta sacarlo y se avisa.",
       "image": "8858.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5843,13 +5952,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "",
+      "explanation": "Los retrovisores se ajustan antes de arrancar, con el coche parado en terreno llano y recto, para que la imagen sea la real. Hacerlo en marcha es una distracción.",
       "image": "8919.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5879,13 +5989,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "",
+      "explanation": "La velocidad excesiva y las distracciones están detrás de la mayoría de los accidentes, en cualquier tipo de vía. La seguridad de los coches no compensa ir demasiado rápido.",
       "image": "9891.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5915,13 +6026,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "",
+      "explanation": "Con depresión cuesta concentrarse y estar atento a lo que pasa alrededor, así que se pierde información del tráfico. Además se suele reaccionar más tarde.",
       "image": "8546.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5951,13 +6063,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "/ TODOS LOS CICLOMOTORES DEBEN ESTAR ASEGURADOS PARA PODER CIRCULAR POR LAS VÍAS PÚBLICAS.",
+      "explanation": "Todos los vehículos a motor que circulan por vías públicas, también los ciclomotores, deben tener el seguro obligatorio en vigor.",
       "image": "12416.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -5987,13 +6100,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "ANFETAMINAS PRODUCE EN EL CONDUCTOR: IMPACIENCIA, VIOLENCIA Y AGRESIVIDAD. \" SOBREVALORA SU CAPACIDAD\" Y DISMINUYE LA SENSACIÓN DE FATIGA.",
+      "explanation": "Las anfetaminas quitan la sensación de cansancio, pero el cansancio sigue ahí. El conductor se cree capaz de seguir y además se vuelve más impulsivo y arriesgado.",
       "image": "5218.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -6023,13 +6137,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "",
+      "explanation": "Se llaman factores de riesgo a las circunstancias que aumentan la probabilidad de un accidente, como el alcohol, la velocidad, el sueño o el mal estado de la vía.",
       "image": "8033.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -6059,13 +6174,14 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "AL ESTAR FUERA DE LA CALZADA Y DEL ARCÉN, (DE LA VÍA) NO NECESITA SEÑALIZARLO.",
+      "explanation": "Si el coche averiado está fuera de la calzada y del arcén, no estorba a nadie, así que no hace falta colocar el dispositivo de preseñalización. Si estuviera en la vía, sí.",
       "image": "6527.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -6095,13 +6211,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "EN VÍAS URBANAS, CIRCULAREMOS POR EL CARRIL QUE MEJOR CONVENGA A NUESTRO DESTINO, SI VAMOS A IR A LA DERECHA, DEBEMOS DE CIRCULAR POR EL CARRIL DE LA DERECHA.",
+      "explanation": "Para girar a la derecha tienes que colocarte con antelación en el carril de la derecha. Así no cruzas por delante de los que siguen de frente.",
       "image": "8738.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -6131,13 +6248,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "PRIORIDAD ENTRE SEÑALES Y NORMAS: 1Âº AGENTES, 2Âº CIRCUNSTANCIALES, 3Âº SEMÁFOROS, 4Âº SEÑALES VERTICALES, 5Âº MARCAS VIALES Y 6Âº LAS NORMAS DE CIRCULACIÓN. CUANDO EXISTA CONTRADICCIÓN, PREVALECE LA PRIORITARIA.",
+      "explanation": "Debes obedecer las señales aunque parezcan contradecir las normas generales: por ejemplo, una señal de velocidad más baja que el límite genérico. Las señales mandan sobre las normas.",
       "image": "3028.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {
@@ -6167,13 +6285,14 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "LA SEÑAL ADVIERTE DEL PELIGRO POR LA PROXIMIDAD DE UNA ZONA DE LA CALZADA CUYO PAVIMENTO PUEDE RESULTAR MUY DESLIZANTE.",
+      "explanation": "El coche derrapando avisa de un tramo cuyo pavimento puede estar muy resbaladizo. Reduce la velocidad y evita frenazos y volantazos.",
       "image": "5103.JPG",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {

@@ -42,7 +42,7 @@ const glossaryDgt = [
     { term: "Parte transitable del arcén", definition: "Parte del arcén por donde pueden circular las personas y algunos vehículos. Por ejemplo: las bicicletas y los vehículos llevados por animales.", image: "assets/glossary/parte-transitable-del-arcen.jpg" },
     { term: "Paso a nivel", definition: "Cruce de una carretera con las vías por donde pasan el tren. Puede estar protegido por barreras o semibarreras.", image: "assets/glossary/paso-a-nivel.jpg" },
     { term: "Paso inferior", definition: "Lugar donde la vía pasa por debajo de otra vía o de una vía de tren.", image: "assets/glossary/paso-inferior.jpg" },
-    { term: "Paso rebajado", definition: "Rampa pequeña que une la acera con la calzada para facilitar el paso a las personas con movilidad reducida.", image: "assets/glossary/paso-rebajado.jpg" },
+    { term: "Paso rebajado", definition: "Rampa pequeña que une la acera con la calzada para facilitar el paso a las personas con movilidad reducida.", image: "assets/glossary/paso-rebajado-2026.jpg" },
     { term: "Plataforma única", definition: "Calle donde la acera y la calzada están al mismo nivel, sin bordillo. Suelen ser zonas con preferencia para los peatones.", image: "assets/glossary/plataforma-unica.jpg" },
     { term: "Poblado", definition: "Zona con edificios cuyas entradas y salidas están señalizadas con las señales de comienzo y fin de poblado. Dentro de un poblado, las vías son urbanas.", image: "assets/glossary/poblado.jpg" },
     { term: "Prioridad de paso", definition: "Preferencia para pasar que tiene un vehículo o una persona sobre los demás.", image: "assets/glossary/prioridad-de-paso.jpg" },
@@ -55,7 +55,7 @@ const glossaryDgt = [
     { term: "Señal V-20", definition: "Panel cuadrado con franjas rojas y blancas que se pone cuando la carga sobresale por detrás del vehículo, por ejemplo un portabicis.", image: "assets/glossary/senal-v-20.jpg" },
     { term: "Señal vertical", definition: "Señal de tráfico colocada en un poste o en un pórtico, a un lado o encima de la vía.", image: "assets/glossary/senal-vertical.jpg" },
     { term: "Señales circunstanciales y de balizamiento", definition: "Señales que se colocan de forma temporal, por ejemplo por obras o por un accidente: conos, paneles luminosos, luces amarillas, vallas. Mandan sobre las señales fijas.", image: "assets/glossary/senales-circunstanciales-y-de-balizamiento.jpg" },
-    { term: "Tramo", definition: "Trozo concreto de una vía, entre dos puntos. Por ejemplo, el tramo entre dos curvas o entre dos salidas.", image: "assets/glossary/tramo.jpg" },
+    { term: "Tramo", definition: "Trozo concreto de una vía, entre dos puntos. Por ejemplo, el tramo entre dos curvas o entre dos salidas.", image: "assets/glossary/tramo-2026.jpg" },
     { term: "Travesía", definition: "Parte de la carretera que pasa por dentro de un poblado.", image: "assets/glossary/travesia.jpg" },
     { term: "Trenzado", definition: "Tramo corto entre una entrada y una salida donde los coches que entran y los que salen cambian de carril y se cruzan. Hay más riesgo de choque. Lo avisa la señal P-35.", image: "assets/glossary/trenzado.jpg" },
     { term: "Vado", definition: "Salida de vehículos por la acera hacia un garaje o un local. Está prohibido estacionar delante.", image: "assets/glossary/vado.jpg" },
@@ -73,6 +73,6 @@ const glossaryDgt = [
     { term: "Zona balizada", definition: "Zona donde hay señales que avisan de un peligro o que no se puede pasar.", image: "assets/glossary/zona-balizada.jpg" },
     { term: "Zona de Bajas Emisiones o ZBE", definition: "Zona de una ciudad donde se limita la entrada de los vehículos más contaminantes, normalmente según su etiqueta ambiental de la DGT.", image: "assets/glossary/zona-de-bajas-emisiones-o-zbe.jpg" },
     { term: "Zona de cebreado", definition: "Zona pintada con rayas blancas oblicuas y rodeada por una línea. Ningún vehículo puede circular, parar ni estacionar sobre ella.", image: "assets/glossary/zona-de-cebreado.jpg" },
-    { term: "Zona de coexistencia", definition: "Calle compartida por peatones, bicis y coches, señalizada con la S-47. Los peatones tienen siempre prioridad y los vehículos no pueden pasar de 20 km/h.", image: "assets/glossary/zona-de-coexistencia.jpg" },
-    { term: "Zona de incertidumbre", definition: "Espacio alrededor de otros usuarios de la vía donde pueden moverse de forma imprevista. Por ejemplo, a los lados de un ciclista o entre coches aparcados, por donde puede salir un peatón.", image: "assets/glossary/zona-de-incertidumbre.jpg" }
+    { term: "Zona de coexistencia", definition: "Calle compartida por peatones, bicis y coches, señalizada con la S-47. Los peatones tienen siempre prioridad y los vehículos no pueden pasar de 20 km/h.", image: "assets/glossary/zona-de-coexistencia-2026.jpg" },
+    { term: "Zona de incertidumbre", definition: "Espacio alrededor de otros usuarios de la vía donde pueden moverse de forma imprevista. Por ejemplo, a los lados de un ciclista o entre coches aparcados, por donde puede salir un peatón.", image: "assets/glossary/zona-de-incertidumbre-2026.jpg" }
 ];
