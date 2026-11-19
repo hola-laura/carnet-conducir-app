@@ -98750,13 +98750,14 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "El sistema de refrigeración del motor de un vehículo estará formado por las cámaras de refrigeración, el radiador y el ventilador, la bomba y el termostato, y los manguitos. No formará parte de él el canalizador.",
-      "image": "B_1548.jpg",
+      "explanation": "El sistema de refrigeración lo forman el radiador, el ventilador, la bomba de agua, el termostato, el vaso de expansión, los manguitos y las cámaras de agua del motor. El «canalizador» no es ninguna pieza de este sistema.",
+      "image": "refrigeracion-motor.svg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
         "accuracyApproved": true,
-        "rightsBasis": "Public data from GitHub repository"
+        "rightsBasis": "Public data from GitHub repository",
+        "explanationReviewed": true
       }
     },
     {

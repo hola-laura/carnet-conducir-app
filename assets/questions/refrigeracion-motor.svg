@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 660" font-family="DM Sans, -apple-system, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="block" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9d6d0"/>
+      <stop offset="1" stop-color="#b9b5ae"/>
+    </linearGradient>
+    <linearGradient id="hot" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e2683c"/>
+      <stop offset="1" stop-color="#c9452b"/>
+    </linearGradient>
+    <linearGradient id="cold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2f74c9"/>
+      <stop offset="1" stop-color="#1f5aa6"/>
+    </linearGradient>
+    <linearGradient id="piston" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9aa3ab"/>
+      <stop offset="1" stop-color="#6d767e"/>
+    </linearGradient>
+    <pattern id="fins" width="8" height="10" patternUnits="userSpaceOnUse">
+      <rect width="8" height="10" fill="#3b7fd0"/>
+      <path d="M0 5 L4 0 L8 5 L4 10 Z" fill="none" stroke="#9cc3ee" stroke-width="1.2"/>
+    </pattern>
+    <marker id="arrHot" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 1 L9 5 L0 9 Z" fill="#fff"/>
+    </marker>
+    <marker id="arrCold" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 1 L9 5 L0 9 Z" fill="#fff"/>
+    </marker>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="660" fill="#ffffff"/>
+
+  <!-- ===== Engine block ===== -->
+  <g filter="url(#soft)">
+    <rect x="360" y="190" width="380" height="250" rx="18" fill="url(#block)" stroke="#8d8880" stroke-width="2"/>
+    <!-- cylinder head -->
+    <rect x="350" y="150" width="400" height="56" rx="12" fill="#cfcbc4" stroke="#8d8880" stroke-width="2"/>
+    <!-- oil sump -->
+    <path d="M380 440 H720 L700 500 Q690 520 670 520 H430 Q410 520 400 500 Z" fill="#a7a29a" stroke="#8d8880" stroke-width="2"/>
+  </g>
+
+  <!-- water jacket (coolant around cylinders) -->
+  <rect x="378" y="214" width="344" height="196" rx="12" fill="#cfe2f8" stroke="#2f74c9" stroke-width="3" stroke-dasharray="0"/>
+
+  <!-- cylinders with pistons -->
+  <g>
+    <rect x="398" y="226" width="62" height="170" rx="6" fill="#f3f1ee" stroke="#8d8880" stroke-width="2"/>
+    <rect x="482" y="226" width="62" height="170" rx="6" fill="#f3f1ee" stroke="#8d8880" stroke-width="2"/>
+    <rect x="566" y="226" width="62" height="170" rx="6" fill="#f3f1ee" stroke="#8d8880" stroke-width="2"/>
+    <rect x="650" y="226" width="62" height="170" rx="6" fill="#f3f1ee" stroke="#8d8880" stroke-width="2"/>
+    <rect x="402" y="300" width="54" height="44" rx="5" fill="url(#piston)"/>
+    <rect x="486" y="262" width="54" height="44" rx="5" fill="url(#piston)"/>
+    <rect x="570" y="262" width="54" height="44" rx="5" fill="url(#piston)"/>
+    <rect x="654" y="300" width="54" height="44" rx="5" fill="url(#piston)"/>
+    <g stroke="#6d767e" stroke-width="7" stroke-linecap="round">
+      <line x1="429" y1="344" x2="429" y2="392"/>
+      <line x1="513" y1="306" x2="513" y2="392"/>
+      <line x1="597" y1="306" x2="597" y2="392"/>
+      <line x1="681" y1="344" x2="681" y2="392"/>
+    </g>
+  </g>
+  <!-- valves on head -->
+  <g fill="#8d8880">
+    <rect x="410" y="160" width="10" height="34" rx="3"/><rect x="438" y="160" width="10" height="34" rx="3"/>
+    <rect x="494" y="160" width="10" height="34" rx="3"/><rect x="522" y="160" width="10" height="34" rx="3"/>
+    <rect x="578" y="160" width="10" height="34" rx="3"/><rect x="606" y="160" width="10" height="34" rx="3"/>
+    <rect x="662" y="160" width="10" height="34" rx="3"/><rect x="690" y="160" width="10" height="34" rx="3"/>
+  </g>
+
+  <!-- ===== Radiator ===== -->
+  <g filter="url(#soft)">
+    <rect x="70" y="150" width="120" height="300" rx="10" fill="url(#fins)" stroke="#1f5aa6" stroke-width="3"/>
+    <rect x="62" y="132" width="136" height="30" rx="8" fill="#e2683c" stroke="#a83a23" stroke-width="2"/>
+    <rect x="62" y="438" width="136" height="30" rx="8" fill="#2f74c9" stroke="#1f5aa6" stroke-width="2"/>
+  </g>
+  <!-- filler cap -->
+  <rect x="98" y="112" width="40" height="22" rx="5" fill="#3d3a36"/>
+  <rect x="92" y="104" width="52" height="10" rx="4" fill="#3d3a36"/>
+
+  <!-- ===== Expansion tank ===== -->
+  <g filter="url(#soft)">
+    <rect x="200" y="40" width="96" height="70" rx="12" fill="#f2f7fd" stroke="#7aa9e0" stroke-width="2.5"/>
+    <rect x="203" y="70" width="90" height="37" rx="8" fill="#9cc3ee"/>
+    <line x1="210" y1="66" x2="230" y2="66" stroke="#7aa9e0" stroke-width="2"/>
+    <text x="236" y="70" font-size="12" fill="#5b7fa8">MAX</text>
+    <rect x="236" y="28" width="26" height="14" rx="4" fill="#3d3a36"/>
+  </g>
+  <path d="M248 110 C248 128 170 120 150 132" fill="none" stroke="#7aa9e0" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- ===== Fan ===== -->
+  <g transform="translate(232 300)">
+    <rect x="-8" y="-70" width="16" height="140" rx="8" fill="#e8e5df" stroke="#b9b5ae" stroke-width="2"/>
+    <g fill="#f0c43a" stroke="#c99a16" stroke-width="2">
+      <ellipse cx="0" cy="-44" rx="10" ry="38"/>
+      <ellipse cx="0" cy="44" rx="10" ry="38"/>
+      <ellipse cx="0" cy="-14" rx="8" ry="22" transform="rotate(35)"/>
+      <ellipse cx="0" cy="14" rx="8" ry="22" transform="rotate(35)"/>
+    </g>
+    <circle r="14" fill="#3d3a36"/>
+    <line x1="14" y1="0" x2="128" y2="0" stroke="#3d3a36" stroke-width="6"/>
+  </g>
+
+  <!-- ===== Water pump + belt ===== -->
+  <g filter="url(#soft)">
+    <circle cx="330" cy="400" r="34" fill="#cfcbc4" stroke="#8d8880" stroke-width="3"/>
+    <circle cx="330" cy="400" r="14" fill="#3d3a36"/>
+    <g stroke="#8d8880" stroke-width="4" stroke-linecap="round">
+      <line x1="330" y1="372" x2="330" y2="384"/><line x1="330" y1="416" x2="330" y2="428"/>
+      <line x1="302" y1="400" x2="314" y2="400"/><line x1="346" y1="400" x2="358" y2="400"/>
+    </g>
+  </g>
+  <circle cx="380" cy="490" r="26" fill="#cfcbc4" stroke="#8d8880" stroke-width="3"/>
+  <circle cx="380" cy="490" r="8" fill="#3d3a36"/>
+  <path d="M302 410 Q300 520 380 516 Q400 515 404 494 M358 392 Q420 420 404 488" fill="none" stroke="#3d3a36" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- ===== Thermostat housing ===== -->
+  <g filter="url(#soft)">
+    <rect x="300" y="128" width="64" height="44" rx="10" fill="#cfcbc4" stroke="#8d8880" stroke-width="3"/>
+    <path d="M316 150 h32" stroke="#3d3a36" stroke-width="4"/>
+    <circle cx="332" cy="150" r="9" fill="#f0c43a" stroke="#c99a16" stroke-width="2"/>
+  </g>
+  <path d="M364 150 H380" stroke="#cfcbc4" stroke-width="16"/>
+
+  <!-- ===== Temperature sensor ===== -->
+  <rect x="700" y="196" width="16" height="30" rx="4" fill="#3d3a36"/>
+  <path d="M708 196 C708 170 740 160 760 150" fill="none" stroke="#3d3a36" stroke-width="3"/>
+
+  <!-- ===== Hoses ===== -->
+  <!-- upper hose: hot, engine -> thermostat -> radiator top -->
+  <path d="M300 150 C250 150 230 147 198 147" fill="none" stroke="url(#hot)" stroke-width="22" stroke-linecap="round"/>
+  <path d="M290 150 C260 150 240 147 212 147" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="6 9" marker-end="url(#arrHot)" opacity="0.9"/>
+  <!-- lower hose: cold, radiator bottom -> pump -->
+  <path d="M198 453 C250 453 268 430 300 412" fill="none" stroke="url(#cold)" stroke-width="22" stroke-linecap="round"/>
+  <path d="M206 453 C248 453 262 434 288 418" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="6 9" marker-end="url(#arrCold)" opacity="0.9"/>
+  <!-- pump -> block -->
+  <path d="M362 400 H382" stroke="url(#cold)" stroke-width="18"/>
+  <!-- heater hoses -->
+  <path d="M740 240 C800 240 806 250 806 300" fill="none" stroke="url(#hot)" stroke-width="16" stroke-linecap="round"/>
+  <path d="M806 380 C806 420 790 430 740 430" fill="none" stroke="url(#cold)" stroke-width="16" stroke-linecap="round"/>
+  <!-- heater core -->
+  <g filter="url(#soft)">
+    <rect x="776" y="296" width="62" height="88" rx="8" fill="url(#fins)" stroke="#1f5aa6" stroke-width="2.5"/>
+  </g>
+
+  <!-- coolant flow inside jacket -->
+  <g fill="none" stroke-width="3" stroke-linecap="round" marker-end="url(#arrHot)">
+    <path d="M392 396 V230" stroke="#2f74c9"/>
+    <path d="M560 216 H420" stroke="#e2683c"/>
+  </g>
+
+  <!-- ===== Labels ===== -->
+  <g stroke="#141414" stroke-width="1.6" fill="none" stroke-linecap="round">
+    <polyline points="118,104 118,80 92,80"/>
+    <polyline points="296,60 330,60 330,40 356,40"/>
+    <polyline points="332,128 332,100 378,100"/>
+    <polyline points="708,170 708,122 756,122"/>
+    <line x1="130" y1="468" x2="130" y2="530"/>
+    <line x1="232" y1="370" x2="232" y2="562"/>
+    <line x1="330" y1="434" x2="330" y2="530"/>
+    <line x1="560" y1="330" x2="560" y2="530"/>
+    <polyline points="838,340 862,340 862,530"/>
+  </g>
+  <g fill="#141414">
+    <circle cx="118" cy="104" r="4.5"/><circle cx="296" cy="60" r="4.5"/><circle cx="332" cy="128" r="4.5"/>
+    <circle cx="708" cy="170" r="4.5"/><circle cx="130" cy="468" r="4.5"/><circle cx="232" cy="370" r="4.5"/>
+    <circle cx="330" cy="434" r="4.5"/><circle cx="560" cy="330" r="4.5"/><circle cx="838" cy="340" r="4.5"/>
+  </g>
+  <g fill="#141414" font-size="18" font-weight="700">
+    <text x="86" y="86" text-anchor="end">Tapón de</text>
+    <text x="86" y="62" text-anchor="end" font-size="0"> </text>
+    <text x="362" y="46">Vaso de expansión</text>
+    <text x="384" y="106">Termostato</text>
+    <text x="762" y="118">Sensor de</text>
+    <text x="762" y="139">temperatura</text>
+  </g>
+  <text x="86" y="106" text-anchor="end" fill="#141414" font-size="18" font-weight="700">llenado</text>
+
+  <rect x="16" y="520" width="868" height="128" rx="14" fill="#f5f3ef"/>
+  <g fill="#141414" font-size="17" font-weight="700" text-anchor="middle">
+    <text x="130" y="550">Radiador</text>
+    <text x="232" y="582">Ventilador</text>
+    <text x="330" y="550">Bomba de agua</text>
+    <text x="560" y="550">Bloque del motor</text>
+    <text x="560" y="569" font-size="14" font-weight="500" fill="#5f5b56">cámaras de agua</text>
+    <text x="862" y="550" text-anchor="end">Radiador de calefacción</text>
+  </g>
+  <line x1="36" y1="598" x2="864" y2="598" stroke="#e2ded7" stroke-width="1.5"/>
+  <g font-size="15" font-weight="700" fill="#141414">
+    <rect x="40" y="614" width="28" height="12" rx="6" fill="#d9573a"/>
+    <text x="78" y="625">Manguito superior: líquido caliente al radiador</text>
+    <rect x="480" y="614" width="28" height="12" rx="6" fill="#2a68b8"/>
+    <text x="518" y="625">Manguito inferior: líquido frío al motor</text>
+  </g>
+</svg>

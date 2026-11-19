@@ -782,7 +782,7 @@ function questionImagePath(image) {
     if (!image) return '';
     const value = String(image).trim();
     if (value.startsWith('assets/')) return value;
-    if (/^[\w.-]+\.(jpe?g|png|gif|webp)$/i.test(value)) {
+    if (/^[\w.-]+\.(jpe?g|png|gif|webp|svg)$/i.test(value)) {
         return 'assets/questions/' + value;
     }
     return '';
@@ -834,6 +834,30 @@ function categorizeQuestion(q) {
 // ============================================
 // NAVIGATION
 // ============================================
+
+// Small source photos (most are 200x200) look blurry when stretched. Show them
+// at a size close to their real one, over a blurred copy that fills the frame.
+document.addEventListener('load', (event) => {
+    const img = event.target;
+    if (!(img instanceof HTMLImageElement)) return;
+    const frame = img.closest('.question-image');
+    if (!frame) return;
+    const small = img.naturalWidth > 0 && img.naturalWidth < 400 && !/\.svg(\?|$)/i.test(img.src);
+    frame.classList.toggle('is-lowres', small);
+    if (small) frame.style.setProperty('--src', `url("${img.src}")`);
+}, true);
+
+document.addEventListener('click', (event) => {
+    const img = event.target.closest('.question-image img');
+    const viewer = document.getElementById('imageViewer');
+    if (!viewer) return;
+    if (img) {
+        document.getElementById('imageViewerImg').src = img.src;
+        viewer.classList.remove('hidden');
+        return;
+    }
+    if (event.target.closest('#imageViewer')) viewer.classList.add('hidden');
+});
 
 let introTimer = null;
 
