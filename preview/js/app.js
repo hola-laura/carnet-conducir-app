@@ -2148,9 +2148,7 @@ function stopDash() {
 
 function showGame() {
     showView('gameView');
-    dash = freshDash(false);
-    refreshDashCopy();
-    drawDash();
+    if (typeof startMatch === 'function') startMatch();
 }
 
 function refreshDashCopy() {
