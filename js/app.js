@@ -35,6 +35,8 @@ const I18N = {
         docTitle: 'Drivo Test — Test del carnet B (España)',
         docDescription: 'Tests gratis para el carnet B: preguntas tipo examen DGT, modo práctica y glosario visual. No afiliada a la DGT.',
         landingLead: 'Tests gratis para el carnet B y el permiso de conducir en España.',
+        landingTag: 'Tu test del carnet B, sin dramas.',
+        landingEnter: 'Empezar',
         setupTitle: 'Personaliza tu preparación',
         setupSubtitle: 'Opcional - puedes configurarlo después',
         examDate: 'Fecha de examen',
@@ -124,8 +126,8 @@ const I18N = {
         searchPlaceholder: 'Buscar',
         libraryEmpty: 'No se encontraron preguntas',
         seeMore: 'Ver más',
-        showExplanation: '💡 Ver Explicación Detallada',
-        hideExplanation: '🔼 Ocultar Explicación',
+        showExplanation: 'Ver explicación',
+        hideExplanation: 'Ocultar explicación',
         whyCorrect: '¿Por qué es correcta?',
         toastProfile: '✓ Perfil guardado correctamente',
         toastReport: '✓ Reporte enviado. Gracias por ayudarnos a mejorar.',
@@ -155,6 +157,8 @@ const I18N = {
         docTitle: 'Drivo Test — Spain driving licence B tests',
         docDescription: 'Free practice tests for Spain’s licence B: DGT-style questions, practice mode and a visual glossary. Not affiliated with the DGT.',
         landingLead: 'Free practice tests for Spain’s licence B driving exam.',
+        landingTag: 'Your licence B test, no drama.',
+        landingEnter: 'Get started',
         setupTitle: 'Personalise your prep',
         setupSubtitle: 'Optional — you can do this later',
         examDate: 'Exam date',
@@ -407,7 +411,7 @@ function syncNativeChrome() {
     document.documentElement.classList.add('native-app');
     document.documentElement.classList.toggle('light-mode', light);
     const theme = document.querySelector('meta[name="theme-color"]');
-    if (theme) theme.setAttribute('content', light ? '#eef4fa' : '#011434');
+    if (theme) theme.setAttribute('content', light ? '#F5F3EF' : '#111111');
     const Bar = window.Capacitor.Plugins && window.Capacitor.Plugins.StatusBar;
     if (!Bar) return;
     Bar.setOverlaysWebView({ overlay: true });
@@ -422,7 +426,7 @@ function toggleTheme() {
 }
 
 function loadTheme() {
-    if (localStorage.getItem('theme') === 'light') {
+    if (localStorage.getItem('theme') !== 'dark') {
         document.body.classList.add('light-mode');
     }
     syncThemeButton();
@@ -1271,16 +1275,19 @@ async function showExplanation(isCorrect, question) {
         bodyHTML = tmp.innerHTML;
     }
 
+    card.classList.toggle('is-wrong', !isCorrect);
     if (isCorrect) {
         if (!bodyHTML) {
             card.classList.add('hidden');
             return;
         }
-        header.classList.add('hidden');
+        header.classList.remove('hidden');
+        icon.textContent = '';
+        title.textContent = t('correct');
         text.innerHTML = `<div class="explanation-section">${bodyHTML}</div>`;
     } else {
         header.classList.remove('hidden');
-        icon.textContent = '❌';
+        icon.textContent = '';
         title.textContent = t('incorrect');
         text.innerHTML = bodyHTML ? `<div class="explanation-section">${bodyHTML}</div>` : '';
     }
@@ -1426,7 +1433,7 @@ function appendLibraryPage() {
                 <button class="expand-button" onclick="toggleExplanation(${index})">
                     ${t('showExplanation')}
                 </button>
-                <div id="explanation-${index}" class="explanation-content" style="display: none; margin-top: 12px; padding: 20px; background: linear-gradient(135deg, rgba(217, 119, 87, 0.08) 0%, rgba(139, 154, 122, 0.08) 100%); border-radius: 16px; border: 1px solid var(--border-color);"></div>
+                <div id="explanation-${index}" class="explanation-content" style="display: none;"></div>
             </div>
             <button type="button" class="library-report">${t('somethingWrong')}</button>
         `;
@@ -1460,7 +1467,7 @@ function toggleExplanation(index) {
         const q = libraryList[index];
         const explanation = getExplanationText(q);
         content.innerHTML = explanation
-            ? `<div style="font-size: 15px; line-height: 1.7; color: var(--text-primary);">${explanation}</div>`
+            ? `<div class="explanation-section">${explanation}</div>`
             : '';
         content.dataset.ready = '1';
     }
@@ -2021,7 +2028,7 @@ function drawDash() {
         }
         return `<polygon points="${it.x},${it.y - 20} ${it.x + 16},${it.y + 16} ${it.x - 16},${it.y + 16}" fill="#FF9E7D"/><rect x="${it.x - 9}" y="${it.y + 2}" width="18" height="5" fill="#fff"/>`;
     }).join('');
-    svg.innerHTML = `<rect width="300" height="440" fill="#4A4468"/>${marks}${items}
+    svg.innerHTML = `<rect width="300" height="440" fill="#2A2230"/>${marks}${items}
         <rect x="${px - 26}" y="338" width="8" height="18" rx="2" fill="#FFF8F0"/>
         <rect x="${px + 18}" y="338" width="8" height="18" rx="2" fill="#FFF8F0"/>
         <rect x="${px - 26}" y="366" width="8" height="18" rx="2" fill="#FFF8F0"/>
