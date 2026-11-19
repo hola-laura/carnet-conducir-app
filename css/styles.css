@@ -1293,18 +1293,18 @@ html.native-app .store-footer {
 
 .scope-chips {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     padding: 0 var(--gutter) 14px;
 }
 
 .scope-chips button {
-    height: 36px;
-    padding: 0 16px;
+    height: 34px;
+    padding: 0 13px;
     border: 1px solid var(--line-strong);
     border-radius: 999px;
     background: var(--card);
     color: var(--ink);
-    font: 600 14px var(--sans);
+    font: 600 13px var(--sans);
 }
 
 .scope-chips button[aria-selected="true"] {
@@ -2092,4 +2092,80 @@ html.native-app .app-tabbar {
         padding-bottom: 10px;
         font-size: 14px;
     }
+}
+
+/* ---------- Guardar preguntas (corazón) ---------- */
+
+.save-button {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--btn);
+    color: var(--btn-ink);
+    box-shadow: var(--shadow);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.save-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.save-button.is-saved {
+    background: var(--accent);
+    color: #fff;
+}
+
+.save-button.is-saved svg path {
+    fill: currentColor;
+}
+
+.save-button.pop {
+    animation: heartPop 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+@keyframes heartPop {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+#testView .question-card {
+    position: relative;
+}
+
+#testView .question-card .save-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+#testView .question-header {
+    padding-right: 44px;
+}
+
+.question-item-header {
+    align-items: center;
+}
+
+.question-item-header .save-button {
+    margin-left: auto;
+    width: 36px;
+    height: 36px;
+}
+
+.scope-chips {
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.scope-chips::-webkit-scrollbar {
+    display: none;
+}
+
+.scope-chips button {
+    flex-shrink: 0;
 }

@@ -18,7 +18,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Drivo Test — Test del carnet B (España)">
     <meta name="twitter:description" content="Tests gratis para el carnet B: preguntas tipo examen DGT, modo práctica y glosario visual. No afiliada a la DGT.">
-    <link rel="stylesheet" href="css/styles.css?v=20">
+    <link rel="stylesheet" href="css/styles.css?v=21">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="assets/icon.svg">
     <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
@@ -169,14 +169,14 @@
                     <span class="photo-frame">
                         <img class="mode-card-photo" src="assets/home-exam.jpg" alt="" width="371" height="247">
                         <span class="photo-caption" data-i18n="examMeta">30 preguntas · Máx 3 fallos · Sin pistas</span>
-                        <span class="round-action" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg></span>
+                        <span class="round-action" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </span>
                 </button>
 
                 <button id="practiceModeBtn" class="prompt-card mode-button" data-mode="practice">
                     <span class="prompt-label" data-i18n="practiceMode">Modo práctica</span>
                     <span class="prompt-answer" data-i18n="practiceMeta">Feedback al instante · Si fallas, ves por qué y sigues.</span>
-                    <span class="round-action" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg></span>
+                    <span class="round-action" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </button>
 
                 <a class="store-footer" href="https://apps.apple.com/es/app/drivo-test/id6813126362" aria-label="Descargar en el App Store">
@@ -211,6 +211,7 @@
                         <span class="prompt-label question-category" id="questionCategory">Señales</span>
                         <span class="review-chip hidden" id="reviewChip" data-i18n="needsReview">Necesitas repasarlo</span>
                     </div>
+                    <button type="button" class="save-button" id="saveQuestionBtn" aria-pressed="false" aria-label="Guardar pregunta" data-i18n-aria="saveQuestion"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg></button>
                     <h2 class="prompt-answer question-text" id="questionText"></h2>
                     <p id="questionTranslatedNote" class="translate-note hidden" data-i18n="autoTranslated">Traducción automática</p>
                 </div>
@@ -298,6 +299,7 @@
                 <button type="button" data-scope="all" aria-selected="true" data-i18n="scopeAll">Todas</button>
                 <button type="button" data-scope="done" aria-selected="false" data-i18n="scopeDone">Hechas</button>
                 <button type="button" data-scope="review" aria-selected="false" data-i18n="scopeReview">A repasar</button>
+                <button type="button" data-scope="saved" aria-selected="false" data-i18n="scopeSaved">Guardadas</button>
             </div>
 
             <div class="questions-list" id="questionsList"></div>
@@ -427,6 +429,6 @@
     <script src="js/illustrations-dgt.js"></script>
     <script src="js/glossary-dgt.js"></script>
     <script src="js/questions-data.js"></script>
-    <script src="js/app.js?v=15"></script>
+    <script src="js/app.js?v=16"></script>
 </body>
 </html>
