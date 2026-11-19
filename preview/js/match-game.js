@@ -54,16 +54,9 @@ const SIGNS = {
     calzadaPrioridad: `<rect x="34" y="34" width="132" height="132" fill="#fff" stroke="${SIGN_INK}" stroke-width="3" transform="rotate(45 100 100)"/>
         <rect x="58" y="58" width="84" height="84" fill="#f4c20d" transform="rotate(45 100 100)"/>`,
     glorieta: signShapes.blue(`
-        <g fill="none" stroke="#fff" stroke-width="14" stroke-linecap="butt">
-            <path d="M100 56 A44 44 0 0 1 138 78"/>
-            <path d="M138 122 A44 44 0 0 1 100 144"/>
-            <path d="M62 122 A44 44 0 0 1 62 78"/>
-        </g>
-        <g fill="#fff">
-            <path d="M150 64 L150 98 L120 82 Z"/>
-            <path d="M86 156 L118 140 L118 170 Z" transform="rotate(0)"/>
-            <path d="M44 86 L74 70 L72 104 Z"/>
-        </g>`),
+        <g fill="none" stroke="#fff" stroke-width="17" stroke-linecap="butt"><path d="M92.4 56.7 A44 44 0 0 0 57.3 89.4"/><path d="M66.3 128.3 A44 44 0 0 0 112.1 142.3"/><path d="M141.3 115.0 A44 44 0 0 0 130.6 68.3"/></g>
+        <g fill="#fff"><path d="M36.2 82.9 L58.7 115.0 L78.7 94.3 Z"/><path d="M117.1 163.8 L133.7 128.3 L105.7 121.3 Z"/><path d="M146.7 53.3 L107.6 56.7 L115.6 84.4 Z"/></g>
+    `),
     estrechamientoDerecha: signShapes.tri(`<path d="M80 154 V72" stroke="${SIGN_INK}" stroke-width="12"/><path d="M122 154 V118 Q122 104 110 98 V72" fill="none" stroke="${SIGN_INK}" stroke-width="12"/>`),
     alturaMaxima: signShapes.prohib(`
         <path d="M100 30 L88 50 H112 Z" fill="${SIGN_INK}"/><path d="M100 170 L88 150 H112 Z" fill="${SIGN_INK}"/>
