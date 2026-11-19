@@ -16701,7 +16701,7 @@
       },
       "category": "PERMISO B",
       "question": {
-        "es": "En una travesía con dos carriles por sentido y sin señales de velocidad, ¿cuál es la velocidad máxima permitida?",
+        "es": "En una travesía sin señales de velocidad y sin plataforma única, ¿cuál es la velocidad máxima permitida?",
         "en": ""
       },
       "answers": [
@@ -16719,7 +16719,7 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "En las travesías se aplican los límites urbanos: 50 km/h si hay dos o más carriles por sentido, 30 km/h si solo hay uno y 20 km/h en calles de plataforma única.",
+      "explanation": "En una travesía sin señales, el límite genérico es 50 km/h. Solo baja a 20 km/h si la travesía es de plataforma única (acera y calzada al mismo nivel), y el titular de la vía puede rebajarlo con señales.",
       "image": "5889.JPG",
       "review": {
         "status": "official-data",
@@ -26413,7 +26413,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "Con lluvia muy intensa puedes usar la antiniebla delantera, y la trasera debe ir encendida: es una de las condiciones especialmente desfavorables (junto a niebla espesa o nevada fuerte) que la justifican. No es solo para niebla.",
+      "explanation": "Con lluvia muy intensa puedes usar la antiniebla delantera, y la trasera debe ir encendida: la norma la reserva para condiciones especialmente desfavorables, como niebla espesa, lluvia muy intensa, nevada fuerte o nubes densas de polvo o humo. Fuera de esos casos deslumbra y está prohibida.",
       "image": "8168.JPG",
       "review": {
         "status": "official-data",
@@ -29244,25 +29244,25 @@
       },
       "category": "PERMISO B",
       "question": {
-        "es": "Es conveniente cambiar los neumáticos de su vehículo...",
+        "es": "Respecto a la antigüedad de los neumáticos, ¿qué se recomienda?",
         "en": ""
       },
       "answers": [
         {
-          "es": "cada 5 años si no tienen dibujo suficiente.",
+          "es": "Cambiarlos obligatoriamente cada 5 años, aunque tengan dibujo suficiente.",
           "en": ""
         },
         {
-          "es": "al menos cada 5 años.",
+          "es": "Revisarlos cada año a partir de los 5 años y sustituirlos como máximo a los 10.",
           "en": ""
         },
         {
-          "es": "al menos cada 10 años.",
+          "es": "No hace falta revisarlos mientras el dibujo supere 1,6 mm.",
           "en": ""
         }
       ],
       "correctIndex": 1,
-      "explanation": "Los neumáticos envejecen y la goma se endurece aunque el dibujo esté bien y casi no se usen. Por eso se recomienda revisarlos y cambiarlos periódicamente, al menos cada 5 años según este criterio.",
+      "explanation": "No hay una caducidad legal: es obligatorio cambiarlos si el dibujo baja de 1,6 mm o tienen cortes o deformaciones. Además, como la goma se endurece con los años, se recomienda que un profesional los revise cada año a partir de los 5 años de fabricación y cambiarlos como máximo a los 10.",
       "image": "7092.JPG",
       "review": {
         "status": "official-data",
@@ -38531,7 +38531,7 @@
       },
       "category": "PERMISO B",
       "question": {
-        "es": "En una travesía con dos carriles por sentido, ¿cuál es la velocidad máxima permitida para una motocicleta?",
+        "es": "En una travesía sin señales de velocidad y sin plataforma única, ¿cuál es la velocidad máxima permitida para una motocicleta?",
         "en": ""
       },
       "answers": [
@@ -38549,7 +38549,7 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "Una travesía es una vía urbana a efectos de velocidad. Con dos o más carriles por sentido, el máximo es 50 km/h también para una moto. Con un solo carril por sentido sería 30 km/h.",
+      "explanation": "En una travesía sin señales, el límite genérico es 50 km/h para todos, también para una moto. Solo baja a 20 km/h si es de plataforma única, o menos si una señal lo indica.",
       "image": "8065.JPG",
       "review": {
         "status": "official-data",
