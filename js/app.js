@@ -35,6 +35,10 @@ const I18N = {
         docTitle: 'Drivo Test — Test del carnet B (España)',
         docDescription: 'Tests gratis para el carnet B: preguntas tipo examen DGT, modo práctica y glosario visual. No afiliada a la DGT.',
         landingLead: 'Tests gratis para el carnet B y el permiso de conducir en España.',
+        landingTag: '3.000 preguntas tipo examen del carnet B, explicadas una a una.',
+        introTitle: 'Hecha para que apruebes y la borres.',
+        introMatch: '¡Correcto!',
+        landingEnter: 'Empezar',
         setupTitle: 'Personaliza tu preparación',
         setupSubtitle: 'Opcional - puedes configurarlo después',
         examDate: 'Fecha de examen',
@@ -124,8 +128,8 @@ const I18N = {
         searchPlaceholder: 'Buscar',
         libraryEmpty: 'No se encontraron preguntas',
         seeMore: 'Ver más',
-        showExplanation: '💡 Ver Explicación Detallada',
-        hideExplanation: '🔼 Ocultar Explicación',
+        showExplanation: 'Ver explicación',
+        hideExplanation: 'Ocultar explicación',
         whyCorrect: '¿Por qué es correcta?',
         toastProfile: '✓ Perfil guardado correctamente',
         toastReport: '✓ Reporte enviado. Gracias por ayudarnos a mejorar.',
@@ -134,6 +138,19 @@ const I18N = {
         toastPhotoType: '⚠️ Solo se permiten imágenes',
         toastPhotoSent: '✓ Foto enviada. ¡Gracias!',
         confirmExit: '¿Seguro que quieres salir del test? Perderás tu progreso.',
+        exitTitle: '¿Salir del examen?',
+        exitText: 'Si sales ahora, este examen no contará.',
+        exitStay: 'Seguir',
+        exitLeave: 'Salir',
+        scopeAll: 'Todas',
+        scopeDone: 'Hechas',
+        scopeReview: 'A repasar',
+        scopeSaved: 'Guardadas',
+        saveQuestion: 'Guardar pregunta',
+        unsaveQuestion: 'Quitar de guardadas',
+        libraryEmptySaved: 'Toca el corazón de una pregunta para guardarla aquí.',
+        libraryEmptyDone: 'Todavía no has respondido ninguna pregunta.',
+        libraryEmptyReview: 'No tienes preguntas para repasar. ¡Bien!',
         navGame: 'Juego',
         gameSub: 'Esquiva los conos y recoge estrellas. Mejor marca: {n}',
         gameStart: 'Empezar',
@@ -155,6 +172,10 @@ const I18N = {
         docTitle: 'Drivo Test — Spain driving licence B tests',
         docDescription: 'Free practice tests for Spain’s licence B: DGT-style questions, practice mode and a visual glossary. Not affiliated with the DGT.',
         landingLead: 'Free practice tests for Spain’s licence B driving exam.',
+        landingTag: '3,000 exam-style licence B questions, each one explained.',
+        introTitle: 'Made to help you pass, then delete it.',
+        introMatch: 'Correct!',
+        landingEnter: 'Get started',
         setupTitle: 'Personalise your prep',
         setupSubtitle: 'Optional — you can do this later',
         examDate: 'Exam date',
@@ -254,6 +275,19 @@ const I18N = {
         toastPhotoType: '⚠️ Images only',
         toastPhotoSent: '✓ Photo sent. Thank you!',
         confirmExit: 'Leave the test? Your progress will be lost.',
+        exitTitle: 'Leave the exam?',
+        exitText: 'If you leave now, this exam won’t count.',
+        exitStay: 'Stay',
+        exitLeave: 'Leave',
+        scopeAll: 'All',
+        scopeDone: 'Done',
+        scopeReview: 'To review',
+        scopeSaved: 'Saved',
+        saveQuestion: 'Save question',
+        unsaveQuestion: 'Remove from saved',
+        libraryEmptySaved: 'Tap the heart on a question to save it here.',
+        libraryEmptyDone: 'You haven’t answered any questions yet.',
+        libraryEmptyReview: 'Nothing to review. Nice!',
         navGame: 'Game',
         gameSub: 'Dodge the cones and collect stars. Best: {n}',
         gameStart: 'Start',
@@ -407,7 +441,7 @@ function syncNativeChrome() {
     document.documentElement.classList.add('native-app');
     document.documentElement.classList.toggle('light-mode', light);
     const theme = document.querySelector('meta[name="theme-color"]');
-    if (theme) theme.setAttribute('content', light ? '#eef4fa' : '#011434');
+    if (theme) theme.setAttribute('content', light ? '#F5F3EF' : '#111111');
     const Bar = window.Capacitor.Plugins && window.Capacitor.Plugins.StatusBar;
     if (!Bar) return;
     Bar.setOverlaysWebView({ overlay: true });
@@ -422,7 +456,7 @@ function toggleTheme() {
 }
 
 function loadTheme() {
-    if (localStorage.getItem('theme') === 'light') {
+    if (localStorage.getItem('theme') !== 'dark') {
         document.body.classList.add('light-mode');
     }
     syncThemeButton();
@@ -438,6 +472,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (isNativeApp()) document.documentElement.classList.add('native-app');
         loadUserStats();
         loadTheme();
+        startIntro();
         loadLang();
         initializeEventListeners();
         await loadQuestions();
@@ -502,7 +537,7 @@ function initializeEventListeners() {
     
     const reviewStatBtn = document.getElementById('reviewStatBtn');
     if (reviewStatBtn) {
-        reviewStatBtn.addEventListener('click', startReviewSession);
+        reviewStatBtn.addEventListener('click', () => showLibrary('review'));
     }
     
     const libraryBtn = document.getElementById('libraryBtn');
@@ -521,7 +556,7 @@ function initializeEventListeners() {
             const btn = event.target.closest('[data-tab]');
             if (!btn) return;
             if (btn.dataset.tab === 'home') goHome();
-            if (btn.dataset.tab === 'library') showLibrary();
+            if (btn.dataset.tab === 'library') showLibrary('all');
             if (btn.dataset.tab === 'glossary') showGlossary();
             if (btn.dataset.tab === 'game') showGame();
         });
@@ -587,6 +622,27 @@ function initializeEventListeners() {
     }
     
     // Library buttons
+    document.getElementById('saveQuestionBtn')?.addEventListener('click', (event) => {
+        const question = currentTest[currentQuestionIndex];
+        if (!question) return;
+        const btn = event.currentTarget;
+        paintSaveButton(btn, toggleSaved(question.id));
+        btn.classList.remove('pop');
+        void btn.offsetWidth;
+        btn.classList.add('pop');
+    });
+
+    document.getElementById('allStatBtn')?.addEventListener('click', () => showLibrary('all'));
+    document.getElementById('doneStatBtn')?.addEventListener('click', () => showLibrary('done'));
+    document.getElementById('libraryScope')?.addEventListener('click', (event) => {
+        const btn = event.target.closest('[data-scope]');
+        if (!btn) return;
+        setLibraryScope(btn.dataset.scope);
+        filterQuestions();
+        window.scrollTo(0, 0);
+        document.getElementById('libraryView').scrollTop = 0;
+    });
+
     const libraryBackBtn = document.getElementById('libraryBackBtn');
     if (libraryBackBtn) {
         libraryBackBtn.addEventListener('click', goHome);
@@ -726,7 +782,7 @@ function questionImagePath(image) {
     if (!image) return '';
     const value = String(image).trim();
     if (value.startsWith('assets/')) return value;
-    if (/^[\w.-]+\.(jpe?g|png|gif|webp)$/i.test(value)) {
+    if (/^[\w.-]+\.(jpe?g|png|gif|webp|svg)$/i.test(value)) {
         return 'assets/questions/' + value;
     }
     return '';
@@ -779,7 +835,72 @@ function categorizeQuestion(q) {
 // NAVIGATION
 // ============================================
 
+// Small source photos (most are 200x200) look blurry when stretched. Show them
+// at a size close to their real one, over a blurred copy that fills the frame.
+document.addEventListener('load', (event) => {
+    const img = event.target;
+    if (!(img instanceof HTMLImageElement)) return;
+    const frame = img.closest('.question-image');
+    if (!frame) return;
+    const small = img.naturalWidth > 0 && img.naturalWidth < 400 && !/\.svg(\?|$)/i.test(img.src);
+    frame.classList.toggle('is-lowres', small);
+    if (small) frame.style.setProperty('--src', `url("${img.src}")`);
+}, true);
+
+document.addEventListener('click', (event) => {
+    const img = event.target.closest('.question-image img, .glossary-illustration img');
+    const viewer = document.getElementById('imageViewer');
+    if (!viewer) return;
+    if (img) {
+        document.getElementById('imageViewerImg').src = img.src;
+        viewer.classList.remove('hidden');
+        return;
+    }
+    if (event.target.closest('#imageViewer')) viewer.classList.add('hidden');
+});
+
+let introTimer = null;
+
+function startIntro() {
+    const cards = [...document.querySelectorAll('.intro-card')];
+    const match = document.querySelector('.intro-match');
+    if (!cards.length || !match) return;
+    let order = cards.map((_, i) => i);
+    const apply = () => {
+        order.forEach((cardIndex, pos) => {
+            cards[cardIndex].dataset.pos = String(pos);
+            cards[cardIndex].classList.remove('is-checked');
+        });
+    };
+    apply();
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        cards[order[0]].classList.add('is-checked');
+        return;
+    }
+    const step = () => {
+        const front = cards[order[0]];
+        front.classList.add('is-checked');
+        match.classList.add('show');
+        introTimer = setTimeout(() => {
+            match.classList.remove('show');
+            front.dataset.pos = 'out';
+            introTimer = setTimeout(() => {
+                order.push(order.shift());
+                apply();
+                introTimer = setTimeout(step, 1000);
+            }, 450);
+        }, 1500);
+    };
+    introTimer = setTimeout(step, 1000);
+}
+
+function stopIntro() {
+    clearTimeout(introTimer);
+    introTimer = null;
+}
+
 function showView(viewId) {
+    if (viewId !== 'landingView') stopIntro();
     document.querySelectorAll('.view').forEach(view => {
         view.classList.remove('active');
     });
@@ -1148,11 +1269,18 @@ function loadQuestion() {
     categoryEl.className = `question-category ${categoryTone(question.category)}`.trim();
     categoryEl.textContent = displayCategory(question.category);
     updateReviewChip(question.id);
+    paintSaveButton(document.getElementById('saveQuestionBtn'), isSaved(question.id));
     document.getElementById('questionText').textContent = question.question;
     document.getElementById('questionText').classList.toggle('is-translating', currentLang === 'en');
     const note = document.getElementById('questionTranslatedNote');
     note.classList.add('hidden');
     
+    const testContainer = document.querySelector('#testView .question-container');
+    if (testContainer) {
+        testContainer.classList.remove('is-answered');
+        testContainer.scrollTop = 0;
+    }
+
     const imageContainer = document.getElementById('questionImage');
     const illustrationHTML = getQuestionIllustration(question);
     imageContainer.innerHTML = illustrationHTML;
@@ -1271,20 +1399,43 @@ async function showExplanation(isCorrect, question) {
         bodyHTML = tmp.innerHTML;
     }
 
+    card.classList.toggle('is-wrong', !isCorrect);
     if (isCorrect) {
         if (!bodyHTML) {
             card.classList.add('hidden');
             return;
         }
-        header.classList.add('hidden');
+        header.classList.remove('hidden');
+        icon.textContent = '';
+        title.textContent = t('correct');
         text.innerHTML = `<div class="explanation-section">${bodyHTML}</div>`;
+        card.classList.remove('hidden');
+        revealExplanation();
+        return;
     } else {
         header.classList.remove('hidden');
-        icon.textContent = '❌';
+        icon.textContent = '';
         title.textContent = t('incorrect');
-        text.innerHTML = bodyHTML ? `<div class="explanation-section">${bodyHTML}</div>` : '';
+        const correctText = escapeHTML(question.answers[question.correctIndex] || '');
+        text.innerHTML = `<p class="explanation-correct"><span>${t('wrongLead')}</span> ${correctText}</p>`
+            + (bodyHTML ? `<div class="explanation-section">${bodyHTML}</div>` : '');
     }
     card.classList.remove('hidden');
+    revealExplanation();
+}
+
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+}
+
+function revealExplanation() {
+    const container = document.querySelector('#testView .question-container');
+    if (!container) return;
+    container.classList.add('is-answered');
+    // Wait for the photo to shrink, then bring the explanation into view.
+    setTimeout(() => {
+        container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' });
+    }, 260);
 }
 
 function getExplanationText(question) {
@@ -1297,10 +1448,41 @@ function nextQuestion() {
     loadQuestion();
 }
 
-function exitTest() {
-    if (confirm(t('confirmExit'))) {
+async function exitTest() {
+    if (testMode !== 'exam' || currentQuestionIndex === 0) {
         goHome();
+        return;
     }
+    const leave = await askConfirm({
+        title: t('exitTitle'),
+        text: t('exitText'),
+        ok: t('exitLeave'),
+        cancel: t('exitStay')
+    });
+    if (leave) goHome();
+}
+
+function askConfirm({ title, text, ok, cancel }) {
+    const sheet = document.getElementById('confirmSheet');
+    document.getElementById('confirmTitle').textContent = title;
+    document.getElementById('confirmText').textContent = text;
+    const okBtn = document.getElementById('confirmOk');
+    const cancelBtn = document.getElementById('confirmCancel');
+    okBtn.textContent = ok;
+    cancelBtn.textContent = cancel;
+    sheet.classList.remove('hidden');
+    return new Promise((resolve) => {
+        const done = (value) => {
+            sheet.classList.add('hidden');
+            okBtn.onclick = null;
+            cancelBtn.onclick = null;
+            sheet.onclick = null;
+            resolve(value);
+        };
+        okBtn.onclick = () => done(true);
+        cancelBtn.onclick = () => done(false);
+        sheet.onclick = (e) => { if (e.target === sheet) done(false); };
+    });
 }
 
 // ============================================
@@ -1336,7 +1518,17 @@ function resetTest() {
 // LIBRARY
 // ============================================
 
-async function showLibrary() {
+let libraryScope = 'all';
+
+function setLibraryScope(scope) {
+    libraryScope = scope;
+    document.querySelectorAll('#libraryScope [data-scope]').forEach((btn) => {
+        btn.setAttribute('aria-selected', btn.dataset.scope === scope ? 'true' : 'false');
+    });
+}
+
+async function showLibrary(scope) {
+    if (typeof scope === 'string') setLibraryScope(scope);
     await runWithLoader(async () => {
         await ensureQuestions();
         filterQuestions();
@@ -1348,6 +1540,14 @@ function filterQuestions() {
     const category = document.getElementById('categoryFilter').value;
     const query = normalizeSearch(document.getElementById('librarySearch')?.value || '');
     let filtered = [...questionsData];
+
+    if (libraryScope === 'done') {
+        filtered = filtered.filter(q => userStats.questionHistory[q.id]);
+    } else if (libraryScope === 'review') {
+        filtered = filtered.filter(q => needsReview(q.id));
+    } else if (libraryScope === 'saved') {
+        filtered = filtered.filter(q => isSaved(q.id));
+    }
     
     if (category !== 'all') {
         const categoryMap = {
@@ -1384,7 +1584,8 @@ function displayQuestions(questions) {
     container.innerHTML = '';
 
     if (questions.length === 0) {
-        container.innerHTML = `<p class="library-empty">${t('libraryEmpty')}</p>`;
+        const emptyKey = { done: 'libraryEmptyDone', review: 'libraryEmptyReview', saved: 'libraryEmptySaved' }[libraryScope] || 'libraryEmpty';
+        container.innerHTML = `<p class="library-empty">${t(emptyKey)}</p>`;
         return;
     }
 
@@ -1410,6 +1611,7 @@ function appendLibraryPage() {
             <div class="question-item-header">
                 <span class="question-category ${categoryTone(q.category)}">${displayCategory(q.category)}</span>
                 ${needsReview(q.id) ? `<span class="review-chip">${t('needsReview')}</span>` : ''}
+                <button type="button" class="save-button${isSaved(q.id) ? ' is-saved' : ''}" aria-pressed="${isSaved(q.id)}" aria-label="${t(isSaved(q.id) ? 'unsaveQuestion' : 'saveQuestion')}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg></button>
             </div>
             ${illustrationHTML ? `<div class="question-image">${illustrationHTML}</div>` : ''}
             <div class="question-item-text">${q.question}</div>
@@ -1422,14 +1624,22 @@ function appendLibraryPage() {
                 `).join('')}
             </div>
             
-            <div class="library-explain">
+            ${getExplanationText(q) ? `<div class="library-explain">
                 <button class="expand-button" onclick="toggleExplanation(${index})">
                     ${t('showExplanation')}
                 </button>
-                <div id="explanation-${index}" class="explanation-content" style="display: none; margin-top: 12px; padding: 20px; background: linear-gradient(135deg, rgba(217, 119, 87, 0.08) 0%, rgba(139, 154, 122, 0.08) 100%); border-radius: 16px; border: 1px solid var(--border-color);"></div>
-            </div>
+                <div id="explanation-${index}" class="explanation-content" style="display: none;"></div>
+            </div>` : ''}
             <button type="button" class="library-report">${t('somethingWrong')}</button>
         `;
+
+        item.querySelector('.save-button').addEventListener('click', (e) => {
+            const btn = e.currentTarget;
+            paintSaveButton(btn, toggleSaved(q.id));
+            btn.classList.remove('pop');
+            void btn.offsetWidth;
+            btn.classList.add('pop');
+        });
 
         item.querySelector('.library-report').addEventListener('click', (e) => {
             e.stopPropagation();
@@ -1460,7 +1670,7 @@ function toggleExplanation(index) {
         const q = libraryList[index];
         const explanation = getExplanationText(q);
         content.innerHTML = explanation
-            ? `<div style="font-size: 15px; line-height: 1.7; color: var(--text-primary);">${explanation}</div>`
+            ? `<div class="explanation-section">${explanation}</div>`
             : '';
         content.dataset.ready = '1';
     }
@@ -1531,6 +1741,25 @@ function loadUserStats() {
         if (saved) userStats = { ...userStats, ...JSON.parse(saved) };
     } catch (error) {}
     if (!userStats.questionHistory) userStats.questionHistory = {};
+    if (!userStats.saved) userStats.saved = {};
+}
+
+function isSaved(questionId) {
+    return !!(userStats.saved && userStats.saved[questionId]);
+}
+
+function toggleSaved(questionId) {
+    if (!userStats.saved) userStats.saved = {};
+    if (userStats.saved[questionId]) delete userStats.saved[questionId];
+    else userStats.saved[questionId] = Date.now();
+    saveUserStats();
+    return isSaved(questionId);
+}
+
+function paintSaveButton(btn, saved) {
+    btn.classList.toggle('is-saved', saved);
+    btn.setAttribute('aria-pressed', saved ? 'true' : 'false');
+    btn.setAttribute('aria-label', t(saved ? 'unsaveQuestion' : 'saveQuestion'));
 }
 
 function saveUserStats() {
@@ -1919,9 +2148,7 @@ function stopDash() {
 
 function showGame() {
     showView('gameView');
-    dash = freshDash(false);
-    refreshDashCopy();
-    drawDash();
+    if (typeof startMatch === 'function') startMatch();
 }
 
 function refreshDashCopy() {
@@ -2021,7 +2248,7 @@ function drawDash() {
         }
         return `<polygon points="${it.x},${it.y - 20} ${it.x + 16},${it.y + 16} ${it.x - 16},${it.y + 16}" fill="#FF9E7D"/><rect x="${it.x - 9}" y="${it.y + 2}" width="18" height="5" fill="#fff"/>`;
     }).join('');
-    svg.innerHTML = `<rect width="300" height="440" fill="#4A4468"/>${marks}${items}
+    svg.innerHTML = `<rect width="300" height="440" fill="#2A2230"/>${marks}${items}
         <rect x="${px - 26}" y="338" width="8" height="18" rx="2" fill="#FFF8F0"/>
         <rect x="${px + 18}" y="338" width="8" height="18" rx="2" fill="#FFF8F0"/>
         <rect x="${px - 26}" y="366" width="8" height="18" rx="2" fill="#FFF8F0"/>

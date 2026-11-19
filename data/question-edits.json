@@ -1,0 +1,384 @@
+{
+ "anki-b-395": {
+  "question": "Desde el 1 de enero de 2026, ¿qué baliza V-16 sirve para señalizar un vehículo inmovilizado?",
+  "answers": [
+   "Cualquier luz amarilla intermitente, aunque no esté homologada.",
+   "Una V-16 homologada y conectada a la plataforma DGT 3.0.",
+   "Una V-16 sin conexión, si es de las antiguas."
+  ],
+  "correctIndex": 1,
+  "image": "v16-roof-closeup.jpg"
+ },
+ "anki-b-786": {
+  "question": "En una calzada de sentido único, ¿cómo debe señalizar su turismo inmovilizado por una avería?",
+  "answers": [
+   "Con un triángulo por detrás del vehículo, a 50 metros como mínimo.",
+   "Solo con la luz de emergencia, porque no vienen vehículos de frente.",
+   "Con la luz de emergencia y la baliza V-16 en la parte más alta del vehículo."
+  ],
+  "correctIndex": 2,
+  "image": "v16-shoulder.jpg"
+ },
+ "anki-b-807": {
+  "answers": [
+   "Solo si cae sobre algún carril, pero no si cae sobre el arcén.",
+   "No.",
+   "Sí, con la luz de emergencia y la baliza V-16."
+  ]
+ },
+ "anki-b-1422": {
+  "question": "Si por una emergencia un turismo queda inmovilizado en la calzada, ¿debe activar la baliza V-16?",
+  "answers": [
+   "Sí, aunque haya encendido las luces de emergencia o de posición.",
+   "No, basta con encender la luz de emergencia.",
+   "No, se enciende la luz de emergencia y, cuando proceda, las de posición."
+  ],
+  "correctIndex": 0,
+  "image": "v16-night.jpg"
+ },
+ "anki-b-1444": {
+  "question": "Además de emitir luz, ¿qué hace la baliza V-16 conectada al activarla?",
+  "answers": [
+   "Llama automáticamente a una grúa.",
+   "Envía la ubicación del vehículo a la DGT, que avisa a otros conductores.",
+   "Nada más: solo emite luz amarilla."
+  ],
+  "correctIndex": 1,
+  "image": "v16-roof-closeup.jpg"
+ },
+ "anki-b-1449": {
+  "answers": [
+   "Un triángulo de preseñalización de peligro y un chaleco reflectante de alta visibilidad.",
+   "Una baliza V-16 conectada y al menos un chaleco reflectante de alta visibilidad.",
+   "Un extintor de incendios."
+  ],
+  "correctIndex": 1,
+  "image": "v16-kit.jpg"
+ },
+ "anki-b-1502": {
+  "question": "Desde el 1 de enero de 2026, ¿qué dispositivo de preseñalización de peligro debe llevar un turismo?",
+  "answers": [
+   "Una baliza V-16 conectada.",
+   "Dos triángulos homologados.",
+   "Tres triángulos homologados."
+  ],
+  "correctIndex": 0,
+  "image": "v16-kit.jpg"
+ },
+ "anki-b-1880": {
+  "answers": [
+   "No, porque el lugar utilizado para inmovilizarlo es el apropiado para ese tipo de situaciones.",
+   "Sí, con la luz de emergencia, la baliza V-16 y, si hace falta, con las luces de posición.",
+   "No, porque el vehículo no está en la calzada."
+  ],
+  "correctIndex": 1,
+  "image": "v16-shoulder.jpg"
+ },
+ "anki-b-2020": {
+  "answers": [
+   "Un equipo homologado de extinción de incendios",
+   "Una baliza V-16 conectada",
+   "Chaleco reflectante"
+  ],
+  "correctIndex": 0
+ },
+ "anki-b-2197": {
+  "question": "Si tiene una avería en esta vía, ¿dónde debe colocar la baliza V-16?",
+  "answers": [
+   "En la parte más alta del vehículo, sin necesidad de caminar por la vía.",
+   "En el suelo, 50 metros por detrás del vehículo.",
+   "Una por delante y otra por detrás del vehículo, a 50 metros."
+  ],
+  "correctIndex": 0,
+  "image": "v16-shoulder.jpg"
+ },
+ "anki-b-2285": {
+  "question": "Desde el 1 de enero de 2026, ¿siguen siendo obligatorios los triángulos de preseñalización en un turismo?",
+  "answers": [
+   "Sí, uno como mínimo.",
+   "No. Los sustituye la baliza V-16 conectada.",
+   "Sí, dos homologados, además de la V-16."
+  ],
+  "correctIndex": 1,
+  "image": "v16-kit.jpg"
+ },
+ "anki-b-2344": {
+  "answers": [
+   "En autopista y autovía sí, en carretera no.",
+   "No, porque el vehículo no es un camión.",
+   "Sí, con la luz de emergencia y la baliza V-16."
+  ],
+  "correctIndex": 2
+ },
+ "anki-b-2491": {
+  "question": "¿De qué color es la luz de la baliza V-16?",
+  "answers": [
+   "Azul",
+   "Roja",
+   "Amarilla"
+  ],
+  "correctIndex": 2,
+  "image": "v16-roof-closeup.jpg"
+ },
+ "anki-b-2575": {
+  "question": "Para colocar la baliza V-16, ¿tiene que alejarse del vehículo?",
+  "answers": [
+   "Sí, debe colocarla a 100 metros por detrás.",
+   "No, se pone en el techo, a ser posible sin salir del coche.",
+   "Sí, debe colocarla a 50 metros por detrás."
+  ],
+  "correctIndex": 1,
+  "image": "v16-window.jpg"
+ },
+ "anki-b-2665": {
+  "question": "¿Cuándo hay que activar la baliza V-16?",
+  "answers": [
+   "Solo de noche o con poca visibilidad.",
+   "Solo en autopistas y autovías.",
+   "Cuando el vehículo queda inmovilizado en la vía por una avería o un accidente."
+  ],
+  "correctIndex": 2,
+  "image": "v16-night.jpg"
+ },
+ "anki-b-2953": {
+  "question": "Ante una avería, ¿por qué es más segura la baliza V-16 que los antiguos triángulos?",
+  "answers": [
+   "Porque no hay que salir del coche ni caminar por la calzada para colocarla.",
+   "Porque permite dejar el coche en el carril sin señalizar nada más.",
+   "No es más segura; solo es más moderna."
+  ],
+  "correctIndex": 0,
+  "image": "v16-window.jpg"
+ },
+ "anki-b-2954": {
+  "question": "De noche, con el turismo inmovilizado en la calzada, ¿qué luces debe encender además de la baliza V-16?",
+  "answers": [
+   "Ninguna, la V-16 es suficiente.",
+   "La luz de emergencia y, si la visibilidad lo exige, las de posición.",
+   "Solo las luces de carretera, para que le vean de lejos."
+  ],
+  "correctIndex": 1,
+  "image": "v16-night.jpg"
+ },
+ "anki-b-2758": {
+  "image": "refrigeracion-motor.svg"
+ },
+ "dgt-nuevas-19": {
+  "image": "assets/glossary/carretera-multicarril.svg"
+ },
+ "dgt-nuevas-20": {
+  "image": "assets/glossary/carretera-multicarril.svg"
+ },
+ "dgt-nuevas-21": {
+  "image": "assets/glossary/carretera-multicarril.svg"
+ },
+ "anki-b-2468": {
+  "question": "Como norma general, ¿a partir de qué estatura puede viajar un menor en el asiento delantero usando solo el cinturón de seguridad?",
+  "answers": [
+   "Más de 135 cm.",
+   "Más de 100 cm.",
+   "Más de 120 cm."
+  ],
+  "correctIndex": 0
+ },
+ "anki-b-2574": {
+  "question": "En una carretera convencional, ¿a qué velocidad, sin causa justificada, se considera que un turismo circula de forma anormalmente lenta?",
+  "answers": [
+   "Por debajo de 60 km/h.",
+   "Por debajo de 45 km/h.",
+   "Por debajo de 50 km/h."
+  ],
+  "correctIndex": 1,
+  "image": null
+ },
+ "anki-b-2726": {
+  "answers": [
+   "Menos de 60 km/h.",
+   "60 km/h o menos.",
+   "Menos de 45 km/h."
+  ],
+  "correctIndex": 2
+ },
+ "anki-b-455": {
+  "question": "En una travesía sin señales de velocidad y sin plataforma única, ¿cuál es la velocidad máxima permitida?"
+ },
+ "anki-b-1053": {
+  "question": "En una travesía sin señales de velocidad y sin plataforma única, ¿cuál es la velocidad máxima permitida para una motocicleta?"
+ },
+ "anki-b-1899": {
+  "question": "A partir de la señal de entrada a poblado, ¿cuál es la velocidad máxima en una calle con un solo carril por sentido, si no hay otra señal?",
+  "answers": [
+   "50 kilómetros por hora.",
+   "30 kilómetros por hora.",
+   "60 kilómetros por hora."
+  ],
+  "correctIndex": 1
+ },
+ "anki-b-2016": {
+  "answers": [
+   "Solamente si hay niebla muy densa.",
+   "No, no es necesario.",
+   "Sí, reducirla para adaptarla al espacio visible."
+  ]
+ },
+ "anki-b-2025": {
+  "question": "Conduce un camión de 3.000 kg de M.M.A. ¿Qué distancia debe dejar en este tramo de carretera?"
+ },
+ "anki-b-2955": {
+  "question": "El turismo rojo sale de una gasolinera para incorporarse a la circulación, en caso necesario, ¿cuándo tiene que ceder el paso?"
+ },
+ "anki-b-2154": {
+  "answers": [
+   "A 70 km/h porque el carril mide más de 1,50 metros de ancho.",
+   "A 100 km/h, según indica la señal.",
+   "A 80 km/h, el límite para un turismo con remolque en carretera convencional."
+  ]
+ },
+ "anki-b-1818": {
+  "question": "Si tiene que salir de su turismo en una vía interurbana por una avería, ¿es obligatorio ponerse un chaleco reflectante?",
+  "answers": [
+   "No es obligatorio si es de día.",
+   "Es obligatorio ponerse una prenda reflectante, pero no tiene que ser un chaleco.",
+   "Sí, y tiene que ser de alta visibilidad y estar certificado."
+  ],
+  "correctIndex": 2,
+  "image": "v16-kit.jpg"
+ },
+ "anki-b-2504": {
+  "image": "v16-shoulder.jpg",
+  "answers": [
+   "No, porque la línea continua lo prohíbe.",
+   "Sí, siempre.",
+   "Sí, después de asegurarme de que lo puedo hacer sin ningún peligro."
+  ],
+  "correctIndex": 2
+ },
+ "anki-b-2139": {
+  "image": "v16-roof-closeup.jpg"
+ },
+ "anki-b-799": {
+  "question": "Respecto a la antigüedad de los neumáticos, ¿qué se recomienda?",
+  "answers": [
+   "Cambiarlos obligatoriamente cada 5 años, aunque tengan dibujo suficiente.",
+   "Revisarlos cada año a partir de los 5 años y sustituirlos como máximo a los 10.",
+   "No hace falta revisarlos mientras el dibujo supere 1,6 mm."
+  ],
+  "correctIndex": 1
+ },
+ "anki-b-1876": {
+  "correctIndex": 1
+ },
+ "anki-b-2019": {
+  "answers": [
+   "Extremar la precaución y, si es necesario, ceder el paso.",
+   "Detener el vehículo siempre, como ante un semáforo en rojo.",
+   "Atravesar el cruce sin ceder el paso, porque el semáforo está funcionando."
+  ],
+  "correctIndex": 0
+ },
+ "anki-b-2029": {
+  "answers": [
+   "No, porque la línea continua impide cruzar al otro carril.",
+   "Sí, si no se acercan vehículos en el carril del sentido contrario.",
+   "Sí, porque la señal de tráfico no lo prohíbe."
+  ]
+ },
+ "anki-b-2226": {
+  "answers": [
+   "Presencia de aire en las canalizaciones de los frenos",
+   "La fuga de líquido de frenos",
+   "El roce prolongado de las pastillas contra los discos (o de las zapatas contra los tambores)."
+  ]
+ },
+ "anki-b-2312": {
+  "question": "Al girar para entrar en otra vía, ¿cuándo debe ceder el paso a los peatones?",
+  "answers": [
+   "Solo si se aproximan por la derecha.",
+   "Solo si hay un paso de peatones señalizado.",
+   "Siempre que estén cruzando la vía en la que va a entrar, aunque no haya paso de peatones."
+  ],
+  "correctIndex": 2
+ },
+ "anki-b-2383": {
+  "answers": [
+   "135 cm",
+   "170 cm",
+   "120 cm"
+  ],
+  "correctIndex": 0
+ },
+ "anki-b-1834": {
+  "question": "¿Cómo suelen ser los espejos retrovisores exteriores de un turismo?",
+  "correctIndex": 1
+ },
+ "anki-b-2923": {
+  "answers": [
+   "El sistema de refrigeración",
+   "El nivel de combustible del depósito",
+   "Las placas de matrícula"
+  ],
+  "correctIndex": 1
+ },
+ "anki-b-1609": {
+  "answers": [
+   "Según la estatura del niño (sillas i-Size) o su peso (sillas anteriores).",
+   "El de medida más grande, para que se pueda usar más tiempo.",
+   "Según la edad."
+  ]
+ },
+ "anki-b-2005": {
+  "correctIndex": 0
+ },
+ "anki-b-1326": {
+  "answers": [
+   "Poniendo el espejo en su posición antideslumbrante.",
+   "Girando el retrovisor 90 grados hacia la izquierda.",
+   "Moviendo bruscamente la cabeza."
+  ],
+  "correctIndex": 0
+ },
+ "anki-b-1565": {
+  "answers": [
+   "Para hacer que el vehículo vaya a más revoluciones",
+   "Para reducir el número de gases nocivos que el motor expulsa",
+   "Para reducir el ruido que producen las explosiones del motor al salir los gases."
+  ]
+ },
+ "anki-b-1878": {
+  "question": "¿En que horario se deben llevar obligatoriamente encendidas las luces por carretera en vías interurbanas poco iluminadas?"
+ },
+ "anki-b-2811": {
+  "question": "¿Por qué lugares deben circular los vehículos a paso de persona?"
+ },
+ "anki-b-2335": {
+  "answers": [
+   "Sí, en este caso.",
+   "No, se le ha de adelantar por la izquierda.",
+   "No, se le puede adelantar por la izquierda o por la derecha."
+  ]
+ },
+ "anki-b-1812": {
+  "answers": [
+   "Sí, y puede llevarlo delante del volante aunque tape la visión.",
+   "Sí, si está bien sujeto y lo programó antes de salir, sin manipularlo en marcha.",
+   "No, nunca puede llevarlo encendido mientras conduce."
+  ],
+  "correctIndex": 1
+ },
+ "anki-b-1640": {
+  "answers": [
+   "Sí, porque la vía es para peatones.",
+   "Sí, porque no es un vehículo a motor.",
+   "No, salvo que vaya al aparcamiento."
+  ],
+  "correctIndex": 2
+ },
+ "anki-b-2369": {
+  "answers": [
+   "Motocicletas.",
+   "Peatones y bicicletas.",
+   "Bicicletas."
+  ],
+  "correctIndex": 2
+ }
+}

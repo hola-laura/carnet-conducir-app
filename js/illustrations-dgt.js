@@ -22,7 +22,7 @@ const DGT_COLORS = {
 
 function wrapSVG(svgContent) {
     return `
-        <div style="display: flex; align-items: center; justify-content: center; padding: 32px; background: linear-gradient(135deg, rgba(217, 119, 87, 0.08) 0%, rgba(139, 154, 122, 0.08) 100%); border-radius: 24px; margin: 24px 0;">
+        <div class="sign-frame">
             ${svgContent}
         </div>
     `;
@@ -479,7 +479,7 @@ function getQuestionIllustration(question) {
         return wrapSVG(createRoadTwoPlusOneSign());
     }
     if (questionText.includes('multicarril')) {
-        return `<img src="assets/glossary/carretera-multicarril.jpg" alt="Señal de carretera multicarril">`;
+        return `<img src="assets/glossary/carretera-multicarril.svg" alt="Señal de carretera multicarril">`;
     }
 
     return '';
