@@ -48600,20 +48600,20 @@
       },
       "answers": [
         {
-          "es": "Poniendo la mano frente a él",
+          "es": "Poniendo el espejo en su posición antideslumbrante.",
           "en": ""
         },
         {
-          "es": "Modificando 90 grados el retrovisor hacía el lado izquierdo",
+          "es": "Girando el retrovisor 90 grados hacia la izquierda.",
           "en": ""
         },
         {
-          "es": "Desplazando bruscamente la cabeza",
+          "es": "Moviendo bruscamente la cabeza.",
           "en": ""
         }
       ],
       "correctIndex": 0,
-      "explanation": "Si te deslumbran por detrás, la única opción segura de las tres es tapar un momento el reflejo con la mano. Girar el retrovisor te deja sin visión trasera y mover la cabeza bruscamente te distrae. Muchos retrovisores tienen además una posición antideslumbrante.",
+      "explanation": "El retrovisor interior tiene una posición antideslumbrante (una pestaña, o es automático) que oscurece las luces del de detrás. Girarlo o mover la cabeza te deja sin ver hacia atrás.",
       "image": "B_39.jpg",
       "review": {
         "status": "official-data",
@@ -57451,12 +57451,12 @@
           "en": ""
         },
         {
-          "es": "Para disminuir las explosiones producidas en el interior del motor",
+          "es": "Para reducir el ruido que producen las explosiones del motor al salir los gases.",
           "en": ""
         }
       ],
       "correctIndex": 2,
-      "explanation": "El silenciador va en el escape y reduce el ruido de las explosiones del motor al salir los gases. Reducir los gases nocivos es tarea del catalizador.",
+      "explanation": "El silenciador reduce el ruido que producen las explosiones del motor cuando los gases salen por el escape. No reduce los gases contaminantes; eso lo hace el catalizador.",
       "image": "B_289.jpg",
       "review": {
         "status": "official-data",
@@ -59034,7 +59034,7 @@
       },
       "answers": [
         {
-          "es": "Según el peso del niño.",
+          "es": "Según la estatura del niño (sillas i-Size) o su peso (sillas anteriores).",
           "en": ""
         },
         {
@@ -59047,7 +59047,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "La silla del niño se elige según su peso o estatura, porque es lo que determina qué sistema le protege bien. La edad es solo orientativa, y una silla demasiado grande no lo sujeta.",
+      "explanation": "La silla se elige según el tamaño del niño: las sillas i-Size actuales indican la estatura y las anteriores, el peso. Una más grande de la cuenta no lo sujeta bien, y la edad no es el criterio.",
       "image": "B_334.jpg",
       "review": {
         "status": "official-data",
@@ -60189,12 +60189,12 @@
           "en": ""
         },
         {
-          "es": "No.",
+          "es": "No, salvo que vaya al aparcamiento.",
           "en": ""
         }
       ],
       "correctIndex": 2,
-      "explanation": "La señal blanca con borde rojo prohíbe circular a todos los vehículos, y un ciclomotor es un vehículo, así que no puede pasar. El panel solo exceptúa a quien vaya a un aparcamiento.",
+      "explanation": "La señal de circulación prohibida impide el paso a todos los vehículos, y el ciclomotor lo es. El panel 'Excepto aparcamiento' deja entrar solo a quien vaya a aparcar allí.",
       "image": "B_366.jpg",
       "review": {
         "status": "official-data",
@@ -66508,20 +66508,20 @@
       },
       "answers": [
         {
-          "es": "Si y debe llevarlo justamente delante del volante aunque tape la visión",
+          "es": "Sí, y puede llevarlo delante del volante aunque tape la visión.",
           "en": ""
         },
         {
-          "es": "Sí, pero únicamente si se toca la pantalla",
+          "es": "Sí, si está bien sujeto y lo programó antes de salir, sin manipularlo en marcha.",
           "en": ""
         },
         {
-          "es": "No, no está permitido",
+          "es": "No, nunca puede llevarlo encendido mientras conduce.",
           "en": ""
         }
       ],
-      "correctIndex": 2,
-      "explanation": "Lo que está prohibido con el coche en marcha es manipular el navegador: tocar la pantalla o programar rutas. Además nunca debe taparte la visión. Prográmalo antes de salir o con el coche parado.",
+      "correctIndex": 1,
+      "explanation": "Puedes llevar el GPS si está bien sujeto, no tapa la visión y lo programaste antes de salir. Lo que está prohibido es manipularlo mientras conduces.",
       "image": "B_547.jpg",
       "review": {
         "status": "official-data",
@@ -67317,7 +67317,7 @@
       },
       "category": "PERMISO B",
       "question": {
-        "es": "¿Qué forma tienen generalmente los espejos retrovisores de un vehículo?",
+        "es": "¿Cómo suelen ser los espejos retrovisores exteriores de un turismo?",
         "en": ""
       },
       "answers": [
@@ -67334,8 +67334,8 @@
           "en": ""
         }
       ],
-      "correctIndex": 0,
-      "explanation": "Por norma general los retrovisores son planos, como el interior, que muestra las distancias reales. Si son convexos, amplían el campo de visión pero hacen que los vehículos parezcan más lejos.",
+      "correctIndex": 1,
+      "explanation": "Los retrovisores exteriores suelen ser convexos, para abarcar más campo de visión, aunque los coches parezcan más lejos de lo que están. El interior suele ser plano.",
       "image": "B_571.jpg",
       "review": {
         "status": "official-data",
@@ -68888,8 +68888,8 @@
           "en": ""
         }
       ],
-      "correctIndex": 2,
-      "explanation": "La señal avisa de un tramo con muchas curvas. En tramos estrechos con muchas curvas la norma permite usar la luz antiniebla; fuera de eso, solo con niebla, lluvia o nieve intensas.",
+      "correctIndex": 1,
+      "explanation": "En tramos estrechos con muchas curvas señalizadas puedes usar de noche la antiniebla delantera. La trasera solo se enciende con condiciones meteorológicas o ambientales muy adversas (niebla espesa, lluvia muy intensa, nevada fuerte o mucho polvo o humo).",
       "image": "B_617.jpg",
       "review": {
         "status": "official-data",
@@ -68945,7 +68945,7 @@
       },
       "category": "PERMISO B",
       "question": {
-        "es": "¿En que horario se deben llevar obligatoriamente encendidas las luces por carretera en vías urbanas poco iluminadas?",
+        "es": "¿En que horario se deben llevar obligatoriamente encendidas las luces por carretera en vías interurbanas poco iluminadas?",
         "en": ""
       },
       "answers": [
@@ -68963,7 +68963,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "Entre la puesta y la salida del sol, en tramos insuficientemente iluminados y a más de 40 km/h, tienes que usar la luz de largo alcance, salvo que deslumbres a alguien.",
+      "explanation": "La luz de carretera es obligatoria de noche, entre el ocaso y la salida del sol, en vías interurbanas insuficientemente iluminadas, siempre que no deslumbres a nadie.",
       "image": "B_619.jpg",
       "review": {
         "status": "official-data",
@@ -73661,8 +73661,8 @@
           "en": ""
         }
       ],
-      "correctIndex": 1,
-      "explanation": "Los turismos deben llevar una rueda de repuesto o un sistema alternativo homologado, como un kit antipinchazos o neumáticos que permiten rodar sin aire.",
+      "correctIndex": 0,
+      "explanation": "Un turismo debe llevar rueda de repuesto, salvo que tenga un sistema alternativo homologado, como un kit antipinchazos o neumáticos que permiten rodar pinchados (run-flat).",
       "image": "B_757.jpg",
       "review": {
         "status": "official-data",
@@ -74167,20 +74167,20 @@
       },
       "answers": [
         {
-          "es": "Aumentar la atención, y atravesar el cruce sin ceder el paso.",
+          "es": "Extremar la precaución y, si es necesario, ceder el paso.",
           "en": ""
         },
         {
-          "es": "Detener el vehículo.",
+          "es": "Detener el vehículo siempre, como ante un semáforo en rojo.",
           "en": ""
         },
         {
-          "es": "Excepto cuando exista una señal vertical de prohibición, podremos pasar con nuestro vehículo cediendo el paso a los vehículos que se acerquen de frente.",
+          "es": "Atravesar el cruce sin ceder el paso, porque el semáforo está funcionando.",
           "en": ""
         }
       ],
-      "correctIndex": 1,
-      "explanation": "En la foto el semáforo está en amarillo. El amarillo fijo te obliga a detenerte antes de la línea, salvo que estés tan cerca que no puedas frenar con seguridad.",
+      "correctIndex": 0,
+      "explanation": "El amarillo intermitente no obliga a parar: pide extremar la precaución y ceder el paso si toca. Detenerse siempre es lo que exigen el rojo y el amarillo fijo.",
       "image": "B_771.jpg",
       "review": {
         "status": "official-data",
@@ -74537,7 +74537,7 @@
       },
       "answers": [
         {
-          "es": "No, porque la señal de tráfico también prohíbe un cambio de dirección.",
+          "es": "No, porque la línea continua impide cruzar al otro carril.",
           "en": ""
         },
         {
@@ -74550,7 +74550,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "Junto a la señal de adelantamiento prohibido empieza una línea continua en el centro de la calzada. Esa línea no se puede cruzar, así que aquí tampoco puedes girar a la izquierda.",
+      "explanation": "La señal de adelantamiento prohibido no prohíbe girar. Aquí lo que te lo impide es la línea continua: no puedes cruzarla para pasar al otro carril.",
       "image": "B_781.jpg",
       "review": {
         "status": "official-data",
@@ -81834,12 +81834,12 @@
           "en": ""
         },
         {
-          "es": "El prolongado roce de las pastillas de freno contra los tambores",
+          "es": "El roce prolongado de las pastillas contra los discos (o de las zapatas contra los tambores).",
           "en": ""
         }
       ],
       "correctIndex": 2,
-      "explanation": "Si frenas mucho rato seguido, por ejemplo en una bajada larga, el roce continuo calienta el sistema de frenos. Usa el freno motor con marchas cortas.",
+      "explanation": "Si frenas mucho rato seguido, por ejemplo en una bajada larga sin usar el freno motor, el roce calienta en exceso discos y pastillas (o tambores y zapatas) y los frenos pierden eficacia.",
       "image": "B_989.jpg",
       "review": {
         "status": "official-data",
@@ -85003,25 +85003,25 @@
       },
       "category": "PERMISO B",
       "question": {
-        "es": "Los vehículos tienen prioridad sobre los peatones cuando...",
+        "es": "Al girar para entrar en otra vía, ¿cuándo debe ceder el paso a los peatones?",
         "en": ""
       },
       "answers": [
         {
-          "es": "Los peatones se aproximen por la derecha.",
+          "es": "Solo si se aproximan por la derecha.",
           "en": ""
         },
         {
-          "es": "Se encuentren en las proximidades de un paso para peatones.",
+          "es": "Solo si hay un paso de peatones señalizado.",
           "en": ""
         },
         {
-          "es": "Vayan a girar en una intersección para entrar en otra vía y haya peatones cruzándola.",
+          "es": "Siempre que estén cruzando la vía en la que va a entrar, aunque no haya paso de peatones.",
           "en": ""
         }
       ],
       "correctIndex": 2,
-      "explanation": "La norma regula aquí la situación del giro: si vas a girar para entrar en otra vía y hay peatones cruzándola, debes cederles el paso aunque no haya paso para peatones.",
+      "explanation": "Al girar para entrar en otra vía, debes ceder el paso a los peatones que la están cruzando, aunque no haya paso de peatones señalizado.",
       "image": "B_1082.jpg",
       "review": {
         "status": "official-data",
@@ -85859,7 +85859,7 @@
       },
       "answers": [
         {
-          "es": "Sí, en todo caso.",
+          "es": "Sí, en este caso.",
           "en": ""
         },
         {
@@ -85872,7 +85872,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "En el gráfico el tranvía circula por el centro de la vía. Al tranvía se le adelanta por la derecha, dejando libre su plataforma.",
+      "explanation": "Al tranvía se le adelanta, como norma general, por la derecha, que es lo que permite la situación del gráfico. En vías de sentido único con espacio suficiente también podría adelantarse por la izquierda.",
       "image": "B_1107.jpg",
       "review": {
         "status": "official-data",
@@ -87088,12 +87088,12 @@
           "en": ""
         },
         {
-          "es": "Bicicletas y ciclomotores.",
+          "es": "Bicicletas.",
           "en": ""
         }
       ],
       "correctIndex": 2,
-      "explanation": "El semáforo con la silueta de una bicicleta regula a quienes circulan en bici y ciclomotor por ese carril. No va dirigido a las motocicletas ni a los peatones.",
+      "explanation": "El semáforo con la silueta de una bicicleta solo regula a los ciclos. Los ciclomotores, como el resto de vehículos, obedecen los semáforos generales.",
       "image": "B_1143.jpg",
       "review": {
         "status": "official-data",
@@ -87598,7 +87598,7 @@
       },
       "answers": [
         {
-          "es": "150 cm",
+          "es": "135 cm",
           "en": ""
         },
         {
@@ -87611,7 +87611,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "A partir de 150 cm de altura el cinturón del coche ya sujeta bien a la persona sin alzador ni sillita. Por debajo, lo seguro es seguir usando un sistema de retención infantil.",
+      "explanation": "Por ley, a partir de 135 cm de estatura ya se puede viajar con el cinturón de adulto, sin sistema de retención infantil. Hasta 150 cm se recomienda seguir usando un alzador.",
       "image": "B_1157.jpg",
       "review": {
         "status": "official-data",
@@ -103354,7 +103354,7 @@
       },
       "category": "PERMISO B",
       "question": {
-        "es": "¿Por que lugares puede un peatón circular a paso de persona?",
+        "es": "¿Por qué lugares deben circular los vehículos a paso de persona?",
         "en": ""
       },
       "answers": [
@@ -103372,7 +103372,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "En las calles residenciales señalizadas los peatones pueden usar toda la calzada y los vehículos tienen que ir muy despacio, como máximo a 20 km/h, cediéndoles el paso. Por la mediana y por vías no preparadas, en cambio, no deben ir.",
+      "explanation": "En las calles residenciales señalizadas los peatones pueden usar toda la calzada y tienen prioridad, así que los vehículos deben ir a paso de persona (como máximo 20 km/h).",
       "image": "B_1603.jpg",
       "review": {
         "status": "official-data",
@@ -107507,7 +107507,7 @@
           "en": ""
         },
         {
-          "es": "Los asientos",
+          "es": "El nivel de combustible del depósito",
           "en": ""
         },
         {
@@ -107516,7 +107516,7 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "La ITV revisa elementos de seguridad como frenos, luces, refrigeración y la matrícula (estado, limpieza y alumbrado). De las opciones dadas, los asientos son la que se considera fuera de la revisión.",
+      "explanation": "En la ITV se revisan los asientos y sus anclajes, los cinturones, las luces, los frenos, la dirección o las emisiones. Lo que no se comprueba es cuánto combustible llevas.",
       "image": "B_1723.jpg",
       "review": {
         "status": "official-data",

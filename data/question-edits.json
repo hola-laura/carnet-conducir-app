@@ -264,5 +264,121 @@
    "No hace falta revisarlos mientras el dibujo supere 1,6 mm."
   ],
   "correctIndex": 1
+ },
+ "anki-b-1876": {
+  "correctIndex": 1
+ },
+ "anki-b-2019": {
+  "answers": [
+   "Extremar la precaución y, si es necesario, ceder el paso.",
+   "Detener el vehículo siempre, como ante un semáforo en rojo.",
+   "Atravesar el cruce sin ceder el paso, porque el semáforo está funcionando."
+  ],
+  "correctIndex": 0
+ },
+ "anki-b-2029": {
+  "answers": [
+   "No, porque la línea continua impide cruzar al otro carril.",
+   "Sí, si no se acercan vehículos en el carril del sentido contrario.",
+   "Sí, porque la señal de tráfico no lo prohíbe."
+  ]
+ },
+ "anki-b-2226": {
+  "answers": [
+   "Presencia de aire en las canalizaciones de los frenos",
+   "La fuga de líquido de frenos",
+   "El roce prolongado de las pastillas contra los discos (o de las zapatas contra los tambores)."
+  ]
+ },
+ "anki-b-2312": {
+  "question": "Al girar para entrar en otra vía, ¿cuándo debe ceder el paso a los peatones?",
+  "answers": [
+   "Solo si se aproximan por la derecha.",
+   "Solo si hay un paso de peatones señalizado.",
+   "Siempre que estén cruzando la vía en la que va a entrar, aunque no haya paso de peatones."
+  ],
+  "correctIndex": 2
+ },
+ "anki-b-2383": {
+  "answers": [
+   "135 cm",
+   "170 cm",
+   "120 cm"
+  ],
+  "correctIndex": 0
+ },
+ "anki-b-1834": {
+  "question": "¿Cómo suelen ser los espejos retrovisores exteriores de un turismo?",
+  "correctIndex": 1
+ },
+ "anki-b-2923": {
+  "answers": [
+   "El sistema de refrigeración",
+   "El nivel de combustible del depósito",
+   "Las placas de matrícula"
+  ],
+  "correctIndex": 1
+ },
+ "anki-b-1609": {
+  "answers": [
+   "Según la estatura del niño (sillas i-Size) o su peso (sillas anteriores).",
+   "El de medida más grande, para que se pueda usar más tiempo.",
+   "Según la edad."
+  ]
+ },
+ "anki-b-2005": {
+  "correctIndex": 0
+ },
+ "anki-b-1326": {
+  "answers": [
+   "Poniendo el espejo en su posición antideslumbrante.",
+   "Girando el retrovisor 90 grados hacia la izquierda.",
+   "Moviendo bruscamente la cabeza."
+  ],
+  "correctIndex": 0
+ },
+ "anki-b-1565": {
+  "answers": [
+   "Para hacer que el vehículo vaya a más revoluciones",
+   "Para reducir el número de gases nocivos que el motor expulsa",
+   "Para reducir el ruido que producen las explosiones del motor al salir los gases."
+  ]
+ },
+ "anki-b-1878": {
+  "question": "¿En que horario se deben llevar obligatoriamente encendidas las luces por carretera en vías interurbanas poco iluminadas?"
+ },
+ "anki-b-2811": {
+  "question": "¿Por qué lugares deben circular los vehículos a paso de persona?"
+ },
+ "anki-b-2335": {
+  "answers": [
+   "Sí, en este caso.",
+   "No, se le ha de adelantar por la izquierda.",
+   "No, se le puede adelantar por la izquierda o por la derecha."
+  ]
+ },
+ "anki-b-1812": {
+  "answers": [
+   "Sí, y puede llevarlo delante del volante aunque tape la visión.",
+   "Sí, si está bien sujeto y lo programó antes de salir, sin manipularlo en marcha.",
+   "No, nunca puede llevarlo encendido mientras conduce."
+  ],
+  "correctIndex": 1
+ },
+ "anki-b-1640": {
+  "answers": [
+   "Sí, porque la vía es para peatones.",
+   "Sí, porque no es un vehículo a motor.",
+   "No, salvo que vaya al aparcamiento."
+  ],
+  "correctIndex": 2
+ },
+ "anki-b-2369": {
+  "answers": [
+   "Motocicletas.",
+   "Peatones y bicicletas.",
+   "Bicicletas."
+  ],
+  "correctIndex": 2
  }
 }
