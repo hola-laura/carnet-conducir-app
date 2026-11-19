@@ -18,7 +18,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Drivo Test — Test del carnet B (España)">
     <meta name="twitter:description" content="Tests gratis para el carnet B: preguntas tipo examen DGT, modo práctica y glosario visual. No afiliada a la DGT.">
-    <link rel="stylesheet" href="css/styles.css?v=19">
+    <link rel="stylesheet" href="css/styles.css?v=20">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="assets/icon.svg">
     <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
@@ -30,12 +30,38 @@
     <div id="app" class="app-container">
 
         <div id="landingView" class="view active">
-            <video class="landing-media" autoplay muted loop playsinline preload="metadata" src="https://videos.pexels.com/video-files/32793923/13979518_1080_1920_30fps.mp4" aria-hidden="true"></video>
-            <div class="landing-scrim"></div>
-            <div class="landing-brand">
-                <img class="landing-logo" src="assets/logo-car-dark.svg" width="72" height="44" alt="">
-                <h1 class="landing-title">Drivo</h1>
-                <p class="landing-tagline" data-i18n="landingTag">Tu test del carnet B, sin dramas.</p>
+            <div class="intro-top">
+                <span class="intro-mark car-mark" aria-hidden="true"></span>
+                <span class="intro-wordmark">Drivo</span>
+            </div>
+
+            <div class="intro-stage" aria-hidden="true">
+                <div class="intro-card" style="--i:0">
+                    <span class="prompt-label">Señales</span>
+                    <span class="prompt-answer">¿Qué indica un triángulo pintado en el suelo?</span>
+                    <span class="intro-answer"><span>Ceda el paso</span><i class="intro-check"></i></span>
+                </div>
+                <div class="intro-card" style="--i:1">
+                    <span class="prompt-label">Novedad 2026</span>
+                    <span class="prompt-answer">¿Siguen valiendo los triángulos de emergencia?</span>
+                    <span class="intro-answer"><span>No, ahora va la V-16</span><i class="intro-check"></i></span>
+                </div>
+                <div class="intro-card" style="--i:2">
+                    <span class="prompt-label">Alcohol</span>
+                    <span class="prompt-answer">Si eres novel, tu tasa máxima es…</span>
+                    <span class="intro-answer"><span>0,15 mg/l en aire</span><i class="intro-check"></i></span>
+                </div>
+                <div class="intro-card" style="--i:3">
+                    <span class="prompt-label">Velocidad</span>
+                    <span class="prompt-answer">Un turismo en autovía, como máximo…</span>
+                    <span class="intro-answer"><span>120 km/h</span><i class="intro-check"></i></span>
+                </div>
+                <span class="intro-match"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg><span data-i18n="introMatch">¡Correcto!</span></span>
+            </div>
+
+            <div class="intro-copy">
+                <h1 class="landing-title" data-i18n="introTitle">Hecha para que apruebes y la borres.</h1>
+                <p class="landing-tagline" data-i18n="landingTag">3.000 preguntas tipo examen del carnet B, explicadas una a una.</p>
                 <p class="visually-hidden" data-i18n="landingLead">Tests gratis para el carnet B y el permiso de conducir en España.</p>
             </div>
             <button type="button" id="enterAppBtn" class="landing-enter" data-i18n="landingEnter">Empezar</button>
@@ -84,16 +110,16 @@
                 </div>
 
                 <div class="vitals stats-grid">
-                    <div class="stat-card">
+                    <button type="button" class="stat-card" id="allStatBtn">
                         <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
                         <div class="stat-number" id="totalQuestions">3000</div>
                         <div class="stat-label" data-i18n="statQuestions">Preguntas</div>
-                    </div>
-                    <div class="stat-card">
+                    </button>
+                    <button type="button" class="stat-card" id="doneStatBtn">
                         <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.7 2.7L16 9.6"/></svg>
                         <div class="stat-number" id="completedQuestions">0</div>
                         <div class="stat-label" data-i18n="statDone">Hechas</div>
-                    </div>
+                    </button>
                     <button type="button" class="stat-card" id="reviewStatBtn">
                         <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
                         <div class="stat-number" id="weakTopics">0</div>
@@ -268,6 +294,12 @@
 
             </div>
 
+            <div class="scope-chips" id="libraryScope" role="tablist">
+                <button type="button" data-scope="all" aria-selected="true" data-i18n="scopeAll">Todas</button>
+                <button type="button" data-scope="done" aria-selected="false" data-i18n="scopeDone">Hechas</button>
+                <button type="button" data-scope="review" aria-selected="false" data-i18n="scopeReview">A repasar</button>
+            </div>
+
             <div class="questions-list" id="questionsList"></div>
         </div>
 
@@ -339,6 +371,17 @@
         <p class="loader-label" data-i18n="loading">Cargando</p>
     </div>
 
+    <div id="confirmSheet" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+        <div class="modal-content">
+            <h3 class="modal-title" id="confirmTitle"></h3>
+            <p class="modal-subtitle" id="confirmText"></p>
+            <div class="modal-actions">
+                <button type="button" class="pill-button outline" id="confirmCancel"></button>
+                <button type="button" class="pill-button" id="confirmOk"></button>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast Notification -->
     <div id="toast" class="toast hidden"></div>
     
@@ -384,6 +427,6 @@
     <script src="js/illustrations-dgt.js"></script>
     <script src="js/glossary-dgt.js"></script>
     <script src="js/questions-data.js"></script>
-    <script src="js/app.js?v=14"></script>
+    <script src="js/app.js?v=15"></script>
 </body>
 </html>
