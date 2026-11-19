@@ -145,6 +145,10 @@ const I18N = {
         scopeAll: 'Todas',
         scopeDone: 'Hechas',
         scopeReview: 'A repasar',
+        scopeSaved: 'Guardadas',
+        saveQuestion: 'Guardar pregunta',
+        unsaveQuestion: 'Quitar de guardadas',
+        libraryEmptySaved: 'Toca el corazón de una pregunta para guardarla aquí.',
         libraryEmptyDone: 'Todavía no has respondido ninguna pregunta.',
         libraryEmptyReview: 'No tienes preguntas para repasar. ¡Bien!',
         navGame: 'Juego',
@@ -278,6 +282,10 @@ const I18N = {
         scopeAll: 'All',
         scopeDone: 'Done',
         scopeReview: 'To review',
+        scopeSaved: 'Saved',
+        saveQuestion: 'Save question',
+        unsaveQuestion: 'Remove from saved',
+        libraryEmptySaved: 'Tap the heart on a question to save it here.',
         libraryEmptyDone: 'You haven’t answered any questions yet.',
         libraryEmptyReview: 'Nothing to review. Nice!',
         navGame: 'Game',
@@ -614,6 +622,16 @@ function initializeEventListeners() {
     }
     
     // Library buttons
+    document.getElementById('saveQuestionBtn')?.addEventListener('click', (event) => {
+        const question = currentTest[currentQuestionIndex];
+        if (!question) return;
+        const btn = event.currentTarget;
+        paintSaveButton(btn, toggleSaved(question.id));
+        btn.classList.remove('pop');
+        void btn.offsetWidth;
+        btn.classList.add('pop');
+    });
+
     document.getElementById('allStatBtn')?.addEventListener('click', () => showLibrary('all'));
     document.getElementById('doneStatBtn')?.addEventListener('click', () => showLibrary('done'));
     document.getElementById('libraryScope')?.addEventListener('click', (event) => {
@@ -1227,6 +1245,7 @@ function loadQuestion() {
     categoryEl.className = `question-category ${categoryTone(question.category)}`.trim();
     categoryEl.textContent = displayCategory(question.category);
     updateReviewChip(question.id);
+    paintSaveButton(document.getElementById('saveQuestionBtn'), isSaved(question.id));
     document.getElementById('questionText').textContent = question.question;
     document.getElementById('questionText').classList.toggle('is-translating', currentLang === 'en');
     const note = document.getElementById('questionTranslatedNote');
@@ -1476,6 +1495,8 @@ function filterQuestions() {
         filtered = filtered.filter(q => userStats.questionHistory[q.id]);
     } else if (libraryScope === 'review') {
         filtered = filtered.filter(q => needsReview(q.id));
+    } else if (libraryScope === 'saved') {
+        filtered = filtered.filter(q => isSaved(q.id));
     }
     
     if (category !== 'all') {
@@ -1513,7 +1534,7 @@ function displayQuestions(questions) {
     container.innerHTML = '';
 
     if (questions.length === 0) {
-        const emptyKey = libraryScope === 'done' ? 'libraryEmptyDone' : libraryScope === 'review' ? 'libraryEmptyReview' : 'libraryEmpty';
+        const emptyKey = { done: 'libraryEmptyDone', review: 'libraryEmptyReview', saved: 'libraryEmptySaved' }[libraryScope] || 'libraryEmpty';
         container.innerHTML = `<p class="library-empty">${t(emptyKey)}</p>`;
         return;
     }
@@ -1540,6 +1561,7 @@ function appendLibraryPage() {
             <div class="question-item-header">
                 <span class="question-category ${categoryTone(q.category)}">${displayCategory(q.category)}</span>
                 ${needsReview(q.id) ? `<span class="review-chip">${t('needsReview')}</span>` : ''}
+                <button type="button" class="save-button${isSaved(q.id) ? ' is-saved' : ''}" aria-pressed="${isSaved(q.id)}" aria-label="${t(isSaved(q.id) ? 'unsaveQuestion' : 'saveQuestion')}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg></button>
             </div>
             ${illustrationHTML ? `<div class="question-image">${illustrationHTML}</div>` : ''}
             <div class="question-item-text">${q.question}</div>
@@ -1560,6 +1582,14 @@ function appendLibraryPage() {
             </div>` : ''}
             <button type="button" class="library-report">${t('somethingWrong')}</button>
         `;
+
+        item.querySelector('.save-button').addEventListener('click', (e) => {
+            const btn = e.currentTarget;
+            paintSaveButton(btn, toggleSaved(q.id));
+            btn.classList.remove('pop');
+            void btn.offsetWidth;
+            btn.classList.add('pop');
+        });
 
         item.querySelector('.library-report').addEventListener('click', (e) => {
             e.stopPropagation();
@@ -1661,6 +1691,25 @@ function loadUserStats() {
         if (saved) userStats = { ...userStats, ...JSON.parse(saved) };
     } catch (error) {}
     if (!userStats.questionHistory) userStats.questionHistory = {};
+    if (!userStats.saved) userStats.saved = {};
+}
+
+function isSaved(questionId) {
+    return !!(userStats.saved && userStats.saved[questionId]);
+}
+
+function toggleSaved(questionId) {
+    if (!userStats.saved) userStats.saved = {};
+    if (userStats.saved[questionId]) delete userStats.saved[questionId];
+    else userStats.saved[questionId] = Date.now();
+    saveUserStats();
+    return isSaved(questionId);
+}
+
+function paintSaveButton(btn, saved) {
+    btn.classList.toggle('is-saved', saved);
+    btn.setAttribute('aria-pressed', saved ? 'true' : 'false');
+    btn.setAttribute('aria-label', t(saved ? 'unsaveQuestion' : 'saveQuestion'));
 }
 
 function saveUserStats() {
