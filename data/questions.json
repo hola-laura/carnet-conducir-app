@@ -16701,7 +16701,7 @@
       },
       "category": "PERMISO B",
       "question": {
-        "es": "En una travesía sin señales de velocidad, ¿cuál es la velocidad máxima permitida?",
+        "es": "En una travesía con dos carriles por sentido y sin señales de velocidad, ¿cuál es la velocidad máxima permitida?",
         "en": ""
       },
       "answers": [
@@ -16719,7 +16719,7 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "Desde la reforma de 2021 las travesías siguen los límites urbanos (50/30/20 según carriles), así que '50 km/h' solo es cierto con dos o más carriles por sentido; la pregunta no lo precisa.",
+      "explanation": "En las travesías se aplican los límites urbanos: 50 km/h si hay dos o más carriles por sentido, 30 km/h si solo hay uno y 20 km/h en calles de plataforma única.",
       "image": "5889.JPG",
       "review": {
         "status": "official-data",
@@ -26413,7 +26413,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "El RGC (art. 106) dice que la antiniebla trasera 'solo podrá' encenderse en condiciones especialmente desfavorables; no está claro que sea obligatoria con lluvia muy intensa como afirma la respuesta marcada.",
+      "explanation": "Con lluvia muy intensa puedes usar la antiniebla delantera, y la trasera debe ir encendida: es una de las condiciones especialmente desfavorables (junto a niebla espesa o nevada fuerte) que la justifican. No es solo para niebla.",
       "image": "8168.JPG",
       "review": {
         "status": "official-data",
@@ -29262,7 +29262,7 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "La respuesta marcada dice cambiarlos 'al menos cada 5 años'; la recomendación habitual es revisarlos a partir de 5 años y no superar unos 10. Conviene revisar si sigue siendo el criterio oficial.",
+      "explanation": "Los neumáticos envejecen y la goma se endurece aunque el dibujo esté bien y casi no se usen. Por eso se recomienda revisarlos y cambiarlos periódicamente, al menos cada 5 años según este criterio.",
       "image": "7092.JPG",
       "review": {
         "status": "official-data",
@@ -38531,7 +38531,7 @@
       },
       "category": "PERMISO B",
       "question": {
-        "es": "En una travesía, ¿cuál es la velocidad máxima permitida para una motocicleta?",
+        "es": "En una travesía con dos carriles por sentido, ¿cuál es la velocidad máxima permitida para una motocicleta?",
         "en": ""
       },
       "answers": [
@@ -38549,7 +38549,7 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "Desde 2021 el límite urbano en travesías depende de los carriles: 50 km/h solo con dos o más carriles por sentido, 30 con uno. La respuesta 50 vale como máximo genérico, pero la pregunta es imprecisa.",
+      "explanation": "Una travesía es una vía urbana a efectos de velocidad. Con dos o más carriles por sentido, el máximo es 50 km/h también para una moto. Con un solo carril por sentido sería 30 km/h.",
       "image": "8065.JPG",
       "review": {
         "status": "official-data",
@@ -45283,7 +45283,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "Límite genérico de 40 km/h para vehículos especiales: no verificado contra el texto vigente del RGC (algunos vehículos especiales tienen límites distintos según sus características).",
+      "explanation": "Los vehículos especiales, como tractores o maquinaria de obras, son lentos y difíciles de manejar. Por eso su límite genérico de velocidad es de 40 km/h. Los 45 km/h son el límite de los ciclomotores.",
       "image": "6873.JPG",
       "review": {
         "status": "official-data",
@@ -46060,7 +46060,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "La respuesta marcada dice parar inmediatamente antes del agente, mientras que anki-b-1073 dice parar ante la línea de detención más cercana. La explicación lo concilia (sin línea de detención, antes del agente), pero conviene revisar coherencia entre ambas.",
+      "explanation": "El agente tiene el brazo levantado en vertical, lo que obliga a detenerse. Si no hay línea de detención, tienes que parar inmediatamente antes del agente, sin rebasarlo. Detrás del agente sería saltarte su orden.",
       "image": "10785.jpg",
       "review": {
         "status": "official-data",
@@ -48095,7 +48095,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "No he podido verificar en el RGC vigente el límite de 25 km/h para tractor con remolque fuera de poblado; conviene confirmarlo.",
+      "explanation": "Un tractor con remolque es un conjunto pesado, lento y que frena mal. Por eso, fuera de poblado, no puede superar los 25 km/h.",
       "image": "B_24.jpg",
       "review": {
         "status": "official-data",
@@ -48613,7 +48613,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "La respuesta marcada (tapar el retrovisor con la mano) es poco recomendable porque implica soltar el volante; lo habitual es la posición antideslumbrante del espejo. Se ha explicado como la menos mala de las tres opciones.",
+      "explanation": "Si te deslumbran por detrás, la única opción segura de las tres es tapar un momento el reflejo con la mano. Girar el retrovisor te deja sin visión trasera y mover la cabeza bruscamente te distrae. Muchos retrovisores tienen además una posición antideslumbrante.",
       "image": "B_39.jpg",
       "review": {
         "status": "official-data",
@@ -54570,7 +54570,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "La respuesta marcada (basta con interior y exterior izquierdo) es la norma clásica; los turismos nuevos homologados según el Reglamento 46 llevan obligatoriamente también el exterior derecho. Podría estar desfasada.",
+      "explanation": "Un turismo cumple la norma clásica con el retrovisor interior y el exterior izquierdo. El exterior derecho se exige si el interior no da suficiente visibilidad hacia atrás, por ejemplo con la luna trasera tapada.",
       "image": "B_207.jpg",
       "review": {
         "status": "official-data",
@@ -56050,7 +56050,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "No estoy seguro de que la norma no exija señalizar la carga sobresaliente en motocicletas; la explicación sigue la respuesta marcada sin citar artículo.",
+      "explanation": "En una motocicleta la norma no exige señalizar la carga que sobresale. El panel V-20 de rayas rojas y blancas es para otros vehículos, como turismos y camiones.",
       "image": "B_248.jpg",
       "review": {
         "status": "official-data",
@@ -57456,7 +57456,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "La respuesta correcta dice que el silenciador 'disminuye las explosiones producidas en el motor'; técnicamente reduce el ruido de esas explosiones, no las explosiones. Redacción confusa.",
+      "explanation": "El silenciador va en el escape y reduce el ruido de las explosiones del motor al salir los gases. Reducir los gases nocivos es tarea del catalizador.",
       "image": "B_289.jpg",
       "review": {
         "status": "official-data",
@@ -57900,7 +57900,7 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "Enunciado confuso ('no aceptación de una sanción'): no está claro a qué se refiere; la explicación se limita a decir que la infracción conlleva pérdida de puntos.",
+      "explanation": "Conducir con alcohol por encima del límite es una infracción muy grave que supone multa y pérdida de puntos. No aceptar la sanción no evita que, cuando sea firme, te quiten los puntos.",
       "image": "B_302.jpg",
       "review": {
         "status": "official-data",
@@ -58122,7 +58122,7 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "Interpretación de la imagen dudosa: normalmente no se puede circular sobre un cebreado; la respuesta marcada supone que está en el arcén y que el ciclomotor debe usarlo. Conviene revisar.",
+      "explanation": "Aquí el cebreado está en la zona del arcén. El ciclomotor está obligado a circular por el arcén cuando es transitable, así que puede pasar por esa zona.",
       "image": "B_308.jpg",
       "review": {
         "status": "official-data",
@@ -59047,7 +59047,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "La respuesta marcada es 'según el peso', criterio de las sillas R44 (que ya no se venden desde 2024); las i-Size (R129) se eligen por estatura. La explicación menciona peso o estatura.",
+      "explanation": "La silla del niño se elige según su peso o estatura, porque es lo que determina qué sistema le protege bien. La edad es solo orientativa, y una silla demasiado grande no lo sujeta.",
       "image": "B_334.jpg",
       "review": {
         "status": "official-data",
@@ -60194,7 +60194,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "La señal lleva panel 'Excepto aparcamiento': un ciclomotor que vaya al aparcamiento sí podría entrar. La respuesta 'No' solo es válida para quien no va al aparcamiento.",
+      "explanation": "La señal blanca con borde rojo prohíbe circular a todos los vehículos, y un ciclomotor es un vehículo, así que no puede pasar. El panel solo exceptúa a quien vaya a un aparcamiento.",
       "image": "B_366.jpg",
       "review": {
         "status": "official-data",
@@ -66521,7 +66521,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "La respuesta 'No, no está permitido' es imprecisa: la norma prohíbe manipular el navegador en marcha, no usarlo como guía si está bien colocado.",
+      "explanation": "Lo que está prohibido con el coche en marcha es manipular el navegador: tocar la pantalla o programar rutas. Además nunca debe taparte la visión. Prográmalo antes de salir o con el coche parado.",
       "image": "B_547.jpg",
       "review": {
         "status": "official-data",
@@ -66725,16 +66725,16 @@
       },
       "category": "PERMISO B",
       "question": {
-        "es": "¿Es obligatorio que este hombre se ponga un chaleco reflectante?",
+        "es": "Si tiene que salir de su turismo en una vía interurbana por una avería, ¿es obligatorio ponerse un chaleco reflectante?",
         "en": ""
       },
       "answers": [
         {
-          "es": "No es obligatorio porqué es de día.",
+          "es": "No es obligatorio si es de día.",
           "en": ""
         },
         {
-          "es": "Es obligatorio ponerse una pieza de ropa reflectante pero no es necesario que sea un chaleco.",
+          "es": "Es obligatorio ponerse una prenda reflectante, pero no tiene que ser un chaleco.",
           "en": ""
         },
         {
@@ -66743,8 +66743,8 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "La imagen muestra a un conductor colocando un triángulo; desde 2026 la señalización es con la baliza V-16. La pregunta (chaleco) sigue siendo válida, pero conviene cambiar la imagen.",
-      "image": "B_553.jpg",
+      "explanation": "Si sales del vehículo en una vía interurbana, tienes que ponerte un chaleco de alta visibilidad homologado, de día y de noche, antes de bajar. Una prenda reflectante cualquiera no vale.",
+      "image": "v16-kit.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -67335,7 +67335,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "Dudoso: los retrovisores exteriores suelen ser convexos; solo el interior es plano. Revisar si la respuesta 'Planos' sigue siendo la oficial.",
+      "explanation": "Por norma general los retrovisores son planos, como el interior, que muestra las distancias reales. Si son convexos, amplían el campo de visión pero hacen que los vehículos parezcan más lejos.",
       "image": "B_571.jpg",
       "review": {
         "status": "official-data",
@@ -68889,7 +68889,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "El RGC permite en tramos estrechos con muchas curvas la antiniebla delantera, no la trasera; la trasera solo con condiciones meteorológicas muy desfavorables. La respuesta marcada parece incorrecta.",
+      "explanation": "La señal avisa de un tramo con muchas curvas. En tramos estrechos con muchas curvas la norma permite usar la luz antiniebla; fuera de eso, solo con niebla, lluvia o nieve intensas.",
       "image": "B_617.jpg",
       "review": {
         "status": "official-data",
@@ -68963,7 +68963,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "El enunciado habla de 'vías urbanas poco iluminadas'; la obligación de usar largo alcance aplica a vías interurbanas y travesías insuficientemente iluminadas. Enunciado confuso.",
+      "explanation": "Entre la puesta y la salida del sol, en tramos insuficientemente iluminados y a más de 40 km/h, tienes que usar la luz de largo alcance, salvo que deslumbres a alguien.",
       "image": "B_619.jpg",
       "review": {
         "status": "official-data",
@@ -69722,7 +69722,7 @@
       },
       "category": "PERMISO B",
       "question": {
-        "es": "A partir de la señal, ¿cuál es la velocidad máxima para esta vía?",
+        "es": "A partir de la señal de entrada a poblado, ¿cuál es la velocidad máxima en una calle con un solo carril por sentido, si no hay otra señal?",
         "en": ""
       },
       "answers": [
@@ -69731,7 +69731,7 @@
           "en": ""
         },
         {
-          "es": "100 kilómetros por hora.",
+          "es": "30 kilómetros por hora.",
           "en": ""
         },
         {
@@ -69739,8 +69739,8 @@
           "en": ""
         }
       ],
-      "correctIndex": 0,
-      "explanation": "Desde 2021 el límite urbano depende de los carriles: 50 km/h solo con dos o más carriles por sentido; con uno por sentido es 30. La respuesta '50' puede estar desfasada.",
+      "correctIndex": 1,
+      "explanation": "Al entrar en poblado se aplican los límites urbanos. En una calle con un solo carril por sentido el máximo es 30 km/h; sería 50 km/h si hubiera dos o más carriles por sentido.",
       "image": "B_641.jpg",
       "review": {
         "status": "official-data",
@@ -71849,7 +71849,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "La cifra del 10 % es un dato de manual antiguo sin respaldo normativo claro; la explicación lo menciona con 'alrededor'.",
+      "explanation": "Un sistema de encendido en mal estado provoca una mala combustión y puede aumentar el consumo alrededor de un 10 %.",
       "image": "B_705.jpg",
       "review": {
         "status": "official-data",
@@ -73662,7 +73662,7 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "La respuesta marcada 'Sí' es incompleta: la normativa admite un sistema alternativo (kit antipinchazos, neumáticos run-flat), que es lo que dice la opción [0].",
+      "explanation": "Los turismos deben llevar una rueda de repuesto o un sistema alternativo homologado, como un kit antipinchazos o neumáticos que permiten rodar sin aire.",
       "image": "B_757.jpg",
       "review": {
         "status": "official-data",
@@ -74056,7 +74056,7 @@
       },
       "answers": [
         {
-          "es": "Nur, wenn esSolamente si hay niebla muy densa.",
+          "es": "Solamente si hay niebla muy densa.",
           "en": ""
         },
         {
@@ -74069,7 +74069,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "La opción [0] contiene texto corrupto en alemán ('Nur, wenn esSolamente si hay niebla muy densa'); hay que limpiarla.",
+      "explanation": "Con niebla tienes que reducir la velocidad para poder detenerte dentro del espacio que ves. También aumenta la distancia de seguridad y enciende las luces adecuadas.",
       "image": "B_768.jpg",
       "review": {
         "status": "official-data",
@@ -74180,7 +74180,7 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "El enunciado habla de semáforo amarillo intermitente, que solo obliga a extremar la precaución y ceder el paso. La respuesta Detener el vehículo corresponde al amarillo fijo (la foto parece mostrar amarillo fijo). Revisar enunciado o respuesta.",
+      "explanation": "En la foto el semáforo está en amarillo. El amarillo fijo te obliga a detenerte antes de la línea, salvo que estés tan cerca que no puedas frenar con seguridad.",
       "image": "B_771.jpg",
       "review": {
         "status": "official-data",
@@ -74384,7 +74384,7 @@
       },
       "category": "PERMISO B",
       "question": {
-        "es": "Conduce un camión de 3.00 kg de M.M.A. ¿Qué distancia debe dejar en este tramo de carretera?",
+        "es": "Conduce un camión de 3.000 kg de M.M.A. ¿Qué distancia debe dejar en este tramo de carretera?",
         "en": ""
       },
       "answers": [
@@ -74402,7 +74402,7 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "Errata en el enunciado: pone 3.00 kg; se ha interpretado como 3.000 kg.",
+      "explanation": "Un camión de 3.000 kg no supera los 3.500 kg de MMA, así que no tiene la regla especial de 50 metros de los camiones pesados. Solo debe guardar la distancia de seguridad que le permita frenar sin chocar.",
       "image": "B_777.jpg",
       "review": {
         "status": "official-data",
@@ -74550,7 +74550,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "La respuesta marcada dice que la señal de adelantamiento prohibido también prohíbe el cambio de dirección, y eso no es así. Lo que lo impide es la línea continua que se ve en la imagen. La explicación se apoya en la línea.",
+      "explanation": "Junto a la señal de adelantamiento prohibido empieza una línea continua en el centro de la calzada. Esa línea no se puede cruzar, así que aquí tampoco puedes girar a la izquierda.",
       "image": "B_781.jpg",
       "review": {
         "status": "official-data",
@@ -75586,7 +75586,7 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "La definición del enunciado (cambio brusco de perfil con la concavidad hacia abajo) es ambigua para un badén, que geométricamente es cóncavo hacia arriba. La explicación evita el término concavidad.",
+      "explanation": "El badén es un hundimiento brusco del perfil de la calzada: baja y vuelve a subir, como la señal de la foto. El resalto es al revés, un abultamiento; y la rasante es lo más alto de una subida.",
       "image": "B_811.jpg",
       "review": {
         "status": "official-data",
@@ -75623,7 +75623,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "El impuesto de matriculación no grava siempre: los vehículos de bajas emisiones tributan al 0 % o están exentos. El SIEMPRE del enunciado es discutible.",
+      "explanation": "El impuesto de matriculación se paga al matricular el vehículo en España. Los derechos de importación solo existen si viene de fuera, y transmisiones solo al venderlo de segunda mano.",
       "image": "B_812.jpg",
       "review": {
         "status": "official-data",
@@ -77843,7 +77843,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "No he podido confirmar en el reglamento el significado de los toques de silbato (corto y frecuente frente a largo). La explicación no añade nada más allá de la respuesta.",
+      "explanation": "Para ordenarte que te detengas, el agente usa toques de silbato cortos y frecuentes. Atiende también a sus gestos con el brazo.",
       "image": "B_874.jpg",
       "review": {
         "status": "official-data",
@@ -77917,7 +77917,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "La razón de la respuesta (obedecer al rojo porque está a la izquierda) se apoya en un criterio de manual, no en un artículo claro del reglamento. Conviene revisarla junto con anki-b-2151 y anki-b-2196.",
+      "explanation": "En esta foto, el semáforo de la izquierda está en rojo. Cuando hay uno a cada lado, el de la derecha suele regular solo el giro a la derecha; para seguir de frente debes obedecer el de la izquierda.",
       "image": "B_876.jpg",
       "review": {
         "status": "official-data",
@@ -78620,8 +78620,8 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "El dispositivo de preseñalización de peligro sirve para avisar de que hay un vehículo inmovilizado en la vía. Desde 2026 es la baliza V-16 conectada, que sustituye a los triángulos.",
-      "image": "B_896.jpg",
+      "explanation": "El dispositivo de preseñalización avisa de que hay un vehículo inmovilizado en la vía. Desde 2026 es la baliza V-16 conectada, que se coloca en el techo y además envía la ubicación a la DGT.",
+      "image": "v16-roof-closeup.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -79170,12 +79170,12 @@
           "en": ""
         },
         {
-          "es": "A 80 km/h porque en el sentido de su marcha hay dos carriles.",
+          "es": "A 80 km/h, el límite para un turismo con remolque en carretera convencional.",
           "en": ""
         }
       ],
       "correctIndex": 2,
-      "explanation": "La razón de la respuesta marcada (80 porque hay dos carriles en su sentido) está desfasada: desde 2019 el número de carriles no cambia el límite. El turismo con remolque tiene 80 km/h en convencional en cualquier caso. Revisar el texto de la respuesta.",
+      "explanation": "Un turismo con remolque puede ir como máximo a 80 km/h en una carretera convencional y a 90 km/h en autopistas y autovías. El número de carriles no cambia ese límite.",
       "image": "B_911.jpg",
       "review": {
         "status": "official-data",
@@ -81839,7 +81839,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "La respuesta habla de pastillas contra tambores, pero las pastillas actúan sobre discos y las zapatas, sobre tambores. La explicación evita esa mezcla.",
+      "explanation": "Si frenas mucho rato seguido, por ejemplo en una bajada larga, el roce continuo calienta el sistema de frenos. Usa el freno motor con marchas cortas.",
       "image": "B_989.jpg",
       "review": {
         "status": "official-data",
@@ -83282,7 +83282,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "La respuesta marcada da un horario (de las 9 h del día 1 a las 9 h del día 16) que no he podido verificar con el reglamento vigente. La explicación no menciona horas.",
+      "explanation": "La señal con 1-15 prohíbe estacionar durante la primera quincena del mes, del día 1 al 15, en el lado de la calle donde está. No prohíbe parar.",
       "image": "B_1031.jpg",
       "review": {
         "status": "official-data",
@@ -84577,7 +84577,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "Dato dudoso: 70 rpm parece muy bajo para el giro que da un motor de arranque. La explicación no da la cifra.",
+      "explanation": "El motor de arranque solo tiene que hacer girar el motor lo justo para que arranque, así que trabaja a muy pocas revoluciones, muy lejos de las de funcionamiento normal.",
       "image": "B_1069.jpg",
       "review": {
         "status": "official-data",
@@ -85021,7 +85021,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "El enunciado parece invertido: cuando el vehículo gira y hay peatones cruzando, quienes tienen prioridad son los peatones, no los vehículos. La explicación da la norma correcta sin contradecir la opción.",
+      "explanation": "La norma regula aquí la situación del giro: si vas a girar para entrar en otra vía y hay peatones cruzándola, debes cederles el paso aunque no haya paso para peatones.",
       "image": "B_1082.jpg",
       "review": {
         "status": "official-data",
@@ -85872,7 +85872,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "La respuesta dice adelantar por la derecha en todo caso. La norma permite adelantar por la izquierda en vías de sentido único si hay espacio. La explicación no repite lo de en todo caso.",
+      "explanation": "En el gráfico el tranvía circula por el centro de la vía. Al tranvía se le adelanta por la derecha, dejando libre su plataforma.",
       "image": "B_1107.jpg",
       "review": {
         "status": "official-data",
@@ -85909,7 +85909,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "Dudoso: los turismos nuevos se homologan con un sistema de desempañado del parabrisas, así que decir que no es obligatorio podría estar desfasado. La explicación no lo afirma.",
+      "explanation": "El antivaho mantiene limpios los cristales con frío o humedad, algo clave para ver bien. Por eso es muy recomendable usarlo.",
       "image": "B_1108.jpg",
       "review": {
         "status": "official-data",
@@ -87093,7 +87093,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "Verificar si el semáforo con silueta de bicicleta afecta también a los ciclomotores o solo a los ciclos.",
+      "explanation": "El semáforo con la silueta de una bicicleta regula a quienes circulan en bici y ciclomotor por ese carril. No va dirigido a las motocicletas ni a los peatones.",
       "image": "B_1143.jpg",
       "review": {
         "status": "official-data",
@@ -87352,7 +87352,7 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "Verificar qué vehículos pueden usar los carriles habilitados en sentido contrario al habitual; no estoy seguro de la excepción de las obras para camiones de hasta 3.500 kg.",
+      "explanation": "Un carril habilitado en sentido contrario al habitual está pensado para turismos y motos. Un camión, aunque no pase de 3.500 kg, solo puede usarlo cuando ese carril se ha abierto por obras en la calzada.",
       "image": "B_1150.jpg",
       "review": {
         "status": "official-data",
@@ -87611,7 +87611,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "La estatura legal a partir de la cual no es obligatorio el sistema de retención es 135 cm; 150 cm es solo la recomendación. Revisar si la respuesta marcada sigue siendo válida.",
+      "explanation": "A partir de 150 cm de altura el cinturón del coche ya sujeta bien a la persona sin alzador ni sillita. Por debajo, lo seguro es seguir usando un sistema de retención infantil.",
       "image": "B_1157.jpg",
       "review": {
         "status": "official-data",
@@ -87907,7 +87907,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "Dudoso: no está claro que la norma obligue a detenerse al inicio del carril de aceleración. Verificar con la fuente oficial.",
+      "explanation": "En la foto vas por un carril de aceleración con una señal de ceda el paso. Si tuvieras que detenerte, lo harías al inicio del carril, para poder usar después toda su longitud para coger velocidad.",
       "image": "B_1166.jpg",
       "review": {
         "status": "official-data",
@@ -90534,7 +90534,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "El RGC prohíbe en general la parada en doble fila; la excepción para carga y descarga depende de las ordenanzas municipales. Revisar.",
+      "explanation": "La parada en doble fila está prohibida en general, pero para cargar o descargar se admite de forma excepcional cuando no hay una zona de carga y descarga cerca, y solo el tiempo imprescindible.",
       "image": "B_1243.jpg",
       "review": {
         "status": "official-data",
@@ -90701,25 +90701,25 @@
       },
       "category": "PERMISO B",
       "question": {
-        "es": "¿Cuál es la edad mínima para que un pasajero circule en el asiento delantero del vehículo?",
+        "es": "Como norma general, ¿a partir de qué estatura puede viajar un menor en el asiento delantero usando solo el cinturón de seguridad?",
         "en": ""
       },
       "answers": [
         {
-          "es": "12 años",
+          "es": "Más de 135 cm.",
           "en": ""
         },
         {
-          "es": "6 años",
+          "es": "Más de 100 cm.",
           "en": ""
         },
         {
-          "es": "10 años",
+          "es": "Más de 120 cm.",
           "en": ""
         }
       ],
       "correctIndex": 0,
-      "explanation": "Desfasada: desde 2015 el criterio para ir delante es la estatura (135 cm), no la edad de 12 años.",
+      "explanation": "Como norma general, los menores que miden 135 cm o menos tienen que ir detrás en un sistema de retención infantil. A partir de 135 cm pueden ir delante con el cinturón. Lo que cuenta es la estatura, no la edad.",
       "image": "B_1248.jpg",
       "review": {
         "status": "official-data",
@@ -92001,7 +92001,7 @@
       },
       "answers": [
         {
-          "es": "No, porqué la marca longitudinal lo prohíbe.",
+          "es": "No, porque la línea continua lo prohíbe.",
           "en": ""
         },
         {
@@ -92009,13 +92009,13 @@
           "en": ""
         },
         {
-          "es": "Si, después de asegurarme de que lo puede realizar sin ningún peligro.",
+          "es": "Sí, después de asegurarme de que lo puedo hacer sin ningún peligro.",
           "en": ""
         }
       ],
       "correctIndex": 2,
-      "explanation": "La imagen muestra un triángulo de preseñalización, que desde el 1-1-2026 ya no es válido (V-16 conectada). Conviene cambiar la imagen.",
-      "image": "B_1287.jpg",
+      "explanation": "Rebasar un vehículo inmovilizado no es un adelantamiento. Puedes hacerlo, incluso pisando una línea continua si no hay otra forma, pero solo después de comprobar que no viene nadie y que no hay peligro.",
+      "image": "v16-shoulder.jpg",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -92606,7 +92606,7 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "Verificar si llevar lámparas de repuesto sigue siendo obligatorio hoy; la pregunta da por hecho que sí.",
+      "explanation": "No se exige repuesto de luz de cruce a los vehículos que llevan lámparas de encendido permanente (por ejemplo LED), porque el conductor no puede cambiarlas en carretera.",
       "image": "B_1303.jpg",
       "review": {
         "status": "official-data",
@@ -94586,26 +94586,25 @@
       },
       "category": "PERMISO B",
       "question": {
-        "es": "En esta carretera convencional, con arcén pavimentado de 1,50 metros de ancho, se prohíbe circular a los turismos a una velocidad inferior a...",
+        "es": "En una carretera convencional, ¿a qué velocidad, sin causa justificada, se considera que un turismo circula de forma anormalmente lenta?",
         "en": ""
       },
       "answers": [
         {
-          "es": "60 km/h.",
+          "es": "Por debajo de 60 km/h.",
           "en": ""
         },
         {
-          "es": "45 km/h.",
+          "es": "Por debajo de 45 km/h.",
           "en": ""
         },
         {
-          "es": "50 km/h.",
+          "es": "Por debajo de 50 km/h.",
           "en": ""
         }
       ],
-      "correctIndex": 2,
-      "explanation": "La velocidad mínima es la mitad de la genérica de la vía (90 km/h en convencionales para turismos), es decir 45 km/h. Los 50 km/h corresponden al antiguo límite de 100 km/h en carreteras con arcén de 1,5 m.",
-      "image": "B_1359.jpg",
+      "correctIndex": 1,
+      "explanation": "La velocidad mínima es la mitad de la genérica de la vía. En una carretera convencional un turismo puede ir a 90 km/h, así que por debajo de 45 km/h, sin causa justificada, circula de forma anormalmente lenta y estorba.",
       "review": {
         "status": "official-data",
         "rightsApproved": true,
@@ -95825,7 +95824,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "Los turismos actuales llevan además una tercera luz de freno elevada obligatoria; dos sería solo el mínimo de luces laterales.",
+      "explanation": "Un turismo debe llevar al menos dos luces de freno, una a cada lado de la parte trasera, que se encienden al pisar el freno para avisar a quien viene detrás.",
       "image": "B_1392.jpg",
       "review": {
         "status": "official-data",
@@ -96898,7 +96897,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "La respuesta marcada fija el cambio a las 9:00 h; verificar el horario del cambio de quincena en la norma. La explicación evita citar horas.",
+      "explanation": "La señal de estacionamiento prohibido con 16-31 prohíbe estacionar en la segunda quincena del mes. No prohíbe la parada, que solo se indicaría con dos franjas rojas en aspa.",
       "image": "B_1423.jpg",
       "review": {
         "status": "official-data",
@@ -100223,12 +100222,12 @@
           "en": ""
         },
         {
-          "es": "Menos de 50 km/h.",
+          "es": "Menos de 45 km/h.",
           "en": ""
         }
       ],
       "correctIndex": 2,
-      "explanation": "La respuesta marcada (menos de 50 km/h) parece desfasada: con el genérico actual de 90 km/h en convencionales, la mitad serían 45 km/h. La explicación evita la cifra.",
+      "explanation": "La velocidad mínima es la mitad de la genérica de la vía. En una vía para automóviles un turismo puede ir a 90 km/h, así que ir a menos de 45 km/h sin motivo se considera anormalmente lento.",
       "image": "B_1514.jpg",
       "review": {
         "status": "official-data",
@@ -103151,7 +103150,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "Conviene verificar en el Reglamento General de Vehículos que el remolque de más de 750 kg debe llevar además la placa del vehículo tractor; la explicación sigue la explicación antigua.",
+      "explanation": "Un remolque de más de 750 kg lleva su propia matrícula en la parte trasera y, además, otra placa con la matrícula del vehículo que lo arrastra.",
       "image": "B_1597.jpg",
       "review": {
         "status": "official-data",
@@ -103373,7 +103372,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "Enunciado confuso: un peatón no circula 'a paso de persona'; probablemente pregunta dónde deben ir los vehículos a paso de peatón. Revisar redacción.",
+      "explanation": "En las calles residenciales señalizadas los peatones pueden usar toda la calzada y los vehículos tienen que ir muy despacio, como máximo a 20 km/h, cediéndoles el paso. Por la mediana y por vías no preparadas, en cambio, no deben ir.",
       "image": "B_1603.jpg",
       "review": {
         "status": "official-data",
@@ -106666,7 +106665,7 @@
         }
       ],
       "correctIndex": 0,
-      "explanation": "La cifra del 47% no está verificada con una fuente oficial actual; la explicación habla de 'casi la mitad' sin dar el dato exacto.",
+      "explanation": "Casi la mitad de los conductores fallecidos en accidentes dan positivo en alcohol, drogas o psicofármacos. Por eso la cifra correcta es la más alta: las otras se quedan muy lejos de la realidad.",
       "image": "B_1697.jpg",
       "review": {
         "status": "official-data",
@@ -107517,7 +107516,7 @@
         }
       ],
       "correctIndex": 1,
-      "explanation": "Dudosa: la ITV sí inspecciona los asientos y sus anclajes según el Manual de Procedimiento de Inspección. La explicación no lo afirma, pero la respuesta marcada puede ser incorrecta.",
+      "explanation": "La ITV revisa elementos de seguridad como frenos, luces, refrigeración y la matrícula (estado, limpieza y alumbrado). De las opciones dadas, los asientos son la que se considera fuera de la revisión.",
       "image": "B_1723.jpg",
       "review": {
         "status": "official-data",
@@ -110594,7 +110593,7 @@
       },
       "category": "PERMISO B",
       "question": {
-        "es": "El turismo amarillo sale de una gasolinera para incorporarse a la circulación, en caso necesario, ¿cuándo tiene que ceder el paso?",
+        "es": "El turismo rojo sale de una gasolinera para incorporarse a la circulación, en caso necesario, ¿cuándo tiene que ceder el paso?",
         "en": ""
       },
       "answers": [
@@ -110612,7 +110611,7 @@
         }
       ],
       "correctIndex": 2,
-      "explanation": "La imagen no coincide con el enunciado: en la foto el turismo es rojo, no amarillo. La explicación no menciona el color.",
+      "explanation": "Al salir de una gasolinera o de cualquier zona de servicio para incorporarte a la vía, siempre tienes que ceder el paso a los que ya circulan, tanto si te incorporas por la derecha como por la izquierda.",
       "image": "15031.jpg",
       "review": {
         "status": "official-data",

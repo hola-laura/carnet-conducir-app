@@ -171,5 +171,89 @@
  },
  "dgt-nuevas-21": {
   "image": "assets/glossary/carretera-multicarril.svg"
+ },
+ "anki-b-2468": {
+  "question": "Como norma general, ¿a partir de qué estatura puede viajar un menor en el asiento delantero usando solo el cinturón de seguridad?",
+  "answers": [
+   "Más de 135 cm.",
+   "Más de 100 cm.",
+   "Más de 120 cm."
+  ],
+  "correctIndex": 0
+ },
+ "anki-b-2574": {
+  "question": "En una carretera convencional, ¿a qué velocidad, sin causa justificada, se considera que un turismo circula de forma anormalmente lenta?",
+  "answers": [
+   "Por debajo de 60 km/h.",
+   "Por debajo de 45 km/h.",
+   "Por debajo de 50 km/h."
+  ],
+  "correctIndex": 1,
+  "image": null
+ },
+ "anki-b-2726": {
+  "answers": [
+   "Menos de 60 km/h.",
+   "60 km/h o menos.",
+   "Menos de 45 km/h."
+  ],
+  "correctIndex": 2
+ },
+ "anki-b-455": {
+  "question": "En una travesía con dos carriles por sentido y sin señales de velocidad, ¿cuál es la velocidad máxima permitida?"
+ },
+ "anki-b-1053": {
+  "question": "En una travesía con dos carriles por sentido, ¿cuál es la velocidad máxima permitida para una motocicleta?"
+ },
+ "anki-b-1899": {
+  "question": "A partir de la señal de entrada a poblado, ¿cuál es la velocidad máxima en una calle con un solo carril por sentido, si no hay otra señal?",
+  "answers": [
+   "50 kilómetros por hora.",
+   "30 kilómetros por hora.",
+   "60 kilómetros por hora."
+  ],
+  "correctIndex": 1
+ },
+ "anki-b-2016": {
+  "answers": [
+   "Solamente si hay niebla muy densa.",
+   "No, no es necesario.",
+   "Sí, reducirla para adaptarla al espacio visible."
+  ]
+ },
+ "anki-b-2025": {
+  "question": "Conduce un camión de 3.000 kg de M.M.A. ¿Qué distancia debe dejar en este tramo de carretera?"
+ },
+ "anki-b-2955": {
+  "question": "El turismo rojo sale de una gasolinera para incorporarse a la circulación, en caso necesario, ¿cuándo tiene que ceder el paso?"
+ },
+ "anki-b-2154": {
+  "answers": [
+   "A 70 km/h porque el carril mide más de 1,50 metros de ancho.",
+   "A 100 km/h, según indica la señal.",
+   "A 80 km/h, el límite para un turismo con remolque en carretera convencional."
+  ]
+ },
+ "anki-b-1818": {
+  "question": "Si tiene que salir de su turismo en una vía interurbana por una avería, ¿es obligatorio ponerse un chaleco reflectante?",
+  "answers": [
+   "No es obligatorio si es de día.",
+   "Es obligatorio ponerse una prenda reflectante, pero no tiene que ser un chaleco.",
+   "Sí, y tiene que ser de alta visibilidad y estar certificado."
+  ],
+  "correctIndex": 2,
+  "image": "v16-kit.jpg"
+ },
+ "anki-b-2504": {
+  "image": "v16-shoulder.jpg",
+  "answers": [
+   "No, porque la línea continua lo prohíbe.",
+   "Sí, siempre.",
+   "Sí, después de asegurarme de que lo puedo hacer sin ningún peligro."
+  ],
+  "correctIndex": 2
+ },
+ "anki-b-2139": {
+  "image": "v16-roof-closeup.jpg"
  }
 }
