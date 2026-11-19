@@ -35,7 +35,9 @@ const I18N = {
         docTitle: 'Drivo Test — Test del carnet B (España)',
         docDescription: 'Tests gratis para el carnet B: preguntas tipo examen DGT, modo práctica y glosario visual. No afiliada a la DGT.',
         landingLead: 'Tests gratis para el carnet B y el permiso de conducir en España.',
-        landingTag: 'Tu test del carnet B, sin dramas.',
+        landingTag: '3.000 preguntas tipo examen del carnet B, explicadas una a una.',
+        introTitle: 'Hecha para que apruebes y la borres.',
+        introMatch: '¡Correcto!',
         landingEnter: 'Empezar',
         setupTitle: 'Personaliza tu preparación',
         setupSubtitle: 'Opcional - puedes configurarlo después',
@@ -136,6 +138,15 @@ const I18N = {
         toastPhotoType: '⚠️ Solo se permiten imágenes',
         toastPhotoSent: '✓ Foto enviada. ¡Gracias!',
         confirmExit: '¿Seguro que quieres salir del test? Perderás tu progreso.',
+        exitTitle: '¿Salir del examen?',
+        exitText: 'Si sales ahora, este examen no contará.',
+        exitStay: 'Seguir',
+        exitLeave: 'Salir',
+        scopeAll: 'Todas',
+        scopeDone: 'Hechas',
+        scopeReview: 'A repasar',
+        libraryEmptyDone: 'Todavía no has respondido ninguna pregunta.',
+        libraryEmptyReview: 'No tienes preguntas para repasar. ¡Bien!',
         navGame: 'Juego',
         gameSub: 'Esquiva los conos y recoge estrellas. Mejor marca: {n}',
         gameStart: 'Empezar',
@@ -157,7 +168,9 @@ const I18N = {
         docTitle: 'Drivo Test — Spain driving licence B tests',
         docDescription: 'Free practice tests for Spain’s licence B: DGT-style questions, practice mode and a visual glossary. Not affiliated with the DGT.',
         landingLead: 'Free practice tests for Spain’s licence B driving exam.',
-        landingTag: 'Your licence B test, no drama.',
+        landingTag: '3,000 exam-style licence B questions, each one explained.',
+        introTitle: 'Made to help you pass, then delete it.',
+        introMatch: 'Correct!',
         landingEnter: 'Get started',
         setupTitle: 'Personalise your prep',
         setupSubtitle: 'Optional — you can do this later',
@@ -258,6 +271,15 @@ const I18N = {
         toastPhotoType: '⚠️ Images only',
         toastPhotoSent: '✓ Photo sent. Thank you!',
         confirmExit: 'Leave the test? Your progress will be lost.',
+        exitTitle: 'Leave the exam?',
+        exitText: 'If you leave now, this exam won’t count.',
+        exitStay: 'Stay',
+        exitLeave: 'Leave',
+        scopeAll: 'All',
+        scopeDone: 'Done',
+        scopeReview: 'To review',
+        libraryEmptyDone: 'You haven’t answered any questions yet.',
+        libraryEmptyReview: 'Nothing to review. Nice!',
         navGame: 'Game',
         gameSub: 'Dodge the cones and collect stars. Best: {n}',
         gameStart: 'Start',
@@ -442,6 +464,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (isNativeApp()) document.documentElement.classList.add('native-app');
         loadUserStats();
         loadTheme();
+        startIntro();
         loadLang();
         initializeEventListeners();
         await loadQuestions();
@@ -506,7 +529,7 @@ function initializeEventListeners() {
     
     const reviewStatBtn = document.getElementById('reviewStatBtn');
     if (reviewStatBtn) {
-        reviewStatBtn.addEventListener('click', startReviewSession);
+        reviewStatBtn.addEventListener('click', () => showLibrary('review'));
     }
     
     const libraryBtn = document.getElementById('libraryBtn');
@@ -525,7 +548,7 @@ function initializeEventListeners() {
             const btn = event.target.closest('[data-tab]');
             if (!btn) return;
             if (btn.dataset.tab === 'home') goHome();
-            if (btn.dataset.tab === 'library') showLibrary();
+            if (btn.dataset.tab === 'library') showLibrary('all');
             if (btn.dataset.tab === 'glossary') showGlossary();
             if (btn.dataset.tab === 'game') showGame();
         });
@@ -591,6 +614,17 @@ function initializeEventListeners() {
     }
     
     // Library buttons
+    document.getElementById('allStatBtn')?.addEventListener('click', () => showLibrary('all'));
+    document.getElementById('doneStatBtn')?.addEventListener('click', () => showLibrary('done'));
+    document.getElementById('libraryScope')?.addEventListener('click', (event) => {
+        const btn = event.target.closest('[data-scope]');
+        if (!btn) return;
+        setLibraryScope(btn.dataset.scope);
+        filterQuestions();
+        window.scrollTo(0, 0);
+        document.getElementById('libraryView').scrollTop = 0;
+    });
+
     const libraryBackBtn = document.getElementById('libraryBackBtn');
     if (libraryBackBtn) {
         libraryBackBtn.addEventListener('click', goHome);
@@ -783,7 +817,48 @@ function categorizeQuestion(q) {
 // NAVIGATION
 // ============================================
 
+let introTimer = null;
+
+function startIntro() {
+    const cards = [...document.querySelectorAll('.intro-card')];
+    const match = document.querySelector('.intro-match');
+    if (!cards.length || !match) return;
+    let order = cards.map((_, i) => i);
+    const apply = () => {
+        order.forEach((cardIndex, pos) => {
+            cards[cardIndex].dataset.pos = String(pos);
+            cards[cardIndex].classList.remove('is-checked');
+        });
+    };
+    apply();
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        cards[order[0]].classList.add('is-checked');
+        return;
+    }
+    const step = () => {
+        const front = cards[order[0]];
+        front.classList.add('is-checked');
+        match.classList.add('show');
+        introTimer = setTimeout(() => {
+            match.classList.remove('show');
+            front.dataset.pos = 'out';
+            introTimer = setTimeout(() => {
+                order.push(order.shift());
+                apply();
+                introTimer = setTimeout(step, 1000);
+            }, 450);
+        }, 1500);
+    };
+    introTimer = setTimeout(step, 1000);
+}
+
+function stopIntro() {
+    clearTimeout(introTimer);
+    introTimer = null;
+}
+
 function showView(viewId) {
+    if (viewId !== 'landingView') stopIntro();
     document.querySelectorAll('.view').forEach(view => {
         view.classList.remove('active');
     });
@@ -1304,10 +1379,41 @@ function nextQuestion() {
     loadQuestion();
 }
 
-function exitTest() {
-    if (confirm(t('confirmExit'))) {
+async function exitTest() {
+    if (testMode !== 'exam' || currentQuestionIndex === 0) {
         goHome();
+        return;
     }
+    const leave = await askConfirm({
+        title: t('exitTitle'),
+        text: t('exitText'),
+        ok: t('exitLeave'),
+        cancel: t('exitStay')
+    });
+    if (leave) goHome();
+}
+
+function askConfirm({ title, text, ok, cancel }) {
+    const sheet = document.getElementById('confirmSheet');
+    document.getElementById('confirmTitle').textContent = title;
+    document.getElementById('confirmText').textContent = text;
+    const okBtn = document.getElementById('confirmOk');
+    const cancelBtn = document.getElementById('confirmCancel');
+    okBtn.textContent = ok;
+    cancelBtn.textContent = cancel;
+    sheet.classList.remove('hidden');
+    return new Promise((resolve) => {
+        const done = (value) => {
+            sheet.classList.add('hidden');
+            okBtn.onclick = null;
+            cancelBtn.onclick = null;
+            sheet.onclick = null;
+            resolve(value);
+        };
+        okBtn.onclick = () => done(true);
+        cancelBtn.onclick = () => done(false);
+        sheet.onclick = (e) => { if (e.target === sheet) done(false); };
+    });
 }
 
 // ============================================
@@ -1343,7 +1449,17 @@ function resetTest() {
 // LIBRARY
 // ============================================
 
-async function showLibrary() {
+let libraryScope = 'all';
+
+function setLibraryScope(scope) {
+    libraryScope = scope;
+    document.querySelectorAll('#libraryScope [data-scope]').forEach((btn) => {
+        btn.setAttribute('aria-selected', btn.dataset.scope === scope ? 'true' : 'false');
+    });
+}
+
+async function showLibrary(scope) {
+    if (typeof scope === 'string') setLibraryScope(scope);
     await runWithLoader(async () => {
         await ensureQuestions();
         filterQuestions();
@@ -1355,6 +1471,12 @@ function filterQuestions() {
     const category = document.getElementById('categoryFilter').value;
     const query = normalizeSearch(document.getElementById('librarySearch')?.value || '');
     let filtered = [...questionsData];
+
+    if (libraryScope === 'done') {
+        filtered = filtered.filter(q => userStats.questionHistory[q.id]);
+    } else if (libraryScope === 'review') {
+        filtered = filtered.filter(q => needsReview(q.id));
+    }
     
     if (category !== 'all') {
         const categoryMap = {
@@ -1391,7 +1513,8 @@ function displayQuestions(questions) {
     container.innerHTML = '';
 
     if (questions.length === 0) {
-        container.innerHTML = `<p class="library-empty">${t('libraryEmpty')}</p>`;
+        const emptyKey = libraryScope === 'done' ? 'libraryEmptyDone' : libraryScope === 'review' ? 'libraryEmptyReview' : 'libraryEmpty';
+        container.innerHTML = `<p class="library-empty">${t(emptyKey)}</p>`;
         return;
     }
 
@@ -1429,12 +1552,12 @@ function appendLibraryPage() {
                 `).join('')}
             </div>
             
-            <div class="library-explain">
+            ${getExplanationText(q) ? `<div class="library-explain">
                 <button class="expand-button" onclick="toggleExplanation(${index})">
                     ${t('showExplanation')}
                 </button>
                 <div id="explanation-${index}" class="explanation-content" style="display: none;"></div>
-            </div>
+            </div>` : ''}
             <button type="button" class="library-report">${t('somethingWrong')}</button>
         `;
 
