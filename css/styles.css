@@ -2169,3 +2169,168 @@ html.native-app .app-tabbar {
 .scope-chips button {
     flex-shrink: 0;
 }
+
+/* Flecha de las tarjetas de inicio */
+.round-action.cute-arrow {
+    width: 50px;
+    height: 50px;
+}
+
+.round-action.cute-arrow svg {
+    width: 26px;
+    height: 26px;
+    animation: nudge 2.6s ease-in-out infinite;
+}
+
+.mode-button:nth-of-type(2) .cute-arrow svg {
+    animation-delay: 1.3s;
+}
+
+@keyframes nudge {
+    0%, 60%, 100% { transform: translateX(0); }
+    70% { transform: translateX(3px); }
+    80% { transform: translateX(-1px); }
+    90% { transform: translateX(2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .round-action.cute-arrow svg { animation: none; }
+}
+
+/* Fotos pequeñas: tamaño real sobre fondo desenfocado */
+.question-image.is-lowres {
+    position: relative;
+    overflow: hidden;
+    background: #1b1b1b;
+}
+
+.question-image.is-lowres::before {
+    content: "";
+    position: absolute;
+    inset: -24px;
+    background: var(--src) center / cover no-repeat;
+    filter: blur(20px) brightness(0.8) saturate(1.1);
+    transform: scale(1.1);
+}
+
+.question-image.is-lowres img,
+#testView .question-image.is-lowres img {
+    position: relative;
+    width: auto;
+    height: auto;
+    max-width: min(100%, 250px);
+    max-height: 100%;
+    margin: auto;
+    border-radius: 10px;
+    object-fit: contain;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.question-item .question-image.is-lowres {
+    display: flex;
+    height: 250px;
+    padding: 14px;
+}
+
+#testView .question-image.is-lowres {
+    padding: 12px;
+}
+
+/* Diagramas vectoriales: fondo blanco y sin recorte */
+.question-image img[src$=".svg"] {
+    object-fit: contain;
+    background: #fff;
+}
+
+#testView .question-image img[src$=".svg"],
+.question-item .question-image img[src$=".svg"] {
+    object-fit: contain;
+    background: #fff;
+}
+
+#testView .question-image:has(img[src$=".svg"]) {
+    background: #fff;
+}
+
+#testView .question-header {
+    min-height: 34px;
+    margin-bottom: 6px;
+    padding-right: 46px;
+}
+
+#testView .question-card .save-button {
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+}
+
+#testView .question-card .save-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Ampliar imagen */
+.question-image img {
+    cursor: zoom-in;
+}
+
+.question-image:has(img[src$=".svg"]) {
+    position: relative;
+}
+
+.question-image:has(img[src$=".svg"])::after {
+    content: "Toca para ampliar";
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(20, 20, 20, 0.78);
+    color: #fff;
+    font: 600 12px var(--sans);
+    pointer-events: none;
+}
+
+.image-viewer {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--safe-top) + 56px) 8px calc(var(--safe-bottom) + 24px);
+    background: rgba(10, 10, 10, 0.94);
+}
+
+.image-viewer img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.image-viewer-close {
+    position: absolute;
+    top: calc(var(--safe-top) + 10px);
+    right: 12px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+}
+
+.image-viewer-close svg {
+    width: 20px;
+    height: 20px;
+}
+
+@media (min-width: 480px) {
+    .image-viewer {
+        position: absolute;
+    }
+}

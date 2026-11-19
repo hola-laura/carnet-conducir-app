@@ -1,95 +1,166 @@
 {
-"anki-b-395": {
+ "anki-b-395": {
   "question": "Desde el 1 de enero de 2026, ¿qué baliza V-16 sirve para señalizar un vehículo inmovilizado?",
-  "answers": ["Cualquier luz amarilla intermitente, aunque no esté homologada.", "Una V-16 homologada y conectada a la plataforma DGT 3.0.", "Una V-16 sin conexión, si es de las antiguas."],
+  "answers": [
+   "Cualquier luz amarilla intermitente, aunque no esté homologada.",
+   "Una V-16 homologada y conectada a la plataforma DGT 3.0.",
+   "Una V-16 sin conexión, si es de las antiguas."
+  ],
   "correctIndex": 1,
   "image": "v16-roof-closeup.jpg"
-},
-"anki-b-786": {
+ },
+ "anki-b-786": {
   "question": "En una calzada de sentido único, ¿cómo debe señalizar su turismo inmovilizado por una avería?",
-  "answers": ["Con un triángulo por detrás del vehículo, a 50 metros como mínimo.", "Solo con la luz de emergencia, porque no vienen vehículos de frente.", "Con la luz de emergencia y la baliza V-16 en la parte más alta del vehículo."],
+  "answers": [
+   "Con un triángulo por detrás del vehículo, a 50 metros como mínimo.",
+   "Solo con la luz de emergencia, porque no vienen vehículos de frente.",
+   "Con la luz de emergencia y la baliza V-16 en la parte más alta del vehículo."
+  ],
   "correctIndex": 2,
   "image": "v16-shoulder.jpg"
-},
-"anki-b-807": {
-  "answers": ["Solo si cae sobre algún carril, pero no si cae sobre el arcén.", "No.", "Sí, con la luz de emergencia y la baliza V-16."]
-},
-"anki-b-1422": {
+ },
+ "anki-b-807": {
+  "answers": [
+   "Solo si cae sobre algún carril, pero no si cae sobre el arcén.",
+   "No.",
+   "Sí, con la luz de emergencia y la baliza V-16."
+  ]
+ },
+ "anki-b-1422": {
   "question": "Si por una emergencia un turismo queda inmovilizado en la calzada, ¿debe activar la baliza V-16?",
-  "answers": ["Sí, aunque haya encendido las luces de emergencia o de posición.", "No, basta con encender la luz de emergencia.", "No, se enciende la luz de emergencia y, cuando proceda, las de posición."],
+  "answers": [
+   "Sí, aunque haya encendido las luces de emergencia o de posición.",
+   "No, basta con encender la luz de emergencia.",
+   "No, se enciende la luz de emergencia y, cuando proceda, las de posición."
+  ],
   "correctIndex": 0,
   "image": "v16-night.jpg"
-},
-"anki-b-1444": {
+ },
+ "anki-b-1444": {
   "question": "Además de emitir luz, ¿qué hace la baliza V-16 conectada al activarla?",
-  "answers": ["Llama automáticamente a una grúa.", "Envía la ubicación del vehículo a la DGT, que avisa a otros conductores.", "Nada más: solo emite luz amarilla."],
+  "answers": [
+   "Llama automáticamente a una grúa.",
+   "Envía la ubicación del vehículo a la DGT, que avisa a otros conductores.",
+   "Nada más: solo emite luz amarilla."
+  ],
   "correctIndex": 1,
   "image": "v16-roof-closeup.jpg"
-},
-"anki-b-1449": {
-  "answers": ["Un triángulo de preseñalización de peligro y un chaleco reflectante de alta visibilidad.", "Una baliza V-16 conectada y al menos un chaleco reflectante de alta visibilidad.", "Un extintor de incendios."],
+ },
+ "anki-b-1449": {
+  "answers": [
+   "Un triángulo de preseñalización de peligro y un chaleco reflectante de alta visibilidad.",
+   "Una baliza V-16 conectada y al menos un chaleco reflectante de alta visibilidad.",
+   "Un extintor de incendios."
+  ],
   "correctIndex": 1,
   "image": "v16-kit.jpg"
-},
-"anki-b-1502": {
+ },
+ "anki-b-1502": {
   "question": "Desde el 1 de enero de 2026, ¿qué dispositivo de preseñalización de peligro debe llevar un turismo?",
-  "answers": ["Una baliza V-16 conectada.", "Dos triángulos homologados.", "Tres triángulos homologados."],
+  "answers": [
+   "Una baliza V-16 conectada.",
+   "Dos triángulos homologados.",
+   "Tres triángulos homologados."
+  ],
   "correctIndex": 0,
   "image": "v16-kit.jpg"
-},
-"anki-b-1880": {
-  "answers": ["No, porque el lugar utilizado para inmovilizarlo es el apropiado para ese tipo de situaciones.", "Sí, con la luz de emergencia, la baliza V-16 y, si hace falta, con las luces de posición.", "No, porque el vehículo no está en la calzada."],
+ },
+ "anki-b-1880": {
+  "answers": [
+   "No, porque el lugar utilizado para inmovilizarlo es el apropiado para ese tipo de situaciones.",
+   "Sí, con la luz de emergencia, la baliza V-16 y, si hace falta, con las luces de posición.",
+   "No, porque el vehículo no está en la calzada."
+  ],
   "correctIndex": 1,
   "image": "v16-shoulder.jpg"
-},
-"anki-b-2020": {
-  "answers": ["Un equipo homologado de extinción de incendios", "Una baliza V-16 conectada", "Chaleco reflectante"],
+ },
+ "anki-b-2020": {
+  "answers": [
+   "Un equipo homologado de extinción de incendios",
+   "Una baliza V-16 conectada",
+   "Chaleco reflectante"
+  ],
   "correctIndex": 0
-},
-"anki-b-2197": {
+ },
+ "anki-b-2197": {
   "question": "Si tiene una avería en esta vía, ¿dónde debe colocar la baliza V-16?",
-  "answers": ["En la parte más alta del vehículo, sin necesidad de caminar por la vía.", "En el suelo, 50 metros por detrás del vehículo.", "Una por delante y otra por detrás del vehículo, a 50 metros."],
+  "answers": [
+   "En la parte más alta del vehículo, sin necesidad de caminar por la vía.",
+   "En el suelo, 50 metros por detrás del vehículo.",
+   "Una por delante y otra por detrás del vehículo, a 50 metros."
+  ],
   "correctIndex": 0,
   "image": "v16-shoulder.jpg"
-},
-"anki-b-2285": {
+ },
+ "anki-b-2285": {
   "question": "Desde el 1 de enero de 2026, ¿siguen siendo obligatorios los triángulos de preseñalización en un turismo?",
-  "answers": ["Sí, uno como mínimo.", "No. Los sustituye la baliza V-16 conectada.", "Sí, dos homologados, además de la V-16."],
+  "answers": [
+   "Sí, uno como mínimo.",
+   "No. Los sustituye la baliza V-16 conectada.",
+   "Sí, dos homologados, además de la V-16."
+  ],
   "correctIndex": 1,
   "image": "v16-kit.jpg"
-},
-"anki-b-2344": {
-  "answers": ["En autopista y autovía sí, en carretera no.", "No, porque el vehículo no es un camión.", "Sí, con la luz de emergencia y la baliza V-16."],
+ },
+ "anki-b-2344": {
+  "answers": [
+   "En autopista y autovía sí, en carretera no.",
+   "No, porque el vehículo no es un camión.",
+   "Sí, con la luz de emergencia y la baliza V-16."
+  ],
   "correctIndex": 2
-},
-"anki-b-2491": {
+ },
+ "anki-b-2491": {
   "question": "¿De qué color es la luz de la baliza V-16?",
-  "answers": ["Azul", "Roja", "Amarilla"],
+  "answers": [
+   "Azul",
+   "Roja",
+   "Amarilla"
+  ],
   "correctIndex": 2,
   "image": "v16-roof-closeup.jpg"
-},
-"anki-b-2575": {
+ },
+ "anki-b-2575": {
   "question": "Para colocar la baliza V-16, ¿tiene que alejarse del vehículo?",
-  "answers": ["Sí, debe colocarla a 100 metros por detrás.", "No, se pone en el techo, a ser posible sin salir del coche.", "Sí, debe colocarla a 50 metros por detrás."],
+  "answers": [
+   "Sí, debe colocarla a 100 metros por detrás.",
+   "No, se pone en el techo, a ser posible sin salir del coche.",
+   "Sí, debe colocarla a 50 metros por detrás."
+  ],
   "correctIndex": 1,
   "image": "v16-window.jpg"
-},
-"anki-b-2665": {
+ },
+ "anki-b-2665": {
   "question": "¿Cuándo hay que activar la baliza V-16?",
-  "answers": ["Solo de noche o con poca visibilidad.", "Solo en autopistas y autovías.", "Cuando el vehículo queda inmovilizado en la vía por una avería o un accidente."],
+  "answers": [
+   "Solo de noche o con poca visibilidad.",
+   "Solo en autopistas y autovías.",
+   "Cuando el vehículo queda inmovilizado en la vía por una avería o un accidente."
+  ],
   "correctIndex": 2,
   "image": "v16-night.jpg"
-},
-"anki-b-2953": {
+ },
+ "anki-b-2953": {
   "question": "Ante una avería, ¿por qué es más segura la baliza V-16 que los antiguos triángulos?",
-  "answers": ["Porque no hay que salir del coche ni caminar por la calzada para colocarla.", "Porque permite dejar el coche en el carril sin señalizar nada más.", "No es más segura; solo es más moderna."],
+  "answers": [
+   "Porque no hay que salir del coche ni caminar por la calzada para colocarla.",
+   "Porque permite dejar el coche en el carril sin señalizar nada más.",
+   "No es más segura; solo es más moderna."
+  ],
   "correctIndex": 0,
   "image": "v16-window.jpg"
-},
-"anki-b-2954": {
+ },
+ "anki-b-2954": {
   "question": "De noche, con el turismo inmovilizado en la calzada, ¿qué luces debe encender además de la baliza V-16?",
-  "answers": ["Ninguna, la V-16 es suficiente.", "La luz de emergencia y, si la visibilidad lo exige, las de posición.", "Solo las luces de carretera, para que le vean de lejos."],
+  "answers": [
+   "Ninguna, la V-16 es suficiente.",
+   "La luz de emergencia y, si la visibilidad lo exige, las de posición.",
+   "Solo las luces de carretera, para que le vean de lejos."
+  ],
   "correctIndex": 1,
   "image": "v16-night.jpg"
-}
+ },
+ "anki-b-2758": {
+  "image": "refrigeracion-motor.svg"
+ }
 }

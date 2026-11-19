@@ -18,7 +18,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Drivo Test — Test del carnet B (España)">
     <meta name="twitter:description" content="Tests gratis para el carnet B: preguntas tipo examen DGT, modo práctica y glosario visual. No afiliada a la DGT.">
-    <link rel="stylesheet" href="css/styles.css?v=21">
+    <link rel="stylesheet" href="css/styles.css?v=22">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="assets/icon.svg">
     <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
@@ -169,14 +169,14 @@
                     <span class="photo-frame">
                         <img class="mode-card-photo" src="assets/home-exam.jpg" alt="" width="371" height="247">
                         <span class="photo-caption" data-i18n="examMeta">30 preguntas · Máx 3 fallos · Sin pistas</span>
-                        <span class="round-action" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                        <span class="round-action cute-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 12.5c3.2-.4 6.8-.4 10.5-.5"/><path d="M13 7.8c1.6 1.3 3 2.6 4.2 4.2-1.2 1.5-2.6 2.9-4.2 4.2"/></svg></span>
                     </span>
                 </button>
 
                 <button id="practiceModeBtn" class="prompt-card mode-button" data-mode="practice">
                     <span class="prompt-label" data-i18n="practiceMode">Modo práctica</span>
                     <span class="prompt-answer" data-i18n="practiceMeta">Feedback al instante · Si fallas, ves por qué y sigues.</span>
-                    <span class="round-action" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    <span class="round-action cute-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 12.5c3.2-.4 6.8-.4 10.5-.5"/><path d="M13 7.8c1.6 1.3 3 2.6 4.2 4.2-1.2 1.5-2.6 2.9-4.2 4.2"/></svg></span>
                 </button>
 
                 <a class="store-footer" href="https://apps.apple.com/es/app/drivo-test/id6813126362" aria-label="Descargar en el App Store">
@@ -384,6 +384,13 @@
         </div>
     </div>
 
+    <div id="imageViewer" class="image-viewer hidden" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+        <img id="imageViewerImg" alt="">
+        <button type="button" class="image-viewer-close" aria-label="Cerrar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+    </div>
+
     <!-- Toast Notification -->
     <div id="toast" class="toast hidden"></div>
     
@@ -429,6 +436,6 @@
     <script src="js/illustrations-dgt.js"></script>
     <script src="js/glossary-dgt.js"></script>
     <script src="js/questions-data.js"></script>
-    <script src="js/app.js?v=16"></script>
+    <script src="js/app.js?v=17"></script>
 </body>
 </html>
