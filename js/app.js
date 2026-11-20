@@ -435,6 +435,20 @@ function isNativeApp() {
     return !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
 }
 
+// Ask for an App Store rating after a good moment (passed exam, great Match round).
+// iOS shows its own dialog at most 3 times a year; we also wait 60 days between asks.
+function maybeAskForReview() {
+    if (!isNativeApp()) return;
+    const Review = window.Capacitor.Plugins && window.Capacitor.Plugins.InAppReview;
+    if (!Review) return;
+    if ((userStats.totalAnswered || 0) < 30) return;
+    const last = userStats.reviewAskedAt || 0;
+    if (Date.now() - last < 60 * 24 * 60 * 60 * 1000) return;
+    userStats.reviewAskedAt = Date.now();
+    saveUserStats();
+    setTimeout(() => { try { Review.requestReview(); } catch (e) {} }, 1200);
+}
+
 function syncNativeChrome() {
     if (!isNativeApp()) return;
     const light = document.body.classList.contains('light-mode');
@@ -1507,6 +1521,7 @@ function showResults() {
     document.getElementById('finalScore').textContent = `${score}%`;
     
     showView('resultsView');
+    if (passed) maybeAskForReview();
 }
 
 function resetTest() {

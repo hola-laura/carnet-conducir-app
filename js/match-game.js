@@ -261,6 +261,7 @@ function finishMatch() {
         ? `¡Ronda perfecta! +${xp} XP`
         : `+${xp} XP · Tu mejor ronda: ${userStats.matchBest}/${MATCH_ROUND}`;
     document.getElementById('matchResult').hidden = false;
+    if (match.correct >= 8 && typeof maybeAskForReview === 'function') maybeAskForReview();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
